@@ -50,7 +50,11 @@ def fetch_koubo_list() -> List[dict]:
     素朴に抜き出す。実際の本番運用では、ここをページの実際のHTML構造
     （テーブルなのか、リストなのか）に合わせて調整する必要がある。
     """
-    res = requests.get(CHUSHO_KOUBO_URL, timeout=30)
+ headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                   "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+}
+res = requests.get(CHUSHO_KOUBO_URL, headers=headers, timeout=30)
     res.raise_for_status()
     soup = BeautifulSoup(res.text, "html.parser")
 
