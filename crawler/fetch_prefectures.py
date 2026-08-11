@@ -26,14 +26,15 @@ PREF_PROGRAM_CONFIG に PrefProgramConfig を1件追加するだけでよい。
 """
 
 import re
+import ssl
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Dict, List, Optional
 
 import requests
 from bs4 import BeautifulSoup
+from requests.adapters import HTTPAdapter
 
-from .fetch_national import parse_deadline
 from .schema import Program
 
 PREFECTURES_JA = {
@@ -780,7 +781,7 @@ PREF_PROGRAM_CONFIG: List[PrefProgramConfig] = [
     PrefProgramConfig(
         pref="ehime", category="融資",
         program_name="愛媛県中小企業向け融資制度（経済対策資金等）",
-        url="https://www.pref.ehime.jp/page/59788.html",
+        url="https://www.pref.ehime.jp/site/madoguchi/59788.html",
         kicker="制度融資 ｜ 愛媛県内の中小企業向け",
         purpose=["設備投資"],
         amount_label="運転 企業5,000万円・組合1億円、借換 企業8,000万円",
@@ -898,16 +899,20 @@ PREF_PROGRAM_CONFIG: List[PrefProgramConfig] = [
         confirmed=True,
     ),
     PrefProgramConfig(
+        # 「2次公募」の個別告知ページ(旧URL: /soshiki/61/231111.html)は
+        # 2026年8月時点で削除済み（採択結果ページに置き換わっている）。
+        # 現在の公募状況が確認できないため、部署の安定した窓口ページに
+        # URLを差し替え、confirmed=False（要確認）にしている。
         pref="kumamoto", category="補助金",
-        program_name="事業承継・後継ぎ支援事業補助金（2次公募）",
-        url="https://www.pref.kumamoto.jp/soshiki/61/231111.html",
+        program_name="事業承継・後継ぎ支援事業補助金",
+        url="https://www.pref.kumamoto.jp/soshiki/61/",
         kicker="事業承継 ｜ 県内中小企業向け",
         purpose=["事業承継"],
         amount_label="上限50万円（準備枠）／100万円（後継ぎ応援枠）",
         rate_label="2/3",
-        deadline="2026-11-30", deadline_label="2026年11月30日17時必着",
+        deadline="2099-01-01", deadline_label="要確認（前回の公募ページが終了。最新の公募回・締切は公式サイトで確認）",
         eligibility=["熊本県内の中小企業", "事業承継の準備、または承継後間もない後継者である", "設備投資・販路開拓等の計画がある（後継ぎ応援枠）"],
-        confirmed=True,
+        confirmed=False,
     ),
     PrefProgramConfig(
         pref="oita", category="融資",
@@ -948,7 +953,7 @@ PREF_PROGRAM_CONFIG: List[PrefProgramConfig] = [
     PrefProgramConfig(
         pref="kagoshima", category="融資",
         program_name="鹿児島県中小企業融資制度（新規開業応援資金等）",
-        url="http://www.pref.kagoshima.jp/af02/sangyo-rodo/syoko/yushi/yuushi/index.html",
+        url="http://www.pref.kagoshima.jp/af02/sangyo-rodo/syoko/yushi/yuushi/yushigaiyou.html",
         kicker="制度融資 ｜ 鹿児島県内の中小企業向け",
         purpose=["設備投資"],
         amount_label="要確認（創業応援 運転・設備2,000万円等）",
@@ -1009,14 +1014,44 @@ def _to_halfwidth(s: str) -> str:
     return s.translate(str.maketrans("０１２３４５６７８９，", "0123456789,"))
 
 
+class _LegacyTLSAdapter(HTTPAdapter):
+    """
+    県のサイトの中には、古いサーバー設定のままでTLSのセキュリティレベルが
+    低く、Pythonのopensslデフォルト設定（SECLEVEL=2）だとハンドシェイクに
+    失敗するものがある（例: 群馬県産業支援機構 g-inf.or.jp）。
+    ブラウザは互換性のために自動でここを緩めて接続できているのに対し、
+    requests はそのまま失敗するため、SECLEVEL=1 まで許容するセッションを
+    使ってアクセスする。証明書の検証自体は行ったままなので、
+    「暗号スイートの許容範囲を広げる」以上のことはしていない。
+    """
+
+    def init_poolmanager(self, *args, **kwargs):
+        ctx = ssl.create_default_context()
+        ctx.set_ciphers("DEFAULT@SECLEVEL=1")
+        kwargs["ssl_context"] = ctx
+        return super().init_poolmanager(*args, **kwargs)
+
+
+def _build_session() -> requests.Session:
+    session = requests.Session()
+    session.mount("https://", _LegacyTLSAdapter())
+    return session
+
+
+_SESSION = _build_session()
+
+
 def fetch_page_text(url: str) -> Optional[str]:
     """URLにアクセスして本文テキストを取得する。失敗時は None を返す。"""
     try:
-        res = requests.get(url, headers=REQUEST_HEADERS, timeout=REQUEST_TIMEOUT)
+        res = _SESSION.get(url, headers=REQUEST_HEADERS, timeout=REQUEST_TIMEOUT)
         res.raise_for_status()
     except requests.RequestException:
         return None
-    soup = BeautifulSoup(res.text, "html.parser")
+    # レスポンスヘッダーに charset が無いサイトもあるため、res.text
+    # （ヘッダー基準のデコード）ではなく生バイトを渡し、BeautifulSoupに
+    # <meta charset> から実際のエンコーディングを検出させる。
+    soup = BeautifulSoup(res.content, "html.parser")
     return " ".join(soup.get_text(separator=" ", strip=True).split())
 
 
@@ -1042,30 +1077,6 @@ def try_extract_rate(text: str, category: str) -> Optional[str]:
             return None
         return f"補助率 {_to_halfwidth(m.group(1))}/{_to_halfwidth(m.group(2))}"
     return None
-
-
-REIWA_DATE = r"令和\d+年\s*\d{1,2}月\s*\d{1,2}日"
-# ページ本文には催事日・更新日など締切と無関係な日付も多数出てくるため、
-# 「締切」「必着」「まで」等のキーワードのすぐ近くにある日付だけを締切候補として扱う。
-DEADLINE_NEAR_KEYWORD_RE = re.compile(
-    rf"(?:(締切|締め切り|受付期限|申請期限)[^。]{{0,15}}({REIWA_DATE}))"
-    rf"|(?:({REIWA_DATE})[^。]{{0,15}}(必着|締切|まで))"
-)
-
-
-def try_extract_deadline(text: str):
-    """
-    「締切は令和8年8月25日」のように、締切を示すキーワードのすぐ近くにある
-    和暦日付だけを締切候補として拾う。見つからなければ (None, None) を返す。
-    """
-    m = DEADLINE_NEAR_KEYWORD_RE.search(text)
-    if not m:
-        return None, None
-    date_text = m.group(2) or m.group(3)
-    deadline = parse_deadline(date_text)
-    if deadline is None:
-        return None, None
-    return deadline, date_text
 
 
 def build_program(cfg: PrefProgramConfig, page_text: Optional[str]) -> Program:
@@ -1094,16 +1105,13 @@ def build_program(cfg: PrefProgramConfig, page_text: Optional[str]) -> Program:
                 rate_label = auto_rate
                 auto_updated = True
 
-        # 締切の自動更新は、募集期間が動く補助金かつ「終了日は要確認」の
-        # ものだけを対象にする（融資は基本「随時受付」で対象外。
-        # 既に具体的な締切日が判明している補助金も、ページ内の無関係な
-        # 日付を誤って拾うリスクがあるため上書きしない）。
-        if cfg.category == "補助金" and "要確認" in deadline_label:
-            auto_deadline, auto_deadline_label = try_extract_deadline(page_text)
-            if auto_deadline:
-                deadline = auto_deadline
-                deadline_label = auto_deadline_label
-                auto_updated = True
+        # 締切日の自動抽出はあえて行わない。都道府県のページには、複数の
+        # 制度・お知らせの締切がまとめて載っている一覧ページも多く、
+        # 「締切」等のキーワード近くの日付を拾う方式では、無関係な別制度の
+        # （時には過去の）締切を誤って採用してしまう事故が実際に確認された。
+        # 誤った締切で「もう終了した制度」に見えてしまう方が、
+        # 「要確認」のまま残るより実害が大きいため、ここは config の
+        # 値をそのまま使う。
 
     # 共済（勤労者福祉共済会等）は県が運営主体ではなく関与する形が多いため
     # ラベルを分けている。融資・補助金は県独自の制度として扱う。
