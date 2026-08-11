@@ -1039,17 +1039,17 @@ const DATA = [
     "scope": "prefecture",
     "scopeLabel": "都道府県独自（北海道）",
     "pref": "hokkaido",
-    "amountLabel": "資金区分による（創業貸付は3,500万円以内）",
-    "rateLabel": "固定金利（令和8年4月改定）（融資期間:1年超10年以内（据置2年以内））",
+    "amountLabel": "要確認（公式サイトで最終確認）",
+    "rateLabel": "要確認（公式サイトで最終確認）",
     "deadline": "2099-01-01",
     "deadlineLabel": "随時受付中（通年・信用保証協会の保証が必要）",
     "eligibility": [
-      "道内で事業を行う中小企業者",
+      "北海道内で事業を営む中小企業者",
       "県・金融機関・信用保証協会の三者協調融資",
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.hokkaido.lg.jp/kz/csk/kny/yuushi/",
-    "sourceCheckedAt": "2026-08-10"
+    "sourceCheckedAt": "2026-08-11"
   },
   {
     "title": "青森県特別保証融資制度",
@@ -1319,17 +1319,17 @@ const DATA = [
     "scope": "prefecture",
     "scopeLabel": "都道府県独自（埼玉県）",
     "pref": "saitama",
-    "amountLabel": "メニュー別（経営安定資金8,000万円等）",
-    "rateLabel": "年1.8%〜2.2%（上限利率、利子補給後・固定）（融資期間:要確認）",
+    "amountLabel": "要確認（公式サイトで最終確認）",
+    "rateLabel": "年1.8%〜2.2%（上限利率、利子補給後・固定）",
     "deadline": "2099-01-01",
     "deadlineLabel": "随時受付中（通年・信用保証協会の保証が必要）",
     "eligibility": [
-      "県内中小企業者・中小企業組合",
+      "埼玉県内で事業を営む中小企業者",
       "県・金融機関・信用保証協会の三者協調融資",
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.saitama.lg.jp/a0805/seidoyushi/",
-    "sourceCheckedAt": "2026-08-10"
+    "sourceCheckedAt": "2026-08-11"
   },
   {
     "title": "千葉県中小企業向け融資制度",
@@ -1404,16 +1404,16 @@ const DATA = [
     "scopeLabel": "都道府県独自（神奈川県）",
     "pref": "kanagawa",
     "amountLabel": "2億円",
-    "rateLabel": "1年以内 年1.6%、1年超10年以内 年2.6%以内又は短プラ+0.8%以内（変動）（融資期間:10年以内）",
+    "rateLabel": "要確認（公式サイトで最終確認）",
     "deadline": "2099-01-01",
     "deadlineLabel": "随時受付中（通年・信用保証協会の保証が必要）",
     "eligibility": [
-      "県内で事業を営む中小企業者",
+      "神奈川県内で事業を営む中小企業者",
       "県・金融機関・信用保証協会の三者協調融資",
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.kanagawa.jp/docs/m6c/cnt/f5782/",
-    "sourceCheckedAt": "2026-08-10"
+    "sourceCheckedAt": "2026-08-11"
   },
   {
     "title": "新潟県中小企業向け制度融資",
@@ -1767,17 +1767,17 @@ const DATA = [
     "scope": "prefecture",
     "scopeLabel": "都道府県独自（大阪府）",
     "pref": "osaka",
-    "amountLabel": "要確認（メニュー別）",
-    "rateLabel": "開業・スタートアップ応援資金 年1.4%（固定）、地域支援ネットワーク型 年1.2%（女性・若者・シニア・UIJターンは0.2%割引）（融資期間:要確認）",
+    "amountLabel": "要確認（公式サイトで最終確認）",
+    "rateLabel": "要確認（公式サイトで最終確認）",
     "deadline": "2099-01-01",
     "deadlineLabel": "随時受付中（通年・信用保証協会の保証が必要）",
     "eligibility": [
-      "府内中小企業者",
+      "大阪府内で事業を営む中小企業者",
       "県・金融機関・信用保証協会の三者協調融資",
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.osaka.lg.jp/o110080/kinyushien/seido001/index.html",
-    "sourceCheckedAt": "2026-08-10"
+    "sourceCheckedAt": "2026-08-11"
   },
   {
     "title": "兵庫県中小企業融資制度（経営活性化資金）",
