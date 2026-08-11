@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>補助金台帳 ｜ 中小企業庁 受付中の補助金まとめ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:#F7F7F4;
+    --line:#DEDCD4;
+    --line-strong:#C7C4B8;
+    --navy:#1C2B4A;
+    --navy-deep:#101A30;
+    --vermillion:#B93C28;
+    --gold:#8A6A22;
+    --text:#1C1E22;
+    --text-sub:#5B5D5F;
+    --status-open:#1E6B41;
+    --status-note:#8A6A22;
+    --status-pref:#2A5A8A;
+    --status-loan:#1E6B6B;
+    --status-kyosai:#6B4E9E;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Zen Kaku Gothic New', sans-serif; -webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  ::selection{background:var(--vermillion); color:#fff;}
+
+  .topbar{background:var(--bg); border-bottom:1px solid var(--line); padding:16px 24px; position:sticky; top:0; z-index:30;}
+  .topbar-inner{max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  .brand{font-family:'Shippori Mincho', serif; font-weight:800; font-size:19px; display:flex; align-items:center; gap:9px; color:var(--navy-deep);}
+  .brand .mark{display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border:1.5px solid var(--vermillion); color:var(--vermillion); border-radius:50%; font-size:12px; font-weight:700;}
+  .topnav a{font-size:13.5px; font-weight:600; text-decoration:none; color:var(--text-sub); margin-left:26px; border-bottom:2px solid transparent; padding-bottom:4px;}
+  .topnav a:hover, .topnav a.active{color:var(--navy-deep); border-color:var(--vermillion);}
+
+  .hero{background:var(--bg-soft); border-bottom:1px solid var(--line); padding:52px 24px 44px;}
+  .hero-inner{max-width:1080px; margin:0 auto;}
+  .eyebrow{font-size:12.5px; letter-spacing:0.12em; color:var(--gold); font-weight:700; display:flex; align-items:center; gap:10px; margin-bottom:18px;}
+  .eyebrow::before{content:""; width:26px; height:2px; background:var(--gold); display:inline-block;}
+  h1.title{font-family:'Shippori Mincho', serif; font-weight:800; font-size:clamp(28px, 4.4vw, 44px); line-height:1.35; margin:0 0 16px; color:var(--navy-deep);}
+  h1.title .accent{color:var(--vermillion);}
+  .lede{font-size:15px; line-height:1.9; color:var(--text-sub); max-width:660px; margin:0 0 26px;}
+  .hero-cta{display:inline-block; font-size:14px; font-weight:700; color:#fff; background:var(--navy); padding:13px 26px; text-decoration:none; letter-spacing:0.02em; border-radius:2px;}
+  .hero-cta:hover{background:var(--navy-deep);}
+  .hero-meta{display:flex; flex-wrap:wrap; border-top:1px solid var(--line); margin-top:32px;}
+  .hero-meta-item{padding:16px 28px 0 0; margin-right:28px;}
+  .hero-meta-num{font-family:'Shippori Mincho', serif; font-size:26px; font-weight:700; color:var(--navy-deep); line-height:1;}
+  .hero-meta-num span.unit{font-size:13px; font-weight:500; margin-left:2px; color:var(--text-sub);}
+  .hero-meta-label{font-size:11.5px; color:var(--text-sub); margin-top:8px;}
+
+  .filterbar{position:sticky; top:65px; z-index:20; background:var(--bg); border-bottom:1px solid var(--line); padding:14px 24px;}
+  .filterbar-inner{max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
+  .filterbar-label{font-size:11.5px; color:var(--text-sub); letter-spacing:0.04em; margin-right:6px; font-weight:700;}
+  .chip{font-family:inherit; font-size:12.5px; padding:7px 14px; border:1px solid var(--line-strong); background:#fff; color:var(--text-sub); border-radius:999px; cursor:pointer; transition:all .15s ease; font-weight:600;}
+  .chip:hover{border-color:var(--navy); color:var(--navy);}
+  .chip.active{background:var(--navy); border-color:var(--navy); color:#fff;}
+
+  .ledger{max-width:1080px; margin:0 auto; padding:36px 24px 80px;}
+  .ledger-caption{font-size:12px; color:var(--text-sub); margin-bottom:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; border-bottom:1px solid var(--line); padding-bottom:12px;}
+
+  .card{position:relative; border:1px solid var(--line); border-radius:3px; padding:26px 26px 26px 30px; margin-bottom:16px; transition:border-color .15s ease, box-shadow .15s ease;}
+  .card::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--status-open); border-radius:3px 0 0 3px;}
+  .card[data-scope="regional"]::before{background:var(--status-note);}
+  .card[data-scope="prefecture"]::before{background:var(--status-pref);}
+  .card[data-scope="loan"]::before{background:var(--status-loan);}
+  .card[data-scope="kyosai"]::before{background:var(--status-kyosai);}
+  .card:hover{border-color:var(--line-strong); box-shadow:0 2px 10px rgba(28,30,34,0.06);}
+
+  .card-head{display:flex; justify-content:space-between; align-items:flex-start; gap:20px; margin-bottom:14px;}
+  .card-title-wrap{flex:1; min-width:0;}
+  .card-kicker{font-size:11.5px; color:var(--text-sub); letter-spacing:0.04em; margin-bottom:6px; font-weight:600;}
+  .card-title{font-family:'Shippori Mincho', serif; font-size:22px; font-weight:700; color:var(--navy-deep); line-height:1.4; margin:0;}
+  .card-desc{font-size:13.5px; color:var(--text-sub); line-height:1.85; margin-top:10px; max-width:660px;}
+
+  .status-badge{flex-shrink:0; padding:8px 14px; border:1.5px solid var(--status-open); color:var(--status-open); font-weight:700; font-size:12.5px; text-align:center; white-space:nowrap; border-radius:2px;}
+  .status-badge.regional{border-color:var(--status-note); color:var(--status-note);}
+  .status-badge.prefecture{border-color:var(--status-pref); color:var(--status-pref);}
+  .status-badge.loan{border-color:var(--status-loan); color:var(--status-loan);}
+  .status-badge.kyosai{border-color:var(--status-kyosai); color:var(--status-kyosai);}
+
+  .scope-tag{
+    display:inline-block; font-size:11px; font-weight:700; padding:4px 10px; border-radius:999px; margin-bottom:10px;
+  }
+  .scope-tag.nationwide{background:#EAF2EC; color:var(--status-open);}
+  .scope-tag.regional{background:#F5EEE0; color:var(--status-note);}
+  .scope-tag.prefecture{background:#EAF0F5; color:var(--status-pref);}
+
+  .datarow{display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; margin-top:20px; padding:16px 18px; background:var(--bg-soft); border:1px solid var(--line); border-radius:2px;}
+  .datacell-label{font-size:10.5px; color:var(--text-sub); letter-spacing:0.04em; margin-bottom:6px; font-weight:600;}
+  .datacell-value{font-family:'Shippori Mincho', serif; font-size:17px; font-weight:700; color:var(--navy-deep); line-height:1.35;}
+  .datacell-value.tight{font-size:14.5px; font-weight:600;}
+
+  .eligibility{margin-top:16px; padding:18px 20px; background:#F4F8F5; border-left:3px solid var(--status-open); border-radius:0 2px 2px 0;}
+  .card[data-scope="regional"] .eligibility{background:#FAF6EC; border-left-color:var(--status-note);}
+  .card[data-scope="prefecture"] .eligibility{background:#EEF3F8; border-left-color:var(--status-pref);}
+  .card[data-scope="loan"] .eligibility{background:#EAF4F4; border-left-color:var(--status-loan);}
+  .card[data-scope="kyosai"] .eligibility{background:#F1EDF7; border-left-color:var(--status-kyosai);}
+  .eligibility-label{font-size:13px; font-weight:700; color:var(--navy-deep); margin-bottom:12px;}
+  .check-list{display:grid; grid-template-columns:1fr 1fr; gap:10px 20px;}
+  .check-item{display:flex; align-items:flex-start; gap:9px; font-size:13.5px; line-height:1.55; color:var(--text); font-weight:500;}
+  .check-item .mark{flex-shrink:0; width:19px; height:19px; border-radius:50%; background:var(--status-open); color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;}
+  .card[data-scope="regional"] .check-item .mark{background:var(--status-note);}
+  .card[data-scope="prefecture"] .check-item .mark{background:var(--status-pref);}
+  .card[data-scope="loan"] .check-item .mark{background:var(--status-loan);}
+  .card[data-scope="kyosai"] .check-item .mark{background:var(--status-kyosai);}
+  .section-divider{
+    max-width:1080px; margin:56px auto 24px; padding:0 24px;
+  }
+  .section-divider h2{
+    font-family:'Shippori Mincho', serif; font-size:22px; color:var(--navy-deep);
+    border-top:2px solid var(--line); padding-top:24px; margin:0 0 6px;
+  }
+  .section-divider p{font-size:13px; color:var(--text-sub); margin:0;}
+  .elig-note{margin-top:12px; font-size:11.5px; color:var(--text-sub); line-height:1.7;}
+  @media (max-width:640px){.check-list{grid-template-columns:1fr;}}
+
+  .card-footer{display:flex; justify-content:space-between; align-items:center; margin-top:18px; font-size:12px; color:var(--text-sub); flex-wrap:wrap; gap:8px;}
+  .card-footer a{color:var(--navy); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:1px; font-weight:700;}
+  .card-footer a:hover{color:var(--vermillion); border-color:var(--vermillion);}
+  .card[data-hidden="true"]{display:none;}
+
+  .disclaimer{max-width:1080px; margin:0 auto; padding:0 24px 60px;}
+  .disclaimer-box{border:1px solid var(--line); background:var(--bg-soft); padding:22px 24px; font-size:12px; line-height:1.9; color:var(--text-sub); border-radius:2px;}
+  .disclaimer-box strong{color:var(--text);}
+  .disclaimer-box a{color:var(--navy); text-decoration:underline;}
+  footer{background:var(--navy-deep); color:rgba(255,255,255,0.55); text-align:center; padding:24px 24px; font-size:11.5px;}
+
+  @media (max-width:640px){.datarow{grid-template-columns:repeat(2, 1fr);} .card-title{font-size:19px;} .filterbar{top:57px;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="mark">印</span>補助金台帳</div>
+    <nav class="topnav">
+      <a href="index.html" class="active">一覧（台帳）</a>
+      <a href="search.html">条件で探す</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">補助金台帳 — SUBSIDY LEDGER PROTOTYPE</div>
+    <h1 class="title">いま使える補助金・融資・共済を、<br><span class="accent">全量</span>で一望する。</h1>
+    <p class="lede">中小企業庁の公式サイト「補助金の公募・採択」ページに加え、都道府県独自の補助金・融資をResearch機能で47都道府県を対象に横断調査し、公式サイトで確認できたものを掲載しています（2026年8月10日時点）。融資は全47都道府県の制度融資を網羅、補助金は25道府県で受付中を確認、共済は国の2制度を掲載しています。</p>
+    <a href="search.html" class="hero-cta">区分・条件を選んで探す（全84件・検索ページ） →</a>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">84</div>
+        <div class="hero-meta-label">掲載中の制度（全量）</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">49</div>
+        <div class="hero-meta-label">うち融資（47都道府県＋国2件）</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">35</div>
+        <div class="hero-meta-label">うち補助金・共済（都道府県関与共済3件含む）</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="filterbar">
+  <div class="filterbar-inner">
+    <span class="filterbar-label">目的で絞り込む</span>
+    <button class="chip active" data-filter="all">すべて</button>
+    <button class="chip" data-filter="DX・AI">DX・AI導入</button>
+    <button class="chip" data-filter="設備投資">設備投資</button>
+    <button class="chip" data-filter="設備投資">設備投資</button>
+    <button class="chip" data-filter="脱炭素">脱炭素・省エネ</button>
+    <button class="chip" data-filter="災害復旧">災害復旧・再建</button>
+    <button class="chip" data-filter="都道府県">都道府県独自</button>
+  </div>
+</div>
+
+<main class="ledger">
+  <div class="ledger-caption">
+    <span>補助金の代表10件（都道府県別の全25件は<a href="search.html" style="color:var(--navy); font-weight:700;">検索ページ</a>へ）</span>
+    <span>出典：中小企業庁「補助金の公募・採択」／各都道府県公式サイト</span>
+  </div>
+
+  <!-- 1 -->
+  <article class="card" data-scope="nationwide" data-tags="DX・AI">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag nationwide">全国対象</span>
+        <div class="card-kicker">ITツール・AI導入 ｜ 中小企業・小規模事業者向け</div>
+        <h2 class="card-title">デジタル化・AI導入補助金2026</h2>
+        <p class="card-desc">会計・受発注・決済などのITツールやAI活用ツールの導入費を補助。通常枠は機能数に応じて上限額が変わり、ハードウェアや導入後の保守費用も対象になり得る。</p>
+      </div>
+      <div class="status-badge">受付中</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">補助上限額（通常枠）</div><div class="datacell-value">450万円</div></div>
+      <div><div class="datacell-label">補助率</div><div class="datacell-value tight">1/2（プロセス数等により変動）</div></div>
+      <div><div class="datacell-label">主な枠</div><div class="datacell-value tight">通常枠／インボイス枠／セキュリティ対策推進枠</div></div>
+      <div><div class="datacell-label">申請締切（第4次）</div><div class="datacell-value tight">2026年8月25日</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな会社が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>従業員300人以下（業種による目安）の会社・個人事業主</div>
+        <div class="check-item"><span class="mark">✓</span>大企業のグループ会社ではない</div>
+        <div class="check-item"><span class="mark">✓</span>導入したいITツールが対応事業者から購入できる</div>
+        <div class="check-item"><span class="mark">✓</span>「GビズIDプライム」を取得できる</div>
+      </div>
+      <div class="elig-note">※従業員数の上限は業種で異なります（例：小売業50人以下／卸売・サービス業100人以下／製造・建設・運輸業300人以下）。</div>
+    </div>
+    <div class="card-footer">
+      <span>対象地域：全国</span>
+      <a href="https://www.chusho.meti.go.jp/koukai/yosan/r8/digital_ai_summary.pdf" target="_blank" rel="noopener">中小企業庁の制度概要資料を見る →</a>
+    </div>
+  </article>
+
+  <!-- 2 -->
+  <article class="card" data-scope="nationwide" data-tags="設備投資">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag nationwide">全国対象</span>
+        <div class="card-kicker">人手不足対策・設備投資 ｜ 既存事業の省力化</div>
+        <h2 class="card-title">中小企業省力化投資補助金（カタログ注文型）</h2>
+        <p class="card-desc">IoT・ロボットなど人手不足解消に効果がある汎用製品を「カタログ」から選んで導入。個別設計が不要なため、比較的簡易な手続きで申請できる。</p>
+      </div>
+      <div class="status-badge">随時受付中</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">補助対象</div><div class="datacell-value tight">カタログ掲載のIoT・ロボット等</div></div>
+      <div><div class="datacell-label">類型</div><div class="datacell-value tight">カタログ注文型</div></div>
+      <div><div class="datacell-label">受付方式</div><div class="datacell-value tight">随時受付（予算上限に達し次第終了）</div></div>
+      <div><div class="datacell-label">申請締切</div><div class="datacell-value tight">随時</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな会社が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>人手不足に悩む中小企業・小規模事業者</div>
+        <div class="check-item"><span class="mark">✓</span>カタログに掲載された製品の中から導入したいものがある</div>
+        <div class="check-item"><span class="mark">✓</span>「GビズIDプライム」を取得できる</div>
+      </div>
+      <div class="elig-note">※個別設計のオーダーメイド設備は対象外です（その場合は一般型を検討）。</div>
+    </div>
+    <div class="card-footer">
+      <span>対象地域：全国</span>
+      <a href="https://www.chusho.meti.go.jp/keiei/sapoin/index.html" target="_blank" rel="noopener">中小企業庁の公式ページを見る →</a>
+    </div>
+  </article>
+
+  <!-- 3 -->
+  <article class="card" data-scope="regional" data-tags="災害復旧">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag regional">地域限定（能登地域の被災事業者）</span>
+        <div class="card-kicker">事業再建 ｜ 被災小規模事業者向け</div>
+        <h2 class="card-title">小規模事業者持続化補助金＜一般型・災害支援枠＞（10次）</h2>
+        <p class="card-desc">令和6年能登半島地震・令和6年能登豪雨により被害を受けた小規模事業者の事業再建の取り組みを支援する特別枠。</p>
+      </div>
+      <div class="status-badge regional">受付中</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">対象</div><div class="datacell-value tight">能登半島地震・能登豪雨の被災事業者</div></div>
+      <div><div class="datacell-label">枠</div><div class="datacell-value tight">一般型・災害支援枠</div></div>
+      <div><div class="datacell-label">公募回</div><div class="datacell-value tight">10次</div></div>
+      <div><div class="datacell-label">申請締切</div><div class="datacell-value tight">2026年10月16日</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな会社が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>令和6年能登半島地震または能登豪雨で被害を受けた事業者</div>
+        <div class="check-item"><span class="mark">✓</span>従業員5人以下（商業・サービス業）／20人以下（それ以外）の小規模事業者</div>
+        <div class="check-item"><span class="mark">✓</span>事業再建に取り組む計画がある</div>
+      </div>
+      <div class="elig-note">※通常枠とは異なる特別枠です。対象地域外の事業者は対象外です。</div>
+    </div>
+    <div class="card-footer">
+      <span>対象地域：能登半島地震・能登豪雨の被災地域</span>
+      <a href="https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260630001.html" target="_blank" rel="noopener">中小企業庁の公式ページを見る →</a>
+    </div>
+  </article>
+
+  <!-- 4 -->
+  <article class="card" data-scope="regional" data-tags="災害復旧">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag regional">地域限定（能登地域の商店街等）</span>
+        <div class="card-kicker">商業活性化 ｜ 商店街等の組織向け</div>
+        <h2 class="card-title">商店街にぎわい創出事業</h2>
+        <p class="card-desc">令和6年能登半島地震により被害を受けた地域の商店街等が実施する、にぎわい創出のためのイベント等の取り組みを支援。</p>
+      </div>
+      <div class="status-badge regional">受付中</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">対象</div><div class="datacell-value tight">能登地震被災地域の商店街等</div></div>
+      <div><div class="datacell-label">対象経費</div><div class="datacell-value tight">にぎわい創出イベント等</div></div>
+      <div><div class="datacell-label">申請主体</div><div class="datacell-value tight">商店街・商業組合等の組織</div></div>
+      <div><div class="datacell-label">申請締切</div><div class="datacell-value tight">2026年8月26日</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな組織が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>令和6年能登半島地震で被害を受けた地域の商店街等</div>
+        <div class="check-item"><span class="mark">✓</span>個人商店単独ではなく、商店街・商業組合等の組織であること</div>
+        <div class="check-item"><span class="mark">✓</span>通行量や売上の回復につながるイベント等を計画している</div>
+      </div>
+      <div class="elig-note">※個人事業主・単独の中小企業は対象外です（商店街等の団体が申請主体）。</div>
+    </div>
+    <div class="card-footer">
+      <span>対象地域：能登半島地震の被災地域</span>
+      <a href="https://www.chusho.meti.go.jp/shogyo/shogyo/index.html" target="_blank" rel="noopener">中小企業庁の公式ページを見る →</a>
+    </div>
+  </article>
+
+  <!-- 5 -->
+  <article class="card" data-scope="regional" data-tags="災害復旧">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag regional">地域限定（能登地域の商店街等）</span>
+        <div class="card-kicker">商業活性化 ｜ 商店街等の組織向け</div>
+        <h2 class="card-title">商店街災害復旧事業</h2>
+        <p class="card-desc">令和6年能登半島地震により被害を受けた商店街等のアーケード・街路灯等の復旧を支援。受付期間が長く、2027年1月までの長期公募。</p>
+      </div>
+      <div class="status-badge regional">受付中</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">対象</div><div class="datacell-value tight">能登地震被災地域の商店街等</div></div>
+      <div><div class="datacell-label">対象経費</div><div class="datacell-value tight">アーケード・街路灯等の復旧費</div></div>
+      <div><div class="datacell-label">申請主体</div><div class="datacell-value tight">商店街・商業組合等の組織</div></div>
+      <div><div class="datacell-label">申請締切</div><div class="datacell-value tight">2027年1月15日</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな組織が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>令和6年能登半島地震で被害を受けた地域の商店街等</div>
+        <div class="check-item"><span class="mark">✓</span>個人商店単独ではなく、商店街・商業組合等の組織であること</div>
+        <div class="check-item"><span class="mark">✓</span>アーケード・街路灯等の共用施設の復旧計画がある</div>
+      </div>
+      <div class="elig-note">※個人事業主・単独の中小企業は対象外です（商店街等の団体が申請主体）。受付期間が長期（〜2027年1月）です。</div>
+    </div>
+    <div class="card-footer">
+      <span>対象地域：能登半島地震の被災地域</span>
+      <a href="https://www.chusho.meti.go.jp/shogyo/shogyo/index.html" target="_blank" rel="noopener">中小企業庁の公式ページを見る →</a>
+    </div>
+  </article>
+  <!-- 6 -->
+  <article class="card" data-scope="prefecture" data-tags="都道府県 DX・AI">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag prefecture">都道府県独自（埼玉県）</span>
+        <div class="card-kicker">ITツール・DX導入 ｜ 埼玉県内の中小企業・個人事業主向け</div>
+        <h2 class="card-title">埼玉県中小企業DX導入支援補助金</h2>
+        <p class="card-desc">キャッシュレス決済システムや会計ソフト、グループウェアなど、生産性向上に資するDXツールの導入経費を埼玉県が独自に補助。中小企業庁の補助金とは別の、都道府県独自の財源による制度。</p>
+      </div>
+      <div class="status-badge prefecture">受付中（第2期）</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">補助上限額</div><div class="datacell-value">300万円</div></div>
+      <div><div class="datacell-label">補助率</div><div class="datacell-value tight">3/4以内</div></div>
+      <div><div class="datacell-label">補助下限額</div><div class="datacell-value tight">7万5千円</div></div>
+      <div><div class="datacell-label">申請締切（第2期）</div><div class="datacell-value tight">2026年8月31日</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな会社が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>埼玉県内に本社・事業所がある中小企業・個人事業主</div>
+        <div class="check-item"><span class="mark">✓</span>直近1期分の決算（確定申告）を終えている</div>
+        <div class="check-item"><span class="mark">✓</span>導入したいDXツール（会計ソフト等）が明確にある</div>
+      </div>
+      <div class="elig-note">※中小企業庁の補助金ではなく、埼玉県が独自予算で実施する制度です。県外の事業所は対象外。申請は期ごとに1事業のみ・複数期の重複申請は不可です。</div>
+    </div>
+    <div class="card-footer">
+      <span>対象地域：埼玉県内</span>
+      <a href="https://www.pref.saitama.lg.jp/a0803/dx_jigyousyashien/dx_index.html" target="_blank" rel="noopener">埼玉県の公式ページを見る →</a>
+    </div>
+  </article>
+  <!-- 7 -->
+  <article class="card" data-scope="prefecture" data-tags="都道府県 設備投資">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag prefecture">都道府県独自（北海道）</span>
+        <div class="card-kicker">賃上げ環境整備・設備投資 ｜ 道内の中小・小規模事業者向け</div>
+        <h2 class="card-title">中小・小規模企業賃上げ環境整備等支援事業費補助金</h2>
+        <p class="card-desc">賃上げに取り組む道内の中小企業・小規模事業者を対象に、新商品開発・販路拡大・設備投資（デジタル技術含む）にかかる費用の一部を北海道が独自に補助。</p>
+      </div>
+      <div class="status-badge prefecture">受付中</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">補助上限額</div><div class="datacell-value tight">200万円（促進枠300万円）</div></div>
+      <div><div class="datacell-label">補助率</div><div class="datacell-value tight">1/2（賃上げ率4.0%以上は3/4）</div></div>
+      <div><div class="datacell-label">受付方式</div><div class="datacell-value tight">予算上限に達し次第終了</div></div>
+      <div><div class="datacell-label">申請期限</div><div class="datacell-value tight">2026年9月30日</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな会社が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>北海道内の中小企業・小規模事業者（大企業のグループ会社は除く）</div>
+        <div class="check-item"><span class="mark">✓</span>賃上げに取り組む計画がある</div>
+        <div class="check-item"><span class="mark">✓</span>新商品開発・販路拡大・設備投資のいずれかを予定している</div>
+      </div>
+      <div class="elig-note">※予算上限に達し次第、期限前でも受付終了となります。早めの検討がおすすめです。</div>
+    </div>
+    <div class="card-footer">
+      <span>対象地域：北海道内</span>
+      <a href="https://www.pref.hokkaido.lg.jp/kz/csk/249117.html" target="_blank" rel="noopener">北海道の公式ページを見る →</a>
+    </div>
+  </article>
+
+  <!-- 8 -->
+  <article class="card" data-scope="prefecture" data-tags="都道府県 設備投資">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag prefecture">都道府県独自（神奈川県）</span>
+        <div class="card-kicker">生産性向上・設備投資 ｜ 県内中小企業者向け</div>
+        <h2 class="card-title">中小企業生産性向上促進事業費補助金（一般枠）8月公募</h2>
+        <p class="card-desc">人手不足解消や業務プロセス改善につながる設備投資・システム導入費用を神奈川県が独自に補助。創業者向け・小規模事業者のデジタル化向けなど複数の枠がある。</p>
+      </div>
+      <div class="status-badge prefecture">受付中</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">補助上限額（一般枠）</div><div class="datacell-value">500万円</div></div>
+      <div><div class="datacell-label">補助率</div><div class="datacell-value tight">1/2以内（小規模事業者2/3以内）</div></div>
+      <div><div class="datacell-label">他の枠</div><div class="datacell-value tight">グループ化支援枠(上限4,000万円)／創業者成長支援枠</div></div>
+      <div><div class="datacell-label">申請締切（8月公募）</div><div class="datacell-value tight">2026年8月31日17時</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな会社が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>神奈川県内の中小企業者等</div>
+        <div class="check-item"><span class="mark">✓</span>人手不足解消・業務プロセス改善につながる設備投資を予定している</div>
+        <div class="check-item"><span class="mark">✓</span>生産性向上の具体的な計画がある</div>
+      </div>
+      <div class="elig-note">※創業者向け（創業者成長支援枠）・小規模事業者のデジタル化向け（別制度）など、事業者のタイプによって使える枠が異なります。</div>
+    </div>
+    <div class="card-footer">
+      <span>対象地域：神奈川県内</span>
+      <a href="https://www.pref.kanagawa.jp/docs/m2w/prs/r2625041.html" target="_blank" rel="noopener">神奈川県の公式ページを見る →</a>
+    </div>
+  </article>
+
+  <!-- 9 -->
+  <article class="card" data-scope="prefecture" data-tags="都道府県 脱炭素">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag prefecture">都道府県独自（大阪府）</span>
+        <div class="card-kicker">脱炭素・省エネ設備 ｜ 府内中小事業者向け</div>
+        <h2 class="card-title">中小事業者の脱炭素化に係る自主的取組支援補助金（2次公募）</h2>
+        <p class="card-desc">省エネ設備や太陽光パネルの導入により、エネルギー使用量またはCO2排出量の削減に取り組む中小事業者を大阪府が独自に補助。</p>
+      </div>
+      <div class="status-badge prefecture">受付中</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">補助上限額</div><div class="datacell-value">200万円</div></div>
+      <div><div class="datacell-label">補助率</div><div class="datacell-value">1/3以内</div></div>
+      <div><div class="datacell-label">対象経費</div><div class="datacell-value tight">省エネ設備・太陽光パネルの購入費</div></div>
+      <div><div class="datacell-label">申請締切</div><div class="datacell-value tight">2026年10月5日18時</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな会社が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>大阪府内に工場・事業場がある中小事業者</div>
+        <div class="check-item"><span class="mark">✓</span>「大阪府脱炭素経営宣言」に登録している（未登録でも申請時に登録可）</div>
+        <div class="check-item"><span class="mark">✓</span>エネルギー使用量1％以上またはCO2年1トン以上の削減計画がある</div>
+      </div>
+      <div class="elig-note">※照明・空調・蓄電池、工事費・据付費単体は対象外です（省エネ設備・太陽光パネル本体が対象）。</div>
+    </div>
+    <div class="card-footer">
+      <span>対象地域：大阪府内</span>
+      <a href="https://www.pref.osaka.lg.jp/o120020/eneseisaku/sec/plan2_subsidy.html" target="_blank" rel="noopener">大阪府の公式ページを見る →</a>
+    </div>
+  </article>
+
+  <!-- 10 -->
+  <article class="card" data-scope="prefecture" data-tags="都道府県 脱炭素">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag prefecture">都道府県独自（兵庫県）</span>
+        <div class="card-kicker">脱炭素・省エネ診断 ｜ 県内中小事業者向け</div>
+        <h2 class="card-title">GX診断補助金（省エネ診断受診支援）</h2>
+        <p class="card-desc">専門機関による「省エネ最適化診断」等の受診費用を兵庫県が独自に補助。設備投資の前段階として、まず自社のエネルギー使用状況を診断したい事業者向け。</p>
+      </div>
+      <div class="status-badge prefecture">受付中</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">補助率</div><div class="datacell-value">1/2</div></div>
+      <div><div class="datacell-label">対象経費</div><div class="datacell-value tight">省エネ診断の受診費用</div></div>
+      <div><div class="datacell-label">補助上限額</div><div class="datacell-value tight">診断メニューにより異なる</div></div>
+      <div><div class="datacell-label">申請締切</div><div class="datacell-value tight">2027年1月29日</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな会社が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>兵庫県内の中小事業者</div>
+        <div class="check-item"><span class="mark">✓</span>「ひょうご産業SDGs推進宣言」を行っている（未実施でも申請時に対応可）</div>
+        <div class="check-item"><span class="mark">✓</span>省エネ診断を受診したいという意向がある</div>
+      </div>
+      <div class="elig-note">※設備投資そのものではなく「診断費用」の補助です。診断結果をもとに、次の設備投資を検討する制度です。</div>
+    </div>
+    <div class="card-footer">
+      <span>対象地域：兵庫県内</span>
+      <a href="https://web.pref.hyogo.lg.jp/sr07/sdgs.html" target="_blank" rel="noopener">兵庫県の公式ページを見る →</a>
+    </div>
+  </article>
+  <div class="section-divider">
+    <h2>融資（無担保・無保証人融資／信用保証付き融資）</h2>
+    <p>中小企業庁が所管する、通年で利用できる融資・保証制度です。補助金と違い「締切」ではなく「随時受付」が基本です。</p>
+  </div>
+
+  <!-- 融資1 -->
+  <article class="card" data-scope="loan" data-tags="設備投資">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag prefecture" style="background:#EAF4F4; color:var(--status-loan);">融資（全国対象）</span>
+        <div class="card-kicker">無担保・無保証人融資 ｜ 小規模事業者向け</div>
+        <h2 class="card-title">小規模事業者経営改善資金融資（マル経融資）</h2>
+        <p class="card-desc">商工会・商工会議所等の経営指導を受けている小規模事業者が、経営改善に必要な資金を日本政策金融公庫から無担保・無保証人・低利で借りられる制度。</p>
+      </div>
+      <div class="status-badge loan">利用可能</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">融資限度額</div><div class="datacell-value">2,000万円</div></div>
+      <div><div class="datacell-label">融資期間</div><div class="datacell-value tight">10年以内（据置2年以内）</div></div>
+      <div><div class="datacell-label">金利</div><div class="datacell-value tight">特別利率F（無担保・無保証人）</div></div>
+      <div><div class="datacell-label">受付</div><div class="datacell-value tight">随時受付中（通年）</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな会社が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>商工会・商工会議所等の経営指導を受けている小規模事業者</div>
+        <div class="check-item"><span class="mark">✓</span>商工会議所等の長の推薦を受けられる</div>
+        <div class="check-item"><span class="mark">✓</span>無理のない返済計画（10年以内）を立てられる</div>
+      </div>
+      <div class="elig-note">※審査の結果、希望に沿えない場合があります。まずは経営指導を受けている商工会・商工会議所にご相談ください。</div>
+    </div>
+    <div class="card-footer">
+      <span>実施：日本政策金融公庫（国民生活事業）／沖縄県は沖縄振興開発金融公庫</span>
+      <a href="https://www.chusho.meti.go.jp/keiei/shokibo/marukei/" target="_blank" rel="noopener">中小企業庁の公式ページを見る →</a>
+    </div>
+  </article>
+
+  <!-- 融資2 -->
+  <article class="card" data-scope="loan" data-tags="設備投資">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag prefecture" style="background:#EAF4F4; color:var(--status-loan);">融資（全国対象）</span>
+        <div class="card-kicker">信用保証付き融資 ｜ 経営の安定に支障が生じている中小企業向け</div>
+        <h2 class="card-title">セーフティネット保証制度</h2>
+        <p class="card-desc">取引先の倒産、自然災害、金融機関の破綻、業況の悪化など、外部要因で経営の安定に支障が生じている中小企業者を対象に、一般保証とは別枠で信用保証協会が保証する制度。</p>
+      </div>
+      <div class="status-badge loan">利用可能</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">保証枠</div><div class="datacell-value tight">一般保証とは別枠</div></div>
+      <div><div class="datacell-label">保証料率</div><div class="datacell-value tight">おおむね1％以内</div></div>
+      <div><div class="datacell-label">号（種類）</div><div class="datacell-value tight">4号・5号・6号など複数</div></div>
+      <div><div class="datacell-label">受付</div><div class="datacell-value tight">随時（号ごとに指定期間・指定業種あり）</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな会社が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>取引先の倒産・自然災害・金融機関破綻などの影響を受けている</div>
+        <div class="check-item"><span class="mark">✓</span>業況の悪化している指定業種に該当する場合も対象になり得る</div>
+        <div class="check-item"><span class="mark">✓</span>本店所在地の市町村長・特別区長の認定を受けられる</div>
+      </div>
+      <div class="elig-note">※号（4号・5号・6号等）によって対象となる事由や指定業種が異なります。まずは市町村の商工担当窓口にご相談ください。</div>
+    </div>
+    <div class="card-footer">
+      <span>実施：信用保証協会（中小企業庁所管）</span>
+      <a href="https://www.chusho.meti.go.jp/kinyu/sefu_net_gaiyou.html" target="_blank" rel="noopener">中小企業庁の公式ページを見る →</a>
+    </div>
+  </article>
+
+  <div class="section-divider">
+    <h2>共済（積立型の経営セーフティネット）</h2>
+    <p>中小機構（独立行政法人中小企業基盤整備機構）が運営する、通年で加入できる共済制度です。掛金を積み立てておくことで、廃業時や取引先倒産時への備えになります。</p>
+  </div>
+
+  <!-- 共済1 -->
+  <article class="card" data-scope="kyosai" data-tags="設備投資">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag prefecture" style="background:#F1EDF7; color:var(--status-kyosai);">共済（全国対象）</span>
+        <div class="card-kicker">経営者の退職金積立 ｜ 個人事業主・小規模企業の経営者向け</div>
+        <h2 class="card-title">小規模企業共済</h2>
+        <p class="card-desc">個人事業主や小規模企業の経営者・役員のための積立型の退職金制度。廃業や退職の際に、積み立てた掛金に応じた共済金を受け取れる。</p>
+      </div>
+      <div class="status-badge kyosai">加入可能</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">掛金月額</div><div class="datacell-value tight">1,000円〜70,000円（500円単位）</div></div>
+      <div><div class="datacell-label">受取時期</div><div class="datacell-value tight">廃業・退職時など</div></div>
+      <div><div class="datacell-label">税制優遇</div><div class="datacell-value tight">掛金は全額所得控除</div></div>
+      <div><div class="datacell-label">受付</div><div class="datacell-value tight">随時加入可能（通年）</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな方が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>個人事業主、または小規模企業の経営者・役員</div>
+        <div class="check-item"><span class="mark">✓</span>業種ごとの従業員数の目安を満たす（例：商業・サービス業5人以下等）</div>
+        <div class="check-item"><span class="mark">✓</span>毎月無理のない範囲で積み立てを続けられる</div>
+      </div>
+      <div class="elig-note">※掛金は増額・減額が可能です。将来の廃業・引退に向けた備えとして活用されています。</div>
+    </div>
+    <div class="card-footer">
+      <span>実施：独立行政法人中小企業基盤整備機構（中小機構）</span>
+      <a href="https://www.chusho.meti.go.jp/faq/faq/faq15_shokibokyosai.html" target="_blank" rel="noopener">中小企業庁の公式ページを見る →</a>
+    </div>
+  </article>
+
+  <!-- 共済2 -->
+  <article class="card" data-scope="kyosai" data-tags="設備投資">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <span class="scope-tag prefecture" style="background:#F1EDF7; color:var(--status-kyosai);">共済（全国対象）</span>
+        <div class="card-kicker">連鎖倒産防止 ｜ 中小企業向け</div>
+        <h2 class="card-title">経営セーフティ共済（中小企業倒産防止共済）</h2>
+        <p class="card-desc">取引先が倒産した際に、無担保・無保証人で掛金の最大10倍まで借り入れできる制度。連鎖倒産や経営難を防ぐためのセーフティネット。</p>
+      </div>
+      <div class="status-badge kyosai">加入可能</div>
+    </div>
+    <div class="datarow">
+      <div><div class="datacell-label">掛金月額</div><div class="datacell-value tight">5,000円〜200,000円（5,000円単位）</div></div>
+      <div><div class="datacell-label">掛金総額上限</div><div class="datacell-value tight">800万円</div></div>
+      <div><div class="datacell-label">借入可能額</div><div class="datacell-value tight">掛金の10倍（上限8,000万円）</div></div>
+      <div><div class="datacell-label">受付</div><div class="datacell-value tight">随時加入可能（通年）</div></div>
+    </div>
+    <div class="eligibility">
+      <div class="eligibility-label">こんな会社が対象です</div>
+      <div class="check-list">
+        <div class="check-item"><span class="mark">✓</span>引き続き1年以上事業を行っている中小企業者</div>
+        <div class="check-item"><span class="mark">✓</span>業種ごとの資本金・従業員数の基準を満たす</div>
+        <div class="check-item"><span class="mark">✓</span>取引先倒産時の連鎖倒産リスクに備えたい</div>
+      </div>
+      <div class="elig-note">※40ヶ月以上納付すれば、解約時に掛金全額が戻ります（それ未満は減額あり）。</div>
+    </div>
+    <div class="card-footer">
+      <span>実施：独立行政法人中小企業基盤整備機構（中小機構）</span>
+      <a href="https://www.smrj.go.jp/kyosai/tkyosai/features/" target="_blank" rel="noopener">中小機構の公式ページを見る →</a>
+    </div>
+  </article>
+
+</main>
+
+<div class="disclaimer">
+  <div class="disclaimer-box">
+    <strong>このページについて：</strong>本ページは中小企業庁「補助金の公募・採択」ページの情報に加え、都道府県独自の補助金・融資・共済をClaudeのResearch機能で47都道府県を対象に4段階の横断調査を実施し、公式サイト（.lg.jpまたは公式財団）で確認できた制度を統合しています。融資は全47都道府県の旗艦「制度融資」を特定（うち15道府県は利率・限度額を確定値まで取得）、補助金は25道府県で受付中を確認、共済は国の2制度に加え、都道府県が運営・費用負担する勤労者福祉共済を再調査した結果、島根・徳島・佐賀の3県のみ該当を確認しました（他44都道府県は市区町村単位が主流）。このページでは補助金・融資・共済の代表14件を詳細表示し、<strong>都道府県別の融資49件・補助金25件・県関与共済3件を含む全84件は検索ページで一覧・絞り込みできます</strong>。融資・共済は締切のある公募ではなく、通年で申込・加入できる制度です。申請・加入前には必ず各制度の公式サイト・パンフレットで最新の状況をご確認ください。<br><br>
+    情報源：<a href="https://www.chusho.meti.go.jp/koukai/hojyokin/index.html" target="_blank" rel="noopener">中小企業庁 補助金の公募・採択ページ</a>／各道府県の公式サイト・公式財団サイト／<a href="https://www.chusho.meti.go.jp/kinyu/index.html" target="_blank" rel="noopener">中小企業庁 金融一般支援ページ</a>／<a href="https://www.smrj.go.jp/kyosai/" target="_blank" rel="noopener">中小機構 共済制度ページ</a>／島根・徳島・佐賀の勤労者福祉共済 公式サイト
+  </div>
+</div>
+
+<footer>補助金台帳 PROTOTYPE — Built with 中小企業庁 public data as a Claude partnership test</footer>
+
+<script>
+  const chips = document.querySelectorAll('.chip');
+  const cards = document.querySelectorAll('.card');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const filter = chip.dataset.filter;
+      cards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        const match = filter === 'all' || tags.includes(filter);
+        card.dataset.hidden = match ? 'false' : 'true';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

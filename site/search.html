@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>補助金を探す ｜ 補助金台帳</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF; --bg-soft:#F7F7F4; --line:#DEDCD4; --line-strong:#C7C4B8;
+    --navy:#1C2B4A; --navy-deep:#101A30; --vermillion:#B93C28; --gold:#8A6A22;
+    --text:#1C1E22; --text-sub:#5B5D5F; --status-open:#1E6B41; --status-note:#8A6A22;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Zen Kaku Gothic New', sans-serif; -webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+
+  .topbar{background:var(--bg); border-bottom:1px solid var(--line); padding:16px 24px;}
+  .topbar-inner{max-width:1280px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;}
+  .brand{font-family:'Shippori Mincho', serif; font-weight:800; font-size:19px; display:flex; align-items:center; gap:9px; color:var(--navy-deep);}
+  .brand .mark{display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border:1.5px solid var(--vermillion); color:var(--vermillion); border-radius:50%; font-size:12px; font-weight:700;}
+  .topnav a{font-size:13.5px; font-weight:600; text-decoration:none; color:var(--text-sub); margin-left:26px; border-bottom:2px solid transparent; padding-bottom:4px;}
+  .topnav a:hover, .topnav a.active{color:var(--navy-deep); border-color:var(--vermillion);}
+
+  .page-head{max-width:1280px; margin:0 auto; padding:32px 24px 0;}
+  .page-head h1{font-family:'Shippori Mincho', serif; font-size:clamp(22px, 3vw, 30px); margin:0 0 8px; color:var(--navy-deep);}
+  .page-head p{font-size:13.5px; color:var(--text-sub); margin:0 0 20px; max-width:700px; line-height:1.85;}
+
+  .searchbar-wrap{max-width:1280px; margin:0 auto; padding:0 24px 8px;}
+  .searchbar{background:var(--bg-soft); border:1px solid var(--line); border-radius:6px; padding:22px 22px 18px;}
+  .searchbar-grid{display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:14px; align-items:end;}
+  .sb-field label{display:block; font-size:11.5px; font-weight:700; color:var(--text-sub); margin-bottom:7px; letter-spacing:0.02em;}
+  .sb-field select{
+    width:100%; padding:12px 12px; font-family:inherit; font-size:14px; font-weight:600;
+    border:1.5px solid var(--line-strong); border-radius:4px;
+    background:#fff url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%235B5D5F'/%3E%3C/svg%3E") no-repeat right 14px center;
+    appearance:none; color:var(--text); cursor:pointer;
+  }
+  .sb-field select:focus{outline:2px solid var(--navy); outline-offset:1px;}
+  .sb-search-btn{padding:12.5px 30px; background:var(--vermillion); color:#fff; font-family:inherit; font-size:14.5px; font-weight:700; border:none; border-radius:4px; cursor:pointer; white-space:nowrap; letter-spacing:0.02em;}
+  .sb-search-btn:hover{background:#9E3320;}
+
+  .searchbar-sub{display:flex; align-items:center; gap:14px; margin-top:16px; padding-top:16px; border-top:1px solid var(--line); flex-wrap:wrap;}
+  .sb-sub-label{font-size:11.5px; font-weight:700; color:var(--text-sub);}
+  .kw-box{display:flex; flex:1; min-width:220px; border:1.5px solid var(--line-strong); border-radius:4px; background:#fff;}
+  .kw-box input{flex:1; border:none; outline:none; padding:10px 12px; font-family:inherit; font-size:13.5px; color:var(--text); background:transparent;}
+  .chip-toggle{font-family:inherit; font-size:12.5px; font-weight:600; padding:8px 14px; border:1.5px solid var(--line-strong); background:#fff; color:var(--text-sub); border-radius:999px; cursor:pointer;}
+
+  .category-tabs{display:flex; gap:8px; max-width:1280px; margin:0 auto 4px; flex-wrap:wrap;}
+  .cat-tab{
+    font-family:inherit; font-size:14px; font-weight:700;
+    padding:11px 22px; border:1.5px solid var(--line-strong); border-radius:999px;
+    background:#fff; color:var(--text-sub); cursor:pointer;
+    display:flex; align-items:center; gap:8px;
+  }
+  .cat-tab:hover{border-color:var(--navy);}
+  .cat-tab.active{background:var(--navy); border-color:var(--navy); color:#fff;}
+  .cat-count{
+    font-size:11.5px; font-weight:700; padding:1px 8px; border-radius:999px;
+    background:rgba(0,0,0,0.06); color:inherit;
+  }
+  .cat-tab.active .cat-count{background:rgba(255,255,255,0.25);}
+
+  .layout{max-width:1280px; margin:0 auto; padding:24px 24px 80px;}
+  .results-bar{display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid var(--line); font-size:12.5px; color:var(--text-sub); flex-wrap:wrap; gap:10px;}
+  .results-count strong{color:var(--navy-deep); font-family:'Shippori Mincho', serif; font-size:18px;}
+  .sort-select{font-family:inherit; font-size:12.5px; font-weight:600; border:1.5px solid var(--line-strong); background:#fff; border-radius:4px; padding:8px 12px; color:var(--text);}
+
+  .result-card{display:grid; grid-template-columns:90px 1fr 200px; gap:22px; align-items:start; padding:22px 22px; border:1px solid var(--line); border-radius:4px; background:#fff; margin-bottom:14px; transition:border-color .15s ease, box-shadow .15s ease;}
+  .result-card:hover{border-color:var(--line-strong); box-shadow:0 2px 10px rgba(28,30,34,0.06);}
+  .r-badge{padding:9px 4px; border:1.5px solid var(--status-open); color:var(--status-open); border-radius:3px; text-align:center; font-weight:700; font-size:11px; line-height:1.4;}
+  .result-card[data-scope="regional"] .r-badge{border-color:var(--status-note); color:var(--status-note);}
+  .result-card[data-scope="prefecture"] .r-badge{border-color:#2A5A8A; color:#2A5A8A;}
+
+  .scope-tag{display:inline-block; font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:999px; margin-bottom:8px;}
+  .scope-tag.nationwide{background:#EAF2EC; color:var(--status-open);}
+  .scope-tag.regional{background:#F5EEE0; color:var(--status-note);}
+  .scope-tag.prefecture{background:#EAF0F5; color:#2A5A8A;}
+  .cat-pill{
+    display:inline-block; font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:999px;
+    margin-bottom:8px; margin-left:6px; background:var(--navy); color:#fff;
+  }
+
+  .r-body .r-kicker{font-size:11.5px; color:var(--text-sub); margin-bottom:4px; font-weight:600;}
+  .r-body .r-title{font-family:'Shippori Mincho', serif; font-size:19px; font-weight:700; margin:0 0 9px; color:var(--navy-deep);}
+  .r-tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px;}
+  .r-tag{font-size:10.5px; font-weight:600; padding:3px 10px; background:var(--bg-soft); color:var(--text-sub); border:1px solid var(--line); border-radius:999px;}
+  .r-eligibility{background:#F4F8F5; border-left:2.5px solid var(--status-open); padding:10px 12px;}
+  .result-card[data-scope="regional"] .r-eligibility{background:#FAF6EC; border-left-color:var(--status-note);}
+  .result-card[data-scope="prefecture"] .r-eligibility{background:#EEF3F8; border-left-color:#2A5A8A;}
+  .r-check-list{display:flex; flex-direction:column; gap:5px;}
+  .r-check-item{display:flex; align-items:flex-start; gap:7px; font-size:12.5px; line-height:1.6; color:var(--text); font-weight:500;}
+  .r-check-item .mark{flex-shrink:0; width:15px; height:15px; border-radius:50%; background:var(--status-open); color:#fff; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:2px;}
+  .result-card[data-scope="regional"] .r-check-item .mark{background:var(--status-note);}
+  .result-card[data-scope="prefecture"] .r-check-item .mark{background:#2A5A8A;}
+
+  .r-figures{text-align:right; padding-left:18px; border-left:1px solid var(--line);}
+  .r-figures .cap{font-family:'Shippori Mincho', serif; font-size:18px; font-weight:700; color:var(--navy-deep);}
+  .r-figures .rate{font-size:12px; color:var(--text-sub); margin-top:3px;}
+  .r-figures .deadline{font-size:11.5px; color:var(--vermillion); margin-top:12px; font-weight:700;}
+  .r-figures a{display:inline-block; margin-top:12px; font-size:12px; color:var(--navy); font-weight:700; text-decoration:none; border-bottom:1.5px solid var(--gold);}
+  .r-figures a:hover{color:var(--vermillion); border-color:var(--vermillion);}
+
+  .empty-state{text-align:center; padding:70px 20px; color:var(--text-sub); font-size:14px; border:1.5px dashed var(--line-strong); border-radius:4px;}
+  .scale-note{margin-top:28px; padding:18px 20px; background:var(--bg-soft); border-left:3px solid var(--navy); font-size:12px; line-height:1.85; color:var(--text-sub); border-radius:0 3px 3px 0;}
+
+  @media (max-width:900px){
+    .searchbar-grid{grid-template-columns:1fr 1fr;}
+    .result-card{grid-template-columns:64px 1fr; grid-template-rows:auto auto;}
+    .r-figures{grid-column:1/-1; text-align:left; border-left:none; border-top:1px solid var(--line); padding:14px 0 0; margin-top:8px;}
+  }
+  @media (max-width:520px){.searchbar-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="mark">印</span>補助金台帳</div>
+    <nav class="topnav">
+      <a href="index.html">一覧（台帳）</a>
+      <a href="search.html" class="active">条件で探す</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page-head">
+  <h1>条件を選んで探す</h1>
+  <p>区分（補助金・融資・共済）・都道府県・事業規模・目的を選んで検索すると、条件に合う制度が一覧表示されます。<strong>今日時点（2026年8月10日）で実際に利用できる制度を全量掲載</strong>しています。中小企業庁（国）の補助金2件、能登地域限定の補助金3件、都道府県独自の補助金25件、国の融資・共済4件、都道府県の制度融資47件、都道府県関与の勤労者福祉共済3件（島根・徳島・佐賀）を統合しています（計84件）。</p>
+</div>
+
+<div class="searchbar-wrap" style="padding-bottom:0;">
+  <div class="category-tabs">
+    <button class="cat-tab active" data-category="all">すべて<span class="cat-count" id="cnt-all">84</span></button>
+    <button class="cat-tab" data-category="補助金">補助金<span class="cat-count" id="cnt-hojo">30</span></button>
+    <button class="cat-tab" data-category="融資">融資<span class="cat-count" id="cnt-yushi">49</span></button>
+    <button class="cat-tab" data-category="共済">共済<span class="cat-count" id="cnt-kyosai">5</span></button>
+  </div>
+</div>
+
+<div class="searchbar-wrap">
+  <div class="searchbar">
+    <div class="searchbar-grid">
+      <div class="sb-field">
+        <label for="f-pref">都道府県</label>
+        <select id="f-pref">
+          <option value="all">指定しない（全国＋地域限定を表示）</option>
+          <option value="nationwide">全国対象の制度のみ</option>
+          <option value="noto">石川県・富山県（能登地域・被災事業者向け）</option>
+          <optgroup label="都道府県から選ぶ（融資は全47・補助金は確認済み25）">
+            <option value="hokkaido">北海道</option>
+            <option value="aomori">青森県</option>
+            <option value="iwate">岩手県</option>
+            <option value="miyagi">宮城県</option>
+            <option value="akita">秋田県</option>
+            <option value="yamagata">山形県</option>
+            <option value="fukushima">福島県</option>
+            <option value="ibaraki">茨城県</option>
+            <option value="tochigi">栃木県</option>
+            <option value="gunma">群馬県</option>
+            <option value="saitama">埼玉県</option>
+            <option value="chiba">千葉県</option>
+            <option value="tokyo">東京都</option>
+            <option value="kanagawa">神奈川県</option>
+            <option value="niigata">新潟県</option>
+            <option value="toyama">富山県</option>
+            <option value="ishikawa">石川県</option>
+            <option value="fukui">福井県</option>
+            <option value="yamanashi">山梨県</option>
+            <option value="nagano">長野県</option>
+            <option value="gifu">岐阜県</option>
+            <option value="shizuoka">静岡県</option>
+            <option value="aichi">愛知県</option>
+            <option value="mie">三重県</option>
+            <option value="shiga">滋賀県</option>
+            <option value="kyoto">京都府</option>
+            <option value="osaka">大阪府</option>
+            <option value="hyogo">兵庫県</option>
+            <option value="nara">奈良県</option>
+            <option value="wakayama">和歌山県</option>
+            <option value="tottori">鳥取県</option>
+            <option value="shimane">島根県</option>
+            <option value="okayama">岡山県</option>
+            <option value="hiroshima">広島県</option>
+            <option value="yamaguchi">山口県</option>
+            <option value="tokushima">徳島県</option>
+            <option value="kagawa">香川県</option>
+            <option value="ehime">愛媛県</option>
+            <option value="kochi">高知県</option>
+            <option value="fukuoka">福岡県</option>
+            <option value="saga">佐賀県</option>
+            <option value="nagasaki">長崎県</option>
+            <option value="kumamoto">熊本県</option>
+            <option value="oita">大分県</option>
+            <option value="miyazaki">宮崎県</option>
+            <option value="kagoshima">鹿児島県</option>
+            <option value="okinawa">沖縄県</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="sb-field">
+        <label for="f-scale">事業規模（利用条件の大枠）</label>
+        <select id="f-scale">
+          <option value="all">指定しない</option>
+          <option value="小規模5">小規模事業者（5人以下：商業・サービス業）</option>
+          <option value="小規模20">小規模事業者（20人以下：それ以外の業種）</option>
+          <option value="中小企業100">中小企業（〜100人・卸売/サービス業）</option>
+          <option value="中小企業300">中小企業（〜300人・製造/建設/運輸業）</option>
+          <option value="組織">商店街・組合等の組織</option>
+        </select>
+      </div>
+      <div class="sb-field">
+        <label for="f-purpose">目的</label>
+        <select id="f-purpose">
+          <option value="all">指定しない</option>
+          <option value="DX・AI">DX・AI導入</option>
+          <option value="設備投資">設備投資</option>
+          <option value="脱炭素">脱炭素・省エネ</option>
+          <option value="賃上げ支援">賃上げ支援</option>
+          <option value="事業承継">事業承継・M&A</option>
+          <option value="商品開発・海外展開">商品開発・海外展開</option>
+          <option value="人材確保">人材確保</option>
+          <option value="災害復旧">災害復旧・事業再建</option>
+        </select>
+      </div>
+      <button class="sb-search-btn" id="search-btn" type="button">この条件で探す</button>
+    </div>
+
+    <div class="searchbar-sub">
+      <span class="sb-sub-label">キーワード</span>
+      <div class="kw-box">
+        <input type="text" id="kw" placeholder="例）AI、設備、商店街、災害">
+      </div>
+      <button class="chip-toggle" id="reset-btn" type="button">条件をリセット</button>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <div class="results-bar">
+    <div class="results-count"><strong id="result-num">84</strong> 件の制度が見つかりました</div>
+    <select class="sort-select" id="sort">
+      <option value="deadline">締切・受付順</option>
+    </select>
+  </div>
+
+  <div id="result-list"></div>
+
+  <div class="scale-note">
+    <strong>設計メモ：</strong>本ページは中小企業庁の公募情報（補助金）に加え、47都道府県を対象にResearch機能で4段階の横断調査を実施しています。①補助金は25道府県で受付期間を確認、②融資は全47都道府県の旗艦「制度融資」を特定、③融資のうち35道府県は公式パンフレットPDFで利率・限度額の確定値を追加取得（うち15道府県は完全確定、残りは概算値または要領原文での最終確認を推奨）、④共済は国の2制度に加え、都道府県が運営・費用負担する勤労者福祉共済を再調査した結果、島根・徳島・佐賀の3県のみ該当を確認（他44都道府県は市区町村単位が主流で、県レベルでは確認できず）。融資・共済は締切のある公募ではなく通年の申込・加入制度のため、「受付」欄には随時である旨を表示しています。融資の利率のうち「変動」「年2回改定」等の注記がある県（鳥取・高知など）は、登録時点の値である点にご注意ください。正式な条件は必ず各制度の公式サイト・パンフレットでご確認ください。
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+
+let activeCategory = 'all';
+
+function applyFilters(){
+  const kw = document.getElementById('kw').value.trim();
+  const pref = document.getElementById('f-pref').value;
+  const scale = document.getElementById('f-scale').value;
+  const purpose = document.getElementById('f-purpose').value;
+
+  let filtered = DATA.filter(d => {
+    if(activeCategory !== 'all' && d.category !== activeCategory) return false;
+    if(kw && !(d.title.includes(kw) || d.kicker.includes(kw) || d.eligibility.some(e => e.includes(kw)))) return false;
+    if(pref === 'nationwide' && d.scope !== 'nationwide') return false;
+    if(pref === 'noto' && d.pref !== 'noto') return false;
+    if(!['all','nationwide','noto'].includes(pref) && d.pref !== pref) return false;
+    if(scale !== 'all' && !d.scale.includes(scale)) return false;
+    if(purpose !== 'all' && !d.purpose.includes(purpose)) return false;
+    return true;
+  });
+
+  filtered.sort((a,b) => new Date(a.deadline) - new Date(b.deadline));
+  renderResults(filtered);
+}
+
+const CATEGORY_LABEL = {
+  "補助金": {badge:"受付中", cta:"詳細を見る"},
+  "融資": {badge:"利用可能", cta:"詳細を見る"},
+  "共済": {badge:"加入可能", cta:"詳細を見る"}
+};
+
+function renderResults(list){
+  document.getElementById('result-num').textContent = list.length;
+  const container = document.getElementById('result-list');
+  if(list.length === 0){
+    container.innerHTML = '<div class="empty-state">条件に一致する制度が見つかりませんでした。条件を減らして再度お試しください。</div>';
+    return;
+  }
+  container.innerHTML = list.map(d => {
+    const label = CATEGORY_LABEL[d.category] || {badge:"受付中", cta:"詳細を見る"};
+    return `
+    <div class="result-card" data-scope="${d.scope}">
+      <div class="r-badge">${label.badge}</div>
+      <div class="r-body">
+        <span class="scope-tag ${d.scope}">${d.scopeLabel}</span>
+        <span class="cat-pill">${d.category}</span>
+        <div class="r-kicker">${d.kicker}</div>
+        <h3 class="r-title">${d.title}</h3>
+        <div class="r-tags">${d.purpose.map(p => `<span class="r-tag">${p}</span>`).join('')}</div>
+        <div class="r-eligibility">
+          <div class="r-check-list">${d.eligibility.map(e => `<div class="r-check-item"><span class="mark">✓</span>${e}</div>`).join('')}</div>
+        </div>
+      </div>
+      <div class="r-figures">
+        <div class="cap">${d.amountLabel}</div>
+        <div class="rate">${d.rateLabel}</div>
+        <div class="deadline">${d.category === '補助金' ? '締切' : '受付'}：${d.deadlineLabel}</div>
+        <a href="${d.url}" target="_blank" rel="noopener">${label.cta} →</a>
+      </div>
+    </div>
+  `;
+  }).join('');
+}
+
+function resetFilters(){
+  document.getElementById('kw').value = '';
+  document.getElementById('f-pref').value = 'all';
+  document.getElementById('f-scale').value = 'all';
+  document.getElementById('f-purpose').value = 'all';
+  applyFilters();
+}
+
+document.querySelectorAll('.cat-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    activeCategory = tab.dataset.category;
+    applyFilters();
+  });
+});
+
+// 全ての検索フィールドにイベントリスナーを登録（インラインハンドラを使わず、環境を問わず確実に動作させるため）
+document.getElementById('f-pref').addEventListener('change', applyFilters);
+document.getElementById('f-scale').addEventListener('change', applyFilters);
+document.getElementById('f-purpose').addEventListener('change', applyFilters);
+document.getElementById('sort').addEventListener('change', applyFilters);
+document.getElementById('kw').addEventListener('input', applyFilters);
+document.getElementById('search-btn').addEventListener('click', applyFilters);
+document.getElementById('reset-btn').addEventListener('click', resetFilters);
+
+applyFilters();
+</script>
+
+</body>
+</html>
