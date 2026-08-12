@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://masanori141-oss.github.io/sme-support-japan/sitemap.xml

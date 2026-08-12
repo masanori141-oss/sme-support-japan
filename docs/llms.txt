@@ -1,0 +1,16 @@
+# 補助金台帳 (Subsidy Ledger) — 日本の中小企業向け補助金・制度融資・共済データベース
+
+> 日本の中小企業・小規模事業者向けに、中小企業庁（全国）および47都道府県が実施する補助金・制度融資・共済制度を横断的にまとめた非公式データベースです。中小企業庁および各都道府県の公式サイトの情報をもとに収集・統合しています。現在91件の制度を掲載（内訳: 補助金37件・融資49件・共済5件、最終更新: 2026-08-11）。本サイトは非公式の情報整理ツールであり、公式情報ではありません。申請・加入前には必ず各制度の公式サイト・パンフレットで最新の状況をご確認ください。
+
+## サイト
+
+- [台帳ページ](https://masanori141-oss.github.io/sme-support-japan/index.html): 代表的な制度を詳細カード形式で紹介
+- [検索ページ](https://masanori141-oss.github.io/sme-support-japan/search.html): 区分（補助金・融資・共済）・都道府県・事業規模・目的で絞り込み検索できる全件一覧
+
+## データ
+
+- [data.json](https://masanori141-oss.github.io/sme-support-japan/data.json): 掲載している全91件の構造化データ（JSON配列）。1件ごとに制度名（title）・区分（category: 補助金/融資/共済）・対象都道府県（pref）・上限額（amountLabel）・補助率/利率（rateLabel）・締切（deadline, deadlineLabel）・対象要件（eligibility）・公式URL（url）・確認日（sourceCheckedAt）などを含みます。
+
+## 更新方法
+
+data.json / data.js は GitHub Actions により毎日自動で再取得・更新されます（1回の取得に失敗した項目は前回値を保持するため、情報が急に消えることはありません）。

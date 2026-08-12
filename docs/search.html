@@ -4,6 +4,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>補助金を探す ｜ 補助金台帳</title>
+<meta name="description" content="区分（補助金・融資・共済）・都道府県・事業規模・目的を選んで、条件に合う補助金・制度融資・共済を検索できます。中小企業庁および全国47都道府県の制度を横断的に掲載。">
+<link rel="canonical" href="https://masanori141-oss.github.io/sme-support-japan/search.html">
+<meta name="robots" content="index,follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="補助金台帳">
+<meta property="og:title" content="補助金を探す ｜ 補助金台帳">
+<meta property="og:description" content="区分（補助金・融資・共済）・都道府県・事業規模・目的を選んで、条件に合う補助金・制度融資・共済を検索できます。中小企業庁および全国47都道府県の制度を横断的に掲載。">
+<meta property="og:url" content="https://masanori141-oss.github.io/sme-support-japan/search.html">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="補助金を探す ｜ 補助金台帳">
+<meta name="twitter:description" content="区分（補助金・融資・共済）・都道府県・事業規模・目的を選んで、条件に合う補助金・制度融資・共済を検索できます。中小企業庁および全国47都道府県の制度を横断的に掲載。">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://masanori141-oss.github.io/sme-support-japan/#website",
+      "url": "https://masanori141-oss.github.io/sme-support-japan/",
+      "name": "補助金台帳",
+      "inLanguage": "ja",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://masanori141-oss.github.io/sme-support-japan/search.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "補助金台帳",
+          "item": "https://masanori141-oss.github.io/sme-support-japan/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "条件で探す",
+          "item": "https://masanori141-oss.github.io/sme-support-japan/search.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -417,6 +471,13 @@ document.getElementById('sort').addEventListener('change', applyFilters);
 document.getElementById('kw').addEventListener('input', applyFilters);
 document.getElementById('search-btn').addEventListener('click', applyFilters);
 document.getElementById('reset-btn').addEventListener('click', resetFilters);
+
+// JSON-LDのSearchAction（search.html?q=...）に対応させるため、
+// URLに ?q= が付いていればキーワード欄に反映してから検索する。
+const initialQuery = new URLSearchParams(location.search).get('q');
+if (initialQuery) {
+  document.getElementById('kw').value = initialQuery;
+}
 
 applyFilters();
 </script>

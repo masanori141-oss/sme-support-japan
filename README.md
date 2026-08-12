@@ -12,7 +12,9 @@
   → crawler/main.py が中小企業庁・都道府県のサイトを調べる
   → data/subsidies.json に保存（前回分とマージするので、
     1回の取得失敗で情報が消えることはない）
-  → scripts/export_to_data_js.py が docs/data.js を作り直す
+  → scripts/export_to_data_js.py が docs/data.js・docs/data.json・
+    docs/sitemap.xml・docs/llms.txt を作り直す（件数・最終更新日は
+    すべて実データから計算するので、本文中に古い数字が残らない）
   → 変化があれば自動的にリポジトリへコミット
   → サイト（docs/search.html, docs/index.html）は data.js を
     読み込んで表示するので、次にサイトを開いたときには
@@ -70,13 +72,18 @@ subsidy-crawler/
 │   ├── fetch_prefectures.py # 都道府県の取得ロジック・設定
 │   └── main.py               # 全体をまとめて実行するスクリプト
 ├── scripts/
-│   └── export_to_data_js.py # JSON → サイト表示用JSファイルへの変換
+│   └── export_to_data_js.py # JSON → サイト表示用データ・SEO関連ファイルへの変換
 ├── data/
-│   └── subsidies.json        # 取得済みデータ本体（初期値として84件入っています）
+│   └── subsidies.json        # 取得済みデータ本体
 ├── docs/
-│   ├── index.html            # 台帳ページ
-│   ├── search.html           # 検索ページ
-│   └── data.js                # サイトが読み込むデータ（自動生成される）
+│   ├── index.html            # 台帳ページ（title/meta description/OGP/JSON-LD対応）
+│   ├── search.html           # 検索ページ（同上。?q=クエリで検索キーワードを渡せる）
+│   ├── data.js                # サイトが読み込むデータ（自動生成される）
+│   ├── data.json              # 同じ内容の素のJSON（外部ツール・LLM向け、自動生成）
+│   ├── sitemap.xml            # 検索エンジン向けサイトマップ（自動生成）
+│   ├── robots.txt             # クローラー向け設定（sitemap.xmlの場所を案内）
+│   ├── llms.txt                # LLM向けサイト概要（llms.txt規格、自動生成）
+│   └── .nojekyll               # GitHub PagesのJekyllビルドを無効化
 ├── .github/workflows/
 │   └── daily-crawl.yml       # 「毎日自動実行して」という設定ファイル
 └── requirements.txt           # 必要なPythonライブラリの一覧
