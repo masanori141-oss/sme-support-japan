@@ -149,20 +149,20 @@
   <div class="hero-inner">
     <div class="eyebrow">補助金台帳 — SUBSIDY LEDGER PROTOTYPE</div>
     <h1 class="title">いま使える補助金・融資・共済を、<br><span class="accent">全量</span>で一望する。</h1>
-    <p class="lede">中小企業庁の公式サイト「補助金の公募・採択」ページに加え、都道府県独自の補助金・融資をResearch機能で47都道府県を対象に横断調査し、公式サイトで確認できたものを掲載しています（2026年8月10日時点）。融資は全47都道府県の制度融資を網羅、補助金は25道府県で受付中を確認、共済は国の2制度を掲載しています。</p>
-    <a href="search.html" class="hero-cta">区分・条件を選んで探す（全84件・検索ページ） →</a>
+    <p class="lede">中小企業庁の公式サイト「補助金の公募・採択」ページに加え、都道府県独自の補助金・融資をResearch機能で<span id="stat-47pref-a">47</span>都道府県を対象に横断調査し、公式サイトで確認できたものを掲載しています（2026年8月10日時点）。融資は全<span id="stat-47pref-b">47</span>都道府県の制度融資を網羅、補助金は<span id="stat-subsidy-pref-a">25</span>道府県で受付中を確認、共済は国の<span id="stat-kyosai-national-a">2</span>制度を掲載しています。</p>
+    <a href="search.html" class="hero-cta">区分・条件を選んで探す（全<span id="stat-total-a">84</span>件・検索ページ） →</a>
     <div class="hero-meta">
       <div class="hero-meta-item">
-        <div class="hero-meta-num">84</div>
+        <div class="hero-meta-num" id="stat-total">84</div>
         <div class="hero-meta-label">掲載中の制度（全量）</div>
       </div>
       <div class="hero-meta-item">
-        <div class="hero-meta-num">49</div>
-        <div class="hero-meta-label">うち融資（47都道府県＋国2件）</div>
+        <div class="hero-meta-num" id="stat-loan">49</div>
+        <div class="hero-meta-label">うち融資（<span id="stat-47pref-c">47</span>都道府県＋国<span id="stat-loan-national-a">2</span>件）</div>
       </div>
       <div class="hero-meta-item">
-        <div class="hero-meta-num">35</div>
-        <div class="hero-meta-label">うち補助金・共済（都道府県関与共済3件含む）</div>
+        <div class="hero-meta-num" id="stat-subsidy-kyosai">35</div>
+        <div class="hero-meta-label">うち補助金・共済（都道府県関与共済<span id="stat-kyosai-pref-a">3</span>件含む）</div>
       </div>
     </div>
   </div>
@@ -183,7 +183,7 @@
 
 <main class="ledger">
   <div class="ledger-caption">
-    <span>補助金の代表10件（都道府県別の全25件は<a href="search.html" style="color:var(--navy); font-weight:700;">検索ページ</a>へ）</span>
+    <span>補助金の代表<span id="stat-example-cards-a">10</span>件（都道府県別の全<span id="stat-subsidy-pref-b">25</span>件は<a href="search.html" style="color:var(--navy); font-weight:700;">検索ページ</a>へ）</span>
     <span>出典：中小企業庁「補助金の公募・採択」／各都道府県公式サイト</span>
   </div>
 
@@ -647,13 +647,14 @@
 
 <div class="disclaimer">
   <div class="disclaimer-box">
-    <strong>このページについて：</strong>本ページは中小企業庁「補助金の公募・採択」ページの情報に加え、都道府県独自の補助金・融資・共済をClaudeのResearch機能で47都道府県を対象に4段階の横断調査を実施し、公式サイト（.lg.jpまたは公式財団）で確認できた制度を統合しています。融資は全47都道府県の旗艦「制度融資」を特定（うち15道府県は利率・限度額を確定値まで取得）、補助金は25道府県で受付中を確認、共済は国の2制度に加え、都道府県が運営・費用負担する勤労者福祉共済を再調査した結果、島根・徳島・佐賀の3県のみ該当を確認しました（他44都道府県は市区町村単位が主流）。このページでは補助金・融資・共済の代表14件を詳細表示し、<strong>都道府県別の融資49件・補助金25件・県関与共済3件を含む全84件は検索ページで一覧・絞り込みできます</strong>。融資・共済は締切のある公募ではなく、通年で申込・加入できる制度です。申請・加入前には必ず各制度の公式サイト・パンフレットで最新の状況をご確認ください。<br><br>
+    <strong>このページについて：</strong>本ページは中小企業庁「補助金の公募・採択」ページの情報に加え、都道府県独自の補助金・融資・共済をClaudeのResearch機能で<span id="stat-47pref-d">47</span>都道府県を対象に4段階の横断調査を実施し、公式サイト（.lg.jpまたは公式財団）で確認できた制度を統合しています。融資は全<span id="stat-47pref-e">47</span>都道府県の旗艦「制度融資」を特定（うち<span id="stat-loan-confirmed">15</span>道府県は利率・限度額を確定値まで取得）、補助金は<span id="stat-subsidy-pref-c">25</span>道府県で受付中を確認、共済は国の<span id="stat-kyosai-national-b">2</span>制度に加え、都道府県が運営・費用負担する勤労者福祉共済を再調査した結果、<span id="stat-kyosai-pref-names">島根・徳島・佐賀</span>の<span id="stat-kyosai-pref-b">3</span>県のみ該当を確認しました（他<span id="stat-non-kyosai-pref">44</span>都道府県は市区町村単位が主流）。このページでは補助金・融資・共済の代表<span id="stat-example-cards-b">14</span>件を詳細表示し、<strong>都道府県別の融資<span id="stat-loan-total">49</span>件・補助金<span id="stat-subsidy-pref-d">25</span>件・県関与共済<span id="stat-kyosai-pref-c">3</span>件を含む全<span id="stat-total-b">84</span>件は検索ページで一覧・絞り込みできます</strong>。融資・共済は締切のある公募ではなく、通年で申込・加入できる制度です。申請・加入前には必ず各制度の公式サイト・パンフレットで最新の状況をご確認ください。<br><br>
     情報源：<a href="https://www.chusho.meti.go.jp/koukai/hojyokin/index.html" target="_blank" rel="noopener">中小企業庁 補助金の公募・採択ページ</a>／各道府県の公式サイト・公式財団サイト／<a href="https://www.chusho.meti.go.jp/kinyu/index.html" target="_blank" rel="noopener">中小企業庁 金融一般支援ページ</a>／<a href="https://www.smrj.go.jp/kyosai/" target="_blank" rel="noopener">中小機構 共済制度ページ</a>／島根・徳島・佐賀の勤労者福祉共済 公式サイト
   </div>
 </div>
 
 <footer>補助金台帳 PROTOTYPE — Built with 中小企業庁 public data as a Claude partnership test</footer>
 
+<script src="data.js"></script>
 <script>
   const chips = document.querySelectorAll('.chip');
   const cards = document.querySelectorAll('.card');
@@ -669,6 +670,85 @@
       });
     });
   });
+
+  // ページ本文中の件数表記は、すべて data.js (DATA) の実際の件数から
+  // 計算する。DATA側の内容が変わっても、この一覧の数字が古いまま
+  // 取り残されることがないようにするため。
+  (function updateStats() {
+    if (typeof DATA === 'undefined' || !Array.isArray(DATA)) return;
+
+    const isPlaceholder = (label) => (label || '').includes('要確認');
+    const prefNameOf = (scopeLabel) => {
+      const m = /（(.+?)）/.exec(scopeLabel || '');
+      return m ? m[1] : null;
+    };
+
+    const total = DATA.length;
+    const loanEntries = DATA.filter(d => d.category === '融資');
+    const subsidyEntries = DATA.filter(d => d.category === '補助金');
+    const kyosaiEntries = DATA.filter(d => d.category === '共済');
+
+    const loanPrefCodes = new Set(loanEntries.filter(d => d.pref !== 'all').map(d => d.pref));
+    const loanNationalCount = loanEntries.filter(d => d.pref === 'all').length;
+    const loanConfirmedCount = loanEntries.filter(d =>
+      d.pref !== 'all' && !isPlaceholder(d.amountLabel) && !isPlaceholder(d.rateLabel)
+    ).length;
+
+    const subsidyPrefEntries = subsidyEntries.filter(d => d.scope === 'prefecture');
+    const subsidyPrefCount = new Set(subsidyPrefEntries.map(d => d.pref)).size;
+
+    const kyosaiNationalCount = kyosaiEntries.filter(d => d.pref === 'all').length;
+    const kyosaiPrefEntries = kyosaiEntries.filter(d => d.pref !== 'all');
+    // 「〜の3県」のように後ろに助数詞を続ける文脈で使うため、都道府県名の
+    // 末尾（都/道/府/県）は落として結合する（例:「島根・徳島・佐賀」）。
+    const kyosaiPrefNames = [...new Set(
+      kyosaiPrefEntries.map(d => {
+        const name = prefNameOf(d.scopeLabel);
+        return name ? name.replace(/[都道府県]$/, '') : null;
+      }).filter(Boolean)
+    )];
+
+    const exampleCardCount = document.querySelectorAll('main.ledger .card').length;
+    const exampleSubsidyCardCount = document.querySelectorAll(
+      'main.ledger .card[data-scope="nationwide"], main.ledger .card[data-scope="regional"], main.ledger .card[data-scope="prefecture"]'
+    ).length;
+
+    const values = {
+      'stat-total': total,
+      'stat-total-a': total,
+      'stat-total-b': total,
+      'stat-loan': loanEntries.length,
+      'stat-loan-total': loanEntries.length,
+      'stat-subsidy-kyosai': subsidyEntries.length + kyosaiEntries.length,
+      'stat-47pref-a': loanPrefCodes.size,
+      'stat-47pref-b': loanPrefCodes.size,
+      'stat-47pref-c': loanPrefCodes.size,
+      'stat-47pref-d': loanPrefCodes.size,
+      'stat-47pref-e': loanPrefCodes.size,
+      'stat-loan-national-a': loanNationalCount,
+      'stat-loan-confirmed': loanConfirmedCount,
+      'stat-subsidy-pref-a': subsidyPrefCount,
+      'stat-subsidy-pref-b': subsidyPrefCount,
+      'stat-subsidy-pref-c': subsidyPrefCount,
+      'stat-subsidy-pref-d': subsidyPrefEntries.length,
+      'stat-kyosai-national-a': kyosaiNationalCount,
+      'stat-kyosai-national-b': kyosaiNationalCount,
+      'stat-kyosai-pref-a': kyosaiPrefEntries.length,
+      'stat-kyosai-pref-b': kyosaiPrefEntries.length,
+      'stat-kyosai-pref-c': kyosaiPrefEntries.length,
+      'stat-non-kyosai-pref': loanPrefCodes.size - kyosaiPrefEntries.length,
+      'stat-example-cards-a': exampleSubsidyCardCount,
+      'stat-example-cards-b': exampleCardCount,
+    };
+
+    Object.entries(values).forEach(([id, value]) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    });
+
+    const namesEl = document.getElementById('stat-kyosai-pref-names');
+    if (namesEl && kyosaiPrefNames.length) namesEl.textContent = kyosaiPrefNames.join('・');
+  })();
 </script>
 
 </body>
