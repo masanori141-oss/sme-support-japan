@@ -149,7 +149,7 @@
   <div class="hero-inner">
     <div class="eyebrow">補助金台帳 — SUBSIDY LEDGER PROTOTYPE</div>
     <h1 class="title">いま使える補助金・融資・共済を、<br><span class="accent">全量</span>で一望する。</h1>
-    <p class="lede">中小企業庁の公式サイト「補助金の公募・採択」ページに加え、都道府県独自の補助金・融資をResearch機能で<span id="stat-47pref-a">47</span>都道府県を対象に横断調査し、公式サイトで確認できたものを掲載しています（2026年8月10日時点）。融資は全<span id="stat-47pref-b">47</span>都道府県の制度融資を網羅、補助金は<span id="stat-subsidy-pref-a">25</span>道府県で受付中を確認、共済は国の<span id="stat-kyosai-national-a">2</span>制度を掲載しています。</p>
+    <p class="lede">中小企業庁の公式サイト「補助金の公募・採択」ページに加え、都道府県独自の補助金・融資をResearch機能で<span id="stat-47pref-a">47</span>都道府県を対象に横断調査し、公式サイトで確認できたものを掲載しています（<span id="stat-asof-a">2026年8月10日</span>時点）。融資は全<span id="stat-47pref-b">47</span>都道府県の制度融資を網羅、補助金は<span id="stat-subsidy-pref-a">25</span>道府県で受付中を確認、共済は国の<span id="stat-kyosai-national-a">2</span>制度を掲載しています。</p>
     <a href="search.html" class="hero-cta">区分・条件を選んで探す（全<span id="stat-total-a">84</span>件・検索ページ） →</a>
     <div class="hero-meta">
       <div class="hero-meta-item">
@@ -713,6 +713,19 @@
       'main.ledger .card[data-scope="nationwide"], main.ledger .card[data-scope="regional"], main.ledger .card[data-scope="prefecture"]'
     ).length;
 
+    // 「◯年◯月◯日時点」の表記は、DATA各件の sourceCheckedAt
+    // （クローラーが実際に確認した日付）のうち最新のものを使う。
+    // クローリングが1回失敗しても、失敗した項目だけ古い日付が残る
+    // 設計（main.pyのmerge）なので、最新値＝直近のクローリング実行日になる。
+    const checkedDates = DATA.map(d => d.sourceCheckedAt).filter(Boolean).sort();
+    const latestCheckedAt = checkedDates[checkedDates.length - 1];
+    const asOfLabel = latestCheckedAt
+      ? (() => {
+          const [y, m, d] = latestCheckedAt.split('-').map(Number);
+          return `${y}年${m}月${d}日`;
+        })()
+      : null;
+
     const values = {
       'stat-total': total,
       'stat-total-a': total,
@@ -748,6 +761,9 @@
 
     const namesEl = document.getElementById('stat-kyosai-pref-names');
     if (namesEl && kyosaiPrefNames.length) namesEl.textContent = kyosaiPrefNames.join('・');
+
+    const asOfEl = document.getElementById('stat-asof-a');
+    if (asOfEl && asOfLabel) asOfEl.textContent = asOfLabel;
   })();
 </script>
 

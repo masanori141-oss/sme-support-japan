@@ -128,7 +128,7 @@
 
 <div class="page-head">
   <h1>条件を選んで探す</h1>
-  <p>区分（補助金・融資・共済）・都道府県・事業規模・目的を選んで検索すると、条件に合う制度が一覧表示されます。<strong>今日時点（2026年8月10日）で実際に利用できる制度を全量掲載</strong>しています。中小企業庁（国）の補助金2件、能登地域限定の補助金3件、都道府県独自の補助金25件、国の融資・共済4件、都道府県の制度融資47件、都道府県関与の勤労者福祉共済3件（島根・徳島・佐賀）を統合しています（計84件）。</p>
+  <p>区分（補助金・融資・共済）・都道府県・事業規模・目的を選んで検索すると、条件に合う制度が一覧表示されます。<strong>今日時点（<span id="stat-asof-b">2026年8月10日</span>）で実際に利用できる制度を全量掲載</strong>しています。中小企業庁（国）の補助金<span id="stat-national-subsidy">2</span>件、能登地域限定の補助金<span id="stat-regional-subsidy">3</span>件、都道府県独自の補助金<span id="stat-subsidy-pref-entries">25</span>件、国の融資・共済<span id="stat-national-loan-kyosai">4</span>件、都道府県の制度融資<span id="stat-loan-pref-entries">47</span>件、都道府県関与の勤労者福祉共済<span id="stat-kyosai-pref-entries">3</span>件（<span id="stat-kyosai-pref-names-b">島根・徳島・佐賀</span>）を統合しています（計<span id="stat-total-c">84</span>件）。</p>
 </div>
 
 <div class="searchbar-wrap" style="padding-bottom:0;">
@@ -249,7 +249,7 @@
   <div id="result-list"></div>
 
   <div class="scale-note">
-    <strong>設計メモ：</strong>本ページは中小企業庁の公募情報（補助金）に加え、47都道府県を対象にResearch機能で4段階の横断調査を実施しています。①補助金は25道府県で受付期間を確認、②融資は全47都道府県の旗艦「制度融資」を特定、③融資のうち35道府県は公式パンフレットPDFで利率・限度額の確定値を追加取得（うち15道府県は完全確定、残りは概算値または要領原文での最終確認を推奨）、④共済は国の2制度に加え、都道府県が運営・費用負担する勤労者福祉共済を再調査した結果、島根・徳島・佐賀の3県のみ該当を確認（他44都道府県は市区町村単位が主流で、県レベルでは確認できず）。融資・共済は締切のある公募ではなく通年の申込・加入制度のため、「受付」欄には随時である旨を表示しています。融資の利率のうち「変動」「年2回改定」等の注記がある県（鳥取・高知など）は、登録時点の値である点にご注意ください。正式な条件は必ず各制度の公式サイト・パンフレットでご確認ください。
+    <strong>設計メモ：</strong>本ページは中小企業庁の公募情報（補助金）に加え、<span id="stat-47pref-f">47</span>都道府県を対象にResearch機能で4段階の横断調査を実施しています。①補助金は<span id="stat-subsidy-pref-b">25</span>道府県で受付期間を確認、②融資は全<span id="stat-47pref-g">47</span>都道府県の旗艦「制度融資」を特定、③融資のうち<span id="stat-loan-partial">35</span>道府県は公式パンフレットPDFで利率・限度額の確定値を追加取得（うち<span id="stat-loan-confirmed-b">15</span>道府県は完全確定、残りは概算値または要領原文での最終確認を推奨）、④共済は国の<span id="stat-kyosai-national-c">2</span>制度に加え、都道府県が運営・費用負担する勤労者福祉共済を再調査した結果、<span id="stat-kyosai-pref-names-c">島根・徳島・佐賀</span>の<span id="stat-kyosai-pref-d">3</span>県のみ該当を確認（他<span id="stat-non-kyosai-pref-b">44</span>都道府県は市区町村単位が主流で、県レベルでは確認できず）。融資・共済は締切のある公募ではなく通年の申込・加入制度のため、「受付」欄には随時である旨を表示しています。融資の利率のうち「変動」「年2回改定」等の注記がある県（鳥取・高知など）は、登録時点の値である点にご注意ください。正式な条件は必ず各制度の公式サイト・パンフレットでご確認ください。
   </div>
 </div>
 
@@ -257,6 +257,80 @@
 <script>
 
 let activeCategory = 'all';
+
+// ページ本文中の件数・日付表記は、すべて data.js (DATA) の実際の内容
+// から計算する。クローリングでDATAの中身が増減・更新されても、
+// この説明文がいつまでも古い数字のまま残らないようにするため。
+(function updateStats(){
+  if (typeof DATA === 'undefined' || !Array.isArray(DATA)) return;
+
+  const isPlaceholder = (label) => (label || '').includes('要確認');
+  const prefNameOf = (scopeLabel) => {
+    const m = /（(.+?)）/.exec(scopeLabel || '');
+    return m ? m[1] : null;
+  };
+  const stripSuffix = (name) => name ? name.replace(/[都道府県]$/, '') : null;
+
+  const total = DATA.length;
+  const loanEntries = DATA.filter(d => d.category === '融資');
+  const subsidyEntries = DATA.filter(d => d.category === '補助金');
+  const kyosaiEntries = DATA.filter(d => d.category === '共済');
+
+  const loanPrefEntries = loanEntries.filter(d => d.pref !== 'all');
+  const loanPrefCount = new Set(loanPrefEntries.map(d => d.pref)).size;
+  const loanNationalCount = loanEntries.length - loanPrefEntries.length;
+  const loanPartialCount = loanPrefEntries.filter(d => !isPlaceholder(d.amountLabel) || !isPlaceholder(d.rateLabel)).length;
+  const loanConfirmedCount = loanPrefEntries.filter(d => !isPlaceholder(d.amountLabel) && !isPlaceholder(d.rateLabel)).length;
+
+  const subsidyNationalCount = subsidyEntries.filter(d => d.pref === 'all').length;
+  const subsidyRegionalCount = subsidyEntries.filter(d => d.scope === 'regional').length;
+  const subsidyPrefEntries = subsidyEntries.filter(d => d.scope === 'prefecture');
+
+  const kyosaiNationalCount = kyosaiEntries.filter(d => d.pref === 'all').length;
+  const kyosaiPrefEntries = kyosaiEntries.filter(d => d.pref !== 'all');
+  const kyosaiPrefNames = [...new Set(kyosaiPrefEntries.map(d => stripSuffix(prefNameOf(d.scopeLabel))).filter(Boolean))];
+
+  const checkedDates = DATA.map(d => d.sourceCheckedAt).filter(Boolean).sort();
+  const latestCheckedAt = checkedDates[checkedDates.length - 1];
+  const asOfLabel = latestCheckedAt
+    ? (() => { const [y, m, d] = latestCheckedAt.split('-').map(Number); return `${y}年${m}月${d}日`; })()
+    : null;
+
+  const values = {
+    'cnt-all': total,
+    'cnt-hojo': subsidyEntries.length,
+    'cnt-yushi': loanEntries.length,
+    'cnt-kyosai': kyosaiEntries.length,
+    'stat-total-c': total,
+    'stat-national-subsidy': subsidyNationalCount,
+    'stat-regional-subsidy': subsidyRegionalCount,
+    'stat-subsidy-pref-entries': subsidyPrefEntries.length,
+    'stat-national-loan-kyosai': loanNationalCount + kyosaiNationalCount,
+    'stat-loan-pref-entries': loanPrefEntries.length,
+    'stat-kyosai-pref-entries': kyosaiPrefEntries.length,
+    'stat-47pref-f': loanPrefCount,
+    'stat-47pref-g': loanPrefCount,
+    'stat-subsidy-pref-b': new Set(subsidyPrefEntries.map(d => d.pref)).size,
+    'stat-loan-partial': loanPartialCount,
+    'stat-loan-confirmed-b': loanConfirmedCount,
+    'stat-kyosai-national-c': kyosaiNationalCount,
+    'stat-kyosai-pref-d': kyosaiPrefEntries.length,
+    'stat-non-kyosai-pref-b': loanPrefCount - kyosaiPrefEntries.length,
+  };
+
+  Object.entries(values).forEach(([id, value]) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  });
+
+  ['stat-kyosai-pref-names-b', 'stat-kyosai-pref-names-c'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el && kyosaiPrefNames.length) el.textContent = kyosaiPrefNames.join('・');
+  });
+
+  const asOfEl = document.getElementById('stat-asof-b');
+  if (asOfEl && asOfLabel) asOfEl.textContent = asOfLabel;
+})();
 
 function applyFilters(){
   const kw = document.getElementById('kw').value.trim();
