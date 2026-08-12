@@ -3,7 +3,7 @@ data/subsidies.json を、search.html が読み込める data.js に変換する
 
     python scripts/export_to_data_js.py
 
-これを実行すると、site/data.js が作られる（上書き）。
+これを実行すると、docs/data.js が作られる（上書き）。
 search.html 側は、今まで直接書いていた
 
     const DATA = [ ...84件... ];
@@ -15,6 +15,9 @@ search.html 側は、今まで直接書いていた
 を読み込むように1回だけ変更しておく。そうすれば、以降は
 data.js を差し替えるだけでサイトの表示内容が自動的に更新される
 （search.html 自体を毎回書き換える必要がなくなる）。
+
+（出力先が docs/ なのは、GitHub Pages の公開フォルダとして
+  リポジトリ直下では /(root) か /docs しか選べないため。）
 """
 
 import json
@@ -22,7 +25,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_PATH = ROOT / "data" / "subsidies.json"
-OUTPUT_PATH = ROOT / "site" / "data.js"
+OUTPUT_PATH = ROOT / "docs" / "data.js"
 
 
 def run():

@@ -33,6 +33,6 @@ jobs:
         run: |
           git config user.name "subsidy-crawler-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/subsidies.json site/data.js
+          git add data/subsidies.json docs/data.js
           git diff --quiet --cached || git commit -m "自動更新: $(date +'%Y-%m-%d') のクローリング結果"
           git push

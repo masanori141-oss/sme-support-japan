@@ -12,9 +12,9 @@
   → crawler/main.py が中小企業庁・都道府県のサイトを調べる
   → data/subsidies.json に保存（前回分とマージするので、
     1回の取得失敗で情報が消えることはない）
-  → scripts/export_to_data_js.py が site/data.js を作り直す
+  → scripts/export_to_data_js.py が docs/data.js を作り直す
   → 変化があれば自動的にリポジトリへコミット
-  → サイト（site/search.html, site/index.html）は data.js を
+  → サイト（docs/search.html, docs/index.html）は data.js を
     読み込んで表示するので、次にサイトを開いたときには
     自動的に最新の内容になっている
 ```
@@ -54,9 +54,11 @@ GitHubの「Actions」タブ →「毎日の補助金・融資・共済クロー
 
 ### 4. （任意）サイトを公開する
 
-GitHubリポジトリの Settings → Pages で「site」フォルダを
+GitHubリポジトリの Settings → Pages で「docs」フォルダを
 公開対象に設定すると、`https://（あなたのアカウント名）.github.io/（リポジトリ名）/`
-のようなURLでサイトが誰でも見られるようになります。
+のようなURLでサイトが誰でも見られるようになります
+（GitHub Pagesは /(root) か /docs しか公開フォルダに選べないため、
+このリポジトリではサイト一式を docs/ に置いています）。
 
 ## ファイル構成
 
@@ -71,7 +73,7 @@ subsidy-crawler/
 │   └── export_to_data_js.py # JSON → サイト表示用JSファイルへの変換
 ├── data/
 │   └── subsidies.json        # 取得済みデータ本体（初期値として84件入っています）
-├── site/
+├── docs/
 │   ├── index.html            # 台帳ページ
 │   ├── search.html           # 検索ページ
 │   └── data.js                # サイトが読み込むデータ（自動生成される）
