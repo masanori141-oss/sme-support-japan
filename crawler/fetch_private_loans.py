@@ -572,6 +572,53 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["結婚式・旅行・医療費など生活の様々なシーンで利用可", "他の目的別ローンとの合計残高1,000万円以内", "審査回答は最短即日"],
         confirmed=True,
     ),
+
+    # --- 地方銀行の対象拡充（教育ローン・住宅ローン） ---
+    LoanConfig(
+        institution="千葉銀行", institution_category="地方銀行",
+        loan_category="education-loan", product_name="ちばぎんスーパー教育ローン",
+        url="https://www.chibabank.co.jp/kojin/loan/education/",
+        rate_min=2.4, rate_max=3.25, rate_label="年2.4%〜3.25%（変動、WEB契約は年2.8%）",
+        limit_label="10万円〜3,000万円", limit_max_yen=30_000_000,
+        features=["保証料は千葉銀行負担", "マイナンバーカード等提示で金利優遇あり", "千葉・東京・茨城・埼玉・神奈川在住/勤務が対象"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="福岡銀行", institution_category="地方銀行",
+        loan_category="education-loan", product_name="学資ローンDX",
+        url="https://www.fukuokabank.co.jp/personal/service/mokuteki/gakushiloan/",
+        rate_min=3.1, rate_max=3.7, rate_label="年3.1%〜3.7%（変動）",
+        limit_label="10万円〜2,000万円", limit_max_yen=20_000_000,
+        features=["借入期間は最長17年", "入学金・授業料のほか、下宿費用等にも利用可", "同行には限度額の低い「教育カードローン」も別途あり"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="常陽銀行", institution_category="地方銀行",
+        loan_category="education-loan", product_name="常陽教育ローン（学援生活）",
+        url="https://www.joyobank.co.jp/personal/loan/education/lp/",
+        rate_min=2.6, rate_max=3.2, rate_label="年2.6%〜3.2%（変動）",
+        limit_label="10万円〜3,000万円", limit_max_yen=30_000_000,
+        features=["入学金・授業料のほか仕送り・生活費・家賃にも利用可", "担保・保証人不要", "全国対応・来店不要でスマホ/PCから申込可"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="千葉銀行", institution_category="地方銀行",
+        loan_category="mortgage", product_name="ちばぎん住宅ローン「ベストチョイス21」（変動金利）",
+        url="https://www.chibabank.co.jp/kojin/loan/housing/plan/select/plan02.html",
+        rate_min=1.225, rate_max=1.225, rate_label="年1.225%（変動、2026年8月時点・店頭金利年3.125%より1.9%割引後）",
+        limit_label="要確認（融資金額は物件価格・年収等により決定）",
+        features=["店頭表示金利からの割引幅を公式サイトで明示（透明性が高い）", "変動・固定とも同じ仕組みで金利を割引", "借入後は年2回金利を見直し"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="静岡銀行", institution_category="地方銀行",
+        loan_category="mortgage", product_name="静岡銀行住宅ローン（変動金利）",
+        url="https://www.shizuokabank.co.jp/personal/loan/jyutaku/index.html",
+        rate_min=1.15, rate_max=1.15, rate_label="年1.15%（変動、2026年8月時点・最優遇後の目安）",
+        limit_label="要確認（融資金額は物件価格・年収等により決定）",
+        features=["au回線等とのセット利用でさらに最大年0.15%優遇", "新規契約は契約から一定期間無利息の特典がある商品も併設", "静岡県内を中心に幅広いエリアで取扱い"],
+        confirmed=True,
+    ),
 ]
 
 
