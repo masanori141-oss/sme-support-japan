@@ -484,6 +484,94 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["住宅ローン基準レートを年2回（4月・10月）見直し", "融資手数料型・保証料型から選択可", "返済額は約5年間一定（5年ルール適用）"],
         confirmed=True,
     ),
+
+    # --- 不動産担保ローン ---
+    LoanConfig(
+        institution="オリックス銀行", institution_category="新興銀行",
+        loan_category="real-estate-loan", product_name="オリックス銀行 不動産担保ローン",
+        url="https://www.orixbank.co.jp/personal/mortgage/",
+        rate_min=2.425, rate_max=4.425, rate_label="変動金利型（短期プライムレート基準）年2.425%〜4.425%",
+        limit_label="2,000万円〜2億円", limit_max_yen=200_000_000,
+        features=["海外不動産・別荘・賃貸用不動産の購入資金にも利用可", "資金使途は原則自由", "投資用不動産ローン・住宅ローンは新規取扱を中止中（本商品は継続提供）"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="楽天銀行", institution_category="新興銀行",
+        loan_category="real-estate-loan", product_name="楽天銀行 不動産担保ローン",
+        url="https://www.rakuten-bank.co.jp/loan/mortgage-collateral/detail/",
+        rate_min=3.02, rate_max=11.78, rate_label="年3.02%〜11.78%（2026年7月1日時点適用金利、固定金利・5年毎見直し）",
+        limit_label="最大1億円未満", limit_max_yen=100_000_000,
+        features=["住宅ローン返済中でも利用可能", "複数の借入のおまとめにも利用可", "資金使途は原則自由"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="SBI新生銀行（新生インベストメント&ファイナンス）", institution_category="新興銀行",
+        loan_category="real-estate-loan", product_name="不動産担保ローン",
+        url="https://www.shinsei-if.com/loan/",
+        rate_min=3.2, rate_max=4.45, rate_label="変動年3.2%〜4.45%（団体信用生命保険なし、2026年4月時点）",
+        limit_label="担保不動産評価額の80%以内", limit_max_yen=None,
+        features=["SBI新生銀行グループの新生インベストメント&ファイナンスが提供", "融資期間は最長35年", "団信加入の有無で金利が異なる"],
+        confirmed=True,
+    ),
+
+    # --- 投資不動産ローン ---
+    LoanConfig(
+        institution="みずほ信託銀行", institution_category="信託銀行",
+        loan_category="investment-property-loan", product_name="賃貸マンション・アパートローン「プロデュース II」",
+        url="https://www.mizuho-tb.co.jp/kinri/loan.html",
+        rate_min=3.375, rate_max=3.375, rate_label="短期プライムレート連動型 年3.375%（団信不加入、2026年8月12日時点、最良条件）",
+        limit_label="要確認（公式サイトで最終確認）",
+        features=["長期プライムレート連動型・固定金利選択型など金利タイプが豊富", "団体信用生命保険の加入有無を選択可", "長期プライムレート連動型は新規取扱を停止中"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="三井住友信託銀行", institution_category="信託銀行",
+        loan_category="investment-property-loan", product_name="アパートローン",
+        url="https://www.smtb.jp/personal/loan/apartment",
+        limit_label="3億円以内（100万円以上、10万円単位）", limit_max_yen=300_000_000,
+        features=["賃貸マンション・アパートの建築・購入資金に利用可", "融資期間は物件の耐用年数等に応じて設定", "金利は個別審査により決定"],
+        confirmed=False,
+    ),
+    LoanConfig(
+        institution="三井住友銀行", institution_category="メガバンク",
+        loan_category="investment-property-loan", product_name="アパートローン",
+        url="https://www.smbc.co.jp/kojin/apartment/",
+        rate_label="非公開（担保評価・借入属性等により個別に決定）",
+        limit_label="200万円以上（上限は物件の建築・購入価格等による）",
+        features=["団体信用生命保険は加入金額1億円が上限", "既存ローンの借換えには利用不可", "融資利率は個別審査により決定（団信加入で年0.3%上乗せ）"],
+        confirmed=False,
+    ),
+
+    # --- 証券担保ローン ---
+    LoanConfig(
+        institution="楽天銀行", institution_category="新興銀行",
+        loan_category="securities-loan", product_name="楽天銀行 証券担保ローン",
+        url="https://www.rakuten-bank.co.jp/loan/securities-collateral/borrowing-ratio/",
+        rate_min=2.125, rate_max=4.125, rate_label="年2.125%〜4.125%（お借入残高に応じた3段階、2026年8月時点）",
+        limit_label="担保有価証券（楽天証券口座内）の評価額に応じて決定", limit_max_yen=None,
+        features=["楽天証券に預けている株式・投資信託等を担保に借入可能", "残高1,000万円超は年2.125%と最も低い", "基準金利（短期プライムレート）に連動し見直しあり"],
+        confirmed=True,
+    ),
+
+    # --- 目的型ローン ---
+    LoanConfig(
+        institution="りそな銀行", institution_category="メガバンク",
+        loan_category="purpose-loan", product_name="りそなフリーローン（無担保型）",
+        url="https://www.resonabank.co.jp/kojin/freeloan/",
+        rate_min=1.7, rate_max=14.0, rate_label="年1.7%〜14.0%（固定、住宅ローン利用者は▲0.5%優遇）",
+        limit_label="上限1,000万円（最長10年）", limit_max_yen=10_000_000,
+        features=["結婚式・旅行・医療費など資金使途は原則自由", "りそなで住宅ローン利用中は金利優遇", "固定金利で返済計画が立てやすい"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="横浜銀行", institution_category="地方銀行",
+        loan_category="purpose-loan", product_name="横浜銀行ライフサポートローン（多目的ローン）",
+        url="https://www.boy.co.jp/kojin/lifesupport-loan/index.html",
+        rate_min=3.85, rate_max=4.85, rate_label="年3.85%〜4.85%（審査により決定）",
+        limit_label="10万円〜500万円", limit_max_yen=5_000_000,
+        features=["結婚式・旅行・医療費など生活の様々なシーンで利用可", "他の目的別ローンとの合計残高1,000万円以内", "審査回答は最短即日"],
+        confirmed=True,
+    ),
 ]
 
 
