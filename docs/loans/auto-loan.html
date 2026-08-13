@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自動車ローン 比較 ｜ 融資・ローン比較台帳</title>
+<meta name="description" content="新車・中古車の購入資金向けローンを、金利・限度額で比較できます。">
+<link rel="canonical" href="https://masanori141-oss.github.io/sme-support-japan/loans/auto-loan.html">
+<meta name="robots" content="index,follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="融資・ローン比較台帳">
+<meta property="og:title" content="自動車ローン 比較 ｜ 融資・ローン比較台帳">
+<meta property="og:description" content="新車・中古車の購入資金向けローンを、金利・限度額で比較できます。">
+<meta property="og:url" content="https://masanori141-oss.github.io/sme-support-japan/loans/auto-loan.html">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自動車ローン 比較 ｜ 融資・ローン比較台帳">
+<meta name="twitter:description" content="新車・中古車の購入資金向けローンを、金利・限度額で比較できます。">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://masanori141-oss.github.io/sme-support-japan/loans/auto-loan.html#webpage",
+      "url": "https://masanori141-oss.github.io/sme-support-japan/loans/auto-loan.html",
+      "name": "自動車ローン 比較 ｜ 融資・ローン比較台帳",
+      "description": "新車・中古車の購入資金向けローンを、金利・限度額で比較できます。",
+      "inLanguage": "ja",
+      "isPartOf": {"@id": "https://masanori141-oss.github.io/sme-support-japan/loans/index.html#website"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "補助金台帳", "item": "https://masanori141-oss.github.io/sme-support-japan/"},
+        {"@type": "ListItem", "position": 2, "name": "融資・ローン比較", "item": "https://masanori141-oss.github.io/sme-support-japan/loans/index.html"},
+        {"@type": "ListItem", "position": 3, "name": "自動車ローン", "item": "https://masanori141-oss.github.io/sme-support-japan/loans/auto-loan.html"}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="loans.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="../index.html" class="brand"><span class="mark">印</span>補助金台帳</a>
+    <nav class="topnav">
+      <a href="../index.html">一覧（台帳）</a>
+      <a href="../search.html">条件で探す</a>
+      <a href="index.html" class="active">融資・ローン比較</a>
+    </nav>
+  </div>
+</div>
+
+<div class="page-head">
+  <div class="eyebrow">LOAN COMPARISON LEDGER</div>
+  <h1>自動車ローンを比較する</h1>
+  <p>新車・中古車の購入資金向けローンを、金利・限度額で比較できます。 金融機関のページに遷移しなくても、金利・限度額・特徴をこの一覧だけで比較できます。下限金利が低い順に並んでいます。</p>
+</div>
+
+<nav class="category-nav">
+    <a href="index.html">総合台帳（全分類）</a>
+    <a href="card-loan.html">カードローン</a>
+    <a href="education-loan.html">教育ローン</a>
+    <a href="auto-loan.html" class="active">自動車ローン</a>
+    <a href="reform-loan.html">リフォームローン</a>
+    <a href="real-estate-loan.html">不動産担保ローン</a>
+    <a href="mortgage.html">住宅ローン</a>
+    <a href="investment-property-loan.html">投資不動産ローン</a>
+    <a href="securities-loan.html">証券担保ローン</a>
+    <a href="purpose-loan.html">目的型ローン</a>
+    <a href="government.html">政府系補助金・融資</a>
+    <a href="other-loan.html">その他ローン</a>
+</nav>
+
+<div class="filterbar">
+  <div class="filterbar-inner">
+    <div class="filter-group" style="flex:1; min-width:260px;">
+      <span class="filter-group-label">金融機関分類で絞り込む</span>
+      <div class="filter-chips" id="inst-cat-chips"></div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-group-label">金利で絞り込む</span>
+      <select id="f-rate">
+          <option value="all">指定しない</option>
+          <option value="1">年1%以下</option>
+          <option value="3">年3%以下</option>
+          <option value="5">年5%以下</option>
+          <option value="8">年8%以下</option>
+          <option value="12">年12%以下</option>
+          <option value="18">年18%以下</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <span class="filter-group-label">融資希望額で絞り込む</span>
+      <select id="f-limit">
+          <option value="all">指定しない</option>
+          <option value="1000000">100万円以上</option>
+          <option value="3000000">300万円以上</option>
+          <option value="5000000">500万円以上</option>
+          <option value="10000000">1,000万円以上</option>
+          <option value="50000000">5,000万円以上</option>
+          <option value="100000000">1億円以上</option>
+      </select>
+    </div>
+    <button class="reset-btn" id="reset-btn" type="button">条件をリセット</button>
+  </div>
+</div>
+
+<div class="layout">
+  <div class="results-bar">
+    <div><strong id="result-num">0</strong> 件の商品が見つかりました</div>
+    <span>金利（下限）が低い順に表示 ｜ 出典：各金融機関公式サイト・中小企業庁・都道府県公式サイト</span>
+  </div>
+  <div id="result-list"></div>
+</div>
+
+<div class="disclaimer">
+  <div class="disclaimer-box">
+    <strong>このページについて：</strong>掲載している金利・限度額は各金融機関の公式サイト等で確認した情報をもとにしていますが、実際に適用される金利・限度額は審査結果により異なります。お申込み前には必ず各金融機関の公式サイトで最新の条件をご確認ください。本ページは非公式の比較情報サイトであり、特定の金融機関を推奨するものではありません。
+  </div>
+</div>
+
+<footer>融資・ローン比較台帳 PROTOTYPE — 補助金台帳と同一プロジェクトの拡張として、Claudeとの協働で作成</footer>
+
+<script>const PAGE_CATEGORY = 'auto-loan';</script>
+<script src="loan-data.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

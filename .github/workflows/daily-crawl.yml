@@ -1,4 +1,4 @@
-name: 毎日の補助金・融資・共済クローリング
+name: 毎日の補助金・融資・共済・民間ローンクローリング
 
 on:
   schedule:
@@ -23,16 +23,22 @@ jobs:
       - name: 必要なライブラリをインストール
         run: pip install -r requirements.txt
 
-      - name: クローリングを実行
+      - name: 補助金・融資・共済のクローリングを実行
         run: python -m crawler.main
 
-      - name: サイト表示用データを生成
+      - name: 民間金融機関の融資データを取得（政府系データと統合）
+        run: python -m crawler.main_loans
+
+      - name: 補助金台帳のサイト表示用データを生成
         run: python scripts/export_to_data_js.py
+
+      - name: 融資・ローン比較台帳のサイト表示用データを生成
+        run: python scripts/export_loans.py
 
       - name: 変更があればリポジトリにコミット
         run: |
           git config user.name "subsidy-crawler-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/subsidies.json docs/data.js docs/data.json docs/sitemap.xml docs/llms.txt
+          git add data/subsidies.json data/loans.json docs/data.js docs/data.json docs/sitemap.xml docs/llms.txt docs/loans/loan-data.js docs/loans/loan-data.json
           git diff --quiet --cached || git commit -m "自動更新: $(date +'%Y-%m-%d') のクローリング結果"
           git push

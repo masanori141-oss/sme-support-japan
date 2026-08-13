@@ -1,0 +1,1770 @@
+const LOAN_DATA = [
+  {
+    "institution": "中小企業庁",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "デジタル化・AI導入補助金2026",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "補助率 1/2（枠・プロセス数により変動）",
+    "limitLabel": "上限450万円（通常枠）",
+    "limitMaxYen": 4500000,
+    "features": [
+      "従業員300人以下（業種による目安）の会社・個人事業主",
+      "大企業のグループ会社ではない",
+      "GビズIDプライムを取得できる"
+    ],
+    "url": "https://www.chusho.meti.go.jp/koukai/yosan/r8/digital_ai_summary.pdf",
+    "sourceCheckedAt": "2026-08-10"
+  },
+  {
+    "institution": "中小企業庁",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "中小企業省力化投資補助金（カタログ注文型）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "随時受付（予算上限に達し次第終了）",
+    "limitLabel": "カタログ掲載製品の導入費を補助",
+    "limitMaxYen": null,
+    "features": [
+      "人手不足に悩む中小企業・小規模事業者",
+      "カタログ掲載製品の中から導入したいものがある",
+      "GビズIDプライムを取得できる"
+    ],
+    "url": "https://www.chusho.meti.go.jp/keiei/sapoin/index.html",
+    "sourceCheckedAt": "2026-08-10"
+  },
+  {
+    "institution": "中小企業庁（能登地域特別枠）",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "小規模事業者持続化補助金＜一般型・災害支援枠＞（10次）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "通常枠とは別の特別枠",
+    "limitLabel": "事業再建の取り組みを補助",
+    "limitMaxYen": null,
+    "features": [
+      "令和6年能登半島地震・能登豪雨の被災事業者",
+      "小規模事業者（従業員5〜20人以下）",
+      "事業再建に取り組む計画がある"
+    ],
+    "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260630001.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "中小企業庁（能登地域特別枠）",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "商店街にぎわい創出事業",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "商店街・商業組合等が申請主体",
+    "limitLabel": "にぎわい創出イベント等を補助",
+    "limitMaxYen": null,
+    "features": [
+      "能登半島地震で被害を受けた地域の商店街等",
+      "個人商店単独ではなく組織であること",
+      "通行量・売上回復につながる計画がある"
+    ],
+    "url": "https://www.chusho.meti.go.jp/shogyo/shogyo/index.html",
+    "sourceCheckedAt": "2026-08-10"
+  },
+  {
+    "institution": "中小企業庁（能登地域特別枠）",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "商店街災害復旧事業",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "商店街・商業組合等が申請主体",
+    "limitLabel": "アーケード・街路灯等の復旧費を補助",
+    "limitMaxYen": null,
+    "features": [
+      "能登半島地震で被害を受けた地域の商店街等",
+      "個人商店単独ではなく組織であること",
+      "共用施設（アーケード・街路灯等）の復旧計画がある"
+    ],
+    "url": "https://www.chusho.meti.go.jp/shogyo/shogyo/index.html",
+    "sourceCheckedAt": "2026-08-10"
+  },
+  {
+    "institution": "埼玉県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "埼玉県中小企業DX導入支援補助金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "補助率 3/4以内",
+    "limitLabel": "上限300万円（下限7万5千円）",
+    "limitMaxYen": 3000000,
+    "features": [
+      "埼玉県内に本社・事業所がある中小企業・個人事業主",
+      "直近1期分の決算（確定申告）を終えている",
+      "導入したいDXツールが明確にある"
+    ],
+    "url": "https://www.pref.saitama.lg.jp/a0803/dx_jigyousyashien/dx_index.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "北海道",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "中小・小規模企業賃上げ環境整備等支援事業費補助金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "補助率 1/2（賃上げ率4.0%以上は3/4）",
+    "limitLabel": "上限200万円（促進枠300万円）",
+    "limitMaxYen": 3000000,
+    "features": [
+      "北海道内の中小企業・小規模事業者",
+      "賃上げに取り組む計画がある",
+      "新商品開発・販路拡大・設備投資のいずれかを予定"
+    ],
+    "url": "https://www.pref.hokkaido.lg.jp/kz/csk/249117.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "神奈川県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "中小企業生産性向上促進事業費補助金（一般枠）8月公募",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "補助率 1/2以内（小規模2/3以内）",
+    "limitLabel": "上限500万円（一般枠）",
+    "limitMaxYen": 5000000,
+    "features": [
+      "神奈川県内の中小企業者等",
+      "人手不足解消・業務プロセス改善につながる設備投資を予定",
+      "生産性向上の具体的な計画がある"
+    ],
+    "url": "https://www.pref.kanagawa.jp/docs/m2w/prs/r2625041.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "大阪府",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "中小事業者の脱炭素化に係る自主的取組支援補助金（2次公募）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "補助率 1/3以内",
+    "limitLabel": "上限200万円",
+    "limitMaxYen": 2000000,
+    "features": [
+      "大阪府内に工場・事業場がある中小事業者",
+      "大阪府脱炭素経営宣言に登録している（申請時登録可）",
+      "エネルギー使用量1％以上またはCO2年1トン以上の削減計画"
+    ],
+    "url": "https://www.pref.osaka.lg.jp/o120020/eneseisaku/sec/plan2_subsidy.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "兵庫県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "GX診断補助金（省エネ診断受診支援）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "補助率 1/2",
+    "limitLabel": "診断メニューにより異なる",
+    "limitMaxYen": null,
+    "features": [
+      "兵庫県内の中小事業者",
+      "ひょうご産業SDGs推進宣言を行っている（申請時対応可）",
+      "省エネ診断を受診したい意向がある"
+    ],
+    "url": "https://web.pref.hyogo.lg.jp/sr07/sdgs.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "岩手県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "物価高騰対策賃上げ支援金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "賃金引上げ実績に基づき算定",
+    "limitLabel": "県全体で25億4,000万円が上限（到達次第終了）",
+    "limitMaxYen": 40000000,
+    "features": [
+      "岩手県内の中小企業者等",
+      "賃上げを実施している、または予定している",
+      "支援金の算定基準（引上げ実績）を満たす"
+    ],
+    "url": "https://iwate-bukkakoutoutaisaku.pref.iwate.jp/",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "宮城県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "中小企業等デジタル化支援事業",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "枠により異なる",
+    "limitLabel": "アドバイザー派遣＋補助（枠により異なる）",
+    "limitMaxYen": null,
+    "features": [
+      "宮城県内に本店・住所を有する中小企業者・個人事業主",
+      "業務効率化・生産性向上のためのデジタル化に取り組みたい",
+      "アドバイザーの助言を受けながら進める意思がある"
+    ],
+    "url": "https://www.pref.miyagi.jp/soshiki/chukisi/r8digital-shien.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "秋田県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "M＆A支援事業",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "類型により異なる",
+    "limitLabel": "上限100万円（譲渡型。類型により異なる）",
+    "limitMaxYen": 1000000,
+    "features": [
+      "秋田県内でM&Aを実施しようとする、または実施した中小企業",
+      "仲介契約締結・企業概要書作成等の準備段階にある",
+      "承継後のPMI（統合）に取り組む場合も対象"
+    ],
+    "url": "https://www.pref.akita.lg.jp/pages/archive/95760",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "山形県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "中小企業まるっとサポート補助金（事業継続力強化支援 第2次）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（公式要領で確認）",
+    "limitLabel": "要確認（公式要領で確認）",
+    "limitMaxYen": null,
+    "features": [
+      "山形県内の中小企業・小規模事業者等",
+      "事業継続力強化（BCP等）の取組を予定している",
+      "公式要領で詳細要件の確認が必要"
+    ],
+    "url": "https://www.pref.yamagata.jp/110013/sangyo/shokogyo/shinko/r8marusapo_jigyokeizoku2_bosyu.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "福島県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "中小企業等生産性向上推進事業補助金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "2/3以内",
+    "limitLabel": "上限200万円（下限30万円）",
+    "limitMaxYen": 2000000,
+    "features": [
+      "福島県内に事業所を有する中小企業者等",
+      "生産性向上計画を策定できる",
+      "パートナーシップ構築宣言を行う（または行う予定）"
+    ],
+    "url": "https://www.pref.fukushima.lg.jp/sec/32011b/seisanseikoujoh.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "栃木県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "事業承継支援補助金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（交付要領による）",
+    "limitLabel": "要確認（交付要領による）",
+    "limitMaxYen": null,
+    "features": [
+      "栃木県内に本店（個人事業者は住所）がある中小企業者",
+      "事業承継後も雇用維持・県内拠点維持の見込みがある",
+      "支援機関の推薦を受けられる"
+    ],
+    "url": "https://www.pref.tochigi.lg.jp/f03/jigyoushoukei/r8uketukekaishi.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "群馬県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "中小企業等海外出願支援事業",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（財団要領で確認）",
+    "limitLabel": "上限300万円",
+    "limitMaxYen": 3000000,
+    "features": [
+      "群馬県内の中小企業者等",
+      "外国への特許出願等を予定している",
+      "申請前に財団への相談ができる"
+    ],
+    "url": "https://www.g-inf.or.jp/html/subsidy_001.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "千葉県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "中小企業成長促進補助金（第4弾）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "1/2以内",
+    "limitLabel": "上限3,000万円（小規模事業者枠は上限500万円）",
+    "limitMaxYen": 30000000,
+    "features": [
+      "千葉県内に事業所を有する中小企業者等",
+      "省力化・業務効率化・生産性向上の設備投資を計画している",
+      "小規模事業者は専用枠（上限500万円）も選べる"
+    ],
+    "url": "https://www.pref.chiba.lg.jp/keisei/zaisei/chiba-seichohojyo4.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "東京都",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "地域資源活用製品等の開発・販売促進事業（販路開拓フェーズ）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "2/3以内",
+    "limitLabel": "上限1,500万円",
+    "limitMaxYen": 15000000,
+    "features": [
+      "東京都内の中小企業者・個人事業主・団体等",
+      "地域資源活用や都市課題解決に資する製品・サービスがある",
+      "販売促進の具体的な計画がある"
+    ],
+    "url": "https://www.tokyo-kosha.or.jp/support/josei/index.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "富山県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "中小企業再生支援強化事業費補助金（第3次追加募集）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（公式要領で確認）",
+    "limitLabel": "要確認（公式要領で確認）",
+    "limitMaxYen": null,
+    "features": [
+      "富山県内の中小企業者等",
+      "省力化・省人化、DX、GXいずれかの取組がある",
+      "公式要領で詳細要件の確認が必要"
+    ],
+    "url": "https://www.pref.toyama.jp/sangyou/shoukoukensetsu/shoukougyou/shien/hojokin/index.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "石川県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "新商品・新サービス開発支援事業助成金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "小規模事業者2/3、中小企業者1/2",
+    "limitLabel": "最大300万円",
+    "limitMaxYen": 3000000,
+    "features": [
+      "石川県内の中小企業者・小規模事業者",
+      "新商品・新サービスの開発計画がある",
+      "石川県産業創出支援機構（ISICO）の支援を受けられる"
+    ],
+    "url": "https://www.isico.or.jp/",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "福井県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "人材育成支援事業補助金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（公式要領で確認）",
+    "limitLabel": "10万円",
+    "limitMaxYen": 100000,
+    "features": [
+      "福井県内に主たる営業所があり建設業許可を有する事業者",
+      "人材育成に係る取組を予定している",
+      "事業実施は令和9年2月末までに完了予定"
+    ],
+    "url": "https://www.pref.fukui.lg.jp/doc/kanri/ninaitehozyo.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "広島県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "中小企業等プロフェッショナル人材確保支援事業補助金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "人材紹介手数料（成功報酬部分）の1/2",
+    "limitLabel": "上限100万円/人（役員採用等は200万円）",
+    "limitMaxYen": 2000000,
+    "features": [
+      "広島県内の中小・中堅企業、組合等",
+      "登録人材紹介会社を通じたプロ人材採用を予定",
+      "副業・兼業人材の活用でも利用できる"
+    ],
+    "url": "https://www.pref.hiroshima.lg.jp/site/pro-kyoten/probosyu08.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "山口県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "中小企業DX推進補助金「DXツール導入型」",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "1/2以内",
+    "limitLabel": "上限75万円（募集100件程度）",
+    "limitMaxYen": 750000,
+    "features": [
+      "山口県内に事業所を有する中小企業者（農林漁業を除く）",
+      "DXツールの導入を計画している",
+      "早めの申請がおすすめ（先着枠あり）"
+    ],
+    "url": "https://www.pref.yamaguchi.lg.jp/press/343044.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "高知県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "事業戦略等推進事業費補助金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（公式要領で確認）",
+    "limitLabel": "要確認（公式要領で確認）",
+    "limitMaxYen": null,
+    "features": [
+      "高知県内の中小企業者等",
+      "ものづくりの地産外商の取組がある",
+      "毎月のエントリー締切に間に合わせられる"
+    ],
+    "url": "https://joho-kochi.or.jp/center/r8top.php",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "福岡県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "中小企業経営革新・賃上げ緊急支援補助金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（公式要領で確認）",
+    "limitLabel": "要確認（公式要領で確認）",
+    "limitMaxYen": null,
+    "features": [
+      "福岡県内に本店（個人事業主は県内在住）",
+      "経営革新計画の承認を受けている（令和7年7月以降）",
+      "事業場内最低賃金が県最低賃金以上"
+    ],
+    "url": "https://www.pref.fukuoka.lg.jp/contents/fukuoka-chinage.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "長崎県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "事業承継促進・後継者事業展開支援補助金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（公式要領で確認）",
+    "limitLabel": "要確認（公式要領で確認）",
+    "limitMaxYen": null,
+    "features": [
+      "長崎県内の事業者",
+      "廃業抑制・事業承継に取り組んでいる",
+      "承継後の事業展開計画がある"
+    ],
+    "url": "https://www.pref.nagasaki.jp/bunrui/shigoto-sangyo/chushokigyoshien-kinyu/",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "大分県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "新価値創出支援補助金（おおいたクリエイティブ活用促進事業）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（公式要領で確認）",
+    "limitLabel": "要確認（公式要領で確認）",
+    "limitMaxYen": null,
+    "features": [
+      "大分県内の中小企業",
+      "クリエイティブ活用による商品・サービス創出を計画",
+      "マッチングイベントへの参加実績がある"
+    ],
+    "url": "https://j-net21.smrj.go.jp/snavi2/articles/184817",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "鹿児島県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "かごしま中小企業DX推進事業費補助金（2次募集）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "2/3",
+    "limitLabel": "上限400万円",
+    "limitMaxYen": 4000000,
+    "features": [
+      "鹿児島県内の中小企業",
+      "デジタル技術導入による生産性向上・省力化を計画",
+      "社内デジタル人材育成の取組も対象"
+    ],
+    "url": "https://www.pref.kagoshima.jp/af22/sangyo-rodo/2026_dx_hojokin.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "中小企業庁",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "小規模事業者経営改善資金融資（マル経融資）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "特別利率F（無担保・無保証人）",
+    "limitLabel": "融資限度額2,000万円",
+    "limitMaxYen": 20000000,
+    "features": [
+      "商工会・商工会議所等の経営指導を受けている小規模事業者",
+      "商工会議所等の長の推薦を受けられる",
+      "返済期間10年以内（据置2年以内）で無理のない計画がある"
+    ],
+    "url": "https://www.chusho.meti.go.jp/keiei/shokibo/marukei/",
+    "sourceCheckedAt": "2026-08-10"
+  },
+  {
+    "institution": "中小企業庁",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "セーフティネット保証制度",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "保証料率はおおむね1％以内",
+    "limitLabel": "一般保証とは別枠で保証（限度額は保証協会による）",
+    "limitMaxYen": null,
+    "features": [
+      "取引先の倒産・自然災害・金融機関破綻・業況悪化業種などの影響を受けている",
+      "本店所在地の市町村長・特別区長の認定を受けられる",
+      "認定書を持って金融機関または信用保証協会に申込みできる"
+    ],
+    "url": "https://www.chusho.meti.go.jp/kinyu/sefu_net_gaiyou.html",
+    "sourceCheckedAt": "2026-08-10"
+  },
+  {
+    "institution": "中小企業基盤整備機構",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "小規模企業共済",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "廃業・退職時に共済金を受け取れる積立制度",
+    "limitLabel": "掛金月額1,000円〜70,000円（500円単位）",
+    "limitMaxYen": null,
+    "features": [
+      "個人事業主、または小規模企業の経営者・役員",
+      "業種ごとの従業員数基準を満たす（例：商業・サービス業5人以下等）",
+      "無理のない範囲で毎月の掛金を積み立てられる"
+    ],
+    "url": "https://www.chusho.meti.go.jp/faq/faq/faq15_shokibokyosai.html",
+    "sourceCheckedAt": "2026-08-10"
+  },
+  {
+    "institution": "中小企業基盤整備機構",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "経営セーフティ共済（中小企業倒産防止共済）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "取引先倒産時に掛金の10倍（上限8,000万円）まで無担保・無保証で借入可",
+    "limitLabel": "掛金月額5,000円〜200,000円（掛金総額800万円まで）",
+    "limitMaxYen": 8000000,
+    "features": [
+      "引き続き1年以上事業を行っている中小企業者",
+      "業種ごとの資本金・従業員数基準を満たす",
+      "取引先倒産時の連鎖倒産リスクに備えたい"
+    ],
+    "url": "https://www.smrj.go.jp/kyosai/tkyosai/features/",
+    "sourceCheckedAt": "2026-08-10"
+  },
+  {
+    "institution": "島根県（勤労者福祉共済）",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "ジョイメイトしまね／ジョイメイトいわみ（勤労者共済会）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "慶弔給付・退職金制度普及・宿泊/レジャー割引（400店舗超）",
+    "limitLabel": "月会費1,000円",
+    "limitMaxYen": null,
+    "features": [
+      "島根県内の中小企業（従業員300人以下または資本金3億円以下）",
+      "従業員・役員・パート・個人事業主も加入可",
+      "国・県・市町村がバックアップする勤労者共済会"
+    ],
+    "url": "https://www.joymate.or.jp/",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "徳島県（勤労者福祉共済）",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "あわ〜ず徳島（勤労者福祉サービスセンター事業）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "慶弔給付・医療/死亡保障・レジャー/チケット割引・ファミサポ利用助成",
+    "limitLabel": "要確認（会費は公式サイトで確認）",
+    "limitMaxYen": null,
+    "features": [
+      "徳島県内の中小企業の勤労者・事業主",
+      "県・市町村・経営者団体・労働者福祉事業団体が構成する公労使型組織",
+      "2026年7月時点で1,078事業所・16,054人が加入"
+    ],
+    "url": "https://toku-nw.com/",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "佐賀県（勤労者福祉共済）",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "佐賀県中小企業勤労者福祉サービスセンター",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "人間ドック補助（上限10,000円）・宿泊助成2,000円・共済給付（結婚祝金20,000円等）",
+    "limitLabel": "事業所年額6,000〜10,000円・会費月額700〜1,000円",
+    "limitMaxYen": null,
+    "features": [
+      "佐賀県内の中小企業（資本金3億円以下または従業員300人以下）",
+      "従業員・一人事業主も加入可",
+      "運営費の一部を県・市町が負担（公益財団法人佐賀県産業振興機構が運営）"
+    ],
+    "url": "https://saga-sc.net/",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "北海道",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "北海道中小企業総合振興資金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（公式サイトで最終確認）",
+    "limitLabel": "要確認（公式サイトで最終確認）",
+    "limitMaxYen": null,
+    "features": [
+      "北海道内で事業を営む中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.hokkaido.lg.jp/kz/csk/kny/yuushi/",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "青森県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "青森県特別保証融資制度",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "メニュー別（経営力向上割引で年0.5%引下げ等）（融資期間:要確認）",
+    "limitLabel": "要確認（メニュー別）",
+    "limitMaxYen": null,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.aomori.lg.jp/soshiki/sangyo/sangyo/kenyuusi.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "岩手県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "岩手県中小企業成長応援資金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "3年以内 年2.5%以内、3年超10年以内 年2.7%以内（県北・沿岸は0.1%減）（融資期間:10年以内（据置2年以内））",
+    "limitLabel": "5,000万円以内",
+    "limitMaxYen": 50000000,
+    "features": [
+      "県内に事業所を有する中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.iwate.jp/sangyoukoyou/sangyoushinkou/kinyuu/1009133.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "宮城県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "宮城県中小企業経営安定資金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "固定・低利（要確認）（融資期間:要確認）",
+    "limitLabel": "5,000万円以内",
+    "limitMaxYen": 50000000,
+    "features": [
+      "県内で事業を営む中小企業者・組合等",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.miyagi.jp/soshiki/syokokin/syokinhan-index-2.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "秋田県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "秋田県中小企業振興資金（一般資金）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（融資期間:10年以内（据置1年以内）等）",
+    "limitLabel": "要確認（流動資産担保資金は1億円）",
+    "limitMaxYen": 100000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.akita.lg.jp/pages/genre/14094",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "山形県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "山形県商工業振興資金融資制度",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "例）地域経済変動対策資金 年1.7%（固定）（融資期間:要確認）",
+    "limitLabel": "要確認（メニュー別）",
+    "limitMaxYen": null,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.yamagata.jp/110013/sangyo/shokogyo/shien/17shikin.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "福島県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "福島県中小企業制度資金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（保証付で年2.5%以内等）（融資期間:運転10年以内・設備15年以内（据置1年以内）等）",
+    "limitLabel": "要確認（信用組合資金は2,500万円）",
+    "limitMaxYen": 25000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.fukushima.lg.jp/sec/32011b/seidosikin.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "茨城県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "茨城県中小企業向け融資制度（パワーアップ融資）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（融資期間:設備・運転とも10年程度）",
+    "limitLabel": "設備5,000万円・運転3,000万円・併用5,000万円",
+    "limitMaxYen": 50000000,
+    "features": [
+      "県内に事業所を有し1年以上同一事業を営む中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.ibaraki.jp/shokorodo/sansei/kinyu/shosei/yushi/yushitop.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "栃木県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "栃木県小規模企業資金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "責任共有制度対象 年1.8%以内、対象外 年1.6%以内（令和8年4月改定）（融資期間:1年超10年以内（据置1年以内））",
+    "limitLabel": "3,000万円",
+    "limitMaxYen": 30000000,
+    "features": [
+      "県内に事業所を有し同一事業を1年以上営む中小企業者・小規模企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.tochigi.lg.jp/f03/work/shoukougyou/yuushi/",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "群馬県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "群馬県制度融資（経営サポート資金）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "例）経営サポート資金 年1.7%以内（融資期間:運転7〜10年以内・設備10年以内（据置1〜2年））",
+    "limitLabel": "メニュー別（経営サポート資金5,000〜6,000万円等）",
+    "limitMaxYen": 60000000,
+    "features": [
+      "県内で事業を営む中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.gunma.jp/site/seidoyuushi/",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "埼玉県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "埼玉県中小企業制度融資（経営安定資金）",
+    "rateMin": 1.8,
+    "rateMax": 2.2,
+    "rateLabel": "年1.8%〜2.2%（上限利率、利子補給後・固定）",
+    "limitLabel": "要確認（公式サイトで最終確認）",
+    "limitMaxYen": null,
+    "features": [
+      "埼玉県内で事業を営む中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.saitama.lg.jp/a0805/seidoyushi/",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "千葉県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "千葉県中小企業向け融資制度",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "例）固定 年1.1〜1.5%（事業再生資金）（融資期間:要確認）",
+    "limitLabel": "メニュー別（事業再生資金6,000万円等）",
+    "limitMaxYen": 60000000,
+    "features": [
+      "県内で事業を行う中小企業者等",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.chiba.lg.jp/keishi/chuushou-yuushi/yuushiseido/chuushou/",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "東京都",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "東京都中小企業制度融資",
+    "rateMin": 2.15,
+    "rateMax": 2.85,
+    "rateLabel": "主力メニューで年2.15%以内〜2.85%以内（固定・変動選択可）（融資期間:運転・設備とも15年以内（据置2年以内））",
+    "limitLabel": "主力メニューで2億8千万円",
+    "limitMaxYen": null,
+    "features": [
+      "都内中小企業・個人事業主",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.sangyo-rodo.metro.tokyo.lg.jp/",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "神奈川県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "神奈川県中小企業制度融資（事業振興融資）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（公式サイトで最終確認）",
+    "limitLabel": "2億円",
+    "limitMaxYen": 200000000,
+    "features": [
+      "神奈川県内で事業を営む中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.kanagawa.jp/docs/m6c/cnt/f5782/",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "新潟県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "新潟県中小企業向け制度融資",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（融資期間:要確認）",
+    "limitLabel": "要確認（メニュー別）",
+    "limitMaxYen": null,
+    "features": [
+      "原則県内で1年以上継続して同一事業を営む中小企業者・事業協同組合等",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.niigata.lg.jp/sec/chiikishinko/yuushi-seidoyushi.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "富山県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "富山県中小企業向け融資制度",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（融資期間:要確認）",
+    "limitLabel": "メニュー別（小口事業資金2,000万円等）",
+    "limitMaxYen": 20000000,
+    "features": [
+      "県内で事業を営む中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.toyama.jp/1300/sangyou/shoukoukensetsu/shoukougyou/kj00012293/index.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "石川県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "石川県制度金融（制度融資）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（融資期間:要確認）",
+    "limitLabel": "要確認（小口零細等メニュー別）",
+    "limitMaxYen": null,
+    "features": [
+      "原則1年以上県内に事業所を有し同一事業を営む中小企業者等",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.ishikawa.lg.jp/kinyuu/kinyuu/youkou.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "福井県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "福井県中小企業者向け制度融資",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "年1.7%以下（固定）（融資期間:10年以内（据置2〜3年））",
+    "limitLabel": "8,000万円",
+    "limitMaxYen": 80000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.fukui.lg.jp/doc/sinsan/seidoyuusihyousi.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "山梨県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "山梨県中小企業制度融資（商工業振興資金）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "固定 年2.1%（県補助後）（融資期間:設備7年以内・運転5年以内（据置1年））",
+    "limitLabel": "一企業5,000万円（設備5,000万円／運転2,000万円）",
+    "limitMaxYen": 50000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.yamanashi.jp/shigoto/shokogyo/shogyo/yushi.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "長野県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "長野県中小企業融資制度（中小企業振興資金）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "固定 年2.4%（融資期間1年以内は年2.1%）（融資期間:設備10年以内・運転7年以内）",
+    "limitLabel": "設備1億円・運転5,000万円",
+    "limitMaxYen": 100000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.nagano.lg.jp/keieishien/sangyo/shokogyo/kinyu/chusyo-yushi/index.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "岐阜県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "岐阜県中小企業資金融資制度",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "概ね年0.8%〜（別途保証料）（融資期間:運転7年・設備10年以内等）",
+    "limitLabel": "要確認（小規模企業小口1,250万円等）",
+    "limitMaxYen": 12500000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.gifu.lg.jp/page/2522.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "静岡県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "静岡県中小企業向け制度融資（経営改善資金）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（別途保証料）（融資期間:要確認）",
+    "limitLabel": "1企業5,000万円（設備＋運転合計）",
+    "limitMaxYen": 50000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.shizuoka.jp/sangyoshigoto/kigyoshien/seidoyushi/index.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "愛知県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "愛知県中小企業融資制度（経済環境適応資金等）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "原則固定金利（融資期間:要確認）",
+    "limitLabel": "要確認（メニュー別）",
+    "limitMaxYen": null,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.aichi.jp/soshiki/kinyu/yushi2024.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "三重県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "三重県中小企業融資制度",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "固定 年1.70〜1.80%（一般扱い）（融資期間:要確認）",
+    "limitLabel": "要確認（がんばる小規模企業応援資金2,000万円等）",
+    "limitMaxYen": 20000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.mie.lg.jp/SHINSAN/HP/77426022712.htm",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "滋賀県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "滋賀県中小企業振興資金融資制度",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "固定 年1.50%（融資期間:設備7年以内・運転5年以内）",
+    "limitLabel": "設備3,000万円・運転2,000万円",
+    "limitMaxYen": 30000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.shiga.lg.jp/ippan/shigotosangyou/kigyou/300703.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "京都府",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "京都府中小企業制度融資（一般資金）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "取扱金融機関により異なる（期間内固定）（融資期間:10年）",
+    "limitLabel": "有担保2億円・無担保8,000万円",
+    "limitMaxYen": 200000000,
+    "features": [
+      "府内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.kyoto.jp/kinyu/seido.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "大阪府",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "大阪府制度融資",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（公式サイトで最終確認）",
+    "limitLabel": "要確認（公式サイトで最終確認）",
+    "limitMaxYen": null,
+    "features": [
+      "大阪府内で事業を営む中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.osaka.lg.jp/o110080/kinyushien/seido001/index.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "兵庫県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "兵庫県中小企業融資制度（経営活性化資金）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "金融機関所定利率（保証料率 主に0.45〜1.90%）（融資期間:設備7年以内・運転5年以内）",
+    "limitLabel": "設備5,000万円・運転3,000万円",
+    "limitMaxYen": 50000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://web.pref.hyogo.lg.jp/sr08/ie05_000000031.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "奈良県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "奈良県制度融資（中小企業事業資金）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "県が利子・保証料の一部/全部を負担（要確認）（融資期間:要確認）",
+    "limitLabel": "要確認（創業資金1,500万円等）",
+    "limitMaxYen": 15000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.nara.jp/5217.htm",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "和歌山県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "和歌山県中小企業融資制度",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "低利固定長期（県が保証料一部負担）（融資期間:要確認）",
+    "limitLabel": "要確認",
+    "limitMaxYen": null,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.wakayama.lg.jp/prefg/060300/gyoumu/kinyuu/sangyoushien.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "鳥取県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "鳥取県企業自立サポート融資",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "年2.10%（変動金利・年2回改定）（融資期間:運転7年以内・設備10年以内）",
+    "limitLabel": "1億円",
+    "limitMaxYen": 100000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.tottori.lg.jp/99469.htm",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "島根県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "島根県中小企業制度融資（一般資金等）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "固定 年1.45%（責任共有）／年1.30%（責任共有外）（融資期間:設備12年・運転7年）",
+    "limitLabel": "要確認",
+    "limitMaxYen": null,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.shimane.lg.jp/industry/syoko/sangyo/yuushi/tyusyo.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "岡山県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "岡山県中小企業振興資金（小規模企業支援資金）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "年1.80%以内（保証料 年0.45〜1.52%）（融資期間:10年以内）",
+    "limitLabel": "一般2,000万円（組合5,000万円）",
+    "limitMaxYen": 50000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.okayama.jp/page/detail-42458.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "広島県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "広島県制度融資（県費預託融資制度・一般資金等）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "固定 3年以内年1.5%／5年以内年1.7%／10年以内年1.9%（融資期間:運転10年・設備10年）",
+    "limitLabel": "要確認",
+    "limitMaxYen": null,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.hiroshima.lg.jp/soshiki/75/1168587452727.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "山口県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "山口県中小企業制度融資（経営基盤強化資金等）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "2025年度に原則0.2%引上げ（具体値はガイドブック）（融資期間:要確認）",
+    "limitLabel": "要確認",
+    "limitMaxYen": null,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.yamaguchi.lg.jp/soshiki/85/21831.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "徳島県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "徳島県中小企業向け融資制度",
+    "rateMin": 1.2,
+    "rateMax": 1.9,
+    "rateLabel": "例）小口 年1.70%以内、創業1.20〜1.90%（融資期間:運転5〜7年・設備8年（据置1〜2年）等）",
+    "limitLabel": "小口資金2,000万円・創業者無担保3,500万円等",
+    "limitMaxYen": 35000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.tokushima.lg.jp/jigyoshanokata/sangyo/shokogyo/5015570/",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "香川県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "香川県中小企業者融資制度（経営安定融資）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "固定 長期7年以内年2.10%以内／7年超2.20%以内、短期年2.00%以内（融資期間:設備10年以内）",
+    "limitLabel": "長期8,000万円以内・短期1,000万円以内",
+    "limitMaxYen": 80000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.kagawa.lg.jp/keiei/kinyu/yuushi/yuushi.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "愛媛県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "愛媛県中小企業向け融資制度（経済対策資金等）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認（例 年1.50〜1.65%）（融資期間:運転7年以内（据置1年）、借換10年以内等）",
+    "limitLabel": "運転 企業5,000万円・組合1億円、借換 企業8,000万円",
+    "limitMaxYen": 100000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.ehime.jp/page/59788.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "高知県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "高知県中小企業等融資制度",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "年2回改定（例 運転2.27%・設備2.42%以内 変動）（融資期間:7年以内（据置1年）等）",
+    "limitLabel": "要確認（経営力強化枠2億8,000万円）",
+    "limitMaxYen": 80000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.kochi.lg.jp/soshiki/150401/2022041300169.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "福岡県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "福岡県中小企業振興資金融資制度（緊急経済対策資金）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "緊急経済対策資金 年1.30%、新規創業資金 年1.30%（女性/35歳未満/55歳以上は年1.20%）（融資期間:10年以内（据置2年以内））",
+    "limitLabel": "1億円以内（新規創業資金は3,500万円以内）",
+    "limitMaxYen": 100000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.fukuoka.lg.jp/contents/r8yuushiseidoannai.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "佐賀県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "佐賀県中小企業金融制度（県制度融資）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "固定 5年以内年1.90%／5年超7年以内年2.00%／7年超年2.10%（融資期間:設備10年・運転7年）",
+    "limitLabel": "設備4,000万円・運転2,000万円",
+    "limitMaxYen": 40000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.saga.lg.jp/kiji00327111/index.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "長崎県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "長崎県中小企業向け制度融資",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "固定 年1.95%以内（長期）（融資期間:10年以内（据置2年））",
+    "limitLabel": "8,000万円（長期）別枠設備1億円",
+    "limitMaxYen": 100000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.nagasaki.jp/bunrui/shigoto-sangyo/chushokigyoshien-kinyu/",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "熊本県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "熊本県中小企業向け融資制度",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "固定・低金利（一般枠は特例枠より概ね0.2%高め）（融資期間:運転1〜5年・設備1〜10年）",
+    "limitLabel": "5,000万円（うち運転2,500万円）組合1億円",
+    "limitMaxYen": 100000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.kumamoto.jp/soshiki/61/50733.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "大分県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "大分県中小企業活性化資金（一般融資）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "7年以内 年1.8%・10年以内 年2.0%（保証料 年0.75%以内）（融資期間:10年以内（据置1年以内））",
+    "limitLabel": "8,000万円",
+    "limitMaxYen": 80000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.oita.jp/soshiki/14040/seidosikin-gaiyo.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "宮崎県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "宮崎県中小企業融資制度（経営安定貸付）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "固定・期間段階制:1年以下1.5%／3年以下1.7%／5年以下1.9%／7年以下2.1%／10年以下2.3%（融資期間:設備10年以内・運転7年以内）",
+    "limitLabel": "要確認",
+    "limitMaxYen": null,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.miyazaki.lg.jp/keieikinyushien/shigoto/chushokigyo/20200329144235.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "鹿児島県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "鹿児島県中小企業融資制度（新規開業応援資金等）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "例）新規開業応援 1年以内1.85%〜10年以内2.45%（変動）（融資期間:最長10年程度）",
+    "limitLabel": "要確認（創業応援 運転・設備2,000万円等）",
+    "limitMaxYen": 20000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "http://www.pref.kagoshima.jp/af02/sangyo-rodo/syoko/yushi/yuushi/yushigaiyou.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "沖縄県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "沖縄県融資制度（小規模企業対策資金・成長促進支援資金等）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "例）小規模企業対策資金 通常2.20%・優遇1.95%（融資期間:運転7年・設備10年以内（据置1年以内））",
+    "limitLabel": "例）創業者支援2,000万円、賃上げ支援3,000万円",
+    "limitMaxYen": 30000000,
+    "features": [
+      "県内中小企業者",
+      "県・金融機関・信用保証協会の三者協調融資",
+      "資金使途:運転資金・設備資金"
+    ],
+    "url": "https://www.pref.okinawa.jp/shigoto/shien/1010056/1022724/1025148/1010102.html",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "中小企業庁",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "令和8年熊本地震の被害を受けた熊本県内の事業者は中小企業省力化投資補助金（一般型）第7回",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認",
+    "limitLabel": "要確認（自動取得のため詳細は公式ページで確認）",
+    "limitMaxYen": null,
+    "features": [
+      "詳細は中小企業庁の公式ページでご確認ください"
+    ],
+    "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260731001.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "中小企業庁",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "小規模事業者持続化補助金＜共同・協業型＞（第3回）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認",
+    "limitLabel": "要確認（自動取得のため詳細は公式ページで確認）",
+    "limitMaxYen": null,
+    "features": [
+      "詳細は中小企業庁の公式ページでご確認ください"
+    ],
+    "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260708001.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "中小企業庁",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "新事業進出・ものづくり商業サービス補助金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認",
+    "limitLabel": "要確認（自動取得のため詳細は公式ページで確認）",
+    "limitMaxYen": null,
+    "features": [
+      "詳細は中小企業庁の公式ページでご確認ください"
+    ],
+    "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260630002.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "中小企業庁",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "小規模事業者持続化補助金＜一般型・通常枠＞（第20回）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認",
+    "limitLabel": "要確認（自動取得のため詳細は公式ページで確認）",
+    "limitMaxYen": null,
+    "features": [
+      "詳細は中小企業庁の公式ページでご確認ください"
+    ],
+    "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260527002.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "中小企業庁",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "小規模事業者持続化補助金＜創業型＞（第4回）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認",
+    "limitLabel": "要確認（自動取得のため詳細は公式ページで確認）",
+    "limitMaxYen": null,
+    "features": [
+      "詳細は中小企業庁の公式ページでご確認ください"
+    ],
+    "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260527001.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "中小企業庁",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "デジタル化・AI導入補助金 通常枠、インボイス枠（インボイス対応類型、電子取引類型）、セキュリティ対策推進枠",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認",
+    "limitLabel": "要確認（自動取得のため詳細は公式ページで確認）",
+    "limitMaxYen": null,
+    "features": [
+      "詳細は中小企業庁の公式ページでご確認ください"
+    ],
+    "url": "https://www.chusho.meti.go.jp/koukai/yosan/r7/r6_it.pdf",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "中小企業庁",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "地域商業機能複合化推進事業（被災商店街等再建支援事業）",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "要確認",
+    "limitLabel": "要確認（自動取得のため詳細は公式ページで確認）",
+    "limitMaxYen": null,
+    "features": [
+      "詳細は中小企業庁の公式ページでご確認ください"
+    ],
+    "url": "https://www.chusho.meti.go.jp/shogyo/shogyo/2024/240215kino_fukugo.html",
+    "sourceCheckedAt": "2026-08-12"
+  },
+  {
+    "institution": "熊本県",
+    "institutionCategory": "政府・地方公共団体",
+    "loanCategory": "government",
+    "productName": "事業承継・後継ぎ支援事業補助金",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "2/3",
+    "limitLabel": "上限50万円（準備枠）／100万円（後継ぎ応援枠）",
+    "limitMaxYen": 1000000,
+    "features": [
+      "熊本県内の中小企業",
+      "事業承継の準備、または承継後間もない後継者である",
+      "設備投資・販路開拓等の計画がある（後継ぎ応援枠）"
+    ],
+    "url": "https://www.pref.kumamoto.jp/soshiki/61/",
+    "sourceCheckedAt": "2026-08-11"
+  },
+  {
+    "institution": "三菱UFJ銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "card-loan",
+    "productName": "バンクイック",
+    "rateMin": 1.4,
+    "rateMax": 14.6,
+    "rateLabel": "年1.4%〜14.6%（変動）",
+    "limitLabel": "10万円〜800万円",
+    "limitMaxYen": 8000000,
+    "features": [
+      "三菱UFJ銀行ATM・提携コンビニATM手数料がほぼ24時間無料",
+      "WEB完結で申込可能",
+      "最低返済額は毎月1,000円から"
+    ],
+    "url": "https://www.bk.mufg.jp/kariru/banquic/index.html",
+    "sourceCheckedAt": "2026-08-13"
+  },
+  {
+    "institution": "みずほ銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "card-loan",
+    "productName": "みずほ銀行カードローン",
+    "rateMin": 2.0,
+    "rateMax": 14.0,
+    "rateLabel": "年2.0%〜14.0%（変動、住宅ローン利用者は1.5%〜13.5%）",
+    "limitLabel": "10万円〜800万円（10万円単位）",
+    "limitMaxYen": 8000000,
+    "features": [
+      "みずほ銀行で住宅ローン利用中なら金利が年0.5%優遇",
+      "利用限度額に応じて金利が決定",
+      "WEB完結で申込可能"
+    ],
+    "url": "https://www.mizuhobank.co.jp/loan_card/kinri/index.html",
+    "sourceCheckedAt": "2026-08-13"
+  },
+  {
+    "institution": "楽天銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "card-loan",
+    "productName": "楽天銀行スーパーローン",
+    "rateMin": 1.9,
+    "rateMax": 14.5,
+    "rateLabel": "年1.9%〜14.5%（変動）",
+    "limitLabel": "10万円〜800万円",
+    "limitMaxYen": 8000000,
+    "features": [
+      "楽天銀行口座があれば即時キャッシング可能",
+      "月々2,000円から返済可能",
+      "楽天会員ランクに応じて審査優遇"
+    ],
+    "url": "https://www.rakuten-bank.co.jp/loan/cardloan/",
+    "sourceCheckedAt": "2026-08-13"
+  },
+  {
+    "institution": "住信SBIネット銀行（ドコモSMTBネット銀行）",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "card-loan",
+    "productName": "Mr.カードローン",
+    "rateMin": 2.04,
+    "rateMax": 14.94,
+    "rateLabel": "年2.04%〜14.94%（変動、コースにより異なる）",
+    "limitLabel": "コースにより300万円〜1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "SBI証券口座保有登録で金利年0.5%優遇",
+      "プレミアムコースは銀行カードローン最高クラスの限度額",
+      "2025年に住信SBIネット銀行からドコモSMTBネット銀行へ名称変更"
+    ],
+    "url": "https://www.netbk.co.jp/contents/lineup/card-loan/",
+    "sourceCheckedAt": "2026-08-13"
+  },
+  {
+    "institution": "千葉銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "card-loan",
+    "productName": "ちばぎんカードローン（クイックパワー＜アドバンス＞）",
+    "rateMin": 1.7,
+    "rateMax": 14.8,
+    "rateLabel": "年1.7%〜14.8%（変動）",
+    "limitLabel": "10万円〜800万円",
+    "limitMaxYen": 8000000,
+    "features": [
+      "千葉銀行本支店・提携ATMで借入・返済可能",
+      "ちばぎんアプリで残高確認・返済ができる",
+      "限度額100万円未満は上限金利14.8%が適用されやすい"
+    ],
+    "url": "https://www.chibabank.co.jp/kojin/services/loan/cardloan/cardloan_new",
+    "sourceCheckedAt": "2026-08-13"
+  },
+  {
+    "institution": "横浜銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "card-loan",
+    "productName": "横浜銀行カードローン",
+    "rateMin": 1.5,
+    "rateMax": 14.6,
+    "rateLabel": "年1.5%〜14.6%（変動）",
+    "limitLabel": "10万円〜1,000万円（10万円単位）",
+    "limitMaxYen": 10000000,
+    "features": [
+      "限度額100万円超で金利が年11.8%以下に低下",
+      "24時間WEB受付、最短当日利用も可能",
+      "銀行カードローンの中でも上限額が高め"
+    ],
+    "url": "https://www.boy.co.jp/kojin/card-loan/yokohama/index.html",
+    "sourceCheckedAt": "2026-08-13"
+  },
+  {
+    "institution": "アコム",
+    "institutionCategory": "消費者金融",
+    "loanCategory": "card-loan",
+    "productName": "アコムカードローン",
+    "rateMin": 2.4,
+    "rateMax": 17.9,
+    "rateLabel": "実質年率2.4%〜17.9%",
+    "limitLabel": "1万円〜800万円",
+    "limitMaxYen": 8000000,
+    "features": [
+      "初めての利用は30日間金利0円サービス対象",
+      "最短20分審査・即日融資も可能",
+      "契約極度額100万円超で金利が下がりやすい"
+    ],
+    "url": "https://www.acom.co.jp/lineup/cardloan/",
+    "sourceCheckedAt": "2026-08-13"
+  },
+  {
+    "institution": "プロミス",
+    "institutionCategory": "消費者金融",
+    "loanCategory": "card-loan",
+    "productName": "プロミス フリーキャッシング",
+    "rateMin": 4.5,
+    "rateMax": 17.8,
+    "rateLabel": "実質年率4.5%〜17.8%",
+    "limitLabel": "1万円〜500万円",
+    "limitMaxYen": 5000000,
+    "features": [
+      "初回利用から30日間無利息",
+      "WEB完結・最短即日融資に対応",
+      "三井住友銀行グループのSMBCコンシューマーファイナンスが運営"
+    ],
+    "url": "https://cyber.promise.co.jp/",
+    "sourceCheckedAt": "2026-08-13"
+  }
+];

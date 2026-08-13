@@ -29,13 +29,31 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_PATH = ROOT / "data" / "subsidies.json"
+LOANS_PATH = ROOT / "data" / "loans.json"
 DOCS_DIR = ROOT / "docs"
 
 SITE_BASE_URL = "https://masanori141-oss.github.io/sme-support-japan/"
 
+# docs/loans/ の12ページ。scripts/generate_loan_pages.py の CATEGORIES と
+# 対応している（ページ構造そのものはこのスクリプトの担当ではないので、
+# sitemap.xml に載せるファイル名の一覧だけをここに持たせている）。
+LOAN_PAGE_FILENAMES = [
+    "index.html", "card-loan.html", "education-loan.html", "auto-loan.html",
+    "reform-loan.html", "real-estate-loan.html", "mortgage.html",
+    "investment-property-loan.html", "securities-loan.html", "purpose-loan.html",
+    "government.html", "other-loan.html",
+]
+
 
 def load_data() -> list:
     with open(DATA_PATH, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def load_loans() -> list:
+    if not LOANS_PATH.exists():
+        return []
+    with open(LOANS_PATH, encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -57,20 +75,25 @@ def latest_checked_at(data: list) -> str:
     return dates[-1] if dates else datetime.now().strftime("%Y-%m-%d")
 
 
-def write_sitemap(data: list) -> None:
+def write_sitemap(data: list, loans: list) -> None:
     lastmod = latest_checked_at(data)
+    loans_lastmod = latest_checked_at(loans) if loans else lastmod
     urls = [
-        (SITE_BASE_URL, "1.0"),
-        (SITE_BASE_URL + "search.html", "0.9"),
+        (SITE_BASE_URL, "1.0", lastmod),
+        (SITE_BASE_URL + "search.html", "0.9", lastmod),
+    ]
+    urls += [
+        (SITE_BASE_URL + "loans/" + filename, "0.8", loans_lastmod)
+        for filename in LOAN_PAGE_FILENAMES
     ]
     entries = "\n".join(
         f"  <url>\n"
         f"    <loc>{loc}</loc>\n"
-        f"    <lastmod>{lastmod}</lastmod>\n"
+        f"    <lastmod>{url_lastmod}</lastmod>\n"
         f"    <changefreq>daily</changefreq>\n"
         f"    <priority>{priority}</priority>\n"
         f"  </url>"
-        for loc, priority in urls
+        for loc, priority, url_lastmod in urls
     )
     content = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -83,29 +106,37 @@ def write_sitemap(data: list) -> None:
     print(f"sitemap.xml を {path} に書き出しました。")
 
 
-def write_llms_txt(data: list) -> None:
+def write_llms_txt(data: list, loans: list) -> None:
     total = len(data)
     loan = sum(1 for d in data if d["category"] == "融資")
     subsidy = sum(1 for d in data if d["category"] == "補助金")
     kyosai = sum(1 for d in data if d["category"] == "共済")
     updated = latest_checked_at(data)
 
-    content = f"""# 補助金台帳 (Subsidy Ledger) — 日本の中小企業向け補助金・制度融資・共済データベース
+    loans_total = len(loans)
+    loans_private = sum(1 for d in loans if d["loanCategory"] != "government")
+    loans_institutions = len({d["institution"] for d in loans if d["loanCategory"] != "government"})
+    loans_updated = latest_checked_at(loans) if loans else updated
 
-> 日本の中小企業・小規模事業者向けに、中小企業庁（全国）および47都道府県が実施する補助金・制度融資・共済制度を横断的にまとめた非公式データベースです。中小企業庁および各都道府県の公式サイトの情報をもとに収集・統合しています。現在{total}件の制度を掲載（内訳: 補助金{subsidy}件・融資{loan}件・共済{kyosai}件、最終更新: {updated}）。本サイトは非公式の情報整理ツールであり、公式情報ではありません。申請・加入前には必ず各制度の公式サイト・パンフレットで最新の状況をご確認ください。
+    content = f"""# 補助金台帳 / 融資・ローン比較台帳 — 日本の中小企業・個人向け補助金・融資データベース
 
-## サイト
+> 日本の中小企業・小規模事業者向けに、中小企業庁（全国）および47都道府県が実施する補助金・制度融資・共済制度を横断的にまとめた非公式データベースです。中小企業庁および各都道府県の公式サイトの情報をもとに収集・統合しています。現在{total}件の制度を掲載（内訳: 補助金{subsidy}件・融資{loan}件・共済{kyosai}件、最終更新: {updated}）。加えて、メガバンク・信託銀行・新興銀行・政府系金融機関・地方銀行・消費者金融など民間金融機関等の融資商品を金利・限度額で横断比較できる「融資・ローン比較台帳」も提供しています（{loans_institutions}金融機関、掲載{loans_private}商品＋政府系制度、最終更新: {loans_updated}）。本サイトは非公式の情報整理ツールであり、公式情報ではありません。申請・借入前には必ず各制度・金融機関の公式サイトで最新の状況をご確認ください。
+
+## 補助金台帳
 
 - [台帳ページ]({SITE_BASE_URL}index.html): 代表的な制度を詳細カード形式で紹介
 - [検索ページ]({SITE_BASE_URL}search.html): 区分（補助金・融資・共済）・都道府県・事業規模・目的で絞り込み検索できる全件一覧
-
-## データ
-
 - [data.json]({SITE_BASE_URL}data.json): 掲載している全{total}件の構造化データ（JSON配列）。1件ごとに制度名（title）・区分（category: 補助金/融資/共済）・対象都道府県（pref）・上限額（amountLabel）・補助率/利率（rateLabel）・締切（deadline, deadlineLabel）・対象要件（eligibility）・公式URL（url）・確認日（sourceCheckedAt）などを含みます。
+
+## 融資・ローン比較台帳
+
+- [総合台帳（全分類）]({SITE_BASE_URL}loans/index.html): 民間・政府系の融資商品を下限金利が低い順に横断比較
+- 分類別ページ: [カードローン]({SITE_BASE_URL}loans/card-loan.html) / [教育ローン]({SITE_BASE_URL}loans/education-loan.html) / [自動車ローン]({SITE_BASE_URL}loans/auto-loan.html) / [リフォームローン]({SITE_BASE_URL}loans/reform-loan.html) / [不動産担保ローン]({SITE_BASE_URL}loans/real-estate-loan.html) / [住宅ローン]({SITE_BASE_URL}loans/mortgage.html) / [投資不動産ローン]({SITE_BASE_URL}loans/investment-property-loan.html) / [証券担保ローン]({SITE_BASE_URL}loans/securities-loan.html) / [目的型ローン]({SITE_BASE_URL}loans/purpose-loan.html) / [政府系補助金・融資]({SITE_BASE_URL}loans/government.html) / [その他ローン]({SITE_BASE_URL}loans/other-loan.html)
+- [loan-data.json]({SITE_BASE_URL}loans/loan-data.json): 掲載している全{loans_total}件の構造化データ（JSON配列）。1件ごとに金融機関名（institution）・金融機関分類（institutionCategory）・融資分類（loanCategory）・商品名（productName）・下限/上限金利（rateMin, rateMax, %単位・不明な場合はnull）・上限融資額（limitMaxYen, 円単位）・特徴（features）・公式URL（url）・確認日（sourceCheckedAt）などを含みます。政府系補助金・融資（loanCategory: "government"）には、補助金台帳のデータもそのまま含まれます（利率のない補助金・共済は rateMin が null）。
 
 ## 更新方法
 
-data.json / data.js は GitHub Actions により毎日自動で再取得・更新されます（1回の取得に失敗した項目は前回値を保持するため、情報が急に消えることはありません）。
+data.json / loan-data.json は GitHub Actions により毎日自動で再取得・更新されます（1回の取得に失敗した項目は前回値を保持するため、情報が急に消えることはありません）。融資・ローン比較台帳は現在、代表的な金融機関・分類（カードローン中心）のみ実データを収録した段階で、対象金融機関・分類を順次拡充中です。
 """
     path = DOCS_DIR / "llms.txt"
     path.write_text(content, encoding="utf-8")
@@ -114,11 +145,12 @@ data.json / data.js は GitHub Actions により毎日自動で再取得・更�
 
 def run():
     data = load_data()
+    loans = load_loans()
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
     write_data_js(data)
     write_data_json(data)
-    write_sitemap(data)
-    write_llms_txt(data)
+    write_sitemap(data, loans)
+    write_llms_txt(data, loans)
 
 
 if __name__ == "__main__":
