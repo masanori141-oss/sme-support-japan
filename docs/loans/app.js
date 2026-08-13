@@ -104,8 +104,12 @@ function sortByRate(list) {
 }
 
 function renderCard(d) {
+  // rateMin===rateMaxは「金利が固定金利である」ことを意味しない
+  // （変動金利でも代表値を1つだけ登録している場合がある）ため、
+  // 「固定」とは表示せず、数値のみを示す。変動/固定の別や優遇条件など
+  // 詳しいニュアンスは rateLabel（公式サイトへのリンク先）で確認できる。
   const rateText = d.rateMin !== null && d.rateMin !== undefined
-    ? (d.rateMin === d.rateMax ? `年${d.rateMin}%（固定）` : `年${d.rateMin}%〜${d.rateMax}%`)
+    ? (d.rateMin === d.rateMax ? `年${d.rateMin}%` : `年${d.rateMin}%〜${d.rateMax}%`)
     : (d.rateLabel || "要確認");
   const limitText = formatYen(d.limitMaxYen) || d.limitLabel || "要確認";
   const catLabel = LOAN_CATEGORY_LABELS[d.loanCategory] || d.loanCategory;

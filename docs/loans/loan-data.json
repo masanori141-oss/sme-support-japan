@@ -2288,5 +2288,167 @@
     ],
     "url": "https://www.boy.co.jp/kojin/mycar-loan/index.html",
     "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "三菱UFJ銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "reform-loan",
+    "productName": "ネットDEリフォームローン",
+    "rateMin": 2.74,
+    "rateMax": 3.625,
+    "rateLabel": "年2.74%〜3.625%（住宅ローン利用者・バリアフリー工事は優遇あり）",
+    "limitLabel": "50万円〜1,000万円（1万円単位）",
+    "limitMaxYen": 10000000,
+    "features": [
+      "住宅ローン利用中は金利年0.5%優遇",
+      "バリアフリー工事は金利年0.385%優遇（併用可）",
+      "WEB完結・来店不要"
+    ],
+    "url": "https://www.bk.mufg.jp/kariru/reform/index.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "三井住友銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "reform-loan",
+    "productName": "フリーローン［リフォーム］",
+    "rateMin": 2.375,
+    "rateMax": 2.375,
+    "rateLabel": "年2.375%（店頭金利年6.625%から年4.25%引下げ後）",
+    "limitLabel": "10万円〜800万円（1万円単位）",
+    "limitMaxYen": 8000000,
+    "features": [
+      "原則、担保・保証人とも不要（保証会社が保証）",
+      "短期プライムレート連動で年2回金利見直し",
+      "リフォーム内容が未確定でも申込可"
+    ],
+    "url": "https://www.smbc.co.jp/kojin/mokuteki_loan/free_m/reform/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "りそな銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "reform-loan",
+    "productName": "りそなリフォームローン",
+    "rateMin": 3.175,
+    "rateMax": 10.3,
+    "rateLabel": "年3.175%〜10.3%",
+    "limitLabel": "100万円〜1億円（大型リフォームローン含む）",
+    "limitMaxYen": 100000000,
+    "features": [
+      "解体費・借換え資金・太陽光パネル設置費用にも利用可",
+      "リフォーム内容が決まる前でも仮審査可能",
+      "大型リフォームは上限1億円まで対応"
+    ],
+    "url": "https://www.resonabank.co.jp/kojin/reform/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "横浜銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "reform-loan",
+    "productName": "横浜銀行リフォームローン",
+    "rateMin": 1.5,
+    "rateMax": 14.6,
+    "rateLabel": "年1.5%〜14.6%（審査により決定）",
+    "limitLabel": "上限1,000万円（最長15年）",
+    "limitMaxYen": 10000000,
+    "features": [
+      "リフォーム内容が決まる前でも申込可能",
+      "担保・保証人不要",
+      "太陽光発電・エコキュート設置費用にも利用可"
+    ],
+    "url": "https://www.boy.co.jp/kojin/reform-loan/index.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "三菱UFJ銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "mortgage",
+    "productName": "三菱UFJ銀行住宅ローン（変動金利）",
+    "rateMin": 0.945,
+    "rateMax": 0.945,
+    "rateLabel": "年0.945%（変動、最優遇後の目安）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "変動金利は基準金利を年2回見直し",
+      "5年ルール・125%ルールで返済額急増を抑制",
+      "団体信用生命保険料は金利に含む"
+    ],
+    "url": "https://www.bk.mufg.jp/kariru/jutaku/index.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "みずほ銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "mortgage",
+    "productName": "みずほ銀行住宅ローン（変動金利）",
+    "rateMin": 1.025,
+    "rateMax": 1.025,
+    "rateLabel": "年1.025%（変動、2026年8月時点・最優遇後の目安）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "変動金利は年2回見直し",
+      "2027年1月返済分からは年1.275%への改定が予定されている",
+      "ネット専用住宅ローンあり"
+    ],
+    "url": "https://www.mizuhobank.co.jp/loan_housing/housingloancost/index.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "三井住友銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "mortgage",
+    "productName": "三井住友銀行住宅ローン（変動金利）",
+    "rateMin": 1.275,
+    "rateMax": 1.275,
+    "rateLabel": "年1.275%（変動、最優遇後の目安）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "変動金利型のほか固定金利特約型（5年・10年）等も選択可",
+      "WEB申込専用住宅ローンあり",
+      "がん団信等の団体信用生命保険が充実"
+    ],
+    "url": "https://www.smbc.co.jp/kojin/jutaku_loan/kinri/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "りそな銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "mortgage",
+    "productName": "りそな住宅ローン（変動金利）",
+    "rateMin": 0.95,
+    "rateMax": 0.95,
+    "rateLabel": "年0.95%（変動、最優遇後の目安）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "新規・借換えとも取扱いあり",
+      "リフォーム資金セット型など目的別プランが豊富",
+      "全期間固定金利プランも選択可"
+    ],
+    "url": "https://www.resonabank.co.jp/kojin/jutaku/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "横浜銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "mortgage",
+    "productName": "横浜銀行住宅ローン（変動金利）",
+    "rateMin": 0.945,
+    "rateMax": 0.945,
+    "rateLabel": "年0.945%（融資手数料型、2026年8月時点・変動）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "住宅ローン基準レートを年2回（4月・10月）見直し",
+      "融資手数料型・保証料型から選択可",
+      "返済額は約5年間一定（5年ルール適用）"
+    ],
+    "url": "https://www.boy.co.jp/kojin/jutaku-loan/shinchiku/index.html",
+    "sourceCheckedAt": "2026-08-14"
   }
 ]
