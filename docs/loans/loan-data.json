@@ -1639,7 +1639,7 @@
       "最低返済額は毎月1,000円から"
     ],
     "url": "https://www.bk.mufg.jp/kariru/banquic/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "みずほ銀行",
@@ -1657,7 +1657,7 @@
       "WEB完結で申込可能"
     ],
     "url": "https://www.mizuhobank.co.jp/loan_card/kinri/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "楽天銀行",
@@ -1675,7 +1675,7 @@
       "楽天会員ランクに応じて審査優遇"
     ],
     "url": "https://www.rakuten-bank.co.jp/loan/cardloan/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "住信SBIネット銀行（ドコモSMTBネット銀行）",
@@ -1693,7 +1693,7 @@
       "2025年に住信SBIネット銀行からドコモSMTBネット銀行へ名称変更"
     ],
     "url": "https://www.netbk.co.jp/contents/lineup/card-loan/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "千葉銀行",
@@ -1711,7 +1711,7 @@
       "限度額100万円未満は上限金利14.8%が適用されやすい"
     ],
     "url": "https://www.chibabank.co.jp/kojin/services/loan/cardloan/cardloan_new",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "横浜銀行",
@@ -1729,7 +1729,7 @@
       "銀行カードローンの中でも上限額が高め"
     ],
     "url": "https://www.boy.co.jp/kojin/card-loan/yokohama/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "アコム",
@@ -1747,7 +1747,7 @@
       "契約極度額100万円超で金利が下がりやすい"
     ],
     "url": "https://www.acom.co.jp/lineup/cardloan/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "プロミス",
@@ -1765,6 +1765,330 @@
       "三井住友銀行グループのSMBCコンシューマーファイナンスが運営"
     ],
     "url": "https://cyber.promise.co.jp/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "りそな銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "card-loan",
+    "productName": "りそなプレミアムカードローン",
+    "rateMin": 1.45,
+    "rateMax": 13.9,
+    "rateLabel": "年1.45%〜13.9%（変動、住宅ローン利用者は上限13.5%）",
+    "limitLabel": "10万円〜800万円",
+    "limitMaxYen": 8000000,
+    "features": [
+      "りそな銀行・埼玉りそな銀行で住宅ローン利用中なら金利年0.5%優遇",
+      "限度額が大きいほど金利が低くなる",
+      "WEB完結で申込可能"
+    ],
+    "url": "https://www.resonabank.co.jp/kojin/cardloan/cardloan.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "ソニー銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "card-loan",
+    "productName": "ソニー銀行カードローン",
+    "rateMin": 2.5,
+    "rateMax": 13.8,
+    "rateLabel": "年2.5%〜13.8%（変動）",
+    "limitLabel": "10万円〜800万円",
+    "limitMaxYen": 8000000,
+    "features": [
+      "申込・借入・返済がPC/スマホで完結",
+      "月々2,000円から返済可能",
+      "金利は原則毎月1日に見直し"
+    ],
+    "url": "https://sonybank.jp/rate/cl.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "イオン銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "card-loan",
+    "productName": "イオン銀行カードローン",
+    "rateMin": 3.8,
+    "rateMax": 13.8,
+    "rateLabel": "年3.8%〜13.8%（変動、住宅ローン利用者は上限13.5%）",
+    "limitLabel": "10万円〜800万円",
+    "limitMaxYen": 8000000,
+    "features": [
+      "イオン銀行で住宅ローン利用中なら金利年0.5%優遇",
+      "口座があれば新規申込時に振込融資も利用可",
+      "審査完了後、最短5日程度でカード到着"
+    ],
+    "url": "https://www.aeonbank.co.jp/interest/card-loan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "セブン銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "card-loan",
+    "productName": "セブン銀行カードローン",
+    "rateMin": 12.0,
+    "rateMax": 15.0,
+    "rateLabel": "年12.0%〜15.0%（限度額10万円/30万円は15.0%、50万円は12.0%）",
+    "limitLabel": "10万円・30万円・50万円の3種類",
+    "limitMaxYen": 500000,
+    "features": [
+      "キャッシュカード・デビットカード・カードローンが1枚に集約",
+      "全国のセブン銀行ATMで借入・返済とも手数料0円",
+      "限度額は3種類から審査で決定"
+    ],
+    "url": "https://www.sevenbank.co.jp/personal/netbank/deposit_loan/loan/beginner.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "PayPay銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "card-loan",
+    "productName": "PayPay銀行カードローン",
+    "rateMin": 1.59,
+    "rateMax": 18.0,
+    "rateLabel": "年1.59%〜18.0%（13段階の変動金利）",
+    "limitLabel": "最大1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "初回借入日から30日間利息0円",
+      "利用にはPayPay銀行の普通預金口座が必要",
+      "最高限度額1,000万円枠は年1.59%と業界最低水準"
+    ],
+    "url": "https://www.paypay-bank.co.jp/cardloan/index.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "アイフル",
+    "institutionCategory": "消費者金融",
+    "loanCategory": "card-loan",
+    "productName": "アイフルカードローン",
+    "rateMin": 3.0,
+    "rateMax": 18.0,
+    "rateLabel": "実質年率3.0%〜18.0%",
+    "limitLabel": "1万円〜800万円（1,000円単位）",
+    "limitMaxYen": 8000000,
+    "features": [
+      "はじめての契約は最大30日間利息0円",
+      "限度額50万円超・他社含め借入100万円超は収入証明書が必要",
+      "WEB完結・最短即日融資に対応"
+    ],
+    "url": "https://www.aiful.co.jp/starter/cardloan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "レイク",
+    "institutionCategory": "消費者金融",
+    "loanCategory": "card-loan",
+    "productName": "レイク",
+    "rateMin": 4.5,
+    "rateMax": 18.0,
+    "rateLabel": "実質年率4.5%〜18.0%",
+    "limitLabel": "1万円〜500万円",
+    "limitMaxYen": 5000000,
+    "features": [
+      "Web申込の初回契約者は最大365日間無利息",
+      "満20歳以上70歳以下、パート・アルバイトも申込可",
+      "最短即日融資に対応"
+    ],
+    "url": "https://lakealsa.com/cashing/interest/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "SMBCモビット",
+    "institutionCategory": "消費者金融",
+    "loanCategory": "card-loan",
+    "productName": "SMBCモビット カードローン",
+    "rateMin": 3.0,
+    "rateMax": 18.0,
+    "rateLabel": "実質年率3.0%〜18.0%",
+    "limitLabel": "最大800万円",
+    "limitMaxYen": 8000000,
+    "features": [
+      "WEB完結申込なら電話・郵送物なしで契約可能",
+      "全国約12万台の提携ATMで借入・返済可能",
+      "スマホATM取引にも対応"
+    ],
+    "url": "https://www.mobit.ne.jp/index.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "京葉銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "card-loan",
+    "productName": "京葉銀行カードローン",
+    "rateMin": 4.5,
+    "rateMax": 13.0,
+    "rateLabel": "年4.5%〜13.0%（住宅ローン利用者・給与振込利用者は0.5%優遇）",
+    "limitLabel": "30万円〜300万円",
+    "limitMaxYen": 3000000,
+    "features": [
+      "住宅ローン利用中または給与振込利用中は金利0.5%優遇",
+      "カードローンⅡ型（住宅ローン利用者向け）は年4.5%",
+      "WEBで申込可能"
+    ],
+    "url": "https://www.keiyobank.co.jp/individual/loan/card/card_loan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "福岡銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "card-loan",
+    "productName": "福岡銀行カードローン",
+    "rateMin": 3.0,
+    "rateMax": 14.5,
+    "rateLabel": "実質年率3.0%〜14.5%（固定）",
+    "limitLabel": "10万円〜1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "限度額が大きいほど金利が低い",
+      "審査結果通知まで5〜7日程度",
+      "初回契約時は上限金利14.5%が適用されやすい"
+    ],
+    "url": "https://www.fukuokabank.co.jp/personal/service/mokuteki/cardloan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "京都銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "card-loan",
+    "productName": "京都銀行カードローン＜ダイレクト＞",
+    "rateMin": 1.9,
+    "rateMax": 14.5,
+    "rateLabel": "年1.9%〜14.5%（固定）",
+    "limitLabel": "10万円〜1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "京都・大阪・滋賀・兵庫・奈良・愛知在住/勤務の方が対象",
+      "WEB完結、原則来店不要",
+      "月々2,000円からの返済に対応"
+    ],
+    "url": "https://www.kyotobank.co.jp/kojin/loan/card/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "北海道銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "card-loan",
+    "productName": "北海道銀行カードローン「ラピッド」",
+    "rateMin": 1.9,
+    "rateMax": 14.95,
+    "rateLabel": "年1.9%〜14.95%（審査により決定）",
+    "limitLabel": "1万円〜800万円",
+    "limitMaxYen": 8000000,
+    "features": [
+      "北海道銀行に口座がなくても利用可能",
+      "全国の提携コンビニATMで返済可能",
+      "限度額400万円超は最小返済額1,000円から"
+    ],
+    "url": "https://www.hokkaidobank.co.jp/loan/lineup/rapid.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "常陽銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "card-loan",
+    "productName": "常陽銀行カードローン「キャッシュピット」",
+    "rateMin": 1.5,
+    "rateMax": 14.8,
+    "rateLabel": "年1.5%〜14.8%",
+    "limitLabel": "上限300万円",
+    "limitMaxYen": 3000000,
+    "features": [
+      "常陽銀行ATM・提携コンビニATMとも手数料0円",
+      "入会金・年会費0円",
+      "パート・アルバイトの方も申込可能"
+    ],
+    "url": "https://www.joyobank.co.jp/personal/loan/cashpit/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "東邦銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "card-loan",
+    "productName": "東邦銀行カードローン「TOHOスマートネクスト」",
+    "rateMin": 1.4,
+    "rateMax": 14.6,
+    "rateLabel": "年1.4%〜14.6%（固定、極度額により12段階）",
+    "limitLabel": "10万円〜800万円",
+    "limitMaxYen": 8000000,
+    "features": [
+      "極度額は12種類（30万〜500万円等）から審査で決定",
+      "極度額に応じて金利が適用される",
+      "利用限度額は返済状況等により増減"
+    ],
+    "url": "https://www.tohobank.co.jp/kinri/loan.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "滋賀銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "card-loan",
+    "productName": "滋賀銀行カードローン「サットキャッシュ」",
+    "rateMin": 4.8,
+    "rateMax": 14.9,
+    "rateLabel": "実質年率4.8%〜14.9%",
+    "limitLabel": "上限500万円",
+    "limitMaxYen": 5000000,
+    "features": [
+      "利用日数分だけ利息がかかる日割計算",
+      "パート・アルバイトは限度額50万円まで申込可",
+      "他社ローンの借換えにも利用可"
+    ],
+    "url": "https://mcl.sbk.jp/lp/satto/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "伊予銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "card-loan",
+    "productName": "伊予銀行カードローン「SAFETY」",
+    "rateMin": 1.9,
+    "rateMax": 14.5,
+    "rateLabel": "実質年率1.9%〜14.5%",
+    "limitLabel": "上限1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "24時間365日アプリで申込〜借入〜返済が完結",
+      "対応14都府県在住/勤務の方が対象",
+      "カード到着前でも返済用口座への振込融資が可能"
+    ],
+    "url": "https://www.iyobank.co.jp/kariru/safety.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "静岡銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "card-loan",
+    "productName": "静岡銀行カードローン「セレカ」",
+    "rateMin": 1.5,
+    "rateMax": 14.5,
+    "rateLabel": "年1.5%〜14.5%",
+    "limitLabel": "上限1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "新規契約は契約から60日間無利息",
+      "全国対応・口座開設不要で申込可能",
+      "限度額が大きいほど金利が低い"
+    ],
+    "url": "https://www.shizuokabank.co.jp/interest/loan.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "山陰合同銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "card-loan",
+    "productName": "ごうぎんカードローン「キャッシュバンクネオ」",
+    "rateMin": 1.95,
+    "rateMax": 14.5,
+    "rateLabel": "実質年率1.95%〜14.5%",
+    "limitLabel": "10万円〜800万円",
+    "limitMaxYen": 8000000,
+    "features": [
+      "残高不足時に限度額内で自動融資",
+      "スマホ・PCから必要書類をWEB提出可能",
+      "コンビニATMでの繰上返済にも対応"
+    ],
+    "url": "https://www.gogin.co.jp/personal/loan/mypace/",
+    "sourceCheckedAt": "2026-08-14"
   }
 ]
