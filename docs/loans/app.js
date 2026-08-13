@@ -105,7 +105,7 @@ function sortByRate(list) {
 
 function renderCard(d) {
   const rateText = d.rateMin !== null && d.rateMin !== undefined
-    ? `年${d.rateMin}%〜${d.rateMax}%`
+    ? (d.rateMin === d.rateMax ? `年${d.rateMin}%（固定）` : `年${d.rateMin}%〜${d.rateMax}%`)
     : (d.rateLabel || "要確認");
   const limitText = formatYen(d.limitMaxYen) || d.limitLabel || "要確認";
   const catLabel = LOAN_CATEGORY_LABELS[d.loanCategory] || d.loanCategory;

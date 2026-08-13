@@ -2090,5 +2090,203 @@
     ],
     "url": "https://www.gogin.co.jp/personal/loan/mypace/",
     "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "三井住友銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "card-loan",
+    "productName": "三井住友銀行カードローン",
+    "rateMin": 1.5,
+    "rateMax": 14.5,
+    "rateLabel": "年1.5%〜14.5%（限度額に応じた8段階、変動）",
+    "limitLabel": "10万円〜800万円（1万円単位）",
+    "limitMaxYen": 8000000,
+    "features": [
+      "住宅ローン利用中は金利0.5%優遇",
+      "限度額700万円超〜800万円以下は年1.5%〜4.5%",
+      "50万円超の借入は収入証明書類が必要"
+    ],
+    "url": "https://www.smbc.co.jp/kojin/cardloan/details/kinri/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "日本政策金融公庫",
+    "institutionCategory": "政府系金融機関",
+    "loanCategory": "education-loan",
+    "productName": "教育一般貸付（国の教育ローン）",
+    "rateMin": 4.05,
+    "rateMax": 4.05,
+    "rateLabel": "年4.05%（固定、2026年7月時点）",
+    "limitLabel": "上限350万円（要件により子1人450万円、海外留学450万円）",
+    "limitMaxYen": 4500000,
+    "features": [
+      "世帯年収の上限あり（子の人数に応じて基準が変動）",
+      "在学中は利息のみの返済に据置可能",
+      "日本政策金融公庫・沖縄振興開発金融公庫が実施する公的融資"
+    ],
+    "url": "https://www.jfc.go.jp/n/finance/search/ippan.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "三菱UFJ銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "education-loan",
+    "productName": "ネットDE教育ローン",
+    "rateMin": 4.475,
+    "rateMax": 4.475,
+    "rateLabel": "年4.475%（固定）",
+    "limitLabel": "上限500万円（医学部等6年制大学は上限1,000万円）",
+    "limitMaxYen": 10000000,
+    "features": [
+      "WEB完結で来店不要",
+      "医学部等6年制大学は融資期間最長16年",
+      "入学金・授業料のほか下宿費用等にも利用可"
+    ],
+    "url": "https://www.bk.mufg.jp/kariru/kyouiku/index.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "みずほ銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "education-loan",
+    "productName": "みずほ銀行教育ローン（無担保）",
+    "rateMin": 3.875,
+    "rateMax": 5.5,
+    "rateLabel": "変動年3.875%・固定年5.5%（選択制）",
+    "limitLabel": "10万円〜300万円（1万円単位）",
+    "limitMaxYen": 3000000,
+    "features": [
+      "保証人不要・保証料もかからない",
+      "みずほの証書貸付ローン利用者は金利0.1%優遇",
+      "在学期間中・卒業後1年は元金返済据置が可能"
+    ],
+    "url": "https://www.mizuhobank.co.jp/loan_education/detail.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "三井住友銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "education-loan",
+    "productName": "三井住友銀行教育ローン（無担保型）",
+    "rateMin": 3.625,
+    "rateMax": 3.625,
+    "rateLabel": "年3.625%（変動）",
+    "limitLabel": "10万円〜300万円（1万円単位）",
+    "limitMaxYen": 3000000,
+    "features": [
+      "最短即日融資に対応",
+      "原則、担保・保証人とも不要（保証会社が保証）",
+      "300万円超の借入は郵送契約"
+    ],
+    "url": "https://www.smbc.co.jp/kojin/mokuteki_loan/kyouiku_m/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "りそな銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "education-loan",
+    "productName": "りそな教育ローン",
+    "rateMin": 2.2,
+    "rateMax": 3.2,
+    "rateLabel": "年2.2%〜3.2%（住宅ローン利用者は年1.55%〜）",
+    "limitLabel": "10万円〜1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "証書貸付タイプ・当座貸越タイプから選択可",
+      "りそなで住宅ローン利用中なら金利優遇",
+      "WEB申込に対応"
+    ],
+    "url": "https://www.resonabank.co.jp/kojin/edu/detail.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "三菱UFJ銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "auto-loan",
+    "productName": "ネットDEマイカーローン",
+    "rateMin": 2.125,
+    "rateMax": 3.25,
+    "rateLabel": "実質年率2.125%〜3.25%",
+    "limitLabel": "50万円〜3,000万円",
+    "limitMaxYen": 30000000,
+    "features": [
+      "WEB完結・来店不要、事前審査は最短即日回答",
+      "住宅ローン利用中は金利年0.2%優遇",
+      "新車・中古車・バイク購入や他社借換にも対応"
+    ],
+    "url": "https://www.bk.mufg.jp/kariru/mycar/index.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "みずほ銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "auto-loan",
+    "productName": "みずほ銀行マイカーローン（多目的ローン）",
+    "rateMin": 6.525,
+    "rateMax": 8.3,
+    "rateLabel": "変動年6.525%・固定年8.3%（選択制）",
+    "limitLabel": "上限300万円",
+    "limitMaxYen": 3000000,
+    "features": [
+      "新車購入または新車ローンの借換えが対象",
+      "融資期間は最長7年",
+      "固定・変動の金利タイプを選択可能"
+    ],
+    "url": "https://www.mizuhobank.co.jp/loan_multi/multi_j/detail.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "三井住友銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "auto-loan",
+    "productName": "三井住友銀行マイカーローン",
+    "rateMin": 3.2,
+    "rateMax": 3.2,
+    "rateLabel": "年3.2%（固定）",
+    "limitLabel": "上限300万円",
+    "limitMaxYen": 3000000,
+    "features": [
+      "原則、担保・保証人とも不要（保証会社が保証）",
+      "自動車購入資金のほか車検・修理・免許取得費用にも利用可",
+      "融資期間1年〜10年以内"
+    ],
+    "url": "https://www.smbc.co.jp/kojin/mokuteki_loan/car/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "りそな銀行",
+    "institutionCategory": "メガバンク",
+    "loanCategory": "auto-loan",
+    "productName": "りそなマイカーローン",
+    "rateMin": 1.55,
+    "rateMax": 4.45,
+    "rateLabel": "年1.55%〜4.45%（住宅ローン利用者は年1.55%〜、EV/FCVは0.3%優遇）",
+    "limitLabel": "要確認（公式サイトで最終確認）",
+    "limitMaxYen": null,
+    "features": [
+      "EV・FCV購入は金利年0.3%優遇",
+      "住宅ローン利用中は金利優遇",
+      "他社自動車ローンの借換えにも対応"
+    ],
+    "url": "https://www.resonabank.co.jp/kojin/mycar/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "横浜銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "auto-loan",
+    "productName": "横浜銀行マイカーローン",
+    "rateMin": 0.9,
+    "rateMax": 3.3,
+    "rateLabel": "年0.9%〜3.3%（審査により決定）",
+    "limitLabel": "上限1,000万円（車検・修理等は500万円）",
+    "limitMaxYen": 10000000,
+    "features": [
+      "神奈川県・東京都全域等が対象エリア",
+      "WEB完結で申込〜契約が可能",
+      "車検・修理・保険料等にも利用可"
+    ],
+    "url": "https://www.boy.co.jp/kojin/mycar-loan/index.html",
+    "sourceCheckedAt": "2026-08-14"
   }
 ]
