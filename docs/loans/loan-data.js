@@ -1639,7 +1639,7 @@ const LOAN_DATA = [
       "最低返済額は毎月1,000円から"
     ],
     "url": "https://www.bk.mufg.jp/kariru/banquic/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "みずほ銀行",
@@ -1657,7 +1657,7 @@ const LOAN_DATA = [
       "WEB完結で申込可能"
     ],
     "url": "https://www.mizuhobank.co.jp/loan_card/kinri/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "楽天銀行",
@@ -1675,7 +1675,7 @@ const LOAN_DATA = [
       "楽天会員ランクに応じて審査優遇"
     ],
     "url": "https://www.rakuten-bank.co.jp/loan/cardloan/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "住信SBIネット銀行（ドコモSMTBネット銀行）",
@@ -1693,7 +1693,7 @@ const LOAN_DATA = [
       "2025年に住信SBIネット銀行からドコモSMTBネット銀行へ名称変更"
     ],
     "url": "https://www.netbk.co.jp/contents/lineup/card-loan/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "千葉銀行",
@@ -1711,7 +1711,7 @@ const LOAN_DATA = [
       "限度額100万円未満は上限金利14.8%が適用されやすい"
     ],
     "url": "https://www.chibabank.co.jp/kojin/services/loan/cardloan/cardloan_new",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "横浜銀行",
@@ -1729,7 +1729,7 @@ const LOAN_DATA = [
       "銀行カードローンの中でも上限額が高め"
     ],
     "url": "https://www.boy.co.jp/kojin/card-loan/yokohama/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "アコム",
@@ -1747,7 +1747,7 @@ const LOAN_DATA = [
       "契約極度額100万円超で金利が下がりやすい"
     ],
     "url": "https://www.acom.co.jp/lineup/cardloan/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "プロミス",
@@ -1765,7 +1765,7 @@ const LOAN_DATA = [
       "三井住友銀行グループのSMBCコンシューマーファイナンスが運営"
     ],
     "url": "https://cyber.promise.co.jp/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "りそな銀行",
@@ -1783,7 +1783,7 @@ const LOAN_DATA = [
       "WEB完結で申込可能"
     ],
     "url": "https://www.resonabank.co.jp/kojin/cardloan/cardloan.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "ソニー銀行",
@@ -1801,7 +1801,7 @@ const LOAN_DATA = [
       "金利は原則毎月1日に見直し"
     ],
     "url": "https://sonybank.jp/rate/cl.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "イオン銀行",
@@ -1819,7 +1819,7 @@ const LOAN_DATA = [
       "審査完了後、最短5日程度でカード到着"
     ],
     "url": "https://www.aeonbank.co.jp/interest/card-loan/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "セブン銀行",
@@ -1837,7 +1837,7 @@ const LOAN_DATA = [
       "限度額は3種類から審査で決定"
     ],
     "url": "https://www.sevenbank.co.jp/personal/netbank/deposit_loan/loan/beginner.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "PayPay銀行",
@@ -1855,7 +1855,7 @@ const LOAN_DATA = [
       "最高限度額1,000万円枠は年1.59%と業界最低水準"
     ],
     "url": "https://www.paypay-bank.co.jp/cardloan/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "アイフル",
@@ -1873,7 +1873,7 @@ const LOAN_DATA = [
       "WEB完結・最短即日融資に対応"
     ],
     "url": "https://www.aiful.co.jp/starter/cardloan/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "レイク",
@@ -1891,7 +1891,7 @@ const LOAN_DATA = [
       "最短即日融資に対応"
     ],
     "url": "https://lakealsa.com/cashing/interest/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "SMBCモビット",
@@ -1909,7 +1909,7 @@ const LOAN_DATA = [
       "スマホATM取引にも対応"
     ],
     "url": "https://www.mobit.ne.jp/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "京葉銀行",
@@ -1927,7 +1927,7 @@ const LOAN_DATA = [
       "WEBで申込可能"
     ],
     "url": "https://www.keiyobank.co.jp/individual/loan/card/card_loan/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "福岡銀行",
@@ -1945,7 +1945,7 @@ const LOAN_DATA = [
       "初回契約時は上限金利14.5%が適用されやすい"
     ],
     "url": "https://www.fukuokabank.co.jp/personal/service/mokuteki/cardloan/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "京都銀行",
@@ -1963,7 +1963,7 @@ const LOAN_DATA = [
       "月々2,000円からの返済に対応"
     ],
     "url": "https://www.kyotobank.co.jp/kojin/loan/card/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "北海道銀行",
@@ -1981,7 +1981,7 @@ const LOAN_DATA = [
       "限度額400万円超は最小返済額1,000円から"
     ],
     "url": "https://www.hokkaidobank.co.jp/loan/lineup/rapid.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "常陽銀行",
@@ -1999,7 +1999,7 @@ const LOAN_DATA = [
       "パート・アルバイトの方も申込可能"
     ],
     "url": "https://www.joyobank.co.jp/personal/loan/cashpit/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "東邦銀行",
@@ -2017,7 +2017,7 @@ const LOAN_DATA = [
       "利用限度額は返済状況等により増減"
     ],
     "url": "https://www.tohobank.co.jp/kinri/loan.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "滋賀銀行",
@@ -2035,7 +2035,7 @@ const LOAN_DATA = [
       "他社ローンの借換えにも利用可"
     ],
     "url": "https://mcl.sbk.jp/lp/satto/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "伊予銀行",
@@ -2053,7 +2053,7 @@ const LOAN_DATA = [
       "カード到着前でも返済用口座への振込融資が可能"
     ],
     "url": "https://www.iyobank.co.jp/kariru/safety.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "静岡銀行",
@@ -2071,7 +2071,7 @@ const LOAN_DATA = [
       "限度額が大きいほど金利が低い"
     ],
     "url": "https://www.shizuokabank.co.jp/interest/loan.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "山陰合同銀行",
@@ -2089,7 +2089,7 @@ const LOAN_DATA = [
       "コンビニATMでの繰上返済にも対応"
     ],
     "url": "https://www.gogin.co.jp/personal/loan/mypace/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "三井住友銀行",
@@ -2107,7 +2107,7 @@ const LOAN_DATA = [
       "50万円超の借入は収入証明書類が必要"
     ],
     "url": "https://www.smbc.co.jp/kojin/cardloan/details/kinri/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "日本政策金融公庫",
@@ -2125,7 +2125,7 @@ const LOAN_DATA = [
       "日本政策金融公庫・沖縄振興開発金融公庫が実施する公的融資"
     ],
     "url": "https://www.jfc.go.jp/n/finance/search/ippan.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "三菱UFJ銀行",
@@ -2143,7 +2143,7 @@ const LOAN_DATA = [
       "入学金・授業料のほか下宿費用等にも利用可"
     ],
     "url": "https://www.bk.mufg.jp/kariru/kyouiku/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "みずほ銀行",
@@ -2161,7 +2161,7 @@ const LOAN_DATA = [
       "在学期間中・卒業後1年は元金返済据置が可能"
     ],
     "url": "https://www.mizuhobank.co.jp/loan_education/detail.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "三井住友銀行",
@@ -2179,7 +2179,7 @@ const LOAN_DATA = [
       "300万円超の借入は郵送契約"
     ],
     "url": "https://www.smbc.co.jp/kojin/mokuteki_loan/kyouiku_m/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "りそな銀行",
@@ -2197,7 +2197,7 @@ const LOAN_DATA = [
       "WEB申込に対応"
     ],
     "url": "https://www.resonabank.co.jp/kojin/edu/detail.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "三菱UFJ銀行",
@@ -2215,7 +2215,7 @@ const LOAN_DATA = [
       "新車・中古車・バイク購入や他社借換にも対応"
     ],
     "url": "https://www.bk.mufg.jp/kariru/mycar/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "みずほ銀行",
@@ -2233,7 +2233,7 @@ const LOAN_DATA = [
       "固定・変動の金利タイプを選択可能"
     ],
     "url": "https://www.mizuhobank.co.jp/loan_multi/multi_j/detail.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "三井住友銀行",
@@ -2251,7 +2251,7 @@ const LOAN_DATA = [
       "融資期間1年〜10年以内"
     ],
     "url": "https://www.smbc.co.jp/kojin/mokuteki_loan/car/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "りそな銀行",
@@ -2269,7 +2269,7 @@ const LOAN_DATA = [
       "他社自動車ローンの借換えにも対応"
     ],
     "url": "https://www.resonabank.co.jp/kojin/mycar/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "横浜銀行",
@@ -2287,7 +2287,7 @@ const LOAN_DATA = [
       "車検・修理・保険料等にも利用可"
     ],
     "url": "https://www.boy.co.jp/kojin/mycar-loan/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "三菱UFJ銀行",
@@ -2305,7 +2305,7 @@ const LOAN_DATA = [
       "WEB完結・来店不要"
     ],
     "url": "https://www.bk.mufg.jp/kariru/reform/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "三井住友銀行",
@@ -2323,7 +2323,7 @@ const LOAN_DATA = [
       "リフォーム内容が未確定でも申込可"
     ],
     "url": "https://www.smbc.co.jp/kojin/mokuteki_loan/free_m/reform/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "りそな銀行",
@@ -2341,7 +2341,7 @@ const LOAN_DATA = [
       "大型リフォームは上限1億円まで対応"
     ],
     "url": "https://www.resonabank.co.jp/kojin/reform/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "横浜銀行",
@@ -2359,7 +2359,7 @@ const LOAN_DATA = [
       "太陽光発電・エコキュート設置費用にも利用可"
     ],
     "url": "https://www.boy.co.jp/kojin/reform-loan/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "三菱UFJ銀行",
@@ -2377,7 +2377,7 @@ const LOAN_DATA = [
       "団体信用生命保険料は金利に含む"
     ],
     "url": "https://www.bk.mufg.jp/kariru/jutaku/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "みずほ銀行",
@@ -2395,7 +2395,7 @@ const LOAN_DATA = [
       "ネット専用住宅ローンあり"
     ],
     "url": "https://www.mizuhobank.co.jp/loan_housing/housingloancost/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "三井住友銀行",
@@ -2413,7 +2413,7 @@ const LOAN_DATA = [
       "がん団信等の団体信用生命保険が充実"
     ],
     "url": "https://www.smbc.co.jp/kojin/jutaku_loan/kinri/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "りそな銀行",
@@ -2431,7 +2431,7 @@ const LOAN_DATA = [
       "全期間固定金利プランも選択可"
     ],
     "url": "https://www.resonabank.co.jp/kojin/jutaku/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "横浜銀行",
@@ -2449,7 +2449,7 @@ const LOAN_DATA = [
       "返済額は約5年間一定（5年ルール適用）"
     ],
     "url": "https://www.boy.co.jp/kojin/jutaku-loan/shinchiku/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "オリックス銀行",
@@ -2467,7 +2467,7 @@ const LOAN_DATA = [
       "投資用不動産ローン・住宅ローンは新規取扱を中止中（本商品は継続提供）"
     ],
     "url": "https://www.orixbank.co.jp/personal/mortgage/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "楽天銀行",
@@ -2485,7 +2485,7 @@ const LOAN_DATA = [
       "資金使途は原則自由"
     ],
     "url": "https://www.rakuten-bank.co.jp/loan/mortgage-collateral/detail/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "SBI新生銀行（新生インベストメント&ファイナンス）",
@@ -2503,7 +2503,7 @@ const LOAN_DATA = [
       "団信加入の有無で金利が異なる"
     ],
     "url": "https://www.shinsei-if.com/loan/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "みずほ信託銀行",
@@ -2521,7 +2521,7 @@ const LOAN_DATA = [
       "長期プライムレート連動型は新規取扱を停止中"
     ],
     "url": "https://www.mizuho-tb.co.jp/kinri/loan.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "三井住友信託銀行",
@@ -2539,7 +2539,7 @@ const LOAN_DATA = [
       "金利は個別審査により決定"
     ],
     "url": "https://www.smtb.jp/personal/loan/apartment",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "三井住友銀行",
@@ -2557,7 +2557,7 @@ const LOAN_DATA = [
       "融資利率は個別審査により決定（団信加入で年0.3%上乗せ）"
     ],
     "url": "https://www.smbc.co.jp/kojin/apartment/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "楽天銀行",
@@ -2575,7 +2575,7 @@ const LOAN_DATA = [
       "基準金利（短期プライムレート）に連動し見直しあり"
     ],
     "url": "https://www.rakuten-bank.co.jp/loan/securities-collateral/borrowing-ratio/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "りそな銀行",
@@ -2593,7 +2593,7 @@ const LOAN_DATA = [
       "固定金利で返済計画が立てやすい"
     ],
     "url": "https://www.resonabank.co.jp/kojin/freeloan/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "横浜銀行",
@@ -2611,7 +2611,7 @@ const LOAN_DATA = [
       "審査回答は最短即日"
     ],
     "url": "https://www.boy.co.jp/kojin/lifesupport-loan/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "千葉銀行",
@@ -2629,7 +2629,7 @@ const LOAN_DATA = [
       "千葉・東京・茨城・埼玉・神奈川在住/勤務が対象"
     ],
     "url": "https://www.chibabank.co.jp/kojin/loan/education/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "福岡銀行",
@@ -2647,7 +2647,7 @@ const LOAN_DATA = [
       "同行には限度額の低い「教育カードローン」も別途あり"
     ],
     "url": "https://www.fukuokabank.co.jp/personal/service/mokuteki/gakushiloan/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "常陽銀行",
@@ -2665,7 +2665,7 @@ const LOAN_DATA = [
       "全国対応・来店不要でスマホ/PCから申込可"
     ],
     "url": "https://www.joyobank.co.jp/personal/loan/education/lp/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "千葉銀行",
@@ -2683,7 +2683,7 @@ const LOAN_DATA = [
       "借入後は年2回金利を見直し"
     ],
     "url": "https://www.chibabank.co.jp/kojin/loan/housing/plan/select/plan02.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "静岡銀行",
@@ -2701,6 +2701,60 @@ const LOAN_DATA = [
       "静岡県内を中心に幅広いエリアで取扱い"
     ],
     "url": "https://www.shizuokabank.co.jp/personal/loan/jyutaku/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "東京スター銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "card-loan",
+    "productName": "スターカードローンα",
+    "rateMin": 1.5,
+    "rateMax": 14.6,
+    "rateLabel": "年1.5%〜14.6%",
+    "limitLabel": "最大1,000万円（10万円単位）",
+    "limitMaxYen": 10000000,
+    "features": [
+      "契約日から30日間利息0円",
+      "来店不要・インターネットで完結",
+      "口座なしタイプも選択可（返済は普段使いの口座でOK）"
+    ],
+    "url": "https://www.tokyostarbank.co.jp/products/loan/cardloan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "みんなの銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "card-loan",
+    "productName": "みんなの銀行カードローン",
+    "rateMin": 1.5,
+    "rateMax": 14.5,
+    "rateLabel": "年1.5%〜14.5%",
+    "limitLabel": "10万円〜1,000万円（10万円単位）",
+    "limitMaxYen": 10000000,
+    "features": [
+      "審査はアプリ完結、勤務先への在籍確認なし",
+      "1次審査は最短2分で結果表示",
+      "借入・返済ともアプリ内で操作"
+    ],
+    "url": "https://www.minna-no-ginko.com/service/loan/column/cardloan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "大和ネクスト銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "investment-property-loan",
+    "productName": "不動産投資ローン",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "非公開（変動型、個別審査により決定）",
+    "limitLabel": "最大30億円（大和証券の不動産仲介物件が対象）",
+    "limitMaxYen": 3000000000,
+    "features": [
+      "大和証券の紹介を受けた「ダイワ・コンサルティングコース」の富裕層向け",
+      "対象は東京・大阪・名古屋等の賃貸需要が見込まれるエリア",
+      "他行からの借換え・建築資金は対象外"
+    ],
+    "url": "https://www.bank-daiwa.co.jp/saving/loan/investment_loan/",
+    "sourceCheckedAt": "2026-08-14"
   }
 ];

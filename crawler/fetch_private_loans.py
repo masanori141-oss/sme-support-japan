@@ -619,6 +619,35 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["au回線等とのセット利用でさらに最大年0.15%優遇", "新規契約は契約から一定期間無利息の特典がある商品も併設", "静岡県内を中心に幅広いエリアで取扱い"],
         confirmed=True,
     ),
+
+    # --- 新興銀行の対象拡充（カードローン・投資不動産ローン） ---
+    LoanConfig(
+        institution="東京スター銀行", institution_category="新興銀行",
+        loan_category="card-loan", product_name="スターカードローンα",
+        url="https://www.tokyostarbank.co.jp/products/loan/cardloan/",
+        rate_min=1.5, rate_max=14.6, rate_label="年1.5%〜14.6%",
+        limit_label="最大1,000万円（10万円単位）", limit_max_yen=10_000_000,
+        features=["契約日から30日間利息0円", "来店不要・インターネットで完結", "口座なしタイプも選択可（返済は普段使いの口座でOK）"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="みんなの銀行", institution_category="新興銀行",
+        loan_category="card-loan", product_name="みんなの銀行カードローン",
+        url="https://www.minna-no-ginko.com/service/loan/column/cardloan/",
+        rate_min=1.5, rate_max=14.5, rate_label="年1.5%〜14.5%",
+        limit_label="10万円〜1,000万円（10万円単位）", limit_max_yen=10_000_000,
+        features=["審査はアプリ完結、勤務先への在籍確認なし", "1次審査は最短2分で結果表示", "借入・返済ともアプリ内で操作"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="大和ネクスト銀行", institution_category="新興銀行",
+        loan_category="investment-property-loan", product_name="不動産投資ローン",
+        url="https://www.bank-daiwa.co.jp/saving/loan/investment_loan/",
+        rate_label="非公開（変動型、個別審査により決定）",
+        limit_label="最大30億円（大和証券の不動産仲介物件が対象）", limit_max_yen=3_000_000_000,
+        features=["大和証券の紹介を受けた「ダイワ・コンサルティングコース」の富裕層向け", "対象は東京・大阪・名古屋等の賃貸需要が見込まれるエリア", "他行からの借換え・建築資金は対象外"],
+        confirmed=False,
+    ),
 ]
 
 
@@ -635,11 +664,18 @@ class _LegacyTLSAdapter(HTTPAdapter):
     SECLEVEL=1 まで許容するセッションを使ってアクセスする。証明書の検証
     自体は行ったままなので、「暗号スイートの許容範囲を広げる」以上の
     ことはしていない。
+
+    東京スター銀行のように、SECLEVEL=1だけでは
+    "UNSAFE_LEGACY_RENEGOTIATION_DISABLED" エラーになるサイトも
+    実際に見つかったため、OP_LEGACY_SERVER_CONNECT も併せて有効にして
+    いる（こちらも古いサーバーとの再ネゴシエーション方式を許容する
+    だけで、証明書検証を無効化するものではない）。
     """
 
     def init_poolmanager(self, *args, **kwargs):
         ctx = ssl.create_default_context()
         ctx.set_ciphers("DEFAULT@SECLEVEL=1")
+        ctx.options |= 0x4  # ssl.OP_LEGACY_SERVER_CONNECT（Python 3.12未満に無いため定数値で直接指定）
         kwargs["ssl_context"] = ctx
         return super().init_poolmanager(*args, **kwargs)
 
