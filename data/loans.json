@@ -2524,6 +2524,114 @@
     "sourceCheckedAt": "2026-08-14"
   },
   {
+    "institution": "住信SBIネット銀行（ドコモSMTBネット銀行）",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "mortgage",
+    "productName": "住宅ローン（WEB申込コース・通期引下げプラン変動金利）",
+    "rateMin": 1.2,
+    "rateMax": 1.55,
+    "rateLabel": "変動年1.20%（環境配慮型住宅または物件価格80%以下）〜1.55%（80%超）、2026年8月時点",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "ネット銀行住宅ローンの代表格で借入件数が多い",
+      "当初引下げプラン（当初期間のみ大幅引下げ）も選択可",
+      "がん団信等の各種団信プランが充実"
+    ],
+    "url": "https://www.netbk.co.jp/contents/lineup/home-loan/web/kinri/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "ソニー銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "mortgage",
+    "productName": "変動セレクト住宅ローン（環境配慮型住宅）",
+    "rateMin": 1.247,
+    "rateMax": 1.247,
+    "rateLabel": "年1.247%（変動、環境配慮型住宅、2026年8月時点）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定、上限3億円）",
+    "limitMaxYen": null,
+    "features": [
+      "借入期間最長50年・融資金額最大3億円",
+      "がん団信100は金利上乗せ年0.1%",
+      "環境配慮型住宅以外は別途住宅ローン金利を適用"
+    ],
+    "url": "https://sonybank.jp/products/hl/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "楽天銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "mortgage",
+    "productName": "楽天銀行住宅ローン（金利選択型・変動金利）",
+    "rateMin": 1.543,
+    "rateMax": 1.543,
+    "rateLabel": "年1.543%（変動、2026年8月時点）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "保証料・繰上返済手数料が無料",
+      "楽天銀行口座を返済口座に指定するとさらに年0.3%優遇",
+      "つなぎ融資にも対応"
+    ],
+    "url": "https://www.rakuten-bank.co.jp/home-loan/rate/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "PayPay銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "mortgage",
+    "productName": "PayPay銀行住宅ローン（全期間引下型・変動金利）",
+    "rateMin": 1.33,
+    "rateMax": 1.33,
+    "rateLabel": "年1.330%（変動、2026年8月時点）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "ソフトバンクスマホユーザー等は「スマホ／ネット／でんき優遇割」でさらに金利優遇",
+      "保証料・保証会社手数料は不要",
+      "手続きはオンラインで完結（司法書士面談は別途）"
+    ],
+    "url": "https://www.paypay-bank.co.jp/mortgage/interest/index.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "イオン銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "mortgage",
+    "productName": "イオン銀行住宅ローン（全期間優遇金利プラン・変動金利）",
+    "rateMin": 0.99,
+    "rateMax": 1.07,
+    "rateLabel": "年0.990%〜1.070%（変動、イオン銀行カードローン利用で年0.05%優遇、2026年8月時点）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "イオングループでの買い物が完済まで毎日5%OFF",
+      "保証料・一部繰上返済手数料が無料",
+      "8疾病保障付団信など保障が充実"
+    ],
+    "url": "https://www.aeonbank.co.jp/interest/housing-loan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "SBI新生銀行（新生インベストメント&ファイナンス）",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "mortgage",
+    "productName": "パワースマート住宅ローン（変動・半年型）",
+    "rateMin": 1.06,
+    "rateMax": 1.06,
+    "rateLabel": "年1.060%（変動・半年型、2026年8月時点）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "保証料・団体信用生命保険料・一部繰上返済手数料が無料",
+      "5年ルール・125%ルールは適用されない",
+      "全疾病保障付団信も金利上乗せなしで選択可"
+    ],
+    "url": "https://www.sbishinseibank.co.jp/retail/housing/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
     "institution": "オリックス銀行",
     "institutionCategory": "新興銀行",
     "loanCategory": "real-estate-loan",
@@ -3295,6 +3403,132 @@
       "教育ローンと同一の目的型ローン商品体系"
     ],
     "url": "https://www.shigagin.com/personal/loan/purpose/justsupport/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "住信SBIネット銀行（ドコモSMTBネット銀行）",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "education-loan",
+    "productName": "目的ローン（教育ローン）",
+    "rateMin": 2.775,
+    "rateMax": 4.475,
+    "rateLabel": "変動年2.775%〜4.475%（住宅ローン残高・カードローン契約・SBI証券口座保有等の条件で最大年1.0%引下げ、2026年8月時点）",
+    "limitLabel": "要確認（公式サイトで最終確認）",
+    "limitMaxYen": null,
+    "features": [
+      "住宅ローン残高がある場合は基準金利より年1.0%引下げ",
+      "SBI証券口座保有登録でも年0.5%引下げ",
+      "当社カードローン契約済でも年0.5%引下げ"
+    ],
+    "url": "https://www.netbk.co.jp/contents/lineup/loan/education/kinri/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "住信SBIネット銀行（ドコモSMTBネット銀行）",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "auto-loan",
+    "productName": "目的ローン（自動車ローン）",
+    "rateMin": 2.775,
+    "rateMax": 4.475,
+    "rateLabel": "変動年2.775%〜4.475%（住宅ローン残高・カードローン契約・SBI証券口座保有等の条件で最大年1.0%引下げ、2026年8月時点）",
+    "limitLabel": "要確認（公式サイトで最終確認）",
+    "limitMaxYen": null,
+    "features": [
+      "住宅ローン残高がある場合は基準金利より年1.0%引下げ",
+      "既存の当社自動車ローンの借換えは対象外",
+      "WEBで手続き完結"
+    ],
+    "url": "https://www.netbk.co.jp/contents/lineup/loan/car/kinri/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "住信SBIネット銀行（ドコモSMTBネット銀行）",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "reform-loan",
+    "productName": "目的ローン（リフォームローン）",
+    "rateMin": 3.475,
+    "rateMax": 4.975,
+    "rateLabel": "変動年3.475%〜4.975%（住宅ローン残高・カードローン契約・SBI証券口座保有等の条件で最大年1.0%引下げ、2026年8月時点）",
+    "limitLabel": "要確認（公式サイトで最終確認）",
+    "limitMaxYen": null,
+    "features": [
+      "住宅ローン残高がある場合は基準金利より年1.0%引下げ",
+      "耐震・バリアフリー工事等にも利用可",
+      "WEBで手続き完結"
+    ],
+    "url": "https://www.netbk.co.jp/contents/lineup/loan/reform/kinri/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "イオン銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "education-loan",
+    "productName": "教育ローン",
+    "rateMin": 4.7,
+    "rateMax": 4.7,
+    "rateLabel": "変動年4.70%（無担保ローン基準金利+1.5%、住宅ローン契約者専用は年2.60%、2026年8月時点）",
+    "limitLabel": "10万円〜500万円",
+    "limitMaxYen": 5000000,
+    "features": [
+      "当社カードローン契約済みなら年1.0%金利優遇",
+      "最長で卒業まで元金据置が可能",
+      "支払済みから4カ月以内なら申込可"
+    ],
+    "url": "https://www.aeonbank.co.jp/loan/educational-loan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "イオン銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "auto-loan",
+    "productName": "アシストプラン（自動車ローン）",
+    "rateMin": 3.8,
+    "rateMax": 13.5,
+    "rateLabel": "固定年3.80%〜13.50%（審査により決定、2026年1月時点）",
+    "limitLabel": "10万円〜700万円",
+    "limitMaxYen": 7000000,
+    "features": [
+      "新車・中古車とも同一金利",
+      "車検・修理・オプション品購入にも利用可",
+      "毎月の返済額が変わらない固定金利"
+    ],
+    "url": "https://www.aeonbank.co.jp/loan/netfree-loan/car-loan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "イオン銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "reform-loan",
+    "productName": "リフォームローン",
+    "rateMin": 6.05,
+    "rateMax": 6.05,
+    "rateLabel": "固定年6.05%（全期間固定、2026年8月時点）",
+    "limitLabel": "30万円〜500万円",
+    "limitMaxYen": 5000000,
+    "features": [
+      "保証料はお借入利率に含まれる（別途負担なし）",
+      "返済日は毎月10日/20日/30日から選択可",
+      "増改築・改装・車庫設置・造園等に利用可"
+    ],
+    "url": "https://www.aeonbank.co.jp/loan/reform-loan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "楽天銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "education-loan",
+    "productName": "楽天銀行教育ローン（非提携型）",
+    "rateMin": 3.9,
+    "rateMax": 4.448,
+    "rateLabel": "固定年3.900%または変動年4.448%（非提携型、提携大学は優遇金利あり）",
+    "limitLabel": "要確認（公式サイトで最終確認）",
+    "limitMaxYen": null,
+    "features": [
+      "大学・大学院専用の教育ローン",
+      "提携大学は優遇金利が適用される",
+      "来店不要でWEB・アプリから申込可能"
+    ],
+    "url": "https://www.rakuten-bank.co.jp/loan/education/",
     "sourceCheckedAt": "2026-08-14"
   }
 ]
