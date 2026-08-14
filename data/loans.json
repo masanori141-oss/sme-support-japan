@@ -2900,5 +2900,149 @@
     ],
     "url": "https://www.fukuokabank.co.jp/personal/service/mokuteki/freeloan/",
     "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "京都銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "education-loan",
+    "productName": "京銀教育ローン",
+    "rateMin": 2.425,
+    "rateMax": 4.325,
+    "rateLabel": "年2.425%〜4.325%（変動、子育て応援金利プラン等の引下げ後、2026年4月時点）",
+    "limitLabel": "最大1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "固定金利も選択可",
+      "入学前・納付済でも申込可能",
+      "最長5年間は利息のみの返済に据置可能"
+    ],
+    "url": "https://www.kyotobank.co.jp/kojin/loan/kyouiku/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "京都銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "auto-loan",
+    "productName": "京銀マイカーローン（自動車ローン）",
+    "rateMin": 1.825,
+    "rateMax": 3.025,
+    "rateLabel": "年1.825%〜3.025%（変動、借入金額に応じた引下げ後、2026年4月時点）",
+    "limitLabel": "最大1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "新車・中古車とも同一金利",
+      "固定金利も選択可",
+      "借入金額が大きいほど金利が低い"
+    ],
+    "url": "https://www.kyotobank.co.jp/kojin/loan/car/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "京都銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "reform-loan",
+    "productName": "京銀住宅リフォームローン",
+    "rateMin": 2.325,
+    "rateMax": 3.325,
+    "rateLabel": "年2.325%〜3.325%（変動、2026年4月時点）",
+    "limitLabel": "最大1,500万円（最長20年）",
+    "limitMaxYen": 15000000,
+    "features": [
+      "エコ金利プラン・京町家金利プランで追加引下げあり",
+      "借入金額100万円以上でさらに金利優遇",
+      "担保・保証人とも不要"
+    ],
+    "url": "https://www.kyotobank.co.jp/kojin/loan/reform/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "北海道銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "education-loan",
+    "productName": "道銀教育ローン（証書貸付型）",
+    "rateMin": 2.825,
+    "rateMax": 4.125,
+    "rateLabel": "変動年2.825%〜4.125%（保証会社・団信付帯の有無による）",
+    "limitLabel": "10万円〜1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "カード型（在学中利息のみ）も選択可",
+      "50万円までは使途確認資料が不要",
+      "団体信用生命保険の付帯も可能"
+    ],
+    "url": "https://www.hokkaidobank.co.jp/loan/kyoiku/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "北海道銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "auto-loan",
+    "productName": "道銀マイカーローン",
+    "rateMin": 3.075,
+    "rateMax": 4.375,
+    "rateLabel": "変動年3.075%〜4.375%（WEB申込による金利引下げ後）",
+    "limitLabel": "10万円〜1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "WEB申込で店頭申込より金利優遇",
+      "車検・修理・カー用品購入等にも利用可",
+      "取扱手数料・保証料とも無料"
+    ],
+    "url": "https://www.hokkaidobank.co.jp/loan/mycar/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "北海道銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "reform-loan",
+    "productName": "道銀リフォームローン",
+    "rateMin": 3.075,
+    "rateMax": 4.375,
+    "rateLabel": "変動年3.075%〜4.375%（WEB申込による金利引下げ後、エコ関連リフォームはさらに優遇）",
+    "limitLabel": "10万円〜1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "エコ関連リフォームはさらに金利優遇",
+      "担保不要",
+      "他社リフォームローンの借換えにも利用可"
+    ],
+    "url": "https://www.hokkaidobank.co.jp/loan/reform/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "東邦銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "auto-loan",
+    "productName": "東邦・オートローン",
+    "rateMin": 2.6,
+    "rateMax": 3.2,
+    "rateLabel": "変動年2.6%〜3.2%（東邦信用保証付、給与振込・住宅ローン利用者は優遇）",
+    "limitLabel": "10万円〜1,500万円",
+    "limitMaxYen": 15000000,
+    "features": [
+      "東邦銀行に住宅ローン利用中なら金利年2.6%",
+      "給与振込指定で金利年2.8%",
+      "保証料込みの表示金利"
+    ],
+    "url": "https://www.tohobank.co.jp/kojin/loan/auto/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "東邦銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "education-loan",
+    "productName": "東邦教育ローン（一括借入方式）",
+    "rateMin": 2.6,
+    "rateMax": 3.2,
+    "rateLabel": "変動年2.6%〜3.2%（東邦信用保証付、給与振込・住宅ローン利用者は優遇）",
+    "limitLabel": "要確認（公式サイトで最終確認）",
+    "limitMaxYen": null,
+    "features": [
+      "カードローン方式（在学中据置）も選択可",
+      "東邦銀行に住宅ローン利用中なら金利年2.6%",
+      "保証料込みの表示金利"
+    ],
+    "url": "https://www.tohobank.co.jp/kojin/loan/education/",
+    "sourceCheckedAt": "2026-08-14"
   }
 ]
