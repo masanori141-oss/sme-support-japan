@@ -2756,5 +2756,77 @@
     ],
     "url": "https://www.bank-daiwa.co.jp/saving/loan/investment_loan/",
     "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "横浜銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "education-loan",
+    "productName": "横浜銀行教育ローン",
+    "rateMin": 0.9,
+    "rateMax": 3.55,
+    "rateLabel": "年0.9%〜3.55%",
+    "limitLabel": "10万円〜1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "カードローン型・一括借入型から選択可",
+      "保証料不要、担保・保証人も不要",
+      "WEB完結で来店不要"
+    ],
+    "url": "https://www.boy.co.jp/kojin/education-loan/index.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "千葉銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "auto-loan",
+    "productName": "ちばぎんマイカーローン",
+    "rateMin": 2.1,
+    "rateMax": 3.4,
+    "rateLabel": "年2.1%〜3.4%（変動、保証料は千葉銀行負担）",
+    "limitLabel": "最大3,000万円",
+    "limitMaxYen": 30000000,
+    "features": [
+      "WEB完結・アプリ口座登録・200万円以上の借入で金利優遇",
+      "新車・中古車のほか維持費・借換えにも利用可",
+      "千葉・東京・茨城・埼玉・神奈川在住/勤務が対象"
+    ],
+    "url": "https://www.chibabank.co.jp/kojin/services/loan/mycar/kinri_mycar",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "京葉銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "auto-loan",
+    "productName": "京葉銀行マイカーローン",
+    "rateMin": 1.4,
+    "rateMax": 4.2,
+    "rateLabel": "年1.4%〜4.2%（変動、Web完結でさらに金利優遇）",
+    "limitLabel": "最大1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "車検・修理費用・水上バイク購入等にも利用可",
+      "Web申込で来店不要の完結契約が可能",
+      "営業用車両は対象外"
+    ],
+    "url": "https://www.keiyobank.co.jp/individual/loan/my_car/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "福岡銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "auto-loan",
+    "productName": "ニューオートローンDX",
+    "rateMin": 2.15,
+    "rateMax": 3.95,
+    "rateLabel": "年2.15%〜3.95%（固定）",
+    "limitLabel": "10万円〜1,500万円",
+    "limitMaxYen": 15000000,
+    "features": [
+      "固定金利型（ニューオートローンDX）と変動金利型（らくらくマイカーローン）を選択可",
+      "住宅ローン利用中はさらに金利優遇",
+      "1万円単位で融資額を調整可能"
+    ],
+    "url": "https://www.fukuokabank.co.jp/personal/service/mokuteki/autoloan/",
+    "sourceCheckedAt": "2026-08-14"
   }
 ]

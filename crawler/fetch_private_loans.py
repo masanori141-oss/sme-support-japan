@@ -648,6 +648,44 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["大和証券の紹介を受けた「ダイワ・コンサルティングコース」の富裕層向け", "対象は東京・大阪・名古屋等の賃貸需要が見込まれるエリア", "他行からの借換え・建築資金は対象外"],
         confirmed=False,
     ),
+
+    # --- 地方銀行の対象拡充（教育ローン・自動車ローン） ---
+    LoanConfig(
+        institution="横浜銀行", institution_category="地方銀行",
+        loan_category="education-loan", product_name="横浜銀行教育ローン",
+        url="https://www.boy.co.jp/kojin/education-loan/index.html",
+        rate_min=0.9, rate_max=3.55, rate_label="年0.9%〜3.55%",
+        limit_label="10万円〜1,000万円", limit_max_yen=10_000_000,
+        features=["カードローン型・一括借入型から選択可", "保証料不要、担保・保証人も不要", "WEB完結で来店不要"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="千葉銀行", institution_category="地方銀行",
+        loan_category="auto-loan", product_name="ちばぎんマイカーローン",
+        url="https://www.chibabank.co.jp/kojin/services/loan/mycar/kinri_mycar",
+        rate_min=2.1, rate_max=3.4, rate_label="年2.1%〜3.4%（変動、保証料は千葉銀行負担）",
+        limit_label="最大3,000万円", limit_max_yen=30_000_000,
+        features=["WEB完結・アプリ口座登録・200万円以上の借入で金利優遇", "新車・中古車のほか維持費・借換えにも利用可", "千葉・東京・茨城・埼玉・神奈川在住/勤務が対象"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="京葉銀行", institution_category="地方銀行",
+        loan_category="auto-loan", product_name="京葉銀行マイカーローン",
+        url="https://www.keiyobank.co.jp/individual/loan/my_car/",
+        rate_min=1.4, rate_max=4.2, rate_label="年1.4%〜4.2%（変動、Web完結でさらに金利優遇）",
+        limit_label="最大1,000万円", limit_max_yen=10_000_000,
+        features=["車検・修理費用・水上バイク購入等にも利用可", "Web申込で来店不要の完結契約が可能", "営業用車両は対象外"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="福岡銀行", institution_category="地方銀行",
+        loan_category="auto-loan", product_name="ニューオートローンDX",
+        url="https://www.fukuokabank.co.jp/personal/service/mokuteki/autoloan/",
+        rate_min=2.15, rate_max=3.95, rate_label="年2.15%〜3.95%（固定）",
+        limit_label="10万円〜1,500万円", limit_max_yen=15_000_000,
+        features=["固定金利型（ニューオートローンDX）と変動金利型（らくらくマイカーローン）を選択可", "住宅ローン利用中はさらに金利優遇", "1万円単位で融資額を調整可能"],
+        confirmed=True,
+    ),
 ]
 
 
