@@ -800,6 +800,53 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["カードローン方式（在学中据置）も選択可", "東邦銀行に住宅ローン利用中なら金利年2.6%", "保証料込みの表示金利"],
         confirmed=True,
     ),
+
+    # --- 地方銀行の対象拡充（滋賀銀行・山陰合同銀行・伊予銀行: 教育ローン・自動車ローン） ---
+    LoanConfig(
+        institution="滋賀銀行", institution_category="地方銀行",
+        loan_category="education-loan", product_name="しがぎん教育ローン（ジャストサポート・目的型）",
+        url="https://www.shigagin.com/personal/loan/purpose/justsupport/education.html",
+        rate_min=3.525, rate_max=5.825, rate_label="固定年3.525%〜5.825%（店頭表示金利、審査により3水準のいずれかを適用、条件により最大0.45%引下げ）",
+        limit_label="10万円〜1,000万円（超える場合は不動産担保型）", limit_max_yen=10_000_000,
+        features=["進学先が決まる前でも仮審査可能（結果は3ヵ月有効）", "スマホ契約なら印紙代0円", "1,000万円超は不動産担保型ジャストサポートを利用"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="山陰合同銀行", institution_category="地方銀行",
+        loan_category="education-loan", product_name="教育ローン「がくえん」（カード型、島根県・鳥取県）",
+        url="https://www.gogin.co.jp/personal/loan/education/",
+        rate_min=2.4, rate_max=4.9, rate_label="変動年2.40%〜4.90%（取引状況に応じ最大年2.5%引下げ）",
+        limit_label="極度額100万円〜1,000万円", limit_max_yen=10_000_000,
+        features=["カード型で必要な時にすぐ引出し可能", "在学中は利息のみの返済でOK", "給与振込利用者は基準金利から年1.0%引下げ"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="山陰合同銀行", institution_category="地方銀行",
+        loan_category="auto-loan", product_name="ごうぎんマイカーローン",
+        url="https://www.gogin.co.jp/personal/loan/mycar/",
+        rate_min=2.05, rate_max=4.55, rate_label="変動年2.05%〜4.55%（取引状況に応じ最大年2.5%引下げ）",
+        limit_label="最高1,000万円", limit_max_yen=10_000_000,
+        features=["自動車購入資金の30%まで（最高30万円）用途自由分を上乗せ可", "車検・修理・ドレスアップ費用にも利用可", "他社からの借換えにも対応"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="伊予銀行", institution_category="地方銀行",
+        loan_category="education-loan", product_name="いよぎん教育ローン",
+        url="https://www.iyobank.co.jp/kariru/education/index.html",
+        rate_min=2.8, rate_max=5.25, rate_label="固定年2.80%〜5.25%（取引状況に応じ最大年0.5%引下げ、引下げ後年2.3%〜）",
+        limit_label="10万円〜1,000万円", limit_max_yen=10_000_000,
+        features=["進学先が未定でも仮審査可能", "在学中は据置期間の設定が可能（最長据置5〜7年）", "団信加入時は金利に年0.2%上乗せ"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="伊予銀行", institution_category="地方銀行",
+        loan_category="auto-loan", product_name="いよぎんマイカーローン",
+        url="https://www.iyobank.co.jp/kariru/mycar-loan/",
+        rate_min=2.35, rate_max=4.5, rate_label="変動年2.35%〜4.50%（取引状況に応じ最大年0.4%引下げ、引下げ後年1.95%〜）",
+        limit_label="10万円〜1,000万円", limit_max_yen=10_000_000,
+        features=["お車決定前でも仮審査可能", "担保・保証人は原則不要", "他社からの借換えにも対応"],
+        confirmed=True,
+    ),
 ]
 
 

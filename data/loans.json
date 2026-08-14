@@ -3044,5 +3044,95 @@
     ],
     "url": "https://www.tohobank.co.jp/kojin/loan/education/",
     "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "滋賀銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "education-loan",
+    "productName": "しがぎん教育ローン（ジャストサポート・目的型）",
+    "rateMin": 3.525,
+    "rateMax": 5.825,
+    "rateLabel": "固定年3.525%〜5.825%（店頭表示金利、審査により3水準のいずれかを適用、条件により最大0.45%引下げ）",
+    "limitLabel": "10万円〜1,000万円（超える場合は不動産担保型）",
+    "limitMaxYen": 10000000,
+    "features": [
+      "進学先が決まる前でも仮審査可能（結果は3ヵ月有効）",
+      "スマホ契約なら印紙代0円",
+      "1,000万円超は不動産担保型ジャストサポートを利用"
+    ],
+    "url": "https://www.shigagin.com/personal/loan/purpose/justsupport/education.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "山陰合同銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "education-loan",
+    "productName": "教育ローン「がくえん」（カード型、島根県・鳥取県）",
+    "rateMin": 2.4,
+    "rateMax": 4.9,
+    "rateLabel": "変動年2.40%〜4.90%（取引状況に応じ最大年2.5%引下げ）",
+    "limitLabel": "極度額100万円〜1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "カード型で必要な時にすぐ引出し可能",
+      "在学中は利息のみの返済でOK",
+      "給与振込利用者は基準金利から年1.0%引下げ"
+    ],
+    "url": "https://www.gogin.co.jp/personal/loan/education/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "山陰合同銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "auto-loan",
+    "productName": "ごうぎんマイカーローン",
+    "rateMin": 2.05,
+    "rateMax": 4.55,
+    "rateLabel": "変動年2.05%〜4.55%（取引状況に応じ最大年2.5%引下げ）",
+    "limitLabel": "最高1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "自動車購入資金の30%まで（最高30万円）用途自由分を上乗せ可",
+      "車検・修理・ドレスアップ費用にも利用可",
+      "他社からの借換えにも対応"
+    ],
+    "url": "https://www.gogin.co.jp/personal/loan/mycar/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "伊予銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "education-loan",
+    "productName": "いよぎん教育ローン",
+    "rateMin": 2.8,
+    "rateMax": 5.25,
+    "rateLabel": "固定年2.80%〜5.25%（取引状況に応じ最大年0.5%引下げ、引下げ後年2.3%〜）",
+    "limitLabel": "10万円〜1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "進学先が未定でも仮審査可能",
+      "在学中は据置期間の設定が可能（最長据置5〜7年）",
+      "団信加入時は金利に年0.2%上乗せ"
+    ],
+    "url": "https://www.iyobank.co.jp/kariru/education/index.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "伊予銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "auto-loan",
+    "productName": "いよぎんマイカーローン",
+    "rateMin": 2.35,
+    "rateMax": 4.5,
+    "rateLabel": "変動年2.35%〜4.50%（取引状況に応じ最大年0.4%引下げ、引下げ後年1.95%〜）",
+    "limitLabel": "10万円〜1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "お車決定前でも仮審査可能",
+      "担保・保証人は原則不要",
+      "他社からの借換えにも対応"
+    ],
+    "url": "https://www.iyobank.co.jp/kariru/mycar-loan/",
+    "sourceCheckedAt": "2026-08-14"
   }
 ]
