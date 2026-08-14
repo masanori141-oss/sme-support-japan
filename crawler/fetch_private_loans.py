@@ -1093,6 +1093,53 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["賃貸アパート・マンション・賃貸店舗の新築・購入・増改築資金に利用可", "変動・固定（3年・5年・7年・10年）を借入後も変更可能", "団体信用生命保険の保険料は千葉銀行負担"],
         confirmed=False,
     ),
+
+    # --- 地方銀行の対象拡充（住宅ローンの残り: 京葉銀行・東邦銀行・滋賀銀行・伊予銀行・山陰合同銀行） ---
+    LoanConfig(
+        institution="京葉銀行", institution_category="地方銀行",
+        loan_category="mortgage", product_name="京葉銀行住宅ローン（変動金利）",
+        url="https://www.keiyobank.co.jp/individual/loan/housing/",
+        rate_min=1.225, rate_max=1.225, rate_label="年1.225%（変動、店頭金利年3.125%より最大1.90%優遇、2026年8月時点）",
+        limit_label="要確認（融資金額は物件価格・年収等により決定）",
+        features=["がん保障付き団体信用生命保険に無料で加入可能", "40年・50年の長期返済プランを選択可能", "固定10年金利も選択可"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="東邦銀行", institution_category="地方銀行",
+        loan_category="mortgage", product_name="東邦・住宅ローン金利応援コース（変動金利応援コース）",
+        url="https://www.tohobank.co.jp/kinri/saikagen-kinri.html",
+        rate_min=0.800, rate_max=0.800, rate_label="年0.800%（変動、給与振込+アプリ等の条件を満たす場合の最下限金利、2026年7月時点）",
+        limit_label="100万円以上1億円以内", limit_max_yen=100_000_000,
+        features=["給与振込・東邦銀行アプリ等の条件で最下限金利を適用", "融資期間は最長50年", "固定3年・5年・10年も選択可"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="滋賀銀行", institution_category="地方銀行",
+        loan_category="mortgage", product_name="しがぎんスーパー住宅ローン（変動型・有担保）",
+        url="https://www.shigagin.com/rate/loan/",
+        rate_min=1.0, rate_max=1.175, rate_label="年1.0%〜1.175%（変動、店頭金利年3.325%より最大引下げ後、事務取扱手数料の型により異なる、2026年8月時点）",
+        limit_label="要確認（融資金額は物件価格・年収等により決定）",
+        features=["WEB申込プランなら来店不要で手続き完結", "一部繰上返済手数料が無料", "団体信用生命保険が充実"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="伊予銀行", institution_category="地方銀行",
+        loan_category="mortgage", product_name="いよぎん住宅ローン（新変動金利型）",
+        url="https://www.iyobank.co.jp/kinri-gaikokukawasesoba-market/monthly/kojinloankinri.html",
+        rate_min=0.95, rate_max=0.95, rate_label="年0.95%〜（変動、審査結果により0.1〜0.3%上乗せの場合あり、2026年8月時点）",
+        limit_label="要確認（融資金額は物件価格・年収等により決定）",
+        features=["段階金利型・変動固定選択型など複数プランから選択可", "新変動金利利用料は借入額の1.1%（税込）", "店頭・HOME TICKETで将来金利上昇時のシミュレーション可能"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="山陰合同銀行", institution_category="地方銀行",
+        loan_category="mortgage", product_name="ごうぎんの住宅ローン（変動金利型・優遇キャンペーン）",
+        url="https://www.gogin.co.jp/rate/housing/index.html",
+        rate_min=0.90, rate_max=1.70, rate_label="年0.90%〜1.70%（変動、キャンペーン金利、通常金利は年1.05%〜4.60%、2026年6月〜12月時点）",
+        limit_label="要確認（融資金額は物件価格・年収等により決定）",
+        features=["新規借入・借換えとも同一金利", "2段階固定金利型・預金連動型など複数プランあり", "キャンペーン適用には条件あり"],
+        confirmed=True,
+    ),
 ]
 
 
