@@ -51,7 +51,7 @@ const LOAN_DATA = [
       "事業再建に取り組む計画がある"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260630001.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "中小企業庁（能登地域特別枠）",
@@ -105,7 +105,7 @@ const LOAN_DATA = [
       "導入したいDXツールが明確にある"
     ],
     "url": "https://www.pref.saitama.lg.jp/a0803/dx_jigyousyashien/dx_index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "北海道",
@@ -123,7 +123,7 @@ const LOAN_DATA = [
       "新商品開発・販路拡大・設備投資のいずれかを予定"
     ],
     "url": "https://www.pref.hokkaido.lg.jp/kz/csk/249117.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "神奈川県",
@@ -141,7 +141,7 @@ const LOAN_DATA = [
       "生産性向上の具体的な計画がある"
     ],
     "url": "https://www.pref.kanagawa.jp/docs/m2w/prs/r2625041.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "大阪府",
@@ -159,7 +159,7 @@ const LOAN_DATA = [
       "エネルギー使用量1％以上またはCO2年1トン以上の削減計画"
     ],
     "url": "https://www.pref.osaka.lg.jp/o120020/eneseisaku/sec/plan2_subsidy.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "兵庫県",
@@ -177,7 +177,7 @@ const LOAN_DATA = [
       "省エネ診断を受診したい意向がある"
     ],
     "url": "https://web.pref.hyogo.lg.jp/sr07/sdgs.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "岩手県",
@@ -195,7 +195,7 @@ const LOAN_DATA = [
       "支援金の算定基準（引上げ実績）を満たす"
     ],
     "url": "https://iwate-bukkakoutoutaisaku.pref.iwate.jp/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "宮城県",
@@ -213,7 +213,7 @@ const LOAN_DATA = [
       "アドバイザーの助言を受けながら進める意思がある"
     ],
     "url": "https://www.pref.miyagi.jp/soshiki/chukisi/r8digital-shien.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "秋田県",
@@ -231,7 +231,7 @@ const LOAN_DATA = [
       "承継後のPMI（統合）に取り組む場合も対象"
     ],
     "url": "https://www.pref.akita.lg.jp/pages/archive/95760",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "山形県",
@@ -249,7 +249,7 @@ const LOAN_DATA = [
       "公式要領で詳細要件の確認が必要"
     ],
     "url": "https://www.pref.yamagata.jp/110013/sangyo/shokogyo/shinko/r8marusapo_jigyokeizoku2_bosyu.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "福島県",
@@ -267,7 +267,7 @@ const LOAN_DATA = [
       "パートナーシップ構築宣言を行う（または行う予定）"
     ],
     "url": "https://www.pref.fukushima.lg.jp/sec/32011b/seisanseikoujoh.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "栃木県",
@@ -285,7 +285,7 @@ const LOAN_DATA = [
       "支援機関の推薦を受けられる"
     ],
     "url": "https://www.pref.tochigi.lg.jp/f03/jigyoushoukei/r8uketukekaishi.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "群馬県",
@@ -303,7 +303,7 @@ const LOAN_DATA = [
       "申請前に財団への相談ができる"
     ],
     "url": "https://www.g-inf.or.jp/html/subsidy_001.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "千葉県",
@@ -321,7 +321,7 @@ const LOAN_DATA = [
       "小規模事業者は専用枠（上限500万円）も選べる"
     ],
     "url": "https://www.pref.chiba.lg.jp/keisei/zaisei/chiba-seichohojyo4.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "東京都",
@@ -339,7 +339,7 @@ const LOAN_DATA = [
       "販売促進の具体的な計画がある"
     ],
     "url": "https://www.tokyo-kosha.or.jp/support/josei/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "富山県",
@@ -357,7 +357,7 @@ const LOAN_DATA = [
       "公式要領で詳細要件の確認が必要"
     ],
     "url": "https://www.pref.toyama.jp/sangyou/shoukoukensetsu/shoukougyou/shien/hojokin/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "石川県",
@@ -375,7 +375,7 @@ const LOAN_DATA = [
       "石川県産業創出支援機構（ISICO）の支援を受けられる"
     ],
     "url": "https://www.isico.or.jp/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "福井県",
@@ -393,7 +393,7 @@ const LOAN_DATA = [
       "事業実施は令和9年2月末までに完了予定"
     ],
     "url": "https://www.pref.fukui.lg.jp/doc/kanri/ninaitehozyo.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "広島県",
@@ -411,7 +411,7 @@ const LOAN_DATA = [
       "副業・兼業人材の活用でも利用できる"
     ],
     "url": "https://www.pref.hiroshima.lg.jp/site/pro-kyoten/probosyu08.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "山口県",
@@ -429,7 +429,7 @@ const LOAN_DATA = [
       "早めの申請がおすすめ（先着枠あり）"
     ],
     "url": "https://www.pref.yamaguchi.lg.jp/press/343044.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "高知県",
@@ -447,7 +447,7 @@ const LOAN_DATA = [
       "毎月のエントリー締切に間に合わせられる"
     ],
     "url": "https://joho-kochi.or.jp/center/r8top.php",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "福岡県",
@@ -465,7 +465,7 @@ const LOAN_DATA = [
       "事業場内最低賃金が県最低賃金以上"
     ],
     "url": "https://www.pref.fukuoka.lg.jp/contents/fukuoka-chinage.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "長崎県",
@@ -483,7 +483,7 @@ const LOAN_DATA = [
       "承継後の事業展開計画がある"
     ],
     "url": "https://www.pref.nagasaki.jp/bunrui/shigoto-sangyo/chushokigyoshien-kinyu/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "大分県",
@@ -501,7 +501,7 @@ const LOAN_DATA = [
       "マッチングイベントへの参加実績がある"
     ],
     "url": "https://j-net21.smrj.go.jp/snavi2/articles/184817",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "鹿児島県",
@@ -519,7 +519,7 @@ const LOAN_DATA = [
       "社内デジタル人材育成の取組も対象"
     ],
     "url": "https://www.pref.kagoshima.jp/af22/sangyo-rodo/2026_dx_hojokin.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "中小企業庁",
@@ -627,7 +627,7 @@ const LOAN_DATA = [
       "2026年7月時点で1,078事業所・16,054人が加入"
     ],
     "url": "https://toku-nw.com/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "佐賀県（勤労者福祉共済）",
@@ -663,7 +663,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.hokkaido.lg.jp/kz/csk/kny/yuushi/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "青森県",
@@ -681,7 +681,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.aomori.lg.jp/soshiki/sangyo/sangyo/kenyuusi.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "岩手県",
@@ -735,7 +735,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.akita.lg.jp/pages/genre/14094",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "山形県",
@@ -753,7 +753,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.yamagata.jp/110013/sangyo/shokogyo/shien/17shikin.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "福島県",
@@ -771,7 +771,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.fukushima.lg.jp/sec/32011b/seidosikin.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "茨城県",
@@ -843,7 +843,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.saitama.lg.jp/a0805/seidoyushi/",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "千葉県",
@@ -915,7 +915,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.niigata.lg.jp/sec/chiikishinko/yuushi-seidoyushi.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "富山県",
@@ -951,7 +951,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.ishikawa.lg.jp/kinyuu/kinyuu/youkou.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "福井県",
@@ -1023,7 +1023,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.gifu.lg.jp/page/2522.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "静岡県",
@@ -1059,7 +1059,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.aichi.jp/soshiki/kinyu/yushi2024.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "三重県",
@@ -1077,7 +1077,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.mie.lg.jp/SHINSAN/HP/77426022712.htm",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "滋賀県",
@@ -1131,7 +1131,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.osaka.lg.jp/o110080/kinyushien/seido001/index.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "兵庫県",
@@ -1167,7 +1167,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.nara.jp/5217.htm",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "和歌山県",
@@ -1185,7 +1185,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.wakayama.lg.jp/prefg/060300/gyoumu/kinyuu/sangyoushien.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "鳥取県",
@@ -1221,7 +1221,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.shimane.lg.jp/industry/syoko/sangyo/yuushi/tyusyo.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "岡山県",
@@ -1257,7 +1257,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.hiroshima.lg.jp/soshiki/75/1168587452727.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "山口県",
@@ -1275,7 +1275,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.yamaguchi.lg.jp/soshiki/85/21831.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "徳島県",
@@ -1347,7 +1347,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.kochi.lg.jp/soshiki/150401/2022041300169.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "福岡県",
@@ -1455,7 +1455,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.miyazaki.lg.jp/keieikinyushien/shigoto/chushokigyo/20200329144235.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "鹿児島県",
@@ -1473,7 +1473,7 @@ const LOAN_DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "http://www.pref.kagoshima.jp/af02/sangyo-rodo/syoko/yushi/yuushi/yushigaiyou.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "沖縄県",
@@ -1507,7 +1507,7 @@ const LOAN_DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260731001.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "中小企業庁",
@@ -1523,7 +1523,7 @@ const LOAN_DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260708001.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "中小企業庁",
@@ -1539,7 +1539,7 @@ const LOAN_DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260630002.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "中小企業庁",
@@ -1555,7 +1555,7 @@ const LOAN_DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260527002.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "中小企業庁",
@@ -1571,7 +1571,7 @@ const LOAN_DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260527001.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "中小企業庁",
@@ -1587,7 +1587,7 @@ const LOAN_DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/yosan/r7/r6_it.pdf",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "中小企業庁",
@@ -1603,7 +1603,7 @@ const LOAN_DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/shogyo/shogyo/2024/240215kino_fukugo.html",
-    "sourceCheckedAt": "2026-08-13"
+    "sourceCheckedAt": "2026-08-14"
   },
   {
     "institution": "熊本県",
