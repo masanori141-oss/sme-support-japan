@@ -1229,6 +1229,55 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["住宅ローン・マイカーローン・教育ローン等をまとめて借換え可能", "融資手数料は一律55,000円（税込）", "団体信用生命保険付き"],
         confirmed=True,
     ),
+
+    # --- 新興銀行の対象拡充（カードローンの残り: ソニー銀行・SBI新生銀行） ---
+    LoanConfig(
+        institution="ソニー銀行", institution_category="新興銀行",
+        loan_category="card-loan", product_name="ソニー銀行カードローン",
+        url="https://sonybank.jp/rate/cl.html",
+        rate_min=2.5, rate_max=13.8, rate_label="実質年率2.500%〜13.800%",
+        limit_label="10万円〜800万円", limit_max_yen=8_000_000,
+        features=["ソニー銀行口座がなくても申込可能（口座開設と同時申込）", "カード受取前でも指定口座に振込可能", "月々2,000円から返済可能"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="SBI新生銀行（新生インベストメント&ファイナンス）", institution_category="新興銀行",
+        loan_category="card-loan", product_name="SBI新生銀行カードローン",
+        url="https://www.sbishinseibank.co.jp/retail/card_loan/splus/",
+        rate_min=4.5, rate_max=14.8, rate_label="実質年率4.500%〜14.800%",
+        limit_label="1万円〜500万円", limit_max_yen=5_000_000,
+        features=["申込みから融資まで来店不要", "SBI新生銀行口座がなくても申込可能", "提携ATMでの借入・返済にも対応"],
+        confirmed=True,
+    ),
+
+    # --- 東京スター銀行の対象拡充（教育ローン・自動車ローン・リフォームローン） ---
+    LoanConfig(
+        institution="東京スター銀行", institution_category="新興銀行",
+        loan_category="education-loan", product_name="スター教育ローン",
+        url="https://www.tokyostarbank.co.jp/products/loan/unsecured/education/",
+        rate_min=1.5, rate_max=3.8, rate_label="年1.5%〜3.8%（保証料込）",
+        limit_label="10万円〜500万円", limit_max_yen=5_000_000,
+        features=["来店不要、申込みから契約までインターネットで完結", "既にお支払済みの教育費の借換えにも利用可", "無担保ローンラインナップの一つ"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="東京スター銀行", institution_category="新興銀行",
+        loan_category="auto-loan", product_name="スターマイカーローン",
+        url="https://www.tokyostarbank.co.jp/products/loan/unsecured/mycar/",
+        rate_min=1.5, rate_max=3.8, rate_label="年1.5%〜3.8%（保証料込）",
+        limit_label="10万円〜500万円", limit_max_yen=5_000_000,
+        features=["新車・中古車・オートバイ等の購入資金に利用可", "来店不要、申込みから契約までインターネットで完結", "融資期間は1年〜10年"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="東京スター銀行", institution_category="新興銀行",
+        loan_category="reform-loan", product_name="スターリフォームローン",
+        url="https://www.tokyostarbank.co.jp/products/loan/unsecured/reform/",
+        rate_min=1.5, rate_max=3.8, rate_label="年1.5%〜3.8%（保証料込）",
+        limit_label="10万円〜500万円", limit_max_yen=5_000_000,
+        features=["来店不要、申込みから契約までインターネットで完結", "融資期間は1年〜10年", "他社リフォームローンの借換えにも利用可"],
+        confirmed=True,
+    ),
 ]
 
 

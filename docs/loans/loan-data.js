@@ -1792,13 +1792,13 @@ const LOAN_DATA = [
     "productName": "ソニー銀行カードローン",
     "rateMin": 2.5,
     "rateMax": 13.8,
-    "rateLabel": "年2.5%〜13.8%（変動）",
+    "rateLabel": "実質年率2.500%〜13.800%",
     "limitLabel": "10万円〜800万円",
     "limitMaxYen": 8000000,
     "features": [
-      "申込・借入・返済がPC/スマホで完結",
-      "月々2,000円から返済可能",
-      "金利は原則毎月1日に見直し"
+      "ソニー銀行口座がなくても申込可能（口座開設と同時申込）",
+      "カード受取前でも指定口座に振込可能",
+      "月々2,000円から返済可能"
     ],
     "url": "https://sonybank.jp/rate/cl.html",
     "sourceCheckedAt": "2026-08-14"
@@ -3853,6 +3853,78 @@ const LOAN_DATA = [
       "団体信用生命保険付き"
     ],
     "url": "https://www.keiyobank.co.jp/individual/loan/home_free/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "SBI新生銀行（新生インベストメント&ファイナンス）",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "card-loan",
+    "productName": "SBI新生銀行カードローン",
+    "rateMin": 4.5,
+    "rateMax": 14.8,
+    "rateLabel": "実質年率4.500%〜14.800%",
+    "limitLabel": "1万円〜500万円",
+    "limitMaxYen": 5000000,
+    "features": [
+      "申込みから融資まで来店不要",
+      "SBI新生銀行口座がなくても申込可能",
+      "提携ATMでの借入・返済にも対応"
+    ],
+    "url": "https://www.sbishinseibank.co.jp/retail/card_loan/splus/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "東京スター銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "education-loan",
+    "productName": "スター教育ローン",
+    "rateMin": 1.5,
+    "rateMax": 3.8,
+    "rateLabel": "年1.5%〜3.8%（保証料込）",
+    "limitLabel": "10万円〜500万円",
+    "limitMaxYen": 5000000,
+    "features": [
+      "来店不要、申込みから契約までインターネットで完結",
+      "既にお支払済みの教育費の借換えにも利用可",
+      "無担保ローンラインナップの一つ"
+    ],
+    "url": "https://www.tokyostarbank.co.jp/products/loan/unsecured/education/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "東京スター銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "auto-loan",
+    "productName": "スターマイカーローン",
+    "rateMin": 1.5,
+    "rateMax": 3.8,
+    "rateLabel": "年1.5%〜3.8%（保証料込）",
+    "limitLabel": "10万円〜500万円",
+    "limitMaxYen": 5000000,
+    "features": [
+      "新車・中古車・オートバイ等の購入資金に利用可",
+      "来店不要、申込みから契約までインターネットで完結",
+      "融資期間は1年〜10年"
+    ],
+    "url": "https://www.tokyostarbank.co.jp/products/loan/unsecured/mycar/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "東京スター銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "reform-loan",
+    "productName": "スターリフォームローン",
+    "rateMin": 1.5,
+    "rateMax": 3.8,
+    "rateLabel": "年1.5%〜3.8%（保証料込）",
+    "limitLabel": "10万円〜500万円",
+    "limitMaxYen": 5000000,
+    "features": [
+      "来店不要、申込みから契約までインターネットで完結",
+      "融資期間は1年〜10年",
+      "他社リフォームローンの借換えにも利用可"
+    ],
+    "url": "https://www.tokyostarbank.co.jp/products/loan/unsecured/reform/",
     "sourceCheckedAt": "2026-08-14"
   }
 ];
