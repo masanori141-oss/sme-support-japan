@@ -3836,5 +3836,23 @@ const LOAN_DATA = [
     ],
     "url": "https://www.shizuokabank.co.jp/personal/loan/free_loan/index.html",
     "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "京葉銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "real-estate-loan",
+    "productName": "アルファ不動産担保フリーローン",
+    "rateMin": 2.1,
+    "rateMax": 4.8,
+    "rateLabel": "変動年2.1%〜4.8%",
+    "limitLabel": "最大5,000万円（最長30年）",
+    "limitMaxYen": 50000000,
+    "features": [
+      "住宅ローン・マイカーローン・教育ローン等をまとめて借換え可能",
+      "融資手数料は一律55,000円（税込）",
+      "団体信用生命保険付き"
+    ],
+    "url": "https://www.keiyobank.co.jp/individual/loan/home_free/",
+    "sourceCheckedAt": "2026-08-14"
   }
 ];

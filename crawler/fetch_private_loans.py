@@ -1218,6 +1218,17 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["資金使途の証明書類が原則不要", "アルバイト・契約社員も申込可", "複数の借入のおまとめにも利用可"],
         confirmed=True,
     ),
+
+    # --- 京葉銀行の不動産担保ローン ---
+    LoanConfig(
+        institution="京葉銀行", institution_category="地方銀行",
+        loan_category="real-estate-loan", product_name="アルファ不動産担保フリーローン",
+        url="https://www.keiyobank.co.jp/individual/loan/home_free/",
+        rate_min=2.1, rate_max=4.8, rate_label="変動年2.1%〜4.8%",
+        limit_label="最大5,000万円（最長30年）", limit_max_yen=50_000_000,
+        features=["住宅ローン・マイカーローン・教育ローン等をまとめて借換え可能", "融資手数料は一律55,000円（税込）", "団体信用生命保険付き"],
+        confirmed=True,
+    ),
 ]
 
 
