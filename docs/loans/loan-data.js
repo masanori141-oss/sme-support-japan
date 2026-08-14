@@ -3530,5 +3530,77 @@ const LOAN_DATA = [
     ],
     "url": "https://www.rakuten-bank.co.jp/loan/education/",
     "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "オリックス銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "card-loan",
+    "productName": "オリックス銀行カードローン",
+    "rateMin": 1.7,
+    "rateMax": 14.8,
+    "rateLabel": "年1.7%〜14.8%",
+    "limitLabel": "最高800万円",
+    "limitMaxYen": 8000000,
+    "features": [
+      "契約日の翌日から30日間無利息サービス",
+      "提携ATM利用手数料0円（全国10万台以上）",
+      "がん保障特約付きプラン「Bright」も選択可"
+    ],
+    "url": "https://www.orixbank.co.jp/personal/cardloan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "住信SBIネット銀行（ドコモSMTBネット銀行）",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "real-estate-loan",
+    "productName": "不動産担保ローン",
+    "rateMin": 3.95,
+    "rateMax": 9.9,
+    "rateLabel": "変動年3.95%〜9.90%（2026年8月時点）",
+    "limitLabel": "300万円〜1億円",
+    "limitMaxYen": 100000000,
+    "features": [
+      "借換え・投資用資金・相続関連資金等、資金使途は原則自由",
+      "複数の借入を「おまとめ」して一本化可能",
+      "住宅ローン返済中でも利用可能"
+    ],
+    "url": "https://www.netbk.co.jp/contents/lineup/loan/realestate/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "イオン銀行",
+    "institutionCategory": "新興銀行",
+    "loanCategory": "purpose-loan",
+    "productName": "フリーローン（イオンアシストプラン）",
+    "rateMin": 3.8,
+    "rateMax": 13.5,
+    "rateLabel": "固定年3.80%〜13.50%（審査により決定、2026年1月時点）",
+    "limitLabel": "30万円〜700万円",
+    "limitMaxYen": 7000000,
+    "features": [
+      "資金使途証明書・年収確認書類が原則不要",
+      "事業性資金以外は使いみち自由",
+      "申込はインターネット限定"
+    ],
+    "url": "https://www.aeonbank.co.jp/loan/netfree_loan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "千葉銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "investment-property-loan",
+    "productName": "金利選択型アパートローン",
+    "rateMin": null,
+    "rateMax": null,
+    "rateLabel": "非公開（変動・固定選択制、審査結果により当行が個別に決定）",
+    "limitLabel": "1億円以内（10万円単位）",
+    "limitMaxYen": 100000000,
+    "features": [
+      "賃貸アパート・マンション・賃貸店舗の新築・購入・増改築資金に利用可",
+      "変動・固定（3年・5年・7年・10年）を借入後も変更可能",
+      "団体信用生命保険の保険料は千葉銀行負担"
+    ],
+    "url": "https://www.chibabank.co.jp/kojin/loan/apartment/outline.html",
+    "sourceCheckedAt": "2026-08-14"
   }
 ];

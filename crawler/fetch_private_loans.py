@@ -1053,6 +1053,46 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["大学・大学院専用の教育ローン", "提携大学は優遇金利が適用される", "来店不要でWEB・アプリから申込可能"],
         confirmed=True,
     ),
+
+    # --- 新興銀行の対象拡充（カードローン・不動産担保ローン・目的型ローン） ---
+    LoanConfig(
+        institution="オリックス銀行", institution_category="新興銀行",
+        loan_category="card-loan", product_name="オリックス銀行カードローン",
+        url="https://www.orixbank.co.jp/personal/cardloan/",
+        rate_min=1.7, rate_max=14.8, rate_label="年1.7%〜14.8%",
+        limit_label="最高800万円", limit_max_yen=8_000_000,
+        features=["契約日の翌日から30日間無利息サービス", "提携ATM利用手数料0円（全国10万台以上）", "がん保障特約付きプラン「Bright」も選択可"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="住信SBIネット銀行（ドコモSMTBネット銀行）", institution_category="新興銀行",
+        loan_category="real-estate-loan", product_name="不動産担保ローン",
+        url="https://www.netbk.co.jp/contents/lineup/loan/realestate/",
+        rate_min=3.95, rate_max=9.90, rate_label="変動年3.95%〜9.90%（2026年8月時点）",
+        limit_label="300万円〜1億円", limit_max_yen=100_000_000,
+        features=["借換え・投資用資金・相続関連資金等、資金使途は原則自由", "複数の借入を「おまとめ」して一本化可能", "住宅ローン返済中でも利用可能"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="イオン銀行", institution_category="新興銀行",
+        loan_category="purpose-loan", product_name="フリーローン（イオンアシストプラン）",
+        url="https://www.aeonbank.co.jp/loan/netfree_loan/",
+        rate_min=3.80, rate_max=13.50, rate_label="固定年3.80%〜13.50%（審査により決定、2026年1月時点）",
+        limit_label="30万円〜700万円", limit_max_yen=7_000_000,
+        features=["資金使途証明書・年収確認書類が原則不要", "事業性資金以外は使いみち自由", "申込はインターネット限定"],
+        confirmed=True,
+    ),
+
+    # --- 地方銀行の対象拡充（投資不動産ローン） ---
+    LoanConfig(
+        institution="千葉銀行", institution_category="地方銀行",
+        loan_category="investment-property-loan", product_name="金利選択型アパートローン",
+        url="https://www.chibabank.co.jp/kojin/loan/apartment/outline.html",
+        rate_label="非公開（変動・固定選択制、審査結果により当行が個別に決定）",
+        limit_label="1億円以内（10万円単位）", limit_max_yen=100_000_000,
+        features=["賃貸アパート・マンション・賃貸店舗の新築・購入・増改築資金に利用可", "変動・固定（3年・5年・7年・10年）を借入後も変更可能", "団体信用生命保険の保険料は千葉銀行負担"],
+        confirmed=False,
+    ),
 ]
 
 
