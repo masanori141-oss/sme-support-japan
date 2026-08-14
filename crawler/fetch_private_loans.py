@@ -706,6 +706,26 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["空き家取壊し資金など使いみちの幅が広い", "住宅ローン・給与振込利用者向けの金利優遇プランもあり", "大規模改修にも対応"],
         confirmed=True,
     ),
+
+    # --- 不動産担保ローン・目的型ローンの対象拡充 ---
+    LoanConfig(
+        institution="りそな銀行", institution_category="メガバンク",
+        loan_category="real-estate-loan", product_name="りそなフリーローン（有担保型）",
+        url="https://www.resonabank.co.jp/kojin/freeloan/secured/",
+        rate_min=3.175, rate_max=10.3, rate_label="年3.175%〜10.3%（変動）",
+        limit_label="100万円〜1億円（最長30年）", limit_max_yen=100_000_000,
+        features=["団体信用生命保険は金利上乗せなしで無料付帯", "無担保型より高額・長期の返済計画が可能", "土地・居宅等の購入資金や借換えにも利用可"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="福岡銀行", institution_category="地方銀行",
+        loan_category="purpose-loan", product_name="ふくぎんフリーローン（ナイスカバー）",
+        url="https://www.fukuokabank.co.jp/personal/service/mokuteki/freeloan/",
+        rate_min=5.2, rate_max=14.0, rate_label="年5.2%〜14.0%（変動・固定選択制、事業資金以外は使途自由）",
+        limit_label="10万円〜500万円", limit_max_yen=5_000_000,
+        features=["他社ローンのおまとめにも利用可", "家具・家電・レジャー資金など使いみち自由（事業資金は除く）", "Web申込は店頭申込より金利優遇"],
+        confirmed=True,
+    ),
 ]
 
 
