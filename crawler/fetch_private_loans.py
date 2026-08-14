@@ -847,6 +847,53 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["お車決定前でも仮審査可能", "担保・保証人は原則不要", "他社からの借換えにも対応"],
         confirmed=True,
     ),
+
+    # --- 地方銀行の対象拡充（京葉銀行・常陽銀行・静岡銀行: 教育ローン・自動車ローンの残り） ---
+    LoanConfig(
+        institution="京葉銀行", institution_category="地方銀行",
+        loan_category="education-loan", product_name="京葉銀行 教育ローン・学資ローン",
+        url="https://www.keiyobank.co.jp/individual/loan/education/",
+        rate_min=3.1, rate_max=3.6, rate_label="変動年3.1%〜3.6%（住宅ローン利用・給与振込利用者は年3.1%）",
+        limit_label="最大1,000万円", limit_max_yen=10_000_000,
+        features=["カードローン型・一括借入型から選択可", "年収確認資料は原則不要（借入300万円まで）", "団体信用生命保険付き（保険料は銀行負担）"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="常陽銀行", institution_category="地方銀行",
+        loan_category="auto-loan", product_name="常陽マイカーローン",
+        url="https://www.joyobank.co.jp/personal/loan/mycar/",
+        rate_min=1.45, rate_max=3.45, rate_label="変動年1.45%〜3.45%（WEB契約、店頭金利年5.875%より引下げ）",
+        limit_label="10万円〜1,000万円", limit_max_yen=10_000_000,
+        features=["PC・スマホでのWEB契約なら大幅金利優遇", "口座がなくても仮審査可能", "繰上返済は何度でも手数料無料"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="静岡銀行", institution_category="地方銀行",
+        loan_category="education-loan", product_name="静岡銀行教育ローン",
+        url="https://www.shizuokabank.co.jp/personal/loan/education/index.html",
+        rate_min=3.1, rate_max=6.6, rate_label="変動年3.1%または5.1%（優遇条件を満たす場合）、通常年4.6%または6.6%",
+        limit_label="10万円〜1,000万円（医・歯・薬・獣医学部進学者は最高3,000万円）", limit_max_yen=10_000_000,
+        features=["カードタイプ・一括借入タイプから選択可（金利は同一）", "静岡県内の地銀・信金で教育ローンシェアNo.1", "合格前から申込可能"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="静岡銀行", institution_category="地方銀行",
+        loan_category="auto-loan", product_name="静岡銀行マイカーローン",
+        url="https://www.shizuokabank.co.jp/personal/loan/mycar/",
+        rate_min=1.4, rate_max=4.4, rate_label="変動年1.4%〜4.4%（優遇後、通常金利は年3.5%〜6.2%）",
+        limit_label="10万円〜1,000万円", limit_max_yen=10_000_000,
+        features=["保証料無料", "融資期間最長10年", "他社ローンの借換えにも利用可"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="滋賀銀行", institution_category="地方銀行",
+        loan_category="auto-loan", product_name="しがぎんマイカーローン（ジャストサポート・目的型）",
+        url="https://www.shigagin.com/personal/loan/purpose/justsupport/",
+        rate_min=3.525, rate_max=5.825, rate_label="固定年3.525%〜5.825%（店頭表示金利、審査により3水準のいずれかを適用、条件により最大0.45%引下げ）",
+        limit_label="10万円〜1,000万円", limit_max_yen=10_000_000,
+        features=["自動車購入・車検・免許取得費用等に利用可", "スマホ契約なら印紙代0円", "教育ローンと同一の目的型ローン商品体系"],
+        confirmed=True,
+    ),
 ]
 
 
