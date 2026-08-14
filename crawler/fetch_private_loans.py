@@ -1140,6 +1140,62 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["新規借入・借換えとも同一金利", "2段階固定金利型・預金連動型など複数プランあり", "キャンペーン適用には条件あり"],
         confirmed=True,
     ),
+
+    # --- 地方銀行の対象拡充（リフォームローンの残り: 東邦・伊予・山陰合同・滋賀・常陽・福岡） ---
+    LoanConfig(
+        institution="東邦銀行", institution_category="地方銀行",
+        loan_category="reform-loan", product_name="スーパー住宅ローン「プラス7」（リフォーム資金）",
+        url="https://www.tohobank.co.jp/kojin/loan/reform/",
+        rate_min=0.800, rate_max=0.800, rate_label="年0.800%〜（変動、住宅ローンと同一の金利応援コース体系、2026年7月時点）",
+        limit_label="100万円以上1億円以内", limit_max_yen=100_000_000,
+        features=["住宅資金と同一商品でリフォーム資金にも利用可", "諸費用・他ローンのおとりまとめ資金も最大700万円上乗せ可", "給与振込等の条件で最下限金利を適用"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="伊予銀行", institution_category="地方銀行",
+        loan_category="reform-loan", product_name="まるごとリフォームローン",
+        url="https://www.iyobank.co.jp/kariru/reform/",
+        rate_min=3.65, rate_max=3.85, rate_label="変動年3.65%（当行住宅ローン利用者等）〜3.85%（それ以外）、2026年4月時点",
+        limit_label="10万円〜1,000万円", limit_max_yen=10_000_000,
+        features=["団体信用生命保険付きで万一の場合も安心", "他社リフォームローンの借換えにも利用可", "提携リフォーム事業利用でさらに金利優遇"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="山陰合同銀行", institution_category="地方銀行",
+        loan_category="reform-loan", product_name="リフォームローン1000",
+        url="https://www.gogin.co.jp/personal/loan/reform/",
+        rate_min=3.10, rate_max=3.80, rate_label="変動年3.10%〜3.80%（取引状況に応じ最大年0.7%引下げ、2026年8月時点）",
+        limit_label="最高1,000万円", limit_max_yen=10_000_000,
+        features=["無担保で手続き簡単", "太陽光発電設置・空き家取壊しにも利用可", "来店不要でご自宅から手続き可能"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="滋賀銀行", institution_category="地方銀行",
+        loan_category="reform-loan", product_name="住宅関連ローン（スピードローン ジャストサポート）",
+        url="https://www.shigagin.com/rate/loan/",
+        rate_min=1.975, rate_max=5.825, rate_label="変動年1.975%〜5.825%（取引状況に応じ最大年1.45%引下げ）",
+        limit_label="10万円〜1,500万円", limit_max_yen=15_000_000,
+        features=["給与振込・公共料金自動引落等の取引条件で金利優遇", "太陽光・蓄電池専用ローンも同一体系", "スマホ契約なら印紙代0円"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="常陽銀行", institution_category="地方銀行",
+        loan_category="reform-loan", product_name="WEB完結型リフォームローン",
+        url="https://www.joyobank.co.jp/personal/loan/reform/",
+        rate_min=1.875, rate_max=3.375, rate_label="変動年1.875%〜3.375%（取引状況に応じ最大年1.5%引下げ）",
+        limit_label="500万円以内", limit_max_yen=5_000_000,
+        features=["来店不要でWEB完結", "保証人原則不要", "他行リフォームローンの借換えも可（めぶき信用保証付きに限る）"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="福岡銀行", institution_category="地方銀行",
+        loan_category="reform-loan", product_name="リフォームローン「かいぞうくん」",
+        url="https://www.fukuokabank.co.jp/personal/service/reform/reformloan/",
+        rate_min=3.30, rate_max=4.40, rate_label="変動年3.30%（住宅ローン利用者等）〜4.40%（それ以外）、条件により年3.60%の中間水準あり",
+        limit_label="最高1,500万円", limit_max_yen=15_000_000,
+        features=["水回りの修理から太陽光発電設置まで幅広く対応", "福岡銀行と提携する自治体の補助金対象工事でも優遇", "担保不要"],
+        confirmed=True,
+    ),
 ]
 
 

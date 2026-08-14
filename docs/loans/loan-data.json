@@ -3692,5 +3692,113 @@
     ],
     "url": "https://www.gogin.co.jp/rate/housing/index.html",
     "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "東邦銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "reform-loan",
+    "productName": "スーパー住宅ローン「プラス7」（リフォーム資金）",
+    "rateMin": 0.8,
+    "rateMax": 0.8,
+    "rateLabel": "年0.800%〜（変動、住宅ローンと同一の金利応援コース体系、2026年7月時点）",
+    "limitLabel": "100万円以上1億円以内",
+    "limitMaxYen": 100000000,
+    "features": [
+      "住宅資金と同一商品でリフォーム資金にも利用可",
+      "諸費用・他ローンのおとりまとめ資金も最大700万円上乗せ可",
+      "給与振込等の条件で最下限金利を適用"
+    ],
+    "url": "https://www.tohobank.co.jp/kojin/loan/reform/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "伊予銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "reform-loan",
+    "productName": "まるごとリフォームローン",
+    "rateMin": 3.65,
+    "rateMax": 3.85,
+    "rateLabel": "変動年3.65%（当行住宅ローン利用者等）〜3.85%（それ以外）、2026年4月時点",
+    "limitLabel": "10万円〜1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "団体信用生命保険付きで万一の場合も安心",
+      "他社リフォームローンの借換えにも利用可",
+      "提携リフォーム事業利用でさらに金利優遇"
+    ],
+    "url": "https://www.iyobank.co.jp/kariru/reform/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "山陰合同銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "reform-loan",
+    "productName": "リフォームローン1000",
+    "rateMin": 3.1,
+    "rateMax": 3.8,
+    "rateLabel": "変動年3.10%〜3.80%（取引状況に応じ最大年0.7%引下げ、2026年8月時点）",
+    "limitLabel": "最高1,000万円",
+    "limitMaxYen": 10000000,
+    "features": [
+      "無担保で手続き簡単",
+      "太陽光発電設置・空き家取壊しにも利用可",
+      "来店不要でご自宅から手続き可能"
+    ],
+    "url": "https://www.gogin.co.jp/personal/loan/reform/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "滋賀銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "reform-loan",
+    "productName": "住宅関連ローン（スピードローン ジャストサポート）",
+    "rateMin": 1.975,
+    "rateMax": 5.825,
+    "rateLabel": "変動年1.975%〜5.825%（取引状況に応じ最大年1.45%引下げ）",
+    "limitLabel": "10万円〜1,500万円",
+    "limitMaxYen": 15000000,
+    "features": [
+      "給与振込・公共料金自動引落等の取引条件で金利優遇",
+      "太陽光・蓄電池専用ローンも同一体系",
+      "スマホ契約なら印紙代0円"
+    ],
+    "url": "https://www.shigagin.com/rate/loan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "常陽銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "reform-loan",
+    "productName": "WEB完結型リフォームローン",
+    "rateMin": 1.875,
+    "rateMax": 3.375,
+    "rateLabel": "変動年1.875%〜3.375%（取引状況に応じ最大年1.5%引下げ）",
+    "limitLabel": "500万円以内",
+    "limitMaxYen": 5000000,
+    "features": [
+      "来店不要でWEB完結",
+      "保証人原則不要",
+      "他行リフォームローンの借換えも可（めぶき信用保証付きに限る）"
+    ],
+    "url": "https://www.joyobank.co.jp/personal/loan/reform/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "福岡銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "reform-loan",
+    "productName": "リフォームローン「かいぞうくん」",
+    "rateMin": 3.3,
+    "rateMax": 4.4,
+    "rateLabel": "変動年3.30%（住宅ローン利用者等）〜4.40%（それ以外）、条件により年3.60%の中間水準あり",
+    "limitLabel": "最高1,500万円",
+    "limitMaxYen": 15000000,
+    "features": [
+      "水回りの修理から太陽光発電設置まで幅広く対応",
+      "福岡銀行と提携する自治体の補助金対象工事でも優遇",
+      "担保不要"
+    ],
+    "url": "https://www.fukuokabank.co.jp/personal/service/reform/reformloan/",
+    "sourceCheckedAt": "2026-08-14"
   }
 ]
