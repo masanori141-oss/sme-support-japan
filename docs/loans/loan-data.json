@@ -2110,6 +2110,24 @@
     "sourceCheckedAt": "2026-08-14"
   },
   {
+    "institution": "三井住友信託銀行",
+    "institutionCategory": "信託銀行",
+    "loanCategory": "card-loan",
+    "productName": "ハウジングカードローン（無担保型）「暮らしの味方」",
+    "rateMin": 5.05,
+    "rateMax": 5.05,
+    "rateLabel": "変動年5.05%（短期プライムレート+年2.925%）",
+    "limitLabel": "50万円〜500万円（50万円単位から選択）",
+    "limitMaxYen": 5000000,
+    "features": [
+      "三井住友信託銀行で住宅ローンを利用中の方限定のカードローン",
+      "資金使途は自由（事業性資金は除く）",
+      "全国の提携ATMで借入・返済可能"
+    ],
+    "url": "https://www.smtb.jp/personal/loan/housing-card",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
     "institution": "日本政策金融公庫",
     "institutionCategory": "政府系金融機関",
     "loanCategory": "education-loan",
@@ -2449,6 +2467,60 @@
       "返済額は約5年間一定（5年ルール適用）"
     ],
     "url": "https://www.boy.co.jp/kojin/jutaku-loan/shinchiku/index.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "北海道銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "mortgage",
+    "productName": "道銀住宅ローン変動金利型",
+    "rateMin": 1.825,
+    "rateMax": 1.825,
+    "rateLabel": "年1.825%（変動、2026年8月時点・新規受付金利）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "基準金利からの引下げ利率は年1.500%",
+      "固定金利選択型（3〜10年）も選択可",
+      "カーボンニュートラル住宅ローンなど目的別プランもあり"
+    ],
+    "url": "https://www.hokkaidobank.co.jp/kinri/new_loan.html",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "福岡銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "mortgage",
+    "productName": "福岡銀行住宅ローン優遇金利（保証料一括型・変動金利）",
+    "rateMin": 1.525,
+    "rateMax": 1.525,
+    "rateLabel": "年1.525%（変動、2026年8月時点・優遇金利）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "優遇金利の適用には一定の条件あり（窓口で要確認）",
+      "固定金利型（2〜10年、全期間固定20〜35年）も選択可",
+      "フラット35の取扱いもあり"
+    ],
+    "url": "https://www.fukuokabank.co.jp/price/loaninterest/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "常陽銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "mortgage",
+    "productName": "常陽銀行住宅ローン（変動金利型・全期間重視プラン）",
+    "rateMin": 1.325,
+    "rateMax": 1.525,
+    "rateLabel": "年1.325%〜1.525%（変動、店頭金利年3.125%より最大1.8%割引、2026年8月時点）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "給与振込等の条件を満たすと全期間最大年1.8%引下げ",
+      "3年固定特別金利プランは年0.795%〜",
+      "固定3〜15年・全期間完全固定も選択可"
+    ],
+    "url": "https://www.joyobank.co.jp/personal/loan/jutaku/kinri/",
     "sourceCheckedAt": "2026-08-14"
   },
   {
