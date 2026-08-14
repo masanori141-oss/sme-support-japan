@@ -3800,5 +3800,41 @@
     ],
     "url": "https://www.fukuokabank.co.jp/personal/service/reform/reformloan/",
     "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "京都銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "mortgage",
+    "productName": "京銀住宅ローン（変動金利プラン）",
+    "rateMin": 1.425,
+    "rateMax": 1.425,
+    "rateLabel": "年1.425%（変動、最優遇金利、2026年8月時点）",
+    "limitLabel": "要確認（融資金額は物件価格・年収等により決定）",
+    "limitMaxYen": null,
+    "features": [
+      "がん診断保険金特約付住宅ローンは45歳以下なら金利上乗せなし",
+      "無担保住宅ローン・フラット35の取扱いもあり",
+      "京銀ダイレクトバンキングなら一部繰上返済手数料無料"
+    ],
+    "url": "https://www.kyotobank.co.jp/kinri/loan/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "静岡銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "purpose-loan",
+    "productName": "しずぎんフリーローン",
+    "rateMin": 4.5,
+    "rateMax": 14.5,
+    "rateLabel": "固定年4.5%〜14.5%（6段階、審査により決定）",
+    "limitLabel": "最高500万円",
+    "limitMaxYen": 5000000,
+    "features": [
+      "資金使途の証明書類が原則不要",
+      "アルバイト・契約社員も申込可",
+      "複数の借入のおまとめにも利用可"
+    ],
+    "url": "https://www.shizuokabank.co.jp/personal/loan/free_loan/index.html",
+    "sourceCheckedAt": "2026-08-14"
   }
 ]

@@ -1196,6 +1196,28 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["水回りの修理から太陽光発電設置まで幅広く対応", "福岡銀行と提携する自治体の補助金対象工事でも優遇", "担保不要"],
         confirmed=True,
     ),
+
+    # --- 京都銀行の住宅ローン（公式サイトはJS描画のため、金利情報サイトで確認） ---
+    LoanConfig(
+        institution="京都銀行", institution_category="地方銀行",
+        loan_category="mortgage", product_name="京銀住宅ローン（変動金利プラン）",
+        url="https://www.kyotobank.co.jp/kinri/loan/",
+        rate_min=1.425, rate_max=1.425, rate_label="年1.425%（変動、最優遇金利、2026年8月時点）",
+        limit_label="要確認（融資金額は物件価格・年収等により決定）",
+        features=["がん診断保険金特約付住宅ローンは45歳以下なら金利上乗せなし", "無担保住宅ローン・フラット35の取扱いもあり", "京銀ダイレクトバンキングなら一部繰上返済手数料無料"],
+        confirmed=True,
+    ),
+
+    # --- 静岡銀行のフリーローン（目的型ローン） ---
+    LoanConfig(
+        institution="静岡銀行", institution_category="地方銀行",
+        loan_category="purpose-loan", product_name="しずぎんフリーローン",
+        url="https://www.shizuokabank.co.jp/personal/loan/free_loan/index.html",
+        rate_min=4.5, rate_max=14.5, rate_label="固定年4.5%〜14.5%（6段階、審査により決定）",
+        limit_label="最高500万円", limit_max_yen=5_000_000,
+        features=["資金使途の証明書類が原則不要", "アルバイト・契約社員も申込可", "複数の借入のおまとめにも利用可"],
+        confirmed=True,
+    ),
 ]
 
 
