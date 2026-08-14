@@ -686,6 +686,26 @@ LOAN_CONFIG: List[LoanConfig] = [
         features=["固定金利型（ニューオートローンDX）と変動金利型（らくらくマイカーローン）を選択可", "住宅ローン利用中はさらに金利優遇", "1万円単位で融資額を調整可能"],
         confirmed=True,
     ),
+
+    # --- 地方銀行の対象拡充（リフォームローン） ---
+    LoanConfig(
+        institution="千葉銀行", institution_category="地方銀行",
+        loan_category="reform-loan", product_name="ちばぎん住まいのリフォームローン",
+        url="https://www.chibabank.co.jp/kojin/loan/reform/",
+        rate_min=2.9, rate_max=3.3, rate_label="年2.9%〜3.3%（通常金利。WEB契約・住宅ローン利用者は優遇あり）",
+        limit_label="最大1,500万円", limit_max_yen=15_000_000,
+        features=["保証人・担保とも不要", "千葉銀行で住宅ローン利用中はさらに金利優遇", "千葉・東京・茨城・埼玉・神奈川在住/勤務が対象"],
+        confirmed=True,
+    ),
+    LoanConfig(
+        institution="京葉銀行", institution_category="地方銀行",
+        loan_category="reform-loan", product_name="京葉銀行リフォームローン",
+        url="https://www.keiyobank.co.jp/individual/loan/reform/",
+        rate_min=1.9, rate_max=4.9, rate_label="年1.9%〜4.9%（固定）",
+        limit_label="最大2,000万円", limit_max_yen=20_000_000,
+        features=["空き家取壊し資金など使いみちの幅が広い", "住宅ローン・給与振込利用者向けの金利優遇プランもあり", "大規模改修にも対応"],
+        confirmed=True,
+    ),
 ]
 
 

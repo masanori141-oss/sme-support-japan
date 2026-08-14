@@ -2828,5 +2828,41 @@ const LOAN_DATA = [
     ],
     "url": "https://www.fukuokabank.co.jp/personal/service/mokuteki/autoloan/",
     "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "千葉銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "reform-loan",
+    "productName": "ちばぎん住まいのリフォームローン",
+    "rateMin": 2.9,
+    "rateMax": 3.3,
+    "rateLabel": "年2.9%〜3.3%（通常金利。WEB契約・住宅ローン利用者は優遇あり）",
+    "limitLabel": "最大1,500万円",
+    "limitMaxYen": 15000000,
+    "features": [
+      "保証人・担保とも不要",
+      "千葉銀行で住宅ローン利用中はさらに金利優遇",
+      "千葉・東京・茨城・埼玉・神奈川在住/勤務が対象"
+    ],
+    "url": "https://www.chibabank.co.jp/kojin/loan/reform/",
+    "sourceCheckedAt": "2026-08-14"
+  },
+  {
+    "institution": "京葉銀行",
+    "institutionCategory": "地方銀行",
+    "loanCategory": "reform-loan",
+    "productName": "京葉銀行リフォームローン",
+    "rateMin": 1.9,
+    "rateMax": 4.9,
+    "rateLabel": "年1.9%〜4.9%（固定）",
+    "limitLabel": "最大2,000万円",
+    "limitMaxYen": 20000000,
+    "features": [
+      "空き家取壊し資金など使いみちの幅が広い",
+      "住宅ローン・給与振込利用者向けの金利優遇プランもあり",
+      "大規模改修にも対応"
+    ],
+    "url": "https://www.keiyobank.co.jp/individual/loan/reform/",
+    "sourceCheckedAt": "2026-08-14"
   }
 ];
