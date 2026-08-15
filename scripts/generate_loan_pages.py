@@ -196,6 +196,16 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N2JHBP892C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', 'G-N2JHBP892C');
+</script>
+
 <title>{label} 比較 ｜ 融資・ローン比較台帳</title>
 <meta name="description" content="{description}">
 <link rel="canonical" href="{canonical}">

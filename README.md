@@ -80,6 +80,18 @@ schema.org の Product/Offer 構造化データ（JSON-LD）がそのまま書�
   使われているのにリクエストされていなかった600番台を追加している
   （リクエストするフォントファイルの数を9個から6個に削減）。
 
+## アクセス解析（Google Analytics 4）
+
+- 全15ページ（`docs/index.html` / `docs/search.html` / `docs/about.html` /
+  `docs/loans/*.html` 全12ページ）の `<head>` 内に、GA4の測定ID
+  `G-N2JHBP892C` を使った `gtag.js` タグを埋め込んでいる。
+- `docs/loans/` 配下は `scripts/generate_loan_pages.py` の
+  `PAGE_TEMPLATE` にタグを含めているため、ページ構造を変更して
+  同スクリプトを再実行しても（`export_loans.py` を続けて実行すれば）
+  タグは維持される。
+- 測定IDを変更する場合は、上記4ファイル・テンプレート内の
+  `G-N2JHBP892C` をすべて置き換える必要がある。
+
 ## 必要なアカウント
 
 - **GitHubアカウント**（無料）。これだけです。
