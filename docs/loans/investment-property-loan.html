@@ -43,6 +43,137 @@
 }
 </script>
 
+<script type="application/ld+json" id="products-jsonld">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      "name": "賃貸マンション・アパートローン「プロデュース II」（みずほ信託銀行）",
+      "category": "投資不動産ローン",
+      "brand": {
+        "@type": "Organization",
+        "name": "みずほ信託銀行"
+      },
+      "url": "https://www.mizuho-tb.co.jp/kinri/loan.html",
+      "description": "長期プライムレート連動型・固定金利選択型など金利タイプが豊富。団体信用生命保険の加入有無を選択可。長期プライムレート連動型は新規取扱を停止中",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "実質年率（下限）",
+          "value": 3.375,
+          "unitText": "%"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "実質年率（上限）",
+          "value": 3.375,
+          "unitText": "%"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.mizuho-tb.co.jp/kinri/loan.html",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": 3.375,
+          "unitText": "%"
+        }
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "アパートローン（三井住友信託銀行）",
+      "category": "投資不動産ローン",
+      "brand": {
+        "@type": "Organization",
+        "name": "三井住友信託銀行"
+      },
+      "url": "https://www.smtb.jp/personal/loan/apartment",
+      "description": "賃貸マンション・アパートの建築・購入資金に利用可。融資期間は物件の耐用年数等に応じて設定。金利は個別審査により決定",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "ご利用限度額",
+          "value": 300000000,
+          "unitText": "円"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.smtb.jp/personal/loan/apartment",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "アパートローン（三井住友銀行）",
+      "category": "投資不動産ローン",
+      "brand": {
+        "@type": "Organization",
+        "name": "三井住友銀行"
+      },
+      "url": "https://www.smbc.co.jp/kojin/apartment/",
+      "description": "団体信用生命保険は加入金額1億円が上限。既存ローンの借換えには利用不可。融資利率は個別審査により決定（団信加入で年0.3%上乗せ）",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.smbc.co.jp/kojin/apartment/",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "不動産投資ローン（大和ネクスト銀行）",
+      "category": "投資不動産ローン",
+      "brand": {
+        "@type": "Organization",
+        "name": "大和ネクスト銀行"
+      },
+      "url": "https://www.bank-daiwa.co.jp/saving/loan/investment_loan/",
+      "description": "大和証券の紹介を受けた「ダイワ・コンサルティングコース」の富裕層向け。対象は東京・大阪・名古屋等の賃貸需要が見込まれるエリア。他行からの借換え・建築資金は対象外",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "ご利用限度額",
+          "value": 3000000000,
+          "unitText": "円"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.bank-daiwa.co.jp/saving/loan/investment_loan/",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "金利選択型アパートローン（千葉銀行）",
+      "category": "投資不動産ローン",
+      "brand": {
+        "@type": "Organization",
+        "name": "千葉銀行"
+      },
+      "url": "https://www.chibabank.co.jp/kojin/loan/apartment/outline.html",
+      "description": "賃貸アパート・マンション・賃貸店舗の新築・購入・増改築資金に利用可。変動・固定（3年・5年・7年・10年）を借入後も変更可能。団体信用生命保険の保険料は千葉銀行負担",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "ご利用限度額",
+          "value": 100000000,
+          "unitText": "円"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.chibabank.co.jp/kojin/loan/apartment/outline.html",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -118,10 +249,119 @@
 
 <div class="layout">
   <div class="results-bar">
-    <div><strong id="result-num">0</strong> 件の商品が見つかりました</div>
+    <div><strong id="result-num">5</strong> 件の商品が見つかりました</div>
     <span>金利（下限）が低い順に表示 ｜ 出典：各金融機関公式サイト・中小企業庁・都道府県公式サイト</span>
   </div>
-  <div id="result-list"></div>
+  <div id="result-list"><!--SSR_CARDS_START--><article class="loan-card">
+  <div class="loan-body">
+    <span class="inst-badge">信託銀行</span>
+    
+    <div class="loan-inst">みずほ信託銀行</div>
+    <h2 class="loan-title">賃貸マンション・アパートローン「プロデュース II」</h2>
+    <div class="loan-features">
+      <div class="loan-feature"><span class="mark">✓</span>長期プライムレート連動型・固定金利選択型など金利タイプが豊富</div><div class="loan-feature"><span class="mark">✓</span>団体信用生命保険の加入有無を選択可</div><div class="loan-feature"><span class="mark">✓</span>長期プライムレート連動型は新規取扱を停止中</div>
+    </div>
+  </div>
+  <div class="loan-figures">
+    <div>
+      <div class="figure-label">金利（実質年率）</div>
+      <div class="figure-value rate">年3.375%</div>
+    </div>
+    <div>
+      <div class="figure-label">ご利用限度額</div>
+      <div class="figure-value">要確認（公式サイトで最終確認）</div>
+    </div>
+    <a class="detail-link" href="https://www.mizuho-tb.co.jp/kinri/loan.html" target="_blank" rel="noopener">公式サイトで詳細を見る →</a>
+  </div>
+</article>
+<article class="loan-card">
+  <div class="loan-body">
+    <span class="inst-badge">信託銀行</span>
+    
+    <div class="loan-inst">三井住友信託銀行</div>
+    <h2 class="loan-title">アパートローン</h2>
+    <div class="loan-features">
+      <div class="loan-feature"><span class="mark">✓</span>賃貸マンション・アパートの建築・購入資金に利用可</div><div class="loan-feature"><span class="mark">✓</span>融資期間は物件の耐用年数等に応じて設定</div><div class="loan-feature"><span class="mark">✓</span>金利は個別審査により決定</div>
+    </div>
+  </div>
+  <div class="loan-figures">
+    <div>
+      <div class="figure-label">金利（実質年率）</div>
+      <div class="figure-value rate">要確認（公式サイトで最終確認）</div>
+    </div>
+    <div>
+      <div class="figure-label">ご利用限度額</div>
+      <div class="figure-value">3億円</div>
+    </div>
+    <a class="detail-link" href="https://www.smtb.jp/personal/loan/apartment" target="_blank" rel="noopener">公式サイトで詳細を見る →</a>
+  </div>
+</article>
+<article class="loan-card">
+  <div class="loan-body">
+    <span class="inst-badge">メガバンク</span>
+    
+    <div class="loan-inst">三井住友銀行</div>
+    <h2 class="loan-title">アパートローン</h2>
+    <div class="loan-features">
+      <div class="loan-feature"><span class="mark">✓</span>団体信用生命保険は加入金額1億円が上限</div><div class="loan-feature"><span class="mark">✓</span>既存ローンの借換えには利用不可</div><div class="loan-feature"><span class="mark">✓</span>融資利率は個別審査により決定（団信加入で年0.3%上乗せ）</div>
+    </div>
+  </div>
+  <div class="loan-figures">
+    <div>
+      <div class="figure-label">金利（実質年率）</div>
+      <div class="figure-value rate">非公開（担保評価・借入属性等により個別に決定）</div>
+    </div>
+    <div>
+      <div class="figure-label">ご利用限度額</div>
+      <div class="figure-value">200万円以上（上限は物件の建築・購入価格等による）</div>
+    </div>
+    <a class="detail-link" href="https://www.smbc.co.jp/kojin/apartment/" target="_blank" rel="noopener">公式サイトで詳細を見る →</a>
+  </div>
+</article>
+<article class="loan-card">
+  <div class="loan-body">
+    <span class="inst-badge">新興銀行</span>
+    
+    <div class="loan-inst">大和ネクスト銀行</div>
+    <h2 class="loan-title">不動産投資ローン</h2>
+    <div class="loan-features">
+      <div class="loan-feature"><span class="mark">✓</span>大和証券の紹介を受けた「ダイワ・コンサルティングコース」の富裕層向け</div><div class="loan-feature"><span class="mark">✓</span>対象は東京・大阪・名古屋等の賃貸需要が見込まれるエリア</div><div class="loan-feature"><span class="mark">✓</span>他行からの借換え・建築資金は対象外</div>
+    </div>
+  </div>
+  <div class="loan-figures">
+    <div>
+      <div class="figure-label">金利（実質年率）</div>
+      <div class="figure-value rate">非公開（変動型、個別審査により決定）</div>
+    </div>
+    <div>
+      <div class="figure-label">ご利用限度額</div>
+      <div class="figure-value">30億円</div>
+    </div>
+    <a class="detail-link" href="https://www.bank-daiwa.co.jp/saving/loan/investment_loan/" target="_blank" rel="noopener">公式サイトで詳細を見る →</a>
+  </div>
+</article>
+<article class="loan-card">
+  <div class="loan-body">
+    <span class="inst-badge">地方銀行</span>
+    
+    <div class="loan-inst">千葉銀行</div>
+    <h2 class="loan-title">金利選択型アパートローン</h2>
+    <div class="loan-features">
+      <div class="loan-feature"><span class="mark">✓</span>賃貸アパート・マンション・賃貸店舗の新築・購入・増改築資金に利用可</div><div class="loan-feature"><span class="mark">✓</span>変動・固定（3年・5年・7年・10年）を借入後も変更可能</div><div class="loan-feature"><span class="mark">✓</span>団体信用生命保険の保険料は千葉銀行負担</div>
+    </div>
+  </div>
+  <div class="loan-figures">
+    <div>
+      <div class="figure-label">金利（実質年率）</div>
+      <div class="figure-value rate">非公開（変動・固定選択制、審査結果により当行が個別に決定）</div>
+    </div>
+    <div>
+      <div class="figure-label">ご利用限度額</div>
+      <div class="figure-value">1億円</div>
+    </div>
+    <a class="detail-link" href="https://www.chibabank.co.jp/kojin/loan/apartment/outline.html" target="_blank" rel="noopener">公式サイトで詳細を見る →</a>
+  </div>
+</article><!--SSR_CARDS_END--></div>
 </div>
 
 <div class="disclaimer">

@@ -14,6 +14,16 @@ HTMLファイルはリポジトリにコミットし、以後は docs/loans/loan
 12ファイルをテンプレートから生成しているのは、ほぼ同一のHTML shell
 （ナビ・フィルターUI・スクリプト読み込み）を手作業で12個複製すると、
 デザイン修正のたびにファイルごとにズレが生じるのを避けるため。
+
+このテンプレートには、scripts/export_loans.py が日次で書き込むための
+2つの差し込み先を用意している（このスクリプト自身は中身を書かない）。
+  - <div id="result-list"><!--SSR_CARDS_START-->...<!--SSR_CARDS_END--></div>
+    JavaScript実行前の生HTMLの時点で商品カードが見えるように
+    （検索エンジン・JSを実行しないAIクローラー向け）。
+  - <script type="application/ld+json" id="products-jsonld">...</script>
+    掲載商品ごとのschema.org Product/Offer構造化データ。
+テンプレートの構造を変えた場合は、export_loans.py 側の正規表現が
+これらのマーカー・id属性を前提にしている点に注意すること。
 """
 
 from pathlib import Path
@@ -142,6 +152,10 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 
 {jsonld_block}
 
+<script type="application/ld+json" id="products-jsonld">
+{{"@context": "https://schema.org", "@graph": []}}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -197,7 +211,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <div><strong id="result-num">0</strong> 件の商品が見つかりました</div>
     <span>金利（下限）が低い順に表示 ｜ 出典：各金融機関公式サイト・中小企業庁・都道府県公式サイト</span>
   </div>
-  <div id="result-list"></div>
+  <div id="result-list"><!--SSR_CARDS_START--><!--SSR_CARDS_END--></div>
 </div>
 
 <div class="disclaimer">

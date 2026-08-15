@@ -43,6 +43,49 @@
 }
 </script>
 
+<script type="application/ld+json" id="products-jsonld">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      "name": "楽天銀行 証券担保ローン（楽天銀行）",
+      "category": "証券担保ローン",
+      "brand": {
+        "@type": "Organization",
+        "name": "楽天銀行"
+      },
+      "url": "https://www.rakuten-bank.co.jp/loan/securities-collateral/borrowing-ratio/",
+      "description": "楽天証券に預けている株式・投資信託等を担保に借入可能。残高1,000万円超は年2.125%と最も低い。基準金利（短期プライムレート）に連動し見直しあり",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "実質年率（下限）",
+          "value": 2.125,
+          "unitText": "%"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "実質年率（上限）",
+          "value": 4.125,
+          "unitText": "%"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.rakuten-bank.co.jp/loan/securities-collateral/borrowing-ratio/",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": 2.125,
+          "unitText": "%"
+        }
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -118,10 +161,31 @@
 
 <div class="layout">
   <div class="results-bar">
-    <div><strong id="result-num">0</strong> 件の商品が見つかりました</div>
+    <div><strong id="result-num">1</strong> 件の商品が見つかりました</div>
     <span>金利（下限）が低い順に表示 ｜ 出典：各金融機関公式サイト・中小企業庁・都道府県公式サイト</span>
   </div>
-  <div id="result-list"></div>
+  <div id="result-list"><!--SSR_CARDS_START--><article class="loan-card">
+  <div class="loan-body">
+    <span class="inst-badge">新興銀行</span>
+    
+    <div class="loan-inst">楽天銀行</div>
+    <h2 class="loan-title">楽天銀行 証券担保ローン</h2>
+    <div class="loan-features">
+      <div class="loan-feature"><span class="mark">✓</span>楽天証券に預けている株式・投資信託等を担保に借入可能</div><div class="loan-feature"><span class="mark">✓</span>残高1,000万円超は年2.125%と最も低い</div><div class="loan-feature"><span class="mark">✓</span>基準金利（短期プライムレート）に連動し見直しあり</div>
+    </div>
+  </div>
+  <div class="loan-figures">
+    <div>
+      <div class="figure-label">金利（実質年率）</div>
+      <div class="figure-value rate">年2.125%〜4.125%</div>
+    </div>
+    <div>
+      <div class="figure-label">ご利用限度額</div>
+      <div class="figure-value">担保有価証券（楽天証券口座内）の評価額に応じて決定</div>
+    </div>
+    <a class="detail-link" href="https://www.rakuten-bank.co.jp/loan/securities-collateral/borrowing-ratio/" target="_blank" rel="noopener">公式サイトで詳細を見る →</a>
+  </div>
+</article><!--SSR_CARDS_END--></div>
 </div>
 
 <div class="disclaimer">

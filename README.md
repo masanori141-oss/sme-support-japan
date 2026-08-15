@@ -21,11 +21,43 @@
     scripts/export_loans.py が docs/loans/loan-data.js・
     docs/loans/loan-data.json を作り直す（件数・最終更新日は
     すべて実データから計算するので、本文中に古い数字が残らない）
+  → scripts/export_loans.py は、docs/loans/*.html 12ページそれぞれの
+    生HTML（<div id="result-list">内・商品ごとのProduct/Offer
+    JSON-LD）も同時に書き換える。JavaScriptを実行しないクローラーが
+    見る「生のHTML」の時点で主要な商品データが読める状態にするため
+    （詳しくは後述）
   → 変化があれば自動的にリポジトリへコミット
   → サイト（docs/index.html・docs/search.html・docs/loans/*.html）は
     data.js / loan-data.js を読み込んで表示するので、次にサイトを
     開いたときには自動的に最新の内容になっている
 ```
+
+## 融資比較ページ（docs/loans/）のSSR（サーバー側事前描画）について
+
+docs/loans/ 配下の12ページ（総合台帳＋分類別11ページ）は、ページを開いた
+瞬間に表示される「生のHTML」の中に、その時点の商品カード一覧と
+schema.org の Product/Offer 構造化データ（JSON-LD）がそのまま書き込まれて
+います。これは `scripts/export_loans.py` が日次実行のたびに、
+`docs/loans/app.js` の `baseDataset()` / `sortByRate()` / `renderCard()`
+と同じロジックをPython側でも再現し、各HTMLファイルに直接埋め込んでいる
+ためです（JavaScriptを実行しない検索エンジン・AIクローラーでも、
+実際に掲載されている金融機関・商品名・金利・限度額をそのまま読み取れる
+ようにするための対応）。
+
+- 埋め込み先の目印は `scripts/generate_loan_pages.py` のテンプレートで
+  用意している（`<!--SSR_CARDS_START-->`〜`<!--SSR_CARDS_END-->` と
+  `id="products-jsonld"` のscriptタグ）。ページの構造自体を変えたい
+  場合はこのテンプレートを編集し、`python scripts/generate_loan_pages.py`
+  を再実行してから `python scripts/export_loans.py` を実行すること。
+- JavaScript側（app.js）は変更していない。ブラウザでJSが実行される
+  環境では、ページ読み込み時に `render()` が同じ内容を同じロジックで
+  再描画するだけなので、絞り込み・並び替え機能への影響はない
+  （SSRの内容とJS描画後の内容は常に一致する）。
+- 動作確認は `curl` 等でHTMLを直接取得し（ブラウザでJSを実行させず）、
+  商品カードとJSON-LDがそのままレスポンスに含まれることを確認する
+  のが確実（ブラウザの「ページのソースを表示」でも同様に確認できる。
+  DevToolsの「Elements」パネルはJS実行後のDOMを表示してしまうため
+  この確認には使えない点に注意）。
 
 ## 必要なアカウント
 
@@ -84,6 +116,8 @@ subsidy-crawler/
 ├── scripts/
 │   ├── export_to_data_js.py  # 補助金台帳: JSON → サイト表示用データ・SEO関連ファイル
 │   ├── export_loans.py       # 融資比較台帳: JSON → サイト表示用データ
+│   │                          # ＋docs/loans/*.htmlへのSSR埋め込み
+│   │                          # （商品カード・Product/Offer JSON-LD）
 │   └── generate_loan_pages.py # docs/loans/ 配下12ページのHTML shellを生成
 │                               # （構造を変えたい時だけ手動で再実行する。
 │                               #   日次パイプラインには含まれない）

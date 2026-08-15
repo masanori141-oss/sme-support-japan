@@ -43,6 +43,13 @@
 }
 </script>
 
+<script type="application/ld+json" id="products-jsonld">
+{
+  "@context": "https://schema.org",
+  "@graph": []
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -121,7 +128,7 @@
     <div><strong id="result-num">0</strong> 件の商品が見つかりました</div>
     <span>金利（下限）が低い順に表示 ｜ 出典：各金融機関公式サイト・中小企業庁・都道府県公式サイト</span>
   </div>
-  <div id="result-list"></div>
+  <div id="result-list"><!--SSR_CARDS_START--><div class="empty-state">条件に一致する商品が見つかりませんでした。絞り込み条件を減らして再度お試しください。</div><!--SSR_CARDS_END--></div>
 </div>
 
 <div class="disclaimer">
