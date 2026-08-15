@@ -79,7 +79,7 @@ const DATA = [
       "事業再建に取り組む計画がある"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260630001.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "商店街にぎわい創出事業",
@@ -157,7 +157,7 @@ const DATA = [
       "導入したいDXツールが明確にある"
     ],
     "url": "https://www.pref.saitama.lg.jp/a0803/dx_jigyousyashien/dx_index.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "中小・小規模企業賃上げ環境整備等支援事業費補助金",
@@ -185,7 +185,7 @@ const DATA = [
       "新商品開発・販路拡大・設備投資のいずれかを予定"
     ],
     "url": "https://www.pref.hokkaido.lg.jp/kz/csk/249117.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "中小企業生産性向上促進事業費補助金（一般枠）8月公募",
@@ -213,7 +213,7 @@ const DATA = [
       "生産性向上の具体的な計画がある"
     ],
     "url": "https://www.pref.kanagawa.jp/docs/m2w/prs/r2625041.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "中小事業者の脱炭素化に係る自主的取組支援補助金（2次公募）",
@@ -241,7 +241,7 @@ const DATA = [
       "エネルギー使用量1％以上またはCO2年1トン以上の削減計画"
     ],
     "url": "https://www.pref.osaka.lg.jp/o120020/eneseisaku/sec/plan2_subsidy.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "GX診断補助金（省エネ診断受診支援）",
@@ -269,7 +269,7 @@ const DATA = [
       "省エネ診断を受診したい意向がある"
     ],
     "url": "https://web.pref.hyogo.lg.jp/sr07/sdgs.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "物価高騰対策賃上げ支援金",
@@ -297,7 +297,7 @@ const DATA = [
       "支援金の算定基準（引上げ実績）を満たす"
     ],
     "url": "https://iwate-bukkakoutoutaisaku.pref.iwate.jp/",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "中小企業等デジタル化支援事業",
@@ -325,7 +325,7 @@ const DATA = [
       "アドバイザーの助言を受けながら進める意思がある"
     ],
     "url": "https://www.pref.miyagi.jp/soshiki/chukisi/r8digital-shien.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "M＆A支援事業",
@@ -353,7 +353,7 @@ const DATA = [
       "承継後のPMI（統合）に取り組む場合も対象"
     ],
     "url": "https://www.pref.akita.lg.jp/pages/archive/95760",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "中小企業まるっとサポート補助金（事業継続力強化支援 第2次）",
@@ -381,7 +381,7 @@ const DATA = [
       "公式要領で詳細要件の確認が必要"
     ],
     "url": "https://www.pref.yamagata.jp/110013/sangyo/shokogyo/shinko/r8marusapo_jigyokeizoku2_bosyu.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "中小企業等生産性向上推進事業補助金",
@@ -409,7 +409,7 @@ const DATA = [
       "パートナーシップ構築宣言を行う（または行う予定）"
     ],
     "url": "https://www.pref.fukushima.lg.jp/sec/32011b/seisanseikoujoh.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "事業承継支援補助金",
@@ -437,7 +437,7 @@ const DATA = [
       "支援機関の推薦を受けられる"
     ],
     "url": "https://www.pref.tochigi.lg.jp/f03/jigyoushoukei/r8uketukekaishi.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "中小企業等海外出願支援事業",
@@ -465,7 +465,7 @@ const DATA = [
       "申請前に財団への相談ができる"
     ],
     "url": "https://www.g-inf.or.jp/html/subsidy_001.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "中小企業成長促進補助金（第4弾）",
@@ -493,7 +493,7 @@ const DATA = [
       "小規模事業者は専用枠（上限500万円）も選べる"
     ],
     "url": "https://www.pref.chiba.lg.jp/keisei/zaisei/chiba-seichohojyo4.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "地域資源活用製品等の開発・販売促進事業（販路開拓フェーズ）",
@@ -521,7 +521,7 @@ const DATA = [
       "販売促進の具体的な計画がある"
     ],
     "url": "https://www.tokyo-kosha.or.jp/support/josei/index.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "中小企業再生支援強化事業費補助金（第3次追加募集）",
@@ -549,7 +549,7 @@ const DATA = [
       "公式要領で詳細要件の確認が必要"
     ],
     "url": "https://www.pref.toyama.jp/sangyou/shoukoukensetsu/shoukougyou/shien/hojokin/index.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "新商品・新サービス開発支援事業助成金",
@@ -577,7 +577,7 @@ const DATA = [
       "石川県産業創出支援機構（ISICO）の支援を受けられる"
     ],
     "url": "https://www.isico.or.jp/",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "人材育成支援事業補助金",
@@ -605,7 +605,7 @@ const DATA = [
       "事業実施は令和9年2月末までに完了予定"
     ],
     "url": "https://www.pref.fukui.lg.jp/doc/kanri/ninaitehozyo.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "中小企業等プロフェッショナル人材確保支援事業補助金",
@@ -633,7 +633,7 @@ const DATA = [
       "副業・兼業人材の活用でも利用できる"
     ],
     "url": "https://www.pref.hiroshima.lg.jp/site/pro-kyoten/probosyu08.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "中小企業DX推進補助金「DXツール導入型」",
@@ -661,7 +661,7 @@ const DATA = [
       "早めの申請がおすすめ（先着枠あり）"
     ],
     "url": "https://www.pref.yamaguchi.lg.jp/press/343044.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "事業戦略等推進事業費補助金",
@@ -689,7 +689,7 @@ const DATA = [
       "毎月のエントリー締切に間に合わせられる"
     ],
     "url": "https://joho-kochi.or.jp/center/r8top.php",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "中小企業経営革新・賃上げ緊急支援補助金",
@@ -717,7 +717,7 @@ const DATA = [
       "事業場内最低賃金が県最低賃金以上"
     ],
     "url": "https://www.pref.fukuoka.lg.jp/contents/fukuoka-chinage.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "事業承継促進・後継者事業展開支援補助金",
@@ -745,7 +745,7 @@ const DATA = [
       "承継後の事業展開計画がある"
     ],
     "url": "https://www.pref.nagasaki.jp/bunrui/shigoto-sangyo/chushokigyoshien-kinyu/",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "新価値創出支援補助金（おおいたクリエイティブ活用促進事業）",
@@ -773,7 +773,7 @@ const DATA = [
       "マッチングイベントへの参加実績がある"
     ],
     "url": "https://j-net21.smrj.go.jp/snavi2/articles/184817",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "かごしま中小企業DX推進事業費補助金（2次募集）",
@@ -801,7 +801,7 @@ const DATA = [
       "社内デジタル人材育成の取組も対象"
     ],
     "url": "https://www.pref.kagoshima.jp/af22/sangyo-rodo/2026_dx_hojokin.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "小規模事業者経営改善資金融資（マル経融資）",
@@ -965,7 +965,7 @@ const DATA = [
       "2026年7月時点で1,078事業所・16,054人が加入"
     ],
     "url": "https://toku-nw.com/",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "佐賀県中小企業勤労者福祉サービスセンター",
@@ -1021,7 +1021,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.hokkaido.lg.jp/kz/csk/kny/yuushi/",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "青森県特別保証融資制度",
@@ -1049,7 +1049,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.aomori.lg.jp/soshiki/sangyo/sangyo/kenyuusi.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "岩手県中小企業成長応援資金",
@@ -1133,7 +1133,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.akita.lg.jp/pages/genre/14094",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "山形県商工業振興資金融資制度",
@@ -1161,7 +1161,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.yamagata.jp/110013/sangyo/shokogyo/shien/17shikin.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "福島県中小企業制度資金",
@@ -1189,7 +1189,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.fukushima.lg.jp/sec/32011b/seidosikin.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "茨城県中小企業向け融資制度（パワーアップ融資）",
@@ -1301,7 +1301,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.saitama.lg.jp/a0805/seidoyushi/",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "千葉県中小企業向け融資制度",
@@ -1413,7 +1413,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.niigata.lg.jp/sec/chiikishinko/yuushi-seidoyushi.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "富山県中小企業向け融資制度",
@@ -1469,7 +1469,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.ishikawa.lg.jp/kinyuu/kinyuu/youkou.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "福井県中小企業者向け制度融資",
@@ -1581,7 +1581,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.gifu.lg.jp/page/2522.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "静岡県中小企業向け制度融資（経営改善資金）",
@@ -1637,7 +1637,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.aichi.jp/soshiki/kinyu/yushi2024.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "三重県中小企業融資制度",
@@ -1665,7 +1665,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.mie.lg.jp/SHINSAN/HP/77426022712.htm",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "滋賀県中小企業振興資金融資制度",
@@ -1749,7 +1749,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.osaka.lg.jp/o110080/kinyushien/seido001/index.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "兵庫県中小企業融資制度（経営活性化資金）",
@@ -1805,7 +1805,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.nara.jp/5217.htm",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "和歌山県中小企業融資制度",
@@ -1833,7 +1833,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.wakayama.lg.jp/prefg/060300/gyoumu/kinyuu/sangyoushien.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "鳥取県企業自立サポート融資",
@@ -1889,7 +1889,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.shimane.lg.jp/industry/syoko/sangyo/yuushi/tyusyo.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "岡山県中小企業振興資金（小規模企業支援資金）",
@@ -1945,7 +1945,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.hiroshima.lg.jp/soshiki/75/1168587452727.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "山口県中小企業制度融資（経営基盤強化資金等）",
@@ -1973,7 +1973,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.yamaguchi.lg.jp/soshiki/85/21831.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "徳島県中小企業向け融資制度",
@@ -2085,7 +2085,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.kochi.lg.jp/soshiki/150401/2022041300169.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "福岡県中小企業振興資金融資制度（緊急経済対策資金）",
@@ -2253,7 +2253,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "https://www.pref.miyazaki.lg.jp/keieikinyushien/shigoto/chushokigyo/20200329144235.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "鹿児島県中小企業融資制度（新規開業応援資金等）",
@@ -2281,7 +2281,7 @@ const DATA = [
       "資金使途:運転資金・設備資金"
     ],
     "url": "http://www.pref.kagoshima.jp/af02/sangyo-rodo/syoko/yushi/yuushi/yushigaiyou.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "沖縄県融資制度（小規模企業対策資金・成長促進支援資金等）",
@@ -2335,7 +2335,7 @@ const DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260731001.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "小規模事業者持続化補助金＜共同・協業型＞（第3回）",
@@ -2359,7 +2359,7 @@ const DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260708001.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "新事業進出・ものづくり商業サービス補助金",
@@ -2385,7 +2385,7 @@ const DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260630002.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "小規模事業者持続化補助金＜一般型・通常枠＞（第20回）",
@@ -2409,7 +2409,7 @@ const DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260527002.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "小規模事業者持続化補助金＜創業型＞（第4回）",
@@ -2433,7 +2433,7 @@ const DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/hojyokin/kobo/2026/260527001.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "デジタル化・AI導入補助金 通常枠、インボイス枠（インボイス対応類型、電子取引類型）、セキュリティ対策推進枠",
@@ -2459,7 +2459,7 @@ const DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/koukai/yosan/r7/r6_it.pdf",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "地域商業機能複合化推進事業（被災商店街等再建支援事業）",
@@ -2485,7 +2485,7 @@ const DATA = [
       "詳細は中小企業庁の公式ページでご確認ください"
     ],
     "url": "https://www.chusho.meti.go.jp/shogyo/shogyo/2024/240215kino_fukugo.html",
-    "sourceCheckedAt": "2026-08-14"
+    "sourceCheckedAt": "2026-08-15"
   },
   {
     "title": "事業承継・後継ぎ支援事業補助金",
