@@ -81,6 +81,7 @@ def write_sitemap(data: list, loans: list) -> None:
     urls = [
         (SITE_BASE_URL, "1.0", lastmod),
         (SITE_BASE_URL + "search.html", "0.9", lastmod),
+        (SITE_BASE_URL + "about.html", "0.5", lastmod),
     ]
     urls += [
         (SITE_BASE_URL + "loans/" + filename, "0.8", loans_lastmod)
@@ -133,6 +134,10 @@ def write_llms_txt(data: list, loans: list) -> None:
 - [総合台帳（全分類）]({SITE_BASE_URL}loans/index.html): 民間・政府系の融資商品を下限金利が低い順に横断比較
 - 分類別ページ: [カードローン]({SITE_BASE_URL}loans/card-loan.html) / [教育ローン]({SITE_BASE_URL}loans/education-loan.html) / [自動車ローン]({SITE_BASE_URL}loans/auto-loan.html) / [リフォームローン]({SITE_BASE_URL}loans/reform-loan.html) / [不動産担保ローン]({SITE_BASE_URL}loans/real-estate-loan.html) / [住宅ローン]({SITE_BASE_URL}loans/mortgage.html) / [投資不動産ローン]({SITE_BASE_URL}loans/investment-property-loan.html) / [証券担保ローン]({SITE_BASE_URL}loans/securities-loan.html) / [目的型ローン]({SITE_BASE_URL}loans/purpose-loan.html) / [政府系補助金・融資]({SITE_BASE_URL}loans/government.html) / [その他ローン]({SITE_BASE_URL}loans/other-loan.html)
 - [loan-data.json]({SITE_BASE_URL}loans/loan-data.json): 掲載している全{loans_total}件の構造化データ（JSON配列）。1件ごとに金融機関名（institution）・金融機関分類（institutionCategory）・融資分類（loanCategory）・商品名（productName）・下限/上限金利（rateMin, rateMax, %単位・不明な場合はnull）・上限融資額（limitMaxYen, 円単位）・特徴（features）・公式URL（url）・確認日（sourceCheckedAt）などを含みます。政府系補助金・融資（loanCategory: "government"）には、補助金台帳のデータもそのまま含まれます（利率のない補助金・共済は rateMin が null）。
+
+## このサイトについて
+
+- [サイトについてページ]({SITE_BASE_URL}about.html): 運営体制、データの収集方法・更新頻度、情報源一覧、免責事項をまとめています。
 
 ## 更新方法
 

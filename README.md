@@ -59,6 +59,27 @@ schema.org の Product/Offer 構造化データ（JSON-LD）がそのまま書�
   DevToolsの「Elements」パネルはJS実行後のDOMを表示してしまうため
   この確認には使えない点に注意）。
 
+## SEO/LLMO対策として追加した要素
+
+- **docs/about.html（サイトについて）**：運営体制・データの収集方法や
+  更新頻度・情報源一覧・免責事項をまとめたページ。全ページのナビゲーション
+  （`.topnav`）からリンクしている。E-E-A-T（信頼性シグナル）対策として、
+  データ取得の仕組み自体をGitHubリポジトリで公開している旨も明記している。
+- **FAQPage構造化データ**：`docs/index.html`（補助金台帳トップ）と
+  `docs/loans/index.html`（融資・ローン総合台帳）の2ページに、実際に画面に
+  表示されるFAQセクション（`.faq-block`）と、対応するschema.orgの
+  FAQPage形式JSON-LDを追加している。融資分類別の11ページには同じFAQを
+  複製していない（重複コンテンツを避けるため）。融資側のFAQ内容は
+  `scripts/generate_loan_pages.py` の `LOANS_FAQ` で管理しており、
+  ここを編集して `python scripts/generate_loan_pages.py` を再実行すれば
+  更新できる（実行後は `python scripts/export_loans.py` も忘れずに）。
+- **Google Fontsの読み込み最適化**：実際にCSSで使われているフォント
+  ウェイトだけをリクエストするよう `<link href="https://fonts.googleapis.com/css2?...">`
+  を整理した（Shippori Minchoは700・800のみ、Zen Kaku Gothic Newは
+  400・500・600・700のみ）。使われていない900番台等を削り、逆に実際は
+  使われているのにリクエストされていなかった600番台を追加している
+  （リクエストするフォントファイルの数を9個から6個に削減）。
+
 ## 必要なアカウント
 
 - **GitHubアカウント**（無料）。これだけです。
@@ -127,6 +148,7 @@ subsidy-crawler/
 ├── docs/
 │   ├── index.html            # 台帳ページ（title/meta description/OGP/JSON-LD対応）
 │   ├── search.html           # 検索ページ（同上。?q=クエリで検索キーワードを渡せる）
+│   ├── about.html             # サイトについて（運営体制・情報源・免責事項）
 │   ├── data.js                # サイトが読み込むデータ（自動生成される）
 │   ├── data.json              # 同じ内容の素のJSON（外部ツール・LLM向け、自動生成）
 │   ├── loans/

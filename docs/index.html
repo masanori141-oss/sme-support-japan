@@ -20,7 +20,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#FFFFFF;
@@ -137,6 +137,13 @@
   .card-footer a{color:var(--navy); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:1px; font-weight:700;}
   .card-footer a:hover{color:var(--vermillion); border-color:var(--vermillion);}
   .card[data-hidden="true"]{display:none;}
+
+  .faq-block{max-width:1080px; margin:8px auto 40px; padding:0 24px;}
+  .faq-block h2{font-family:'Shippori Mincho', serif; font-size:20px; color:var(--navy-deep); margin:0 0 16px; padding-bottom:12px; border-bottom:1px solid var(--line);}
+  .faq-item{padding:16px 0; border-bottom:1px solid var(--line);}
+  .faq-item:last-child{border-bottom:none;}
+  .faq-q{font-size:14px; font-weight:700; color:var(--navy-deep); margin-bottom:8px;}
+  .faq-a{font-size:13px; line-height:1.85; color:var(--text-sub);}
 
   .disclaimer{max-width:1080px; margin:0 auto; padding:0 24px 60px;}
   .disclaimer-box{border:1px solid var(--line); background:var(--bg-soft); padding:22px 24px; font-size:12px; line-height:1.9; color:var(--text-sub); border-radius:2px;}
@@ -455,6 +462,34 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "このサイトは中小企業庁の公式サイトですか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "いいえ、非公式の情報整理サイトです。中小企業庁および各都道府県の公式サイトの情報をもとに、独自に収集・整理しています。正式な要件は必ず公式サイトでご確認ください。"}
+    },
+    {
+      "@type": "Question",
+      "name": "掲載されている情報はどのくらいの頻度で更新されますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "毎日自動で公式サイトを再取得し、変更があれば当日中に反映しています。各制度には確認日を表示しています。"}
+    },
+    {
+      "@type": "Question",
+      "name": "「補助金」「融資」「共済」の違いは何ですか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "補助金は要件を満たせば返済不要な支援金、融資はいずれ返済が必要な借入金です。共済は掛金を積み立てて将来の資金繰りや退職金等に備える制度です。"}
+    },
+    {
+      "@type": "Question",
+      "name": "都道府県独自の補助金・融資はすべて掲載されていますか？",
+      "acceptedAnswer": {"@type": "Answer", "text": "融資（制度融資）は全47都道府県を網羅していますが、補助金は公式サイトで受付中であることを確認できた道府県のみ掲載しています。詳しくは検索ページで絞り込んでご確認いただけます。"}
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -465,6 +500,7 @@
       <a href="index.html" class="active">一覧（台帳）</a>
       <a href="search.html">条件で探す</a>
       <a href="loans/index.html">融資・ローン比較</a>
+      <a href="about.html">サイトについて</a>
     </nav>
   </div>
 </div>
@@ -968,6 +1004,26 @@
   </article>
 
 </main>
+
+<div class="faq-block">
+  <h2>よくあるご質問</h2>
+  <div class="faq-item">
+    <div class="faq-q">Q. このサイトは中小企業庁の公式サイトですか？</div>
+    <div class="faq-a">いいえ、非公式の情報整理サイトです。中小企業庁および各都道府県の公式サイトの情報をもとに、独自に収集・整理しています。正式な要件は必ず公式サイトでご確認ください。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q. 掲載されている情報はどのくらいの頻度で更新されますか？</div>
+    <div class="faq-a">毎日自動で公式サイトを再取得し、変更があれば当日中に反映しています。各制度には確認日を表示しています。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q. 「補助金」「融資」「共済」の違いは何ですか？</div>
+    <div class="faq-a">補助金は要件を満たせば返済不要な支援金、融資はいずれ返済が必要な借入金です。共済は掛金を積み立てて将来の資金繰りや退職金等に備える制度です。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Q. 都道府県独自の補助金・融資はすべて掲載されていますか？</div>
+    <div class="faq-a">融資（制度融資）は全47都道府県を網羅していますが、補助金は公式サイトで受付中であることを確認できた道府県のみ掲載しています。詳しくは検索ページで絞り込んでご確認いただけます。</div>
+  </div>
+</div>
 
 <div class="disclaimer">
   <div class="disclaimer-box">

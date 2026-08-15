@@ -26,6 +26,7 @@ HTMLファイルはリポジトリにコミットし、以後は docs/loans/loan
 これらのマーカー・id属性を前提にしている点に注意すること。
 """
 
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -102,6 +103,66 @@ def limit_options() -> str:
     return "\n          ".join(opts)
 
 
+# 総合台帳ページ（slug == "all"）にのみ表示するFAQ。他の11ページには
+# 出さない（同一内容を12ページに複製すると重複コンテンツになるため）。
+LOANS_FAQ = [
+    ("掲載されている金利は必ず適用されますか？",
+     "いいえ。掲載している金利は各金融機関の公式サイトで確認した基準ですが、実際に適用される金利は審査結果により異なります。お申込み前には必ず各金融機関の公式サイトで最新の条件をご確認ください。"),
+    ("「下限金利」が低い順に並んでいますが、下限金利だけで選んで良いですか？",
+     "下限金利は、その商品で最も優遇された条件が適用された場合の金利です。実際に適用される金利は審査結果によって上限に近づく場合があるため、金利だけでなく限度額や特徴もあわせてご確認ください。"),
+    ("カードローンとフリーローン・目的型ローンの違いは何ですか？",
+     "カードローンは利用限度額の範囲内で繰り返し借入・返済ができる商品です。フリーローン・目的型ローンは一度にまとまった金額を借り入れる商品で、資金使途が自由なものと、教育・自動車など特定の目的に限定されるものに分かれます。"),
+    ("このサイトは特定の金融機関を推奨していますか？",
+     "いいえ。本サイトは非公式の比較情報サイトであり、特定の金融機関を推奨するものではありません。掲載順は下限金利が低い順の機械的な並び替えです。"),
+    ("政府系の補助金・融資と、民間金融機関の融資はどう違いますか？",
+     "「政府系補助金・融資」分類には、中小企業庁・都道府県が実施する制度融資や補助金・共済を掲載しています。返済不要な補助金や、公的機関が関わる分だけ低金利な融資が含まれる一方、審査や手続きに時間がかかる場合があります。"),
+]
+
+
+def faq_html_block(slug: str) -> str:
+    if slug != "all":
+        return ""
+    items = "\n".join(
+        f"""    <div class="faq-item">
+      <div class="faq-q">Q. {q}</div>
+      <div class="faq-a">{a}</div>
+    </div>"""
+        for q, a in LOANS_FAQ
+    )
+    return f"""<div class="layout" style="padding-top:0;">
+  <div class="faq-block">
+    <h2>よくあるご質問</h2>
+{items}
+  </div>
+</div>
+
+"""
+
+
+def faq_jsonld_block(slug: str) -> str:
+    if slug != "all":
+        return ""
+    entities = ",\n".join(
+        f"""    {{
+      "@type": "Question",
+      "name": {json.dumps(q, ensure_ascii=False)},
+      "acceptedAnswer": {{"@type": "Answer", "text": {json.dumps(a, ensure_ascii=False)}}}
+    }}"""
+        for q, a in LOANS_FAQ
+    )
+    return f"""<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+{entities}
+  ]
+}}
+</script>
+
+"""
+
+
 def jsonld(slug: str, label: str, filename: str, description: str) -> str:
     url = SITE_BASE_URL + "loans/" + filename
     return f"""<script type="application/ld+json">
@@ -152,13 +213,13 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 
 {jsonld_block}
 
-<script type="application/ld+json" id="products-jsonld">
+{faq_jsonld}<script type="application/ld+json" id="products-jsonld">
 {{"@context": "https://schema.org", "@graph": []}}
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="loans.css">
 </head>
 <body>
@@ -170,6 +231,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
       <a href="../index.html">一覧（台帳）</a>
       <a href="../search.html">条件で探す</a>
       <a href="index.html" class="active">融資・ローン比較</a>
+      <a href="../about.html">サイトについて</a>
     </nav>
   </div>
 </div>
@@ -214,7 +276,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   <div id="result-list"><!--SSR_CARDS_START--><!--SSR_CARDS_END--></div>
 </div>
 
-<div class="disclaimer">
+{faq_html}<div class="disclaimer">
   <div class="disclaimer-box">
     <strong>このページについて：</strong>掲載している金利・限度額は各金融機関の公式サイト等で確認した情報をもとにしていますが、実際に適用される金利・限度額は審査結果により異なります。お申込み前には必ず各金融機関の公式サイトで最新の条件をご確認ください。本ページは非公式の比較情報サイトであり、特定の金融機関を推奨するものではありません。
   </div>
@@ -240,6 +302,8 @@ def run():
             description=description,
             canonical=SITE_BASE_URL + "loans/" + filename,
             jsonld_block=jsonld(slug, label, filename, description),
+            faq_jsonld=faq_jsonld_block(slug),
+            faq_html=faq_html_block(slug),
             nav=nav_html(slug),
             rate_options=rate_options(),
             limit_options=limit_options(),

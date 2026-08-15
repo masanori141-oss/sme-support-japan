@@ -65,6 +65,13 @@ a{color:inherit;}
 
 .empty-state{padding:60px 20px; text-align:center; color:var(--text-sub); font-size:13.5px; border:1px dashed var(--line-strong); border-radius:3px;}
 
+.faq-block{max-width:1280px; margin:8px auto 40px; padding:0 24px;}
+.faq-block h2{font-family:'Shippori Mincho', serif; font-size:20px; color:var(--navy-deep); margin:0 0 16px; padding-bottom:12px; border-bottom:1px solid var(--line);}
+.faq-item{padding:16px 0; border-bottom:1px solid var(--line);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{font-size:14px; font-weight:700; color:var(--navy-deep); margin-bottom:8px;}
+.faq-a{font-size:13px; line-height:1.85; color:var(--text-sub);}
+
 .disclaimer{max-width:1280px; margin:0 auto; padding:0 24px 60px;}
 .disclaimer-box{border:1px solid var(--line); background:var(--bg-soft); padding:20px 22px; font-size:12px; line-height:1.85; color:var(--text-sub); border-radius:2px;}
 .disclaimer-box strong{color:var(--text);}
