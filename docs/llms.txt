@@ -1,18 +1,18 @@
 # 補助金台帳 / 融資・ローン比較台帳 — 日本の中小企業・個人向け補助金・融資データベース
 
-> 日本の中小企業・小規模事業者向けに、中小企業庁（全国）および47都道府県が実施する補助金・制度融資・共済制度を横断的にまとめた非公式データベースです。中小企業庁および各都道府県の公式サイトの情報をもとに収集・統合しています。現在91件の制度を掲載（内訳: 補助金37件・融資49件・共済5件、最終更新: 2026-08-17）。加えて、メガバンク・信託銀行・新興銀行・政府系金融機関・地方銀行・消費者金融など民間金融機関等の融資商品を金利・限度額で横断比較できる「融資・ローン比較台帳」も提供しています（35金融機関、掲載128商品＋政府系制度、最終更新: 2026-08-17）。本サイトは非公式の情報整理ツールであり、公式情報ではありません。申請・借入前には必ず各制度・金融機関の公式サイトで最新の状況をご確認ください。
+> 日本の中小企業・小規模事業者向けに、中小企業庁（全国）および47都道府県が実施する補助金・制度融資・共済制度を横断的にまとめた非公式データベースです。中小企業庁および各都道府県の公式サイトの情報をもとに収集・統合しています。現在92件の制度を掲載（内訳: 補助金38件・融資49件・共済5件、最終更新: 2026-08-18）。加えて、メガバンク・信託銀行・新興銀行・政府系金融機関・地方銀行・消費者金融など民間金融機関等の融資商品を金利・限度額で横断比較できる「融資・ローン比較台帳」も提供しています（35金融機関、掲載128商品＋政府系制度、最終更新: 2026-08-18）。本サイトは非公式の情報整理ツールであり、公式情報ではありません。申請・借入前には必ず各制度・金融機関の公式サイトで最新の状況をご確認ください。
 
 ## 補助金台帳
 
 - [台帳ページ](https://masanori141-oss.github.io/sme-support-japan/index.html): 代表的な制度を詳細カード形式で紹介
 - [検索ページ](https://masanori141-oss.github.io/sme-support-japan/search.html): 区分（補助金・融資・共済）・都道府県・事業規模・目的で絞り込み検索できる全件一覧
-- [data.json](https://masanori141-oss.github.io/sme-support-japan/data.json): 掲載している全91件の構造化データ（JSON配列）。1件ごとに制度名（title）・区分（category: 補助金/融資/共済）・対象都道府県（pref）・上限額（amountLabel）・補助率/利率（rateLabel）・締切（deadline, deadlineLabel）・対象要件（eligibility）・公式URL（url）・確認日（sourceCheckedAt）などを含みます。
+- [data.json](https://masanori141-oss.github.io/sme-support-japan/data.json): 掲載している全92件の構造化データ（JSON配列）。1件ごとに制度名（title）・区分（category: 補助金/融資/共済）・対象都道府県（pref）・上限額（amountLabel）・補助率/利率（rateLabel）・締切（deadline, deadlineLabel）・対象要件（eligibility）・公式URL（url）・確認日（sourceCheckedAt）などを含みます。
 
 ## 融資・ローン比較台帳
 
 - [総合台帳（全分類）](https://masanori141-oss.github.io/sme-support-japan/loans/index.html): 民間・政府系の融資商品を下限金利が低い順に横断比較
 - 分類別ページ: [カードローン](https://masanori141-oss.github.io/sme-support-japan/loans/card-loan.html) / [教育ローン](https://masanori141-oss.github.io/sme-support-japan/loans/education-loan.html) / [自動車ローン](https://masanori141-oss.github.io/sme-support-japan/loans/auto-loan.html) / [リフォームローン](https://masanori141-oss.github.io/sme-support-japan/loans/reform-loan.html) / [不動産担保ローン](https://masanori141-oss.github.io/sme-support-japan/loans/real-estate-loan.html) / [住宅ローン](https://masanori141-oss.github.io/sme-support-japan/loans/mortgage.html) / [投資不動産ローン](https://masanori141-oss.github.io/sme-support-japan/loans/investment-property-loan.html) / [証券担保ローン](https://masanori141-oss.github.io/sme-support-japan/loans/securities-loan.html) / [目的型ローン](https://masanori141-oss.github.io/sme-support-japan/loans/purpose-loan.html) / [政府系補助金・融資](https://masanori141-oss.github.io/sme-support-japan/loans/government.html) / [その他ローン](https://masanori141-oss.github.io/sme-support-japan/loans/other-loan.html)
-- [loan-data.json](https://masanori141-oss.github.io/sme-support-japan/loans/loan-data.json): 掲載している全219件の構造化データ（JSON配列）。1件ごとに金融機関名（institution）・金融機関分類（institutionCategory）・融資分類（loanCategory）・商品名（productName）・下限/上限金利（rateMin, rateMax, %単位・不明な場合はnull）・上限融資額（limitMaxYen, 円単位）・特徴（features）・公式URL（url）・確認日（sourceCheckedAt）などを含みます。政府系補助金・融資（loanCategory: "government"）には、補助金台帳のデータもそのまま含まれます（利率のない補助金・共済は rateMin が null）。
+- [loan-data.json](https://masanori141-oss.github.io/sme-support-japan/loans/loan-data.json): 掲載している全220件の構造化データ（JSON配列）。1件ごとに金融機関名（institution）・金融機関分類（institutionCategory）・融資分類（loanCategory）・商品名（productName）・下限/上限金利（rateMin, rateMax, %単位・不明な場合はnull）・上限融資額（limitMaxYen, 円単位）・特徴（features）・公式URL（url）・確認日（sourceCheckedAt）などを含みます。政府系補助金・融資（loanCategory: "government"）には、補助金台帳のデータもそのまま含まれます（利率のない補助金・共済は rateMin が null）。
 
 ## このサイトについて
 
