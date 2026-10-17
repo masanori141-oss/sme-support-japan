@@ -65,11 +65,12 @@ def esc(value) -> str:
 
 
 def js_num(n) -> str:
-    """PythonのfloatをJSのtoString()と同じ見た目にする（14.0 -> "14"、3.625 -> "3.625"）。"""
+    """app.js の fmtRate() と同じ見た目にする（2.0 -> "2.0"、3.625 -> "3.625"）。
+    整数の金利は「年2%」ではなく金融機関の表記に近い「年2.0%」とする。"""
     if n is None:
         return ""
     if float(n).is_integer():
-        return str(int(n))
+        return f"{int(n)}.0"
     return str(n)
 
 

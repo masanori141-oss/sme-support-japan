@@ -104,6 +104,11 @@ function sortByRate(list) {
 }
 
 // 公式サイトで金利を確認した日。住宅ローンは毎日自動確認し、確認できた日だけ更新される。
+// 整数の金利は「年2%」ではなく「年2.0%」と表示する（export_loans.py の js_num と同じ）
+function fmtRate(n) {
+  return Number.isInteger(n) ? n.toFixed(1) : String(n);
+}
+
 function checkedAtHtml(iso) {
   if (!iso) return "";
   const [y, m, dd] = iso.split("-");
@@ -116,7 +121,7 @@ function renderCard(d) {
   // 「固定」とは表示せず、数値のみを示す。変動/固定の別や優遇条件など
   // 詳しいニュアンスは rateLabel（公式サイトへのリンク先）で確認できる。
   const rateText = d.rateMin !== null && d.rateMin !== undefined
-    ? (d.rateMin === d.rateMax ? `年${d.rateMin}%` : `年${d.rateMin}%〜${d.rateMax}%`)
+    ? (d.rateMin === d.rateMax ? `年${fmtRate(d.rateMin)}%` : `年${fmtRate(d.rateMin)}%〜${fmtRate(d.rateMax)}%`)
     : (d.rateLabel || "要確認");
   const limitText = formatYen(d.limitMaxYen) || d.limitLabel || "要確認";
   const catLabel = LOAN_CATEGORY_LABELS[d.loanCategory] || d.loanCategory;
