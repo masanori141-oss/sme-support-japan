@@ -10,7 +10,10 @@
 【毎日の判定】
   1. 読み取れて、値が変わっていた → 金利を上書き（確認日=今日、履歴に記録）
   2. 読み取れて、値が同じ         → 金利は上書きしない（確認日のみ今日に更新）
-  3. 読み取れない                 → 金利も確認日も変えない（要対応として報告）
+  3. 読み取れない                 → 金利も確認日も変えない
+     - ページは取れたのに目印が無い（ページ構成の変更）→ すぐに Issue で知らせる
+     - 金融機関側のアクセス制限で取れない → 最後に確認できた日から30日を超えたら Issue で知らせる（手動確認）
+  人が公式サイトで確認して設定の rate_min・checked_at を更新した場合は、それを最新として取り込む。
 安全装置：
   - 目印が見つからない・順番どおりに並んでいない → 読み取れない扱い
   - 金利が妥当な範囲（min_rate〜max_rate）外 → 上書きしない
@@ -33,6 +36,9 @@ STATE_PATH = ROOT / "data" / "rate_watch_state.json"
 REPORT_PATH = ROOT / "data" / "rate_watch_report.md"
 
 RATE_RE = re.compile(r"(\d{1,2}\.\d{1,3})%")
+# 金融機関側のアクセス制限（クラウドのサーバーからの自動アクセスを拒否）を示す本文
+BLOCKED_RE = re.compile(r"AccessDenied|Youdon'thavepermission|403Forbidden|RequestRejected")
+STALE_DAYS = 30  # 公式サイトで確認できない状態がこの日数を超えたら Issue で知らせる
 
 
 @dataclass
@@ -160,7 +166,7 @@ def run_watches(configs, fetch_static: Callable[[str], Optional[str]], today: Op
     today = today or datetime.now().strftime("%Y-%m-%d")
     state = load_state()
     cache: Dict[tuple, Optional[str]] = {}
-    report = {"changed": [], "same": [], "pending": [], "failed": [], "rejected": []}
+    report = {"changed": [], "same": [], "pending": [], "failed": [], "rejected": [], "blocked": []}
 
     for cfg in configs:
         w = getattr(cfg, "watch", None)
@@ -171,6 +177,12 @@ def run_watches(configs, fetch_static: Callable[[str], Optional[str]], today: Op
             "rate": cfg.rate_min, "checkedAt": cfg.checked_at or None, "history": [],
         })
         st["url"] = w.url
+        # 人が公式サイトで確認して設定（rate_min・checked_at）を更新した場合は、それを最新として取り込む
+        if cfg.checked_at and (not st.get("checkedAt") or cfg.checked_at > st["checkedAt"]):
+            if st.get("rate") != cfg.rate_min:
+                st["history"].append({"date": cfg.checked_at, "from": st.get("rate"), "to": cfg.rate_min, "by": "手動確認"})
+                st["changedAt"] = cfg.checked_at
+            st["rate"], st["checkedAt"] = cfg.rate_min, cfg.checked_at
         prev = st.get("rate")
 
         text, how = None, ""
@@ -185,17 +197,19 @@ def run_watches(configs, fetch_static: Callable[[str], Optional[str]], today: Op
                 cache[("render", w.url)] = fetch_rendered_text(w.url, ready=lambda t: all(_readable(t, x) for x in same_url))
             text, how = cache[("render", w.url)], "ヘッドレスブラウザ"
 
+        if text is None or BLOCKED_RE.search(compact(text)[:300]):
+            # 金融機関側のアクセス制限。毎日は知らせず、確認できない期間が STALE_DAYS を超えたら知らせる
+            why = "金融機関側のアクセス制限により自動取得できません（" + ("応答なし・タイムアウト" if text is None else "Access Denied") + f"／{how}）"
+            st["lastError"], st["lastErrorAt"] = why, today
+            report["blocked"].append((key, why, w.url, st.get("checkedAt")))
+            continue
         try:
-            if text is None:
-                raise ValueError(f"ページを取得できません（アクセス拒否・タイムアウト等／{how}）")
-            try:
-                rate = extract_rate(text, w)
-            except ValueError as e:
-                # 拒否ページ等が返っていないか確認できるよう、受け取った本文の冒頭を添える
-                raise ValueError(f"{e}（{how}で受け取った本文の冒頭: {compact(text)[:60]}…）") from None
+            rate = extract_rate(text, w)
         except ValueError as e:
-            st["lastError"], st["lastErrorAt"] = str(e), today
-            report["failed"].append((key, str(e), w.url, st.get("checkedAt")))
+            # ページは取得できたのに読めない＝ページ構成の変更の可能性。すぐに知らせる
+            msg = f"{e}（{how}で受け取った本文の冒頭: {compact(text)[:60]}…）"
+            st["lastError"], st["lastErrorAt"] = msg, today
+            report["failed"].append((key, msg, w.url, st.get("checkedAt")))
             continue
 
         if not (w.min_rate <= rate <= w.max_rate):
@@ -226,13 +240,20 @@ def run_watches(configs, fetch_static: Callable[[str], Optional[str]], today: Op
     save_state(state)
     write_report(report, today)
     print(f"  金利の自動確認: 変更 {len(report['changed'])} / 変更なし {len(report['same'])} / "
-          f"保留 {len(report['pending'])} / 読み取れず {len(report['failed'])} / 範囲外 {len(report['rejected'])}")
+          f"保留 {len(report['pending'])} / 読み取れず {len(report['failed'])} / 範囲外 {len(report['rejected'])} / "
+          f"アクセス制限 {len(report['blocked'])}")
     return state
 
 
 def write_report(r: dict, today: str) -> None:
     """GitHub Actions で Issue 本文に使うレポート。要対応がなければファイルを作らない。"""
-    needs_action = r["failed"] or r["rejected"] or r["pending"]
+    def days_since(d):
+        try:
+            return (datetime.strptime(today, "%Y-%m-%d") - datetime.strptime(d, "%Y-%m-%d")).days
+        except (TypeError, ValueError):
+            return 9999
+    stale = [b for b in r["blocked"] if days_since(b[3]) > STALE_DAYS]
+    needs_action = r["failed"] or r["rejected"] or r["pending"] or stale
     if REPORT_PATH.exists():
         REPORT_PATH.unlink()
     if not needs_action:
@@ -251,6 +272,13 @@ def write_report(r: dict, today: str) -> None:
     if r["rejected"]:
         lines += ["### 妥当な範囲外のため更新しなかった商品", ""]
         lines += [f"- {k}：{why}（{u}）" for k, why, u in r["rejected"]]
+        lines += [""]
+    if stale:
+        lines += [f"### {STALE_DAYS}日以上、公式サイトで金利を確認できていない商品（手動確認が必要）", "",
+                  "金融機関側のアクセス制限で自動取得できない商品です。公式ページで金利を確認し、"
+                  "`crawler/fetch_private_loans.py` の該当商品の `rate_min`・`rate_max`・`rate_label`・`checked_at`（確認日）を更新してください。", "",
+                  "| 商品 | 公式ページ | 最終確認日 |", "|---|---|---|"]
+        lines += [f"| {k} | {u} | {last or '—'} |" for k, why, u, last in stale]
         lines += [""]
     if r["changed"]:
         lines += ["### 参考：本日更新した金利", ""]

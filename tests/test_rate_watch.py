@@ -73,6 +73,21 @@ def main():
     st = run(PAGE.replace("年1.195%", "年9.9%"), cfg, "2026-10-22")
     assert st["rate"] == 2.195 and "妥当な範囲" in st["lastError"]
 
+    # アクセス制限：金利・確認日は変えず、30日以内は Issue 用レポートを作らない
+    st = run("Access Denied You don't have permission to access", cfg, "2026-10-23")
+    assert st["rate"] == 2.195 and st["checkedAt"] == "2026-10-21" and "アクセス制限" in st["lastError"]
+    assert not rw.REPORT_PATH.exists()
+    st = run(None, cfg, "2026-11-10")  # 応答なし（タイムアウト）も同じ扱い
+    assert not rw.REPORT_PATH.exists()
+    # 最後に確認できた日から30日を超えたら手動確認を促すレポートを作る
+    st = run(None, cfg, "2026-11-25")
+    assert rw.REPORT_PATH.exists() and "手動確認" in rw.REPORT_PATH.read_text(encoding="utf-8")
+    # 人が公式サイトで確認して設定を更新したら、それを最新として取り込む
+    manual = Cfg(rate_min=2.3, checked_at="2026-11-26")
+    st = run(None, manual, "2026-11-27")
+    assert st["rate"] == 2.3 and st["checkedAt"] == "2026-11-26" and st["history"][-1]["by"] == "手動確認"
+    assert not rw.REPORT_PATH.exists()
+
     print("OK: rate_watch の判定ルールはすべて期待どおりです")
 
 
