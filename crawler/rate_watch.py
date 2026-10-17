@@ -88,8 +88,12 @@ RENDER_TEXT_JS = """() => {
 }"""
 
 
-def fetch_rendered_text(url: str) -> Optional[str]:
-    """ヘッドレスブラウザ（Playwright）で描画後の本文を取得する。未導入・失敗時は None。"""
+def fetch_rendered_text(url: str, ready: Optional[Callable[[str], bool]] = None) -> Optional[str]:
+    """ヘッドレスブラウザ（Playwright）で描画後の本文を取得する。未導入・失敗時は None。
+
+    解析用タグ等で通信が止まらないページがあるため「通信が落ち着くまで待つ」は使わず、
+    読み込み後に最大20秒、ready(本文) が真になる（＝金利が描画される）まで待つ。
+    """
     global _render_browser
     try:
         from playwright.sync_api import sync_playwright  # 遅延import（未導入でも静的取得は動く）
@@ -98,20 +102,34 @@ def fetch_rendered_text(url: str) -> Optional[str]:
     try:
         if _render_browser is None:
             pw = sync_playwright().start()
-            _render_browser = pw.chromium.launch()
+            # HTTP/2 で接続を拒否するサイトがあるため HTTP/1.1 で接続する
+            _render_browser = pw.chromium.launch(args=["--disable-http2"])
         page = _render_browser.new_page(locale="ja-JP", user_agent=(
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
             "(KHTML, like Gecko) Chrome/140.0 Safari/537.36"))
         try:
-            page.goto(url, wait_until="networkidle", timeout=45_000)
-            page.wait_for_timeout(1500)
-            # タブ切替で非表示になっている金利表も読めるよう、表示状態に関係なく本文を取得する
-            return page.evaluate(RENDER_TEXT_JS)
+            page.goto(url, wait_until="domcontentloaded", timeout=45_000)
+            text = ""
+            for _ in range(20):
+                page.wait_for_timeout(1000)
+                # タブ切替で非表示になっている金利表も読めるよう、表示状態に関係なく本文を取得する
+                text = page.evaluate(RENDER_TEXT_JS)
+                if ready is None or ready(text):
+                    break
+            return text
         finally:
             page.close()
     except Exception as e:  # noqa: BLE001
         print(f"    [render失敗] {url}: {e}")
         return None
+
+
+def _readable(text: str, watch: RateWatch) -> bool:
+    try:
+        extract_rate(text, watch)
+        return True
+    except ValueError:
+        return False
 
 
 # ---------------------------------------------------------------- 状態
@@ -155,15 +173,26 @@ def run_watches(configs, fetch_static: Callable[[str], Optional[str]], today: Op
         st["url"] = w.url
         prev = st.get("rate")
 
-        ck = (w.url, w.render)
-        if ck not in cache:
-            cache[ck] = fetch_rendered_text(w.url) if w.render else fetch_static(w.url)
-        text = cache[ck]
+        text, how = None, ""
+        if not w.render:
+            if ("static", w.url) not in cache:
+                cache[("static", w.url)] = fetch_static(w.url)
+            text, how = cache[("static", w.url)], "通常取得"
+        if text is None:
+            # JavaScript描画のページ、または通常の取得が拒否された場合はヘッドレスブラウザで取得
+            if ("render", w.url) not in cache:
+                same_url = [c.watch for c in configs if getattr(c, "watch", None) and c.watch.url == w.url]
+                cache[("render", w.url)] = fetch_rendered_text(w.url, ready=lambda t: all(_readable(t, x) for x in same_url))
+            text, how = cache[("render", w.url)], "ヘッドレスブラウザ"
 
         try:
             if text is None:
-                raise ValueError("ページを取得できません（アクセス拒否・タイムアウト等）" + ("／ヘッドレスブラウザ" if w.render else ""))
-            rate = extract_rate(text, w)
+                raise ValueError(f"ページを取得できません（アクセス拒否・タイムアウト等／{how}）")
+            try:
+                rate = extract_rate(text, w)
+            except ValueError as e:
+                # 拒否ページ等が返っていないか確認できるよう、受け取った本文の冒頭を添える
+                raise ValueError(f"{e}（{how}で受け取った本文の冒頭: {compact(text)[:60]}…）") from None
         except ValueError as e:
             st["lastError"], st["lastErrorAt"] = str(e), today
             report["failed"].append((key, str(e), w.url, st.get("checkedAt")))
@@ -227,3 +256,35 @@ def write_report(r: dict, today: str) -> None:
         lines += ["### 参考：本日更新した金利", ""]
         lines += [f"- {k}：{a}% → {b}%" for k, a, b, u in r["changed"]]
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def dry_run() -> int:
+    """状態を保存せずに、全商品の読み取り結果だけを表示する（設定の確認用）。
+
+    python -m crawler.rate_watch            … 全商品
+    python -m crawler.rate_watch みずほ       … 名前に「みずほ」を含む商品だけ
+    """
+    import sys
+    import tempfile
+    from .fetch_private_loans import LOAN_CONFIG, fetch_page_text
+
+    global STATE_PATH, REPORT_PATH
+    tmp = Path(tempfile.mkdtemp())
+    STATE_PATH, REPORT_PATH = tmp / "state.json", tmp / "report.md"
+    words = sys.argv[1:]
+    targets = [c for c in LOAN_CONFIG if getattr(c, "watch", None)
+               and (not words or any(w in state_key(c) for w in words))]
+    state = run_watches(targets, fetch_page_text)
+    ng = 0
+    for c in targets:
+        st = state[state_key(c)]
+        if st.get("lastError"):
+            ng += 1
+            print(f"NG  {state_key(c)}\n      {st['lastError']}")
+        else:
+            print(f"OK  {state_key(c)}: {st.get('pending', {}).get('rate', st['rate'])}%")
+    return 1 if ng else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(dry_run())
