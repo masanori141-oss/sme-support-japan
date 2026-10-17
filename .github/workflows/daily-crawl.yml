@@ -59,6 +59,9 @@ jobs:
           gh label create loan-rate-check --color B93C28 --description "住宅ローン金利の自動確認で要対応" 2>/dev/null || true
           num=$(gh issue list --label loan-rate-check --state open --json number --jq '.[0].number')
           if [ -n "$num" ]; then
+            # 前回と同じ内容なら追記しない（毎日同じ一覧が並ばないように）
+            last=$(gh issue view "$num" --json body,comments --jq 'if (.comments|length)>0 then .comments[-1].body else .body end')
+            if [ "$last" = "$(cat data/rate_watch_report.md)" ]; then echo "前回と同じ内容のため追記しません"; exit 0; fi
             gh issue comment "$num" --body-file data/rate_watch_report.md
           else
             gh issue create --title "【要確認】住宅ローン金利の自動確認" --label loan-rate-check --body-file data/rate_watch_report.md

@@ -26,6 +26,7 @@ W = RateWatch(url="https://example.test/rate", anchors=["新規お借り入れ�
 class Cfg:
     institution: str = "テスト銀行"
     product_name: str = "テスト住宅ローン（変動）"
+    loan_category: str = "mortgage"
     rate_min: Optional[float] = 0.945
     checked_at: str = "2026-08-14"
     watch: Optional[RateWatch] = field(default_factory=lambda: W)
@@ -87,6 +88,24 @@ def main():
     st = run(None, manual, "2026-11-27")
     assert st["rate"] == 2.3 and st["checkedAt"] == "2026-11-26" and st["history"][-1]["by"] == "手動確認"
     assert not rw.REPORT_PATH.exists()
+
+    # 幅のある金利（カードローン等）：下限・上限の両方を読み、どちらかが変われば上書き
+    RW = RateWatch(url="", anchors=["金利(実質年率)"], is_range=True, label="年{min}%〜{max}%")
+    assert rw.extract_rates("ご利用限度額 10万円〜800万円 金利（実質年率） 年1.5%～14.6%", RW) == (1.5, 14.6)
+    assert rw.extract_rates("金利(実質年率) 3.0~18.0%", RW) == (3.0, 18.0)
+    assert rw.format_label(RW, 1.5, 14.0) == "年1.5%〜14.0%"
+    card = Cfg(institution="テストカード", product_name="テストカードローン", loan_category="card-loan",
+               rate_min=1.5, checked_at="2026-08-14", watch=RW)
+    card.rate_max = 14.6
+    st = run("金利(実質年率) 年1.5%～14.6%", card, "2026-10-17")
+    assert (st["rate"], st["rateMax"]) == (1.5, 14.6) and st["checkedAt"] == "2026-10-17" and len(st["history"]) == 0
+    st = run("金利(実質年率) 年1.5%～14.8%", card, "2026-10-18")
+    assert (st["rate"], st["rateMax"]) == (1.5, 14.8) and st["history"][-1]["toMax"] == 14.8
+    # カードローンは18%台も妥当（住宅ローンの上限6%は適用しない）、20%超は採用しない
+    st = run("金利(実質年率) 年1.5%～18.0%", card, "2026-10-19")
+    assert st["pending"]["rateMax"] == 18.0
+    st = run("金利(実質年率) 年1.5%～25.0%", card, "2026-10-20")
+    assert "妥当な範囲" in st["lastError"]
 
     print("OK: rate_watch の判定ルールはすべて期待どおりです")
 
