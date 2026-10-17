@@ -679,8 +679,6 @@
   "福岡銀行｜ニューオートローンDX": {
     "checkedAt": "2026-10-17",
     "history": [],
-    "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-17",
     "rate": 2.4,
     "rateMax": 4.2,
     "url": "https://www.fukuokabank.co.jp/personal/service/mokuteki/autoloan/"
