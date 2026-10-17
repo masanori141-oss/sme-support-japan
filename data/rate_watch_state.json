@@ -1,0 +1,148 @@
+{
+  "PayPay銀行｜PayPay銀行住宅ローン（全期間引下型・変動金利）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.58,
+    "url": "https://www.paypay-bank.co.jp/mortgage/interest/index.html"
+  },
+  "SBI新生銀行（新生インベストメント&ファイナンス）｜パワースマート住宅ローン（変動・半年型）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "lastError": "ページを取得できません（アクセス拒否・タイムアウト等）／ヘッドレスブラウザ",
+    "lastErrorAt": "2026-10-17",
+    "rate": 1.34,
+    "url": "https://www.sbishinseibank.co.jp/retail/housing/"
+  },
+  "みずほ銀行｜みずほ銀行住宅ローン（変動金利）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "lastError": "目印「現在変動金利金利の低さを重視される方に」が見つかりません",
+    "lastErrorAt": "2026-10-17",
+    "rate": 1.275,
+    "url": "https://www.mizuhobank.co.jp/loan_housing/housingloancost/index.html"
+  },
+  "りそな銀行｜りそな住宅ローン（変動金利）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "lastError": "ページを取得できません（アクセス拒否・タイムアウト等）",
+    "lastErrorAt": "2026-10-17",
+    "rate": 1.25,
+    "url": "https://www.resonabank.co.jp/common/kinri/json/jutaku.json"
+  },
+  "イオン銀行｜イオン銀行住宅ローン（全期間優遇金利プラン・変動金利）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "lastError": "目印「新規お借入れ変動金利※物件価格の80%以内でお借入れの場合」が見つかりません",
+    "lastErrorAt": "2026-10-17",
+    "rate": 1.04,
+    "url": "https://www.aeonbank.co.jp/interest/housing-loan/"
+  },
+  "ソニー銀行｜変動セレクト住宅ローン（環境配慮型住宅）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "lastError": "ページを取得できません（アクセス拒否・タイムアウト等）／ヘッドレスブラウザ",
+    "lastErrorAt": "2026-10-17",
+    "rate": 1.747,
+    "url": "https://sonybank.jp/products/hl/"
+  },
+  "三井住友銀行｜三井住友銀行住宅ローン（変動金利）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.525,
+    "url": "https://www.smbc.co.jp/kojin/jutaku_loan/kinri/"
+  },
+  "三菱UFJ銀行｜三菱UFJ銀行住宅ローン（変動金利）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.195,
+    "url": "https://www.bk.mufg.jp/kariru/jutaku/yuuguu/index.html"
+  },
+  "京葉銀行｜京葉銀行住宅ローン（変動金利）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.725,
+    "url": "https://www.keiyobank.co.jp/individual/loan/housing/"
+  },
+  "京都銀行｜京銀住宅ローン（変動金利プラン）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.675,
+    "url": "https://www.kyotobank.co.jp/kojin/campaign/kinriplan/"
+  },
+  "伊予銀行｜いよぎん住宅ローン（新変動金利型）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.25,
+    "url": "https://www.iyobank.co.jp/kinri-gaikokukawasesoba-market/monthly/kojinloankinri.html"
+  },
+  "住信SBIネット銀行（ドコモSMTBネット銀行）｜住宅ローン（WEB申込コース・通期引下げプラン変動金利）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "lastError": "ページを取得できません（アクセス拒否・タイムアウト等）／ヘッドレスブラウザ",
+    "lastErrorAt": "2026-10-17",
+    "rate": 2.0,
+    "url": "https://www.netbk.co.jp/contents/lineup/home-loan/web/kinri/"
+  },
+  "北海道銀行｜道銀住宅ローン変動金利型": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 2.075,
+    "url": "https://www.hokkaidobank.co.jp/kinri/new_loan.html"
+  },
+  "千葉銀行｜ちばぎん住宅ローン「ベストチョイス21」（変動金利）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.5,
+    "url": "https://www.chibabank.co.jp/kojin/loan/housing/plan/select/plan02.html"
+  },
+  "山陰合同銀行｜ごうぎんの住宅ローン（変動金利型・優遇キャンペーン）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.1,
+    "url": "https://www.gogin.co.jp/rate/housing/index.html"
+  },
+  "常陽銀行｜常陽銀行住宅ローン（変動金利型・全期間重視プラン）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.575,
+    "url": "https://www.joyobank.co.jp/personal/loan/jutaku/kinri/"
+  },
+  "東邦銀行｜東邦・住宅ローン金利応援コース（変動金利応援コース）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.05,
+    "url": "https://www.tohobank.co.jp/kinri/saikagen-kinri.html"
+  },
+  "楽天銀行｜楽天銀行住宅ローン（金利選択型・変動金利）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "lastError": "ページを取得できません（アクセス拒否・タイムアウト等）／ヘッドレスブラウザ",
+    "lastErrorAt": "2026-10-17",
+    "rate": 1.747,
+    "url": "https://www.rakuten-bank.co.jp/home-loan/rate/"
+  },
+  "横浜銀行｜横浜銀行住宅ローン（変動金利）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.325,
+    "url": "https://www.boy.co.jp/kojin/jutaku-loan/shinchiku/index.html"
+  },
+  "滋賀銀行｜しがぎんスーパー住宅ローン（変動型・有担保）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.25,
+    "url": "https://www.shigagin.com/rate/loan/"
+  },
+  "福岡銀行｜福岡銀行住宅ローン優遇金利（保証料一括型・変動金利）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.775,
+    "url": "https://www.fukuokabank.co.jp/price/loaninterest/"
+  },
+  "静岡銀行｜静岡銀行住宅ローン（変動金利）": {
+    "checkedAt": "2026-10-17",
+    "history": [],
+    "rate": 1.4,
+    "url": "https://www.shizuokabank.co.jp/personal/loan/jyutaku/index.html"
+  }
+}
