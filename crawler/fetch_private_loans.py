@@ -32,6 +32,7 @@ from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 
 from .loan_schema import LoanProduct
+from .rate_watch import RateWatch, fmt_rate, load_state, run_watches, state_key
 
 REQUEST_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -55,6 +56,8 @@ class LoanConfig:
     limit_max_yen: Optional[int] = None
     features: List[str] = field(default_factory=list)
     confirmed: bool = False
+    checked_at: str = ""           # 公式サイトで金利を確認した日（空なら LEGACY_CHECKED_AT）
+    watch: Optional[RateWatch] = None  # 毎日の自動確認の設定（rate_watch.py）。未設定の商品は自動では更新しない
 
 
 # 代表的な金融機関・カードローンをResearchで確認した初期値として登録。
@@ -451,47 +454,57 @@ LOAN_CONFIG: List[LoanConfig] = [
     LoanConfig(
         institution="三菱UFJ銀行", institution_category="メガバンク",
         loan_category="mortgage", product_name="三菱UFJ銀行住宅ローン（変動金利）",
-        url="https://www.bk.mufg.jp/kariru/jutaku/index.html",
-        rate_min=0.945, rate_max=0.945, rate_label="年0.945%（変動、最優遇後の目安）",
+        url="https://www.bk.mufg.jp/kariru/jutaku/yuuguu/index.html",
+        rate_min=1.195, rate_max=1.195, rate_label="年1.195%（変動・ずーっと一律優遇コース）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["変動金利は基準金利を年2回見直し", "5年ルール・125%ルールで返済額急増を抑制", "団体信用生命保険料は金利に含む"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.bk.mufg.jp/kariru/jutaku/yuuguu/index.html", anchors=["新規お借り入れの金利", "【ずーっと一律優遇コース】適用金利変動金利"], label="年{rate}%（変動・ずーっと一律優遇コース）"),
     ),
     LoanConfig(
         institution="みずほ銀行", institution_category="メガバンク",
         loan_category="mortgage", product_name="みずほ銀行住宅ローン（変動金利）",
         url="https://www.mizuhobank.co.jp/loan_housing/housingloancost/index.html",
-        rate_min=1.025, rate_max=1.025, rate_label="年1.025%（変動、2026年8月時点・最優遇後の目安）",
+        rate_min=1.275, rate_max=1.275, rate_label="年1.275%〜（変動、最優遇後の目安）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
-        features=["変動金利は年2回見直し", "2027年1月返済分からは年1.275%への改定が予定されている", "ネット専用住宅ローンあり"],
+        features=["変動金利は年2回見直し", "金利引き下げ幅は申込内容・審査結果により決定", "ネット専用住宅ローンあり"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.mizuhobank.co.jp/loan_housing/housingloancost/index.html", anchors=["現在変動金利金利の低さを重視される方に"], render=True, label="年{rate}%〜（変動、最優遇後の目安）"),
     ),
     LoanConfig(
         institution="三井住友銀行", institution_category="メガバンク",
         loan_category="mortgage", product_name="三井住友銀行住宅ローン（変動金利）",
         url="https://www.smbc.co.jp/kojin/jutaku_loan/kinri/",
-        rate_min=1.275, rate_max=1.275, rate_label="年1.275%（変動、最優遇後の目安）",
+        rate_min=1.525, rate_max=1.525, rate_label="年1.525%〜（変動・最後までずーっと引き下げプラン）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["変動金利型のほか固定金利特約型（5年・10年）等も選択可", "WEB申込専用住宅ローンあり", "がん団信等の団体信用生命保険が充実"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.smbc.co.jp/kojin/jutaku_loan/kinri/", anchors=["最後までずーっと引き下げプラン", "店頭金利ご融資利率", "変動金利型"], nth=1, render=True, label="年{rate}%〜（変動・最後までずーっと引き下げプラン）"),
     ),
     LoanConfig(
         institution="りそな銀行", institution_category="メガバンク",
         loan_category="mortgage", product_name="りそな住宅ローン（変動金利）",
         url="https://www.resonabank.co.jp/kojin/jutaku/",
-        rate_min=0.95, rate_max=0.95, rate_label="年0.95%（変動、最優遇後の目安）",
+        rate_min=1.25, rate_max=1.25, rate_label="年1.25%〜（変動・融資手数料型）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["新規・借換えとも取扱いあり", "リフォーム資金セット型など目的別プランが豊富", "全期間固定金利プランも選択可"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.resonabank.co.jp/common/kinri/json/jutaku.json", json_path="0.new1.floatingRate.apply", note="りそなが金利表示に使っている公開JSON（新規①・変動金利・適用金利）", label="年{rate}%〜（変動・融資手数料型）"),
     ),
     LoanConfig(
         institution="横浜銀行", institution_category="地方銀行",
         loan_category="mortgage", product_name="横浜銀行住宅ローン（変動金利）",
         url="https://www.boy.co.jp/kojin/jutaku-loan/shinchiku/index.html",
-        rate_min=0.945, rate_max=0.945, rate_label="年0.945%（融資手数料型、2026年8月時点・変動）",
+        rate_min=1.325, rate_max=1.325, rate_label="年1.325%（変動・融資手数料型金利プラン）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["住宅ローン基準レートを年2回（4月・10月）見直し", "融資手数料型・保証料型から選択可", "返済額は約5年間一定（5年ルール適用）"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.boy.co.jp/kojin/jutaku-loan/shinchiku/index.html", anchors=["金利一覧(新築・購入)", "変動金利型※1"], render=True, label="年{rate}%（変動・融資手数料型金利プラン）"),
     ),
 
     # --- 地方銀行の対象拡充（住宅ローン: 北海道銀行・福岡銀行・常陽銀行） ---
@@ -499,28 +512,34 @@ LOAN_CONFIG: List[LoanConfig] = [
         institution="北海道銀行", institution_category="地方銀行",
         loan_category="mortgage", product_name="道銀住宅ローン変動金利型",
         url="https://www.hokkaidobank.co.jp/kinri/new_loan.html",
-        rate_min=1.825, rate_max=1.825, rate_label="年1.825%（変動、2026年8月時点・新規受付金利）",
+        rate_min=2.075, rate_max=2.075, rate_label="年2.075%（変動、新規受付金利）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["基準金利からの引下げ利率は年1.500%", "固定金利選択型（3〜10年）も選択可", "カーボンニュートラル住宅ローンなど目的別プランもあり"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.hokkaidobank.co.jp/kinri/new_loan.html", anchors=["「道銀住宅ローン変動金利型」について詳しく見る", "変動金利型"], label="年{rate}%（変動、新規受付金利）"),
     ),
     LoanConfig(
         institution="福岡銀行", institution_category="地方銀行",
         loan_category="mortgage", product_name="福岡銀行住宅ローン優遇金利（保証料一括型・変動金利）",
         url="https://www.fukuokabank.co.jp/price/loaninterest/",
-        rate_min=1.525, rate_max=1.525, rate_label="年1.525%（変動、2026年8月時点・優遇金利）",
+        rate_min=1.775, rate_max=1.775, rate_label="年1.775%（変動・優遇金利）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["優遇金利の適用には一定の条件あり（窓口で要確認）", "固定金利型（2〜10年、全期間固定20〜35年）も選択可", "フラット35の取扱いもあり"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.fukuokabank.co.jp/price/loaninterest/", anchors=["ローンの種類年利住宅ローン優遇金利(保証料一括型)", "変動金利型"], label="年{rate}%（変動・優遇金利）"),
     ),
     LoanConfig(
         institution="常陽銀行", institution_category="地方銀行",
         loan_category="mortgage", product_name="常陽銀行住宅ローン（変動金利型・全期間重視プラン）",
         url="https://www.joyobank.co.jp/personal/loan/jutaku/kinri/",
-        rate_min=1.325, rate_max=1.525, rate_label="年1.325%〜1.525%（変動、店頭金利年3.125%より最大1.8%割引、2026年8月時点）",
+        rate_min=1.575, rate_max=1.575, rate_label="年1.575%〜（変動・最大割引後）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["給与振込等の条件を満たすと全期間最大年1.8%引下げ", "3年固定特別金利プランは年0.795%〜", "固定3〜15年・全期間完全固定も選択可"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.joyobank.co.jp/personal/loan/jutaku/kinri/", anchors=["新規でお借入れの場合", "変動金利型最大割引後適用金利"], label="年{rate}%〜（変動・最大割引後）"),
     ),
 
     # --- 新興銀行の対象拡充（住宅ローン: ネット銀行が実は主流） ---
@@ -528,55 +547,67 @@ LOAN_CONFIG: List[LoanConfig] = [
         institution="住信SBIネット銀行（ドコモSMTBネット銀行）", institution_category="新興銀行",
         loan_category="mortgage", product_name="住宅ローン（WEB申込コース・通期引下げプラン変動金利）",
         url="https://www.netbk.co.jp/contents/lineup/home-loan/web/kinri/",
-        rate_min=1.20, rate_max=1.55, rate_label="変動年1.20%（環境配慮型住宅または物件価格80%以下）〜1.55%（80%超）、2026年8月時点",
+        rate_min=2.0, rate_max=2.0, rate_label="年2.00%（変動・通期引下げプラン）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["ネット銀行住宅ローンの代表格で借入件数が多い", "当初引下げプラン（当初期間のみ大幅引下げ）も選択可", "がん団信等の各種団信プランが充実"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.netbk.co.jp/contents/lineup/home-loan/web/kinri/", anchors=["通期引下げプラン変動金利"], render=True, label="年{rate}%（変動・通期引下げプラン）"),
     ),
     LoanConfig(
         institution="ソニー銀行", institution_category="新興銀行",
         loan_category="mortgage", product_name="変動セレクト住宅ローン（環境配慮型住宅）",
         url="https://sonybank.jp/products/hl/",
-        rate_min=1.247, rate_max=1.247, rate_label="年1.247%（変動、環境配慮型住宅、2026年8月時点）",
+        rate_min=1.747, rate_max=1.747, rate_label="年1.747%（変動、環境配慮型住宅の新規購入）",
         limit_label="要確認（融資金額は物件価格・年収等により決定、上限3億円）",
         features=["借入期間最長50年・融資金額最大3億円", "がん団信100は金利上乗せ年0.1%", "環境配慮型住宅以外は別途住宅ローン金利を適用"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://sonybank.jp/products/hl/", anchors=["変動セレクト住宅ローン(環境配慮型住宅)変動金利[年利]"], render=True, label="年{rate}%（変動、環境配慮型住宅の新規購入）"),
     ),
     LoanConfig(
         institution="楽天銀行", institution_category="新興銀行",
         loan_category="mortgage", product_name="楽天銀行住宅ローン（金利選択型・変動金利）",
         url="https://www.rakuten-bank.co.jp/home-loan/rate/",
-        rate_min=1.543, rate_max=1.543, rate_label="年1.543%（変動、2026年8月時点）",
+        rate_min=1.747, rate_max=1.747, rate_label="年1.747%〜（変動、当月の借入金利）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["保証料・繰上返済手数料が無料", "楽天銀行口座を返済口座に指定するとさらに年0.3%優遇", "つなぎ融資にも対応"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.rakuten-bank.co.jp/home-loan/rate/", anchors=["住宅ローン(金利選択型)借入金利※", "変動金利"], nth=1, render=True, note="当月・翌月の表が並ぶ。先頭（当月）の表の借入金利", label="年{rate}%〜（変動、当月の借入金利）"),
     ),
     LoanConfig(
         institution="PayPay銀行", institution_category="新興銀行",
         loan_category="mortgage", product_name="PayPay銀行住宅ローン（全期間引下型・変動金利）",
         url="https://www.paypay-bank.co.jp/mortgage/interest/index.html",
-        rate_min=1.330, rate_max=1.330, rate_label="年1.330%（変動、2026年8月時点）",
+        rate_min=1.58, rate_max=1.58, rate_label="年1.58%（変動・全期間引下型）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["ソフトバンクスマホユーザー等は「スマホ／ネット／でんき優遇割」でさらに金利優遇", "保証料・保証会社手数料は不要", "手続きはオンラインで完結（司法書士面談は別途）"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.paypay-bank.co.jp/mortgage/interest/index.html", anchors=["変動金利新規お借り入れ・お借り換え(全期間引下型)"], render=True, label="年{rate}%（変動・全期間引下型）"),
     ),
     LoanConfig(
         institution="イオン銀行", institution_category="新興銀行",
         loan_category="mortgage", product_name="イオン銀行住宅ローン（全期間優遇金利プラン・変動金利）",
         url="https://www.aeonbank.co.jp/interest/housing-loan/",
-        rate_min=0.990, rate_max=1.070, rate_label="年0.990%〜1.070%（変動、イオン銀行カードローン利用で年0.05%優遇、2026年8月時点）",
+        rate_min=1.04, rate_max=1.04, rate_label="年1.04%〜（変動、物件価格の80%以内の新規借入）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["イオングループでの買い物が完済まで毎日5%OFF", "保証料・一部繰上返済手数料が無料", "8疾病保障付団信など保障が充実"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.aeonbank.co.jp/interest/housing-loan/", anchors=["新規お借入れ変動金利※物件価格の80%以内でお借入れの場合"], render=True, label="年{rate}%〜（変動、物件価格の80%以内の新規借入）"),
     ),
     LoanConfig(
         institution="SBI新生銀行（新生インベストメント&ファイナンス）", institution_category="新興銀行",
         loan_category="mortgage", product_name="パワースマート住宅ローン（変動・半年型）",
         url="https://www.sbishinseibank.co.jp/retail/housing/",
-        rate_min=1.060, rate_max=1.060, rate_label="年1.060%（変動・半年型、2026年8月時点）",
+        rate_min=1.34, rate_max=1.34, rate_label="年1.34%（変動・半年型、ハイパー預金開設者の優遇後）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["保証料・団体信用生命保険料・一部繰上返済手数料が無料", "5年ルール・125%ルールは適用されない", "全疾病保障付団信も金利上乗せなしで選択可"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.sbishinseibank.co.jp/retail/housing/", anchors=["ハイパー預金開設者限定*変動金利(半年型)"], render=True, label="年{rate}%（変動・半年型、ハイパー預金開設者の優遇後）"),
     ),
 
     # --- 不動産担保ローン ---
@@ -699,19 +730,23 @@ LOAN_CONFIG: List[LoanConfig] = [
         institution="千葉銀行", institution_category="地方銀行",
         loan_category="mortgage", product_name="ちばぎん住宅ローン「ベストチョイス21」（変動金利）",
         url="https://www.chibabank.co.jp/kojin/loan/housing/plan/select/plan02.html",
-        rate_min=1.225, rate_max=1.225, rate_label="年1.225%（変動、2026年8月時点・店頭金利年3.125%より1.9%割引後）",
+        rate_min=1.5, rate_max=1.5, rate_label="年1.50%（変動、割引後金利）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["店頭表示金利からの割引幅を公式サイトで明示（透明性が高い）", "変動・固定とも同じ仕組みで金利を割引", "借入後は年2回金利を見直し"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.chibabank.co.jp/kojin/loan/housing/plan/select/plan02.html", anchors=["割引後金利", "変動金利"], label="年{rate}%（変動、割引後金利）"),
     ),
     LoanConfig(
         institution="静岡銀行", institution_category="地方銀行",
         loan_category="mortgage", product_name="静岡銀行住宅ローン（変動金利）",
         url="https://www.shizuokabank.co.jp/personal/loan/jyutaku/index.html",
-        rate_min=1.15, rate_max=1.15, rate_label="年1.15%（変動、2026年8月時点・最優遇後の目安）",
+        rate_min=1.4, rate_max=1.4, rate_label="年1.40%〜（固定・変動ミックス型の変動金利）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["au回線等とのセット利用でさらに最大年0.15%優遇", "新規契約は契約から一定期間無利息の特典がある商品も併設", "静岡県内を中心に幅広いエリアで取扱い"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.shizuokabank.co.jp/personal/loan/jyutaku/index.html", anchors=["新規借入をお考えの方", "変動金利(固定・変動ミックス型)"], window=60, render=True, label="年{rate}%〜（固定・変動ミックス型の変動金利）"),
     ),
 
     # --- 新興銀行の対象拡充（カードローン・投資不動産ローン） ---
@@ -1099,46 +1134,56 @@ LOAN_CONFIG: List[LoanConfig] = [
         institution="京葉銀行", institution_category="地方銀行",
         loan_category="mortgage", product_name="京葉銀行住宅ローン（変動金利）",
         url="https://www.keiyobank.co.jp/individual/loan/housing/",
-        rate_min=1.225, rate_max=1.225, rate_label="年1.225%（変動、店頭金利年3.125%より最大1.90%優遇、2026年8月時点）",
+        rate_min=1.725, rate_max=1.725, rate_label="年1.725%（変動・最大優遇後、40年返済）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["がん保障付き団体信用生命保険に無料で加入可能", "40年・50年の長期返済プランを選択可能", "固定10年金利も選択可"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.keiyobank.co.jp/individual/loan/housing/", anchors=["現在変動金利"], note="40年返済の金利（50年返済は別表示）", label="年{rate}%（変動・最大優遇後、40年返済）"),
     ),
     LoanConfig(
         institution="東邦銀行", institution_category="地方銀行",
         loan_category="mortgage", product_name="東邦・住宅ローン金利応援コース（変動金利応援コース）",
         url="https://www.tohobank.co.jp/kinri/saikagen-kinri.html",
-        rate_min=0.800, rate_max=0.800, rate_label="年0.800%（変動、給与振込+アプリ等の条件を満たす場合の最下限金利、2026年7月時点）",
+        rate_min=1.05, rate_max=1.05, rate_label="年1.05%（変動・最下限金利、給与振込等の条件あり）",
         limit_label="100万円以上1億円以内", limit_max_yen=100_000_000,
         features=["給与振込・東邦銀行アプリ等の条件で最下限金利を適用", "融資期間は最長50年", "固定3年・5年・10年も選択可"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.tohobank.co.jp/kinri/saikagen-kinri.html", anchors=["変動金利応援コース", "当行に給与振込のお取引がある方"], nth=1, note="引下げ幅・最下限金利の順に並ぶため2番目", label="年{rate}%（変動・最下限金利、給与振込等の条件あり）"),
     ),
     LoanConfig(
         institution="滋賀銀行", institution_category="地方銀行",
         loan_category="mortgage", product_name="しがぎんスーパー住宅ローン（変動型・有担保）",
         url="https://www.shigagin.com/rate/loan/",
-        rate_min=1.0, rate_max=1.175, rate_label="年1.0%〜1.175%（変動、店頭金利年3.325%より最大引下げ後、事務取扱手数料の型により異なる、2026年8月時点）",
+        rate_min=1.25, rate_max=1.25, rate_label="年1.25%（変動・最大引下げ後、事務取扱手数料定率タイプ）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["WEB申込プランなら来店不要で手続き完結", "一部繰上返済手数料が無料", "団体信用生命保険が充実"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.shigagin.com/rate/loan/", anchors=["スーパー住宅ローン事務取扱手数料定率タイプ", "変動型(有担保)"], nth=2, note="店頭金利・引下げ幅・引下げ後の順に並ぶため3番目", label="年{rate}%（変動・最大引下げ後、事務取扱手数料定率タイプ）"),
     ),
     LoanConfig(
         institution="伊予銀行", institution_category="地方銀行",
         loan_category="mortgage", product_name="いよぎん住宅ローン（新変動金利型）",
         url="https://www.iyobank.co.jp/kinri-gaikokukawasesoba-market/monthly/kojinloankinri.html",
-        rate_min=0.95, rate_max=0.95, rate_label="年0.95%〜（変動、審査結果により0.1〜0.3%上乗せの場合あり、2026年8月時点）",
+        rate_min=1.25, rate_max=1.25, rate_label="年1.25%〜（新変動金利型）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["段階金利型・変動固定選択型など複数プランから選択可", "新変動金利利用料は借入額の1.1%（税込）", "店頭・HOME TICKETで将来金利上昇時のシミュレーション可能"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.iyobank.co.jp/kinri-gaikokukawasesoba-market/monthly/kojinloankinri.html", anchors=["1.新変動金利型", "新変動金利型"], nth=1, note="前月・当月の2列。2列目（当月）", label="年{rate}%〜（新変動金利型）"),
     ),
     LoanConfig(
         institution="山陰合同銀行", institution_category="地方銀行",
         loan_category="mortgage", product_name="ごうぎんの住宅ローン（変動金利型・優遇キャンペーン）",
         url="https://www.gogin.co.jp/rate/housing/index.html",
-        rate_min=0.90, rate_max=1.70, rate_label="年0.90%〜1.70%（変動、キャンペーン金利、通常金利は年1.05%〜4.60%、2026年6月〜12月時点）",
+        rate_min=1.1, rate_max=1.1, rate_label="年1.10%〜（変動・キャンペーン金利、条件あり）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["新規借入・借換えとも同一金利", "2段階固定金利型・預金連動型など複数プランあり", "キャンペーン適用には条件あり"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.gogin.co.jp/rate/housing/index.html", anchors=["変動金利キャンペーン金利"], label="年{rate}%〜（変動・キャンペーン金利、条件あり）"),
     ),
 
     # --- 地方銀行の対象拡充（リフォームローンの残り: 東邦・伊予・山陰合同・滋賀・常陽・福岡） ---
@@ -1201,11 +1246,13 @@ LOAN_CONFIG: List[LoanConfig] = [
     LoanConfig(
         institution="京都銀行", institution_category="地方銀行",
         loan_category="mortgage", product_name="京銀住宅ローン（変動金利プラン）",
-        url="https://www.kyotobank.co.jp/kinri/loan/",
-        rate_min=1.425, rate_max=1.425, rate_label="年1.425%（変動、最優遇金利、2026年8月時点）",
+        url="https://www.kyotobank.co.jp/kojin/campaign/kinriplan/",
+        rate_min=1.675, rate_max=1.675, rate_label="年1.675%（変動・最下限金利）",
         limit_label="要確認（融資金額は物件価格・年収等により決定）",
         features=["がん診断保険金特約付住宅ローンは45歳以下なら金利上乗せなし", "無担保住宅ローン・フラット35の取扱いもあり", "京銀ダイレクトバンキングなら一部繰上返済手数料無料"],
         confirmed=True,
+        checked_at="2026-10-17",
+        watch=RateWatch(url="https://www.kyotobank.co.jp/kojin/campaign/kinriplan/", anchors=["最下限金利店頭表示金利最下限金利変動金利"], nth=1, note="店頭表示金利・最下限金利の順に並ぶため2番目", label="年{rate}%（変動・最下限金利）"),
     ),
 
     # --- 静岡銀行のフリーローン（目的型ローン） ---
@@ -1362,17 +1409,28 @@ def _is_placeholder(label: str) -> bool:
     return "要確認" in (label or "")
 
 
-def build_product(cfg: LoanConfig, page_text: Optional[str]) -> LoanProduct:
-    today = datetime.now().strftime("%Y-%m-%d")
+# LOAN_CONFIG の初期値を人手で調査した日。checked_at 未設定の商品の「確認日」として表示する
+# （以前は毎日その日の日付を入れていたため、実際には確認していない金利も最新に見えていた）。
+LEGACY_CHECKED_AT = "2026-08-14"
 
+
+def build_product(cfg: LoanConfig, page_text: Optional[str], state: Optional[Dict[str, dict]] = None) -> LoanProduct:
     rate_min, rate_max, rate_label = cfg.rate_min, cfg.rate_max, cfg.rate_label
     limit_label, limit_max_yen = cfg.limit_label, cfg.limit_max_yen
+    checked_at = cfg.checked_at or LEGACY_CHECKED_AT
 
-    # 自動抽出はあくまで「要確認」のままになっている項目を埋めるためのもの。
-    # 既に人手で確認済みの値は、汎用正規表現がページ内の無関係な数字に
-    # 誤ってマッチするリスクがあるため上書きしない
-    # （都道府県の制度融資で実際に誤マッチが起きた教訓を踏まえている）。
-    if page_text:
+    if cfg.watch:
+        # 毎日の自動確認（rate_watch.py）の結果を使う。確認できなかった日は前回確認した値・確認日のまま。
+        st = (state or {}).get(state_key(cfg))
+        if st and st.get("rate") is not None:
+            rate_min = rate_max = st["rate"]
+            rate_label = cfg.watch.label.format(rate=fmt_rate(st["rate"]))
+            checked_at = st.get("checkedAt") or checked_at
+    elif page_text:
+        # 自動抽出はあくまで「要確認」のままになっている項目を埋めるためのもの。
+        # 既に人手で確認済みの値は、汎用正規表現がページ内の無関係な数字に
+        # 誤ってマッチするリスクがあるため上書きしない
+        # （都道府県の制度融資で実際に誤マッチが起きた教訓を踏まえている）。
         if _is_placeholder(cfg.rate_label):
             auto_rate = try_extract_rate(page_text)
             if auto_rate:
@@ -1397,26 +1455,30 @@ def build_product(cfg: LoanConfig, page_text: Optional[str]) -> LoanProduct:
         limit_max_yen=limit_max_yen,
         features=cfg.features,
         url=cfg.url,
-        source_checked_at=today,
+        source_checked_at=checked_at,
         confirmed=cfg.confirmed or (rate_min is not None and not _is_placeholder(rate_label)),
     )
 
 
 def fetch_private_loan_products() -> List[LoanProduct]:
     """
-    LOAN_CONFIG の各URLに実際にアクセスし、取得できたページ本文から
-    自動抽出を試みる。個別のURLへのアクセスに失敗しても
-    （実際、みずほ銀行はBot対策で403、プロミス・千葉銀行はJS
-    レンダリングで本文が取得できない、等が起こりうる）、その1件が
-    config のフォールバック値になるだけで、全体の処理は止めない。
+    1. watch が設定された商品（住宅ローン）は rate_watch で公式サイトの金利を確認し、状態を更新する。
+    2. LOAN_CONFIG の各URLに実際にアクセスし、「要確認」の項目だけ汎用抽出で埋める。
+    個別のURLへのアクセスに失敗しても（みずほ銀行はBot対策で403、
+    プロミス・千葉銀行はJSレンダリングで本文が取得できない、等が起こりうる）、
+    その1件が前回値・初期値のままになるだけで、全体の処理は止めない。
     """
+    state = run_watches(LOAN_CONFIG, fetch_page_text)
+
     page_cache: Dict[str, Optional[str]] = {}
     products: List[LoanProduct] = []
-
     for cfg in LOAN_CONFIG:
+        if cfg.watch:
+            products.append(build_product(cfg, None, state))
+            continue
         if cfg.url not in page_cache:
             page_cache[cfg.url] = fetch_page_text(cfg.url)
-        products.append(build_product(cfg, page_cache[cfg.url]))
+        products.append(build_product(cfg, page_cache[cfg.url], state))
 
     return products
 

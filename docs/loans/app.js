@@ -103,6 +103,13 @@ function sortByRate(list) {
   });
 }
 
+// 公式サイトで金利を確認した日。住宅ローンは毎日自動確認し、確認できた日だけ更新される。
+function checkedAtHtml(iso) {
+  if (!iso) return "";
+  const [y, m, dd] = iso.split("-");
+  return `<div class="checked-at">公式サイト確認日：${y}年${Number(m)}月${Number(dd)}日</div>`;
+}
+
 function renderCard(d) {
   // rateMin===rateMaxは「金利が固定金利である」ことを意味しない
   // （変動金利でも代表値を1つだけ登録している場合がある）ため、
@@ -136,6 +143,7 @@ function renderCard(d) {
         <div class="figure-value">${limitText}</div>
       </div>
       <a class="detail-link" href="${d.url}" target="_blank" rel="noopener">公式サイトで詳細を見る →</a>
+      ${checkedAtHtml(d.sourceCheckedAt)}
     </div>
   `;
   return card;

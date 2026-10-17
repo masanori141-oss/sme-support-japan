@@ -144,9 +144,18 @@ def render_card_html(d: dict, page_category: str) -> str:
         f'      <div class="figure-value">{esc(limit_text(d))}</div>\n'
         "    </div>\n"
         f'    <a class="detail-link" href="{url}" target="_blank" rel="noopener">公式サイトで詳細を見る →</a>\n'
+        f"    {checked_at_html(d.get('sourceCheckedAt'))}\n"
         "  </div>\n"
         "</article>"
     )
+
+
+def checked_at_html(iso) -> str:
+    """app.js の checkedAtHtml() と同じ表示（公式サイトで金利を確認した日）。"""
+    if not iso:
+        return ""
+    y, m, dd = iso.split("-")
+    return f'<div class="checked-at">公式サイト確認日：{y}年{int(m)}月{int(dd)}日</div>'
 
 
 def render_cards_block(items: list, page_category: str) -> str:

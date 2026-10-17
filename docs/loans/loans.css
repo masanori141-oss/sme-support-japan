@@ -80,3 +80,5 @@ footer{background:var(--navy-deep); color:rgba(255,255,255,0.55); text-align:cen
 @media (max-width:760px){
   .loan-card{grid-template-columns:1fr;}
 }
+
+.checked-at{margin-top:8px; font-size:11.5px; color:var(--text-sub);}
