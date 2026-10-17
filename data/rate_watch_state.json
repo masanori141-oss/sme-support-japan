@@ -8,7 +8,7 @@
   "SBI新生銀行（新生インベストメント&ファイナンス）｜パワースマート住宅ローン（変動・半年型）": {
     "checkedAt": "2026-10-17",
     "history": [],
-    "lastError": "ページを取得できません（アクセス拒否・タイムアウト等）／ヘッドレスブラウザ",
+    "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
     "lastErrorAt": "2026-10-17",
     "rate": 1.34,
     "url": "https://www.sbishinseibank.co.jp/retail/housing/"
@@ -16,7 +16,7 @@
   "みずほ銀行｜みずほ銀行住宅ローン（変動金利）": {
     "checkedAt": "2026-10-17",
     "history": [],
-    "lastError": "目印「現在変動金利金利の低さを重視される方に」が見つかりません",
+    "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
     "lastErrorAt": "2026-10-17",
     "rate": 1.275,
     "url": "https://www.mizuhobank.co.jp/loan_housing/housingloancost/index.html"
@@ -24,7 +24,7 @@
   "りそな銀行｜りそな住宅ローン（変動金利）": {
     "checkedAt": "2026-10-17",
     "history": [],
-    "lastError": "ページを取得できません（アクセス拒否・タイムアウト等）",
+    "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
     "lastErrorAt": "2026-10-17",
     "rate": 1.25,
     "url": "https://www.resonabank.co.jp/common/kinri/json/jutaku.json"
@@ -32,7 +32,7 @@
   "イオン銀行｜イオン銀行住宅ローン（全期間優遇金利プラン・変動金利）": {
     "checkedAt": "2026-10-17",
     "history": [],
-    "lastError": "目印「新規お借入れ変動金利※物件価格の80%以内でお借入れの場合」が見つかりません",
+    "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
     "lastErrorAt": "2026-10-17",
     "rate": 1.04,
     "url": "https://www.aeonbank.co.jp/interest/housing-loan/"
@@ -40,8 +40,6 @@
   "ソニー銀行｜変動セレクト住宅ローン（環境配慮型住宅）": {
     "checkedAt": "2026-10-17",
     "history": [],
-    "lastError": "ページを取得できません（アクセス拒否・タイムアウト等）／ヘッドレスブラウザ",
-    "lastErrorAt": "2026-10-17",
     "rate": 1.747,
     "url": "https://sonybank.jp/products/hl/"
   },
@@ -78,8 +76,6 @@
   "住信SBIネット銀行（ドコモSMTBネット銀行）｜住宅ローン（WEB申込コース・通期引下げプラン変動金利）": {
     "checkedAt": "2026-10-17",
     "history": [],
-    "lastError": "ページを取得できません（アクセス拒否・タイムアウト等）／ヘッドレスブラウザ",
-    "lastErrorAt": "2026-10-17",
     "rate": 2.0,
     "url": "https://www.netbk.co.jp/contents/lineup/home-loan/web/kinri/"
   },
@@ -116,7 +112,7 @@
   "楽天銀行｜楽天銀行住宅ローン（金利選択型・変動金利）": {
     "checkedAt": "2026-10-17",
     "history": [],
-    "lastError": "ページを取得できません（アクセス拒否・タイムアウト等）／ヘッドレスブラウザ",
+    "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
     "lastErrorAt": "2026-10-17",
     "rate": 1.747,
     "url": "https://www.rakuten-bank.co.jp/home-loan/rate/"
