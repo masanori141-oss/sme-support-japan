@@ -3151,7 +3151,7 @@ const LOAN_DATA = [
       "1万円単位で融資額を調整可能"
     ],
     "url": "https://www.fukuokabank.co.jp/personal/service/mokuteki/autoloan/",
-    "sourceCheckedAt": "2026-10-18"
+    "sourceCheckedAt": "2026-10-20"
   },
   {
     "institution": "千葉銀行",
