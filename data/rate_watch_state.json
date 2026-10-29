@@ -1,6 +1,6 @@
 {
   "PayPay銀行｜PayPay銀行住宅ローン（全期間引下型・変動金利）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.58,
     "rateMax": 1.58,
@@ -10,7 +10,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 4.5,
     "rateMax": 14.8,
     "url": "https://www.sbishinseibank.co.jp/retail/card_loan/splus/"
@@ -19,7 +19,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 1.34,
     "rateMax": 1.34,
     "url": "https://www.sbishinseibank.co.jp/retail/housing/"
@@ -28,13 +28,13 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 3.45,
     "rateMax": 6.4,
     "url": "https://www.shinsei-if.com/loan/"
   },
   "SMBCモビット｜SMBCモビット カードローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.0,
     "rateMax": 18.0,
@@ -44,7 +44,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 3.375,
     "rateMax": 3.375,
     "url": "https://www.mizuho-tb.co.jp/kinri/loan.html"
@@ -53,7 +53,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 2.0,
     "rateMax": 14.0,
     "url": "https://www.mizuhobank.co.jp/loan_card/kinri/index.html"
@@ -62,7 +62,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 1.275,
     "rateMax": 1.275,
     "url": "https://www.mizuhobank.co.jp/loan_housing/housingloancost/index.html"
@@ -71,7 +71,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 1.5,
     "rateMax": 14.5,
     "url": "https://www.minna-no-ginko.com/service/loan/column/cardloan/"
@@ -80,7 +80,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 3.7,
     "rateMax": 10.8,
     "url": "https://www.resonabank.co.jp/common/kinri/json/secured.json"
@@ -89,7 +89,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 1.7,
     "rateMax": 14.0,
     "url": "https://www.resonabank.co.jp/common/kinri/json/freeloan.json"
@@ -98,7 +98,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 1.7,
     "rateMax": 14.0,
     "url": "https://www.resonabank.co.jp/common/kinri/json/cardloan.json"
@@ -107,7 +107,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 2.1,
     "rateMax": 4.7,
     "url": "https://www.resonabank.co.jp/common/kinri/json/mycar.json"
@@ -116,7 +116,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 2.5,
     "rateMax": 4.375,
     "url": "https://www.resonabank.co.jp/common/kinri/json/reform.json"
@@ -125,7 +125,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 1.25,
     "rateMax": 1.25,
     "url": "https://www.resonabank.co.jp/common/kinri/json/jutaku.json"
@@ -134,20 +134,20 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（応答なし・タイムアウト／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 3.375,
     "rateMax": 5.375,
     "url": "https://www.resonabank.co.jp/common/kinri/json/edu.json"
   },
   "アイフル｜アイフルカードローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.0,
     "rateMax": 18.0,
     "url": "https://www.aiful.co.jp/starter/cardloan/"
   },
   "アコム｜アコムカードローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.4,
     "rateMax": 17.9,
@@ -157,7 +157,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 3.8,
     "rateMax": 13.5,
     "url": "https://www.aeonbank.co.jp/loan/netfree-loan/car-loan/"
@@ -166,7 +166,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 1.04,
     "rateMax": 1.04,
     "url": "https://www.aeonbank.co.jp/interest/housing-loan/"
@@ -175,7 +175,7 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 3.8,
     "rateMax": 13.5,
     "url": "https://www.aeonbank.co.jp/interest/card-loan/"
@@ -184,48 +184,48 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 4.7,
     "rateMax": 4.7,
     "url": "https://www.aeonbank.co.jp/interest/card-loan/"
   },
   "オリックス銀行｜オリックス銀行 不動産担保ローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.675,
     "rateMax": 4.675,
     "url": "https://www.orixbank.co.jp/personal/mortgage/"
   },
   "オリックス銀行｜オリックス銀行カードローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.7,
     "rateMax": 14.8,
     "url": "https://www.orixbank.co.jp/personal/cardloan/"
   },
   "セブン銀行｜セブン銀行カードローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 12.0,
     "rateMax": 15.0,
     "url": "https://www.sevenbank.co.jp/personal/netbank/deposit_loan/loan/beginner.html"
   },
   "ソニー銀行｜ソニー銀行カードローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.5,
     "rateMax": 13.8,
     "url": "https://sonybank.jp/rate/cl.html"
   },
   "ソニー銀行｜変動セレクト住宅ローン（環境配慮型住宅）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.747,
     "rateMax": 1.747,
     "url": "https://sonybank.jp/products/hl/"
   },
   "プロミス｜プロミス フリーキャッシング": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.5,
     "rateMax": 18.0,
@@ -235,363 +235,363 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 4.5,
     "rateMax": 18.0,
     "url": "https://lakealsa.com/cashing/interest/"
   },
   "三井住友銀行｜三井住友銀行カードローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.5,
     "rateMax": 14.5,
     "url": "https://www.smbc.co.jp/kojin/cardloan/details/kinri/"
   },
   "三井住友銀行｜三井住友銀行マイカーローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.45,
     "rateMax": 3.45,
     "url": "https://www.smbc.co.jp/kojin/mokuteki_loan/car/"
   },
   "三井住友銀行｜三井住友銀行住宅ローン（変動金利）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.525,
     "rateMax": 1.525,
     "url": "https://www.smbc.co.jp/kojin/jutaku_loan/kinri/"
   },
   "三井住友銀行｜三井住友銀行教育ローン（無担保型）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.875,
     "rateMax": 3.875,
     "url": "https://www.smbc.co.jp/kojin/mokuteki_loan/kyouiku_m/"
   },
   "三菱UFJ銀行｜ネットDEマイカーローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.375,
     "rateMax": 3.5,
     "url": "https://www.bk.mufg.jp/kariru/mycar/index.html"
   },
   "三菱UFJ銀行｜バンクイック": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.4,
     "rateMax": 14.6,
     "url": "https://www.bk.mufg.jp/kariru/banquic/index.html"
   },
   "三菱UFJ銀行｜三菱UFJ銀行住宅ローン（変動金利）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.195,
     "rateMax": 1.195,
     "url": "https://www.bk.mufg.jp/kariru/jutaku/yuuguu/index.html"
   },
   "京葉銀行｜アルファ不動産担保フリーローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.1,
     "rateMax": 4.8,
     "url": "https://www.keiyobank.co.jp/individual/loan/home_free/"
   },
   "京葉銀行｜京葉銀行 教育ローン・学資ローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.1,
     "rateMax": 3.6,
     "url": "https://www.keiyobank.co.jp/individual/loan/education/"
   },
   "京葉銀行｜京葉銀行カードローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 4.5,
     "rateMax": 13.0,
     "url": "https://www.keiyobank.co.jp/individual/loan/card/card_loan/"
   },
   "京葉銀行｜京葉銀行マイカーローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.4,
     "rateMax": 4.2,
     "url": "https://www.keiyobank.co.jp/individual/loan/my_car/"
   },
   "京葉銀行｜京葉銀行リフォームローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.9,
     "rateMax": 4.9,
     "url": "https://www.keiyobank.co.jp/individual/loan/reform/"
   },
   "京葉銀行｜京葉銀行住宅ローン（変動金利）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.725,
     "rateMax": 1.725,
     "url": "https://www.keiyobank.co.jp/individual/loan/housing/"
   },
   "京都銀行｜京都銀行カードローン＜ダイレクト＞": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.9,
     "rateMax": 14.5,
     "url": "https://www.kyotobank.co.jp/kojin/loan/card/"
   },
   "京都銀行｜京銀マイカーローン（自動車ローン）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.075,
     "rateMax": 3.275,
     "url": "https://www.kyotobank.co.jp/kojin/loan/car/"
   },
   "京都銀行｜京銀住宅リフォームローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.575,
     "rateMax": 3.575,
     "url": "https://www.kyotobank.co.jp/kojin/loan/reform/"
   },
   "京都銀行｜京銀住宅ローン（変動金利プラン）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.675,
     "rateMax": 1.675,
     "url": "https://www.kyotobank.co.jp/kojin/campaign/kinriplan/"
   },
   "京都銀行｜京銀教育ローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.675,
     "rateMax": 4.575,
     "url": "https://www.kyotobank.co.jp/kojin/loan/kyouiku/"
   },
   "伊予銀行｜いよぎんマイカーローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.9,
     "rateMax": 4.45,
     "url": "https://www.iyobank.co.jp/kariru/mycar-loan/"
   },
   "伊予銀行｜いよぎん住宅ローン（新変動金利型）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.25,
     "rateMax": 1.25,
     "url": "https://www.iyobank.co.jp/kinri-gaikokukawasesoba-market/monthly/kojinloankinri.html"
   },
   "伊予銀行｜いよぎん教育ローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.8,
     "rateMax": 5.25,
     "url": "https://www.iyobank.co.jp/kariru/education/index.html"
   },
   "伊予銀行｜伊予銀行カードローン「SAFETY」": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.9,
     "rateMax": 14.5,
     "url": "https://www.iyobank.co.jp/kariru/safety.html"
   },
   "住信SBIネット銀行（ドコモSMTBネット銀行）｜Mr.カードローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.04,
     "rateMax": 14.94,
     "url": "https://www.netbk.co.jp/contents/lineup/card-loan/"
   },
   "住信SBIネット銀行（ドコモSMTBネット銀行）｜不動産担保ローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 4.2,
     "rateMax": 10.15,
     "url": "https://www.netbk.co.jp/contents/lineup/loan/realestate/"
   },
   "住信SBIネット銀行（ドコモSMTBネット銀行）｜住宅ローン（WEB申込コース・通期引下げプラン変動金利）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.0,
     "rateMax": 2.0,
     "url": "https://www.netbk.co.jp/contents/lineup/home-loan/web/kinri/"
   },
   "住信SBIネット銀行（ドコモSMTBネット銀行）｜目的ローン（リフォームローン）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.725,
     "rateMax": 5.225,
     "url": "https://www.netbk.co.jp/contents/lineup/loan/reform/kinri/"
   },
   "住信SBIネット銀行（ドコモSMTBネット銀行）｜目的ローン（教育ローン）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.025,
     "rateMax": 4.725,
     "url": "https://www.netbk.co.jp/contents/lineup/loan/education/kinri/"
   },
   "住信SBIネット銀行（ドコモSMTBネット銀行）｜目的ローン（自動車ローン）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.025,
     "rateMax": 4.725,
     "url": "https://www.netbk.co.jp/contents/lineup/loan/car/kinri/"
   },
   "北海道銀行｜北海道銀行カードローン「ラピッド」": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.9,
     "rateMax": 14.95,
     "url": "https://www.hokkaidobank.co.jp/loan/lineup/rapid.html"
   },
   "北海道銀行｜道銀マイカーローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.325,
     "rateMax": 4.625,
     "url": "https://www.hokkaidobank.co.jp/loan/mycar/"
   },
   "北海道銀行｜道銀リフォームローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.325,
     "rateMax": 4.625,
     "url": "https://www.hokkaidobank.co.jp/loan/reform/"
   },
   "北海道銀行｜道銀住宅ローン変動金利型": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.075,
     "rateMax": 2.075,
     "url": "https://www.hokkaidobank.co.jp/kinri/new_loan.html"
   },
   "北海道銀行｜道銀教育ローン（証書貸付型）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.075,
     "rateMax": 4.375,
     "url": "https://www.hokkaidobank.co.jp/loan/kyoiku/"
   },
   "千葉銀行｜ちばぎんカードローン（クイックパワー＜アドバンス＞）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.4,
     "rateMax": 14.8,
     "url": "https://www.chibabank.co.jp/kojin/services/loan/cardloan/cardloan_new"
   },
   "千葉銀行｜ちばぎんスーパー教育ローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.1,
     "rateMax": 3.5,
     "url": "https://www.chibabank.co.jp/kojin/loan/education/"
   },
   "千葉銀行｜ちばぎん住まいのリフォームローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.7,
     "rateMax": 3.8,
     "url": "https://www.chibabank.co.jp/kojin/loan/reform/"
   },
   "千葉銀行｜ちばぎん住宅ローン「ベストチョイス21」（変動金利）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.5,
     "rateMax": 1.5,
     "url": "https://www.chibabank.co.jp/kojin/loan/housing/plan/select/plan02.html"
   },
   "山陰合同銀行｜ごうぎんの住宅ローン（変動金利型・優遇キャンペーン）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.1,
     "rateMax": 1.1,
     "url": "https://www.gogin.co.jp/rate/housing/index.html"
   },
   "山陰合同銀行｜ごうぎんマイカーローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.05,
     "rateMax": 4.55,
     "url": "https://www.gogin.co.jp/personal/loan/mycar/"
   },
   "山陰合同銀行｜リフォームローン1000": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.1,
     "rateMax": 3.8,
     "url": "https://www.gogin.co.jp/personal/loan/reform/"
   },
   "山陰合同銀行｜教育ローン「がくえん」（カード型、島根県・鳥取県）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.4,
     "rateMax": 4.9,
     "url": "https://www.gogin.co.jp/personal/loan/education/"
   },
   "常陽銀行｜常陽銀行カードローン「キャッシュピット」": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.5,
     "rateMax": 14.8,
     "url": "https://www.joyobank.co.jp/personal/loan/cashpit/"
   },
   "常陽銀行｜常陽銀行住宅ローン（変動金利型・全期間重視プラン）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.575,
     "rateMax": 1.575,
     "url": "https://www.joyobank.co.jp/personal/loan/jutaku/kinri/"
   },
   "日本政策金融公庫｜教育一般貸付（国の教育ローン）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 4.05,
     "rateMax": 4.05,
     "url": "https://www.jfc.go.jp/n/finance/search/ippan.html"
   },
   "東京スター銀行｜スターカードローンα": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.5,
     "rateMax": 14.6,
     "url": "https://www.tokyostarbank.co.jp/products/loan/cardloan/"
   },
   "東京スター銀行｜スターマイカーローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.5,
     "rateMax": 3.8,
     "url": "https://www.tokyostarbank.co.jp/products/loan/unsecured/mycar/"
   },
   "東京スター銀行｜スターリフォームローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.5,
     "rateMax": 3.8,
     "url": "https://www.tokyostarbank.co.jp/products/loan/unsecured/reform/"
   },
   "東京スター銀行｜スター教育ローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.5,
     "rateMax": 3.8,
     "url": "https://www.tokyostarbank.co.jp/products/loan/unsecured/education/"
   },
   "東邦銀行｜スーパー住宅ローン「プラス7」（リフォーム資金）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.05,
     "rateMax": 1.05,
     "url": "https://www.tohobank.co.jp/kinri/saikagen-kinri.html"
   },
   "東邦銀行｜東邦・住宅ローン金利応援コース（変動金利応援コース）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.05,
     "rateMax": 1.05,
     "url": "https://www.tohobank.co.jp/kinri/saikagen-kinri.html"
   },
   "東邦銀行｜東邦銀行カードローン「TOHOスマートネクスト」": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.4,
     "rateMax": 14.6,
@@ -601,7 +601,7 @@
     "checkedAt": "2026-10-21",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 3.35,
     "rateMax": 12.11,
     "url": "https://www.rakuten-bank.co.jp/loan/mortgage-collateral/detail/"
@@ -610,7 +610,7 @@
     "checkedAt": "2026-10-21",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 1.9,
     "rateMax": 14.5,
     "url": "https://www.rakuten-bank.co.jp/loan/cardloan/"
@@ -619,90 +619,90 @@
     "checkedAt": "2026-10-17",
     "history": [],
     "lastError": "金融機関側のアクセス制限により自動取得できません（Access Denied／ヘッドレスブラウザ）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 1.747,
     "rateMax": 1.747,
     "url": "https://www.rakuten-bank.co.jp/home-loan/rate/"
   },
   "横浜銀行｜横浜銀行カードローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.5,
     "rateMax": 14.6,
     "url": "https://www.boy.co.jp/kojin/card-loan/yokohama/index.html"
   },
   "横浜銀行｜横浜銀行マイカーローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 0.9,
     "rateMax": 3.3,
     "url": "https://www.boy.co.jp/kojin/mycar-loan/index.html"
   },
   "横浜銀行｜横浜銀行ライフサポートローン（多目的ローン）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 4.6,
     "rateMax": 5.6,
     "url": "https://www.boy.co.jp/kojin/lifesupport-loan/index.html"
   },
   "横浜銀行｜横浜銀行住宅ローン（変動金利）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.325,
     "rateMax": 1.325,
     "url": "https://www.boy.co.jp/kojin/jutaku-loan/shinchiku/index.html"
   },
   "横浜銀行｜横浜銀行教育ローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 3.75,
     "rateMax": 3.75,
     "url": "https://www.boy.co.jp/kojin/education-loan/index.html"
   },
   "滋賀銀行｜しがぎんスーパー住宅ローン（変動型・有担保）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.25,
     "rateMax": 1.25,
     "url": "https://www.shigagin.com/rate/loan/"
   },
   "滋賀銀行｜滋賀銀行カードローン「サットキャッシュ」": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 4.8,
     "rateMax": 14.9,
     "url": "https://mcl.sbk.jp/lp/satto/"
   },
   "福岡銀行｜ふくぎんフリーローン（ナイスカバー）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 5.2,
     "rateMax": 14.0,
     "url": "https://www.fukuokabank.co.jp/personal/service/mokuteki/freeloan/"
   },
   "福岡銀行｜ニューオートローンDX": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 2.4,
     "rateMax": 4.2,
     "url": "https://www.fukuokabank.co.jp/personal/service/mokuteki/autoloan/"
   },
   "福岡銀行｜福岡銀行住宅ローン優遇金利（保証料一括型・変動金利）": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.775,
     "rateMax": 1.775,
     "url": "https://www.fukuokabank.co.jp/price/loaninterest/"
   },
   "静岡銀行｜しずぎんフリーローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 4.5,
     "rateMax": 14.5,
     "url": "https://www.shizuokabank.co.jp/personal/loan/free_loan/index.html"
   },
   "静岡銀行｜静岡銀行マイカーローン": {
-    "checkedAt": "2026-10-28",
+    "checkedAt": "2026-10-29",
     "history": [],
     "rate": 1.4,
     "rateMax": 4.4,
@@ -712,7 +712,7 @@
     "checkedAt": "2026-10-18",
     "history": [],
     "lastError": "目印「新規借入をお考えの方」が見つかりません（ヘッドレスブラウザで受け取った本文の冒頭: 金融機関コード:0149個人のお客さま法人・個人事業主のお客さま株主・投資家のみなさま採用情報企業情報しずおかフィナンシ…）",
-    "lastErrorAt": "2026-10-28",
+    "lastErrorAt": "2026-10-29",
     "rate": 1.4,
     "rateMax": 1.4,
     "url": "https://www.shizuokabank.co.jp/personal/loan/jyutaku/index.html"
